@@ -2,26 +2,13 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
-type Query {
-  permission(where: PermissionWhereUniqueInput!): Permission
-  findFirstPermission(where: PermissionWhereInput, orderBy: [PermissionOrderByWithRelationInput!], cursor: PermissionWhereUniqueInput, take: Int, skip: Int, distinct: [PermissionScalarFieldEnum!]): Permission
-  permissions(where: PermissionWhereInput, orderBy: [PermissionOrderByWithRelationInput!], cursor: PermissionWhereUniqueInput, take: Int, skip: Int, distinct: [PermissionScalarFieldEnum!]): [Permission!]!
-  aggregatePermission(where: PermissionWhereInput, orderBy: [PermissionOrderByWithRelationInput!], cursor: PermissionWhereUniqueInput, take: Int, skip: Int): AggregatePermission!
-  groupByPermission(where: PermissionWhereInput, orderBy: [PermissionOrderByWithAggregationInput!], by: [PermissionScalarFieldEnum!]!, having: PermissionScalarWhereWithAggregatesInput, take: Int, skip: Int): [PermissionGroupBy!]!
-  user(where: UserWhereUniqueInput!): User
-  findFirstUser(where: UserWhereInput, orderBy: [UserOrderByWithRelationInput!], cursor: UserWhereUniqueInput, take: Int, skip: Int, distinct: [UserScalarFieldEnum!]): User
-  users(where: UserWhereInput, orderBy: [UserOrderByWithRelationInput!], cursor: UserWhereUniqueInput, take: Int, skip: Int, distinct: [UserScalarFieldEnum!]): [User!]!
-  aggregateUser(where: UserWhereInput, orderBy: [UserOrderByWithRelationInput!], cursor: UserWhereUniqueInput, take: Int, skip: Int): AggregateUser!
-  groupByUser(where: UserWhereInput, orderBy: [UserOrderByWithAggregationInput!], by: [UserScalarFieldEnum!]!, having: UserScalarWhereWithAggregatesInput, take: Int, skip: Int): [UserGroupBy!]!
-}
-
 type Permission {
-  id: String!
+  id: ID!
   createdAt: DateTime!
   updatedAt: DateTime!
+  user: User
   userId: String!
   type: Role!
-  user: User
 }
 
 """
@@ -35,7 +22,7 @@ enum Role {
 }
 
 type User {
-  id: String!
+  id: ID!
   createdAt: DateTime!
   updatedAt: DateTime!
   firstName: String!
@@ -54,21 +41,28 @@ enum VerificationStatus {
   PENDING
 }
 
-input PermissionWhereUniqueInput {
-  id: String
-  userId: String
+type Family {
+  id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
 }
 
-input PermissionWhereInput {
-  AND: [PermissionWhereInput!]
-  OR: [PermissionWhereInput!]
-  NOT: [PermissionWhereInput!]
+type Query {
+  familys(where: FamilyWhereInput, orderBy: [FamilyOrderByWithRelationInput!], cursor: FamilyWhereUniqueInput, take: Int, skip: Int, distinct: [FamilyScalarFieldEnum!]): [Family!]!
+  family(where: FamilyWhereUniqueInput!): Family
+  permissions(where: PermissionWhereInput, orderBy: [PermissionOrderByWithRelationInput!], cursor: PermissionWhereUniqueInput, take: Int, skip: Int, distinct: [PermissionScalarFieldEnum!]): [Permission!]!
+  permission(where: PermissionWhereUniqueInput!): Permission
+  users(where: UserWhereInput, orderBy: [UserOrderByWithRelationInput!], cursor: UserWhereUniqueInput, take: Int, skip: Int, distinct: [UserScalarFieldEnum!]): [User!]!
+  user(where: UserWhereUniqueInput!): User
+}
+
+input FamilyWhereInput {
+  AND: [FamilyWhereInput!]
+  OR: [FamilyWhereInput!]
+  NOT: [FamilyWhereInput!]
   id: StringFilter
   createdAt: DateTimeFilter
   updatedAt: DateTimeFilter
-  user: UserRelationFilter
-  userId: StringFilter
-  type: EnumRoleFilter
 }
 
 input StringFilter {
@@ -125,6 +119,39 @@ input NestedDateTimeFilter {
   gt: DateTime
   gte: DateTime
   not: NestedDateTimeFilter
+}
+
+input FamilyOrderByWithRelationInput {
+  id: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+}
+
+enum SortOrder {
+  asc
+  desc
+}
+
+input FamilyWhereUniqueInput {
+  id: String
+}
+
+enum FamilyScalarFieldEnum {
+  id
+  createdAt
+  updatedAt
+}
+
+input PermissionWhereInput {
+  AND: [PermissionWhereInput!]
+  OR: [PermissionWhereInput!]
+  NOT: [PermissionWhereInput!]
+  id: StringFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  user: UserRelationFilter
+  userId: StringFilter
+  type: EnumRoleFilter
 }
 
 input UserRelationFilter {
@@ -242,11 +269,6 @@ input PermissionOrderByWithRelationInput {
   type: SortOrder
 }
 
-enum SortOrder {
-  asc
-  desc
-}
-
 input UserOrderByWithRelationInput {
   id: SortOrder
   createdAt: SortOrder
@@ -261,194 +283,17 @@ input UserOrderByWithRelationInput {
   permission: PermissionOrderByWithRelationInput
 }
 
+input PermissionWhereUniqueInput {
+  id: String
+  userId: String
+}
+
 enum PermissionScalarFieldEnum {
   id
   createdAt
   updatedAt
   userId
   type
-}
-
-type AggregatePermission {
-  _count: PermissionCountAggregate
-  _min: PermissionMinAggregate
-  _max: PermissionMaxAggregate
-}
-
-type PermissionCountAggregate {
-  id: Int!
-  createdAt: Int!
-  updatedAt: Int!
-  userId: Int!
-  type: Int!
-  _all: Int!
-}
-
-type PermissionMinAggregate {
-  id: String
-  createdAt: DateTime
-  updatedAt: DateTime
-  userId: String
-  type: Role
-}
-
-type PermissionMaxAggregate {
-  id: String
-  createdAt: DateTime
-  updatedAt: DateTime
-  userId: String
-  type: Role
-}
-
-type PermissionGroupBy {
-  id: String!
-  createdAt: DateTime!
-  updatedAt: DateTime!
-  userId: String!
-  type: Role!
-  _count: PermissionCountAggregate
-  _min: PermissionMinAggregate
-  _max: PermissionMaxAggregate
-}
-
-input PermissionOrderByWithAggregationInput {
-  id: SortOrder
-  createdAt: SortOrder
-  updatedAt: SortOrder
-  userId: SortOrder
-  type: SortOrder
-  _count: PermissionCountOrderByAggregateInput
-  _max: PermissionMaxOrderByAggregateInput
-  _min: PermissionMinOrderByAggregateInput
-}
-
-input PermissionCountOrderByAggregateInput {
-  id: SortOrder
-  createdAt: SortOrder
-  updatedAt: SortOrder
-  userId: SortOrder
-  type: SortOrder
-}
-
-input PermissionMaxOrderByAggregateInput {
-  id: SortOrder
-  createdAt: SortOrder
-  updatedAt: SortOrder
-  userId: SortOrder
-  type: SortOrder
-}
-
-input PermissionMinOrderByAggregateInput {
-  id: SortOrder
-  createdAt: SortOrder
-  updatedAt: SortOrder
-  userId: SortOrder
-  type: SortOrder
-}
-
-input PermissionScalarWhereWithAggregatesInput {
-  AND: [PermissionScalarWhereWithAggregatesInput!]
-  OR: [PermissionScalarWhereWithAggregatesInput!]
-  NOT: [PermissionScalarWhereWithAggregatesInput!]
-  id: StringWithAggregatesFilter
-  createdAt: DateTimeWithAggregatesFilter
-  updatedAt: DateTimeWithAggregatesFilter
-  userId: StringWithAggregatesFilter
-  type: EnumRoleWithAggregatesFilter
-}
-
-input StringWithAggregatesFilter {
-  equals: String
-  in: [String!]
-  notIn: [String!]
-  lt: String
-  lte: String
-  gt: String
-  gte: String
-  contains: String
-  startsWith: String
-  endsWith: String
-  mode: QueryMode
-  not: NestedStringWithAggregatesFilter
-  _count: NestedIntFilter
-  _min: NestedStringFilter
-  _max: NestedStringFilter
-}
-
-input NestedStringWithAggregatesFilter {
-  equals: String
-  in: [String!]
-  notIn: [String!]
-  lt: String
-  lte: String
-  gt: String
-  gte: String
-  contains: String
-  startsWith: String
-  endsWith: String
-  not: NestedStringWithAggregatesFilter
-  _count: NestedIntFilter
-  _min: NestedStringFilter
-  _max: NestedStringFilter
-}
-
-input NestedIntFilter {
-  equals: Int
-  in: [Int!]
-  notIn: [Int!]
-  lt: Int
-  lte: Int
-  gt: Int
-  gte: Int
-  not: NestedIntFilter
-}
-
-input DateTimeWithAggregatesFilter {
-  equals: DateTime
-  in: [DateTime!]
-  notIn: [DateTime!]
-  lt: DateTime
-  lte: DateTime
-  gt: DateTime
-  gte: DateTime
-  not: NestedDateTimeWithAggregatesFilter
-  _count: NestedIntFilter
-  _min: NestedDateTimeFilter
-  _max: NestedDateTimeFilter
-}
-
-input NestedDateTimeWithAggregatesFilter {
-  equals: DateTime
-  in: [DateTime!]
-  notIn: [DateTime!]
-  lt: DateTime
-  lte: DateTime
-  gt: DateTime
-  gte: DateTime
-  not: NestedDateTimeWithAggregatesFilter
-  _count: NestedIntFilter
-  _min: NestedDateTimeFilter
-  _max: NestedDateTimeFilter
-}
-
-input EnumRoleWithAggregatesFilter {
-  equals: Role
-  in: [Role!]
-  notIn: [Role!]
-  not: NestedEnumRoleWithAggregatesFilter
-  _count: NestedIntFilter
-  _min: NestedEnumRoleFilter
-  _max: NestedEnumRoleFilter
-}
-
-input NestedEnumRoleWithAggregatesFilter {
-  equals: Role
-  in: [Role!]
-  notIn: [Role!]
-  not: NestedEnumRoleWithAggregatesFilter
-  _count: NestedIntFilter
-  _min: NestedEnumRoleFilter
-  _max: NestedEnumRoleFilter
 }
 
 input UserWhereUniqueInput {
@@ -469,248 +314,36 @@ enum UserScalarFieldEnum {
   verificationStatus
 }
 
-type AggregateUser {
-  _count: UserCountAggregate
-  _min: UserMinAggregate
-  _max: UserMaxAggregate
-}
-
-type UserCountAggregate {
-  id: Int!
-  createdAt: Int!
-  updatedAt: Int!
-  firstName: Int!
-  lastName: Int!
-  email: Int!
-  password: Int!
-  validationToken: Int!
-  lastLogin: Int!
-  verificationStatus: Int!
-  _all: Int!
-}
-
-type UserMinAggregate {
-  id: String
-  createdAt: DateTime
-  updatedAt: DateTime
-  firstName: String
-  lastName: String
-  email: String
-  password: String
-  validationToken: String
-  lastLogin: DateTime
-  verificationStatus: VerificationStatus
-}
-
-type UserMaxAggregate {
-  id: String
-  createdAt: DateTime
-  updatedAt: DateTime
-  firstName: String
-  lastName: String
-  email: String
-  password: String
-  validationToken: String
-  lastLogin: DateTime
-  verificationStatus: VerificationStatus
-}
-
-type UserGroupBy {
-  id: String!
-  createdAt: DateTime!
-  updatedAt: DateTime!
-  firstName: String!
-  lastName: String!
-  email: String!
-  password: String
-  validationToken: String!
-  lastLogin: DateTime
-  verificationStatus: VerificationStatus!
-  _count: UserCountAggregate
-  _min: UserMinAggregate
-  _max: UserMaxAggregate
-}
-
-input UserOrderByWithAggregationInput {
-  id: SortOrder
-  createdAt: SortOrder
-  updatedAt: SortOrder
-  firstName: SortOrder
-  lastName: SortOrder
-  email: SortOrder
-  password: SortOrder
-  validationToken: SortOrder
-  lastLogin: SortOrder
-  verificationStatus: SortOrder
-  _count: UserCountOrderByAggregateInput
-  _max: UserMaxOrderByAggregateInput
-  _min: UserMinOrderByAggregateInput
-}
-
-input UserCountOrderByAggregateInput {
-  id: SortOrder
-  createdAt: SortOrder
-  updatedAt: SortOrder
-  firstName: SortOrder
-  lastName: SortOrder
-  email: SortOrder
-  password: SortOrder
-  validationToken: SortOrder
-  lastLogin: SortOrder
-  verificationStatus: SortOrder
-}
-
-input UserMaxOrderByAggregateInput {
-  id: SortOrder
-  createdAt: SortOrder
-  updatedAt: SortOrder
-  firstName: SortOrder
-  lastName: SortOrder
-  email: SortOrder
-  password: SortOrder
-  validationToken: SortOrder
-  lastLogin: SortOrder
-  verificationStatus: SortOrder
-}
-
-input UserMinOrderByAggregateInput {
-  id: SortOrder
-  createdAt: SortOrder
-  updatedAt: SortOrder
-  firstName: SortOrder
-  lastName: SortOrder
-  email: SortOrder
-  password: SortOrder
-  validationToken: SortOrder
-  lastLogin: SortOrder
-  verificationStatus: SortOrder
-}
-
-input UserScalarWhereWithAggregatesInput {
-  AND: [UserScalarWhereWithAggregatesInput!]
-  OR: [UserScalarWhereWithAggregatesInput!]
-  NOT: [UserScalarWhereWithAggregatesInput!]
-  id: StringWithAggregatesFilter
-  createdAt: DateTimeWithAggregatesFilter
-  updatedAt: DateTimeWithAggregatesFilter
-  firstName: StringWithAggregatesFilter
-  lastName: StringWithAggregatesFilter
-  email: StringWithAggregatesFilter
-  password: StringNullableWithAggregatesFilter
-  validationToken: StringWithAggregatesFilter
-  lastLogin: DateTimeNullableWithAggregatesFilter
-  verificationStatus: EnumVerificationStatusWithAggregatesFilter
-}
-
-input StringNullableWithAggregatesFilter {
-  equals: String
-  in: [String!]
-  notIn: [String!]
-  lt: String
-  lte: String
-  gt: String
-  gte: String
-  contains: String
-  startsWith: String
-  endsWith: String
-  mode: QueryMode
-  not: NestedStringNullableWithAggregatesFilter
-  _count: NestedIntNullableFilter
-  _min: NestedStringNullableFilter
-  _max: NestedStringNullableFilter
-}
-
-input NestedStringNullableWithAggregatesFilter {
-  equals: String
-  in: [String!]
-  notIn: [String!]
-  lt: String
-  lte: String
-  gt: String
-  gte: String
-  contains: String
-  startsWith: String
-  endsWith: String
-  not: NestedStringNullableWithAggregatesFilter
-  _count: NestedIntNullableFilter
-  _min: NestedStringNullableFilter
-  _max: NestedStringNullableFilter
-}
-
-input NestedIntNullableFilter {
-  equals: Int
-  in: [Int!]
-  notIn: [Int!]
-  lt: Int
-  lte: Int
-  gt: Int
-  gte: Int
-  not: NestedIntNullableFilter
-}
-
-input DateTimeNullableWithAggregatesFilter {
-  equals: DateTime
-  in: [DateTime!]
-  notIn: [DateTime!]
-  lt: DateTime
-  lte: DateTime
-  gt: DateTime
-  gte: DateTime
-  not: NestedDateTimeNullableWithAggregatesFilter
-  _count: NestedIntNullableFilter
-  _min: NestedDateTimeNullableFilter
-  _max: NestedDateTimeNullableFilter
-}
-
-input NestedDateTimeNullableWithAggregatesFilter {
-  equals: DateTime
-  in: [DateTime!]
-  notIn: [DateTime!]
-  lt: DateTime
-  lte: DateTime
-  gt: DateTime
-  gte: DateTime
-  not: NestedDateTimeNullableWithAggregatesFilter
-  _count: NestedIntNullableFilter
-  _min: NestedDateTimeNullableFilter
-  _max: NestedDateTimeNullableFilter
-}
-
-input EnumVerificationStatusWithAggregatesFilter {
-  equals: VerificationStatus
-  in: [VerificationStatus!]
-  notIn: [VerificationStatus!]
-  not: NestedEnumVerificationStatusWithAggregatesFilter
-  _count: NestedIntFilter
-  _min: NestedEnumVerificationStatusFilter
-  _max: NestedEnumVerificationStatusFilter
-}
-
-input NestedEnumVerificationStatusWithAggregatesFilter {
-  equals: VerificationStatus
-  in: [VerificationStatus!]
-  notIn: [VerificationStatus!]
-  not: NestedEnumVerificationStatusWithAggregatesFilter
-  _count: NestedIntFilter
-  _min: NestedEnumVerificationStatusFilter
-  _max: NestedEnumVerificationStatusFilter
-}
-
 type Mutation {
-  createPermission(data: PermissionCreateInput!): Permission!
-  createManyPermission(data: [PermissionCreateManyInput!]!, skipDuplicates: Boolean): AffectedRowsOutput!
-  deletePermission(where: PermissionWhereUniqueInput!): Permission
-  updatePermission(data: PermissionUpdateInput!, where: PermissionWhereUniqueInput!): Permission
-  deleteManyPermission(where: PermissionWhereInput): AffectedRowsOutput!
-  updateManyPermission(data: PermissionUpdateManyMutationInput!, where: PermissionWhereInput): AffectedRowsOutput!
-  upsertPermission(where: PermissionWhereUniqueInput!, create: PermissionCreateInput!, update: PermissionUpdateInput!): Permission!
-  createUser(data: UserCreateInput!): User!
-  createManyUser(data: [UserCreateManyInput!]!, skipDuplicates: Boolean): AffectedRowsOutput!
-  deleteUser(where: UserWhereUniqueInput!): User
-  updateUser(data: UserUpdateInput!, where: UserWhereUniqueInput!): User
-  deleteManyUser(where: UserWhereInput): AffectedRowsOutput!
-  updateManyUser(data: UserUpdateManyMutationInput!, where: UserWhereInput): AffectedRowsOutput!
-  upsertUser(where: UserWhereUniqueInput!, create: UserCreateInput!, update: UserUpdateInput!): User!
+  createFamily(createFamilyInput: FamilyCreateInput!): Family!
+  updateFamily(where: FamilyWhereUniqueInput!, updateFamilyInput: FamilyUpdateInput!): Family!
+  removeFamily(where: FamilyWhereUniqueInput!): Family!
+  createPermission(createPermissionInput: PermissionCreateInput!): Permission!
+  updatePermission(where: PermissionWhereUniqueInput!, updatePermissionInput: PermissionUpdateInput!): Permission!
+  removePermission(where: PermissionWhereUniqueInput!): Permission!
+  createUser(createUserInput: UserCreateInput!): User!
+  updateUser(where: UserWhereUniqueInput!, updateUserInput: UserUpdateInput!): User!
+  removeUser(where: UserWhereUniqueInput!): User!
+}
+
+input FamilyCreateInput {
+  id: String
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input FamilyUpdateInput {
+  id: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input StringFieldUpdateOperationsInput {
+  set: String
+}
+
+input DateTimeFieldUpdateOperationsInput {
+  set: DateTime
 }
 
 input PermissionCreateInput {
@@ -745,32 +378,12 @@ input UserCreateOrConnectWithoutPermissionInput {
   create: UserCreateWithoutPermissionInput!
 }
 
-type AffectedRowsOutput {
-  count: Int!
-}
-
-input PermissionCreateManyInput {
-  id: String
-  createdAt: DateTime
-  updatedAt: DateTime
-  userId: String!
-  type: Role!
-}
-
 input PermissionUpdateInput {
   id: StringFieldUpdateOperationsInput
   createdAt: DateTimeFieldUpdateOperationsInput
   updatedAt: DateTimeFieldUpdateOperationsInput
   user: UserUpdateOneWithoutPermissionInput
   type: EnumRoleFieldUpdateOperationsInput
-}
-
-input StringFieldUpdateOperationsInput {
-  set: String
-}
-
-input DateTimeFieldUpdateOperationsInput {
-  set: DateTime
 }
 
 input UserUpdateOneWithoutPermissionInput {
@@ -817,13 +430,6 @@ input EnumRoleFieldUpdateOperationsInput {
   set: Role
 }
 
-input PermissionUpdateManyMutationInput {
-  id: StringFieldUpdateOperationsInput
-  createdAt: DateTimeFieldUpdateOperationsInput
-  updatedAt: DateTimeFieldUpdateOperationsInput
-  type: EnumRoleFieldUpdateOperationsInput
-}
-
 input UserCreateInput {
   id: String
   createdAt: DateTime
@@ -854,19 +460,6 @@ input PermissionCreateWithoutUserInput {
 input PermissionCreateOrConnectWithoutUserInput {
   where: PermissionWhereUniqueInput!
   create: PermissionCreateWithoutUserInput!
-}
-
-input UserCreateManyInput {
-  id: String
-  createdAt: DateTime
-  updatedAt: DateTime
-  firstName: String!
-  lastName: String!
-  email: String!
-  password: String
-  validationToken: String!
-  lastLogin: DateTime
-  verificationStatus: VerificationStatus
 }
 
 input UserUpdateInput {
@@ -903,17 +496,4 @@ input PermissionUpdateWithoutUserInput {
   createdAt: DateTimeFieldUpdateOperationsInput
   updatedAt: DateTimeFieldUpdateOperationsInput
   type: EnumRoleFieldUpdateOperationsInput
-}
-
-input UserUpdateManyMutationInput {
-  id: StringFieldUpdateOperationsInput
-  createdAt: DateTimeFieldUpdateOperationsInput
-  updatedAt: DateTimeFieldUpdateOperationsInput
-  firstName: StringFieldUpdateOperationsInput
-  lastName: StringFieldUpdateOperationsInput
-  email: StringFieldUpdateOperationsInput
-  password: NullableStringFieldUpdateOperationsInput
-  validationToken: StringFieldUpdateOperationsInput
-  lastLogin: NullableDateTimeFieldUpdateOperationsInput
-  verificationStatus: EnumVerificationStatusFieldUpdateOperationsInput
 }

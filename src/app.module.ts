@@ -3,8 +3,11 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { PrismaClient } from '@prisma/client';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { crudResolvers, resolvers } from '../prisma/generated';
+
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
+import { ModelsModule } from './models/models.module';
+import { PrismaService } from './services/prisma/prisma.service';
+import { PrismaModule } from './services/prisma/prisma.module';
 
 const prisma = new PrismaClient({
   log: ['query'],
@@ -14,18 +17,16 @@ const prisma = new PrismaClient({
   imports: [
     GraphQLModule.forRoot<ApolloDriverConfig>({
       installSubscriptionHandlers: true,
-      autoSchemaFile: 'schema.gql',
+      autoSchemaFile: './schema.gql',
       debug: true,
       playground: true,
       driver: ApolloDriver,
       context: ({ req }) => ({ req, prisma }),
     }),
+    ModelsModule,
+    PrismaModule,
   ],
   controllers: [AppController],
-  providers: [
-    AppService,
-    ...(crudResolvers as unknown as Provider<any>[]),
-    ...(resolvers as unknown as Provider<any>[]),
-  ],
+  providers: [AppService],
 })
 export class AppModule {}

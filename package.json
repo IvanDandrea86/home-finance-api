@@ -7,7 +7,9 @@
   "license": "UNLICENSED",
   "scripts": {
     "prebuild": "rimraf dist",
+    "gen-typings": "mkdir ./node_modules/@prisma/client/nestjs-graphql && ts-node ./src/utils/generate-typings",
     "build": "nest build",
+    "prisma:generate": "npx prisma generate && yarn format",
     "docker:up": "  sudo docker-compose  up -d ",
     "docker:down": "  sudo docker-compose down",
     "docker:reset": "sudo docker stop $(sudo docker ps -a -q);sudo docker system prune; sudo docker rmi $( sudo docker images -a -q); sudo docker rm $(sudo  docker ps -a -q)",
@@ -30,17 +32,16 @@
     "@nestjs/graphql": "^10.0.18",
     "@nestjs/platform-express": "^9.0.0",
     "@prisma/client": "^3.14.0",
-    "A": "^0.0.1",
     "apollo-server-express": "^3.10.0",
+    "class-transformer": "^0.5.1",
     "class-validator": "^0.13.2",
-    "graphql": "^15.3.0",
+    "graphql": "^16.5.0",
     "graphql-fields": "^2.0.3",
     "graphql-scalars": "^1.17.0",
+    "prisma-nestjs-graphql-resource-generator": "^0.1.1",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
-    "rxjs": "^7.2.0",
-    "type-graphql": "^1.1.1",
-    "typegraphql-nestjs": "^0.4.1"
+    "rxjs": "^7.2.0"
   },
   "devDependencies": {
     "@nestjs/cli": "^9.0.0",
@@ -59,13 +60,14 @@
     "jest": "28.1.2",
     "prettier": "^2.3.2",
     "prisma": "^3.14.0",
+    "prisma-json-schema-generator": "^3.0.0",
+    "prisma-nestjs-graphql": "^16.0.1",
     "source-map-support": "^0.5.20",
     "supertest": "^6.1.3",
     "ts-jest": "28.0.5",
     "ts-loader": "^9.2.3",
     "ts-node": "^10.0.0",
     "tsconfig-paths": "4.0.0",
-    "typegraphql-prisma-nestjs": "^0.2000.3",
     "typescript": "^4.3.5"
   },
   "jest": {
