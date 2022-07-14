@@ -1,5 +1,18 @@
 version: "3.9"
 services:
+
+  redis:
+    image: 'bitnami/redis:latest'
+    hostname: redis
+    ports:
+      - '6379'
+    environment:
+      REDIS_REPLICATION_MODE: master
+      REDIS_PASSWORD: my_master_password
+    volumes:
+      - '/path/to/redis-persistence:/bitnami'
+    restart: unless-stopped
+
   postgres:
     image: postgres:latest
     container_name: postgres2
@@ -28,6 +41,9 @@ services:
       - pgadmin-data:/var/lib/pgadmin
     restart: unless-stopped
 
+
+
 volumes:
   postgres-data:
   pgadmin-data:
+  redis:

@@ -1,32 +1,25 @@
-import { Module, Provider } from '@nestjs/common';
+import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
-import { PrismaClient } from '@prisma/client';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-
+import { ApolloServerPluginLandingPageLocalDefault } from 'apollo-server-core';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { ModelsModule } from './models/models.module';
-import { PrismaService } from './services/prisma/prisma.service';
 import { PrismaModule } from './services/prisma/prisma.module';
-
-const prisma = new PrismaClient({
-  log: ['query'],
-});
+import { AuthModule } from './auth/auth.module';
+import { ConfigModule } from '@nestjs/config';
+import { ALLOW_ORIGIN } from './constants';
+import { GraphQLConfig } from './config/graphgql.config';
 
 @Module({
   imports: [
-    GraphQLModule.forRoot<ApolloDriverConfig>({
-      installSubscriptionHandlers: true,
-      autoSchemaFile: './schema.gql',
-      debug: true,
-      playground: true,
-      driver: ApolloDriver,
-      context: ({ req }) => ({ req, prisma }),
-    }),
+    GraphQLModule.forRoot<ApolloDriverConfig>(GraphQLConfig),
     ModelsModule,
     PrismaModule,
+    AuthModule,
+    ConfigModule.forRoot({}),
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  // controllers: [AppController],
+  // providers: [AppService],
 })
 export class AppModule {}

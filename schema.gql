@@ -47,6 +47,12 @@ type Family {
   updatedAt: DateTime!
 }
 
+type AuthResponse {
+  message: String
+  role: String
+  user: User
+}
+
 type Query {
   familys(where: FamilyWhereInput, orderBy: [FamilyOrderByWithRelationInput!], cursor: FamilyWhereUniqueInput, take: Int, skip: Int, distinct: [FamilyScalarFieldEnum!]): [Family!]!
   family(where: FamilyWhereUniqueInput!): Family
@@ -54,6 +60,7 @@ type Query {
   permission(where: PermissionWhereUniqueInput!): Permission
   users(where: UserWhereInput, orderBy: [UserOrderByWithRelationInput!], cursor: UserWhereUniqueInput, take: Int, skip: Int, distinct: [UserScalarFieldEnum!]): [User!]!
   user(where: UserWhereUniqueInput!): User
+  whoAmI: User
 }
 
 input FamilyWhereInput {
@@ -324,6 +331,8 @@ type Mutation {
   createUser(createUserInput: UserCreateInput!): User!
   updateUser(where: UserWhereUniqueInput!, updateUserInput: UserUpdateInput!): User!
   removeUser(where: UserWhereUniqueInput!): User!
+  login(authInput: AuthInput!): AuthResponse!
+  logout: AuthResponse
 }
 
 input FamilyCreateInput {
@@ -496,4 +505,9 @@ input PermissionUpdateWithoutUserInput {
   createdAt: DateTimeFieldUpdateOperationsInput
   updatedAt: DateTimeFieldUpdateOperationsInput
   type: EnumRoleFieldUpdateOperationsInput
+}
+
+input AuthInput {
+  email: String
+  password: String
 }

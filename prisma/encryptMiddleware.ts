@@ -8,8 +8,9 @@ export default async function (
   //Middleware from Prisma.create for encrypt password
   if (params.action == 'create' && params.model == 'User') {
     const user = params.args.data;
+    const hasPassword = Object.hasOwnProperty.bind(user)('password');
     //Encrypt password if exist password args
-    if (user.hasOwnProperty('password')) {
+    if (hasPassword) {
       const salt = await bcrypt.genSalt(10);
       const hash = await bcrypt.hash(user.password, salt);
       user.password = hash;
@@ -20,10 +21,8 @@ export default async function (
   if (params.action == 'update' && params.model == 'User') {
     const user = params.args.data;
     //Encrypt password if exist password args
-    if (
-      user.hasOwnProperty('password') &&
-      user.password.hasOwnProperty('set')
-    ) {
+    const hasPassword = Object.hasOwnProperty.bind(user)('password');
+    if (hasPassword) {
       const salt = await bcrypt.genSalt(10);
       const hash = await bcrypt.hash(user.password.set, salt);
       user.password = hash;
