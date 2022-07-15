@@ -9,22 +9,23 @@ import { PermissionScalarFieldEnum } from './permission-scalar-field.enum';
 
 @ArgsType()
 export class FindFirstPermissionArgs {
-  @Field(() => PermissionWhereInput, { nullable: true })
-  @Type(() => PermissionWhereInput)
-  where?: PermissionWhereInput;
 
-  @Field(() => [PermissionOrderByWithRelationInput], { nullable: true })
-  orderBy?: Array<PermissionOrderByWithRelationInput>;
+    @Field(() => PermissionWhereInput, {nullable:true})
+    @Type(() => PermissionWhereInput)
+    where?: PermissionWhereInput;
 
-  @Field(() => PermissionWhereUniqueInput, { nullable: true })
-  cursor?: PermissionWhereUniqueInput;
+    @Field(() => [PermissionOrderByWithRelationInput], {nullable:true})
+    orderBy?: Array<PermissionOrderByWithRelationInput>;
 
-  @Field(() => Int, { nullable: true })
-  take?: number;
+    @Field(() => PermissionWhereUniqueInput, {nullable:true})
+    cursor?: PermissionWhereUniqueInput;
 
-  @Field(() => Int, { nullable: true })
-  skip?: number;
+    @Field(() => Int, {nullable:true})
+    take?: number;
 
-  @Field(() => [PermissionScalarFieldEnum], { nullable: true })
-  distinct?: Array<keyof typeof PermissionScalarFieldEnum>;
+    @Field(() => Int, {nullable:true})
+    skip?: number;
+
+    @Field(() => [PermissionScalarFieldEnum], {nullable:true})
+    distinct?: Array<keyof typeof PermissionScalarFieldEnum>;
 }

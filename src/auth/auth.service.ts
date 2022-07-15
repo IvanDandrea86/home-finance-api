@@ -19,9 +19,12 @@ export class AuthService {
   ) {}
 
   async validateUser(email: string, password: string): Promise<any> {
-    const user = await this.userService.findOne({
-      email,
-    });
+    const user = await this.userService.findOne(
+      {
+        email: email,
+      },
+      { permission: true },
+    );
     if (!user) {
       throw new NotFoundException('constant.EMAIL_NOT_FOUND');
     }

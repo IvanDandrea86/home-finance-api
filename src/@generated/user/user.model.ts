@@ -6,39 +6,37 @@ import { Permission } from '../permission/permission.model';
 
 @ObjectType()
 export class User {
-  @Field(() => ID, { nullable: false })
-  id!: string;
 
-  @Field(() => Date, { nullable: false })
-  createdAt!: Date;
+    @Field(() => ID, {nullable:false})
+    id!: string;
 
-  @Field(() => Date, { nullable: false })
-  updatedAt!: Date;
+    @Field(() => Date, {nullable:false})
+    createdAt!: Date;
 
-  @Field(() => String, { nullable: false })
-  firstName!: string;
+    @Field(() => Date, {nullable:false})
+    updatedAt!: Date;
 
-  @Field(() => String, { nullable: false })
-  lastName!: string;
+    @Field(() => String, {nullable:false})
+    firstName!: string;
 
-  @Field(() => String, { nullable: false })
-  email!: string;
+    @Field(() => String, {nullable:false})
+    lastName!: string;
 
-  @Field(() => String, { nullable: true })
-  password!: string | null;
+    @Field(() => String, {nullable:false})
+    email!: string;
 
-  @Field(() => String, { nullable: false })
-  validationToken!: string;
+    @Field(() => String, {nullable:true})
+    password!: string | null;
 
-  @Field(() => Date, { nullable: true })
-  lastLogin!: Date | null;
+    @Field(() => String, {nullable:false})
+    validationToken!: string;
 
-  @Field(() => VerificationStatus, {
-    nullable: false,
-    defaultValue: 'NOT_VERIFIED',
-  })
-  verificationStatus!: keyof typeof VerificationStatus;
+    @Field(() => Date, {nullable:true})
+    lastLogin!: Date | null;
 
-  @Field(() => Permission, { nullable: true })
-  permission?: Permission | null;
+    @Field(() => VerificationStatus, {nullable:false,defaultValue:'NOT_VERIFIED'})
+    verificationStatus!: keyof typeof VerificationStatus;
+
+    @Field(() => Permission, {nullable:true})
+    permission?: Permission | null;
 }

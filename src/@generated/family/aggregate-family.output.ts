@@ -6,12 +6,13 @@ import { FamilyMaxAggregate } from './family-max-aggregate.output';
 
 @ObjectType()
 export class AggregateFamily {
-  @Field(() => FamilyCountAggregate, { nullable: true })
-  _count?: FamilyCountAggregate;
 
-  @Field(() => FamilyMinAggregate, { nullable: true })
-  _min?: FamilyMinAggregate;
+    @Field(() => FamilyCountAggregate, {nullable:true})
+    _count?: FamilyCountAggregate;
 
-  @Field(() => FamilyMaxAggregate, { nullable: true })
-  _max?: FamilyMaxAggregate;
+    @Field(() => FamilyMinAggregate, {nullable:true})
+    _min?: FamilyMinAggregate;
+
+    @Field(() => FamilyMaxAggregate, {nullable:true})
+    _max?: FamilyMaxAggregate;
 }

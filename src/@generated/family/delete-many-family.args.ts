@@ -5,7 +5,8 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class DeleteManyFamilyArgs {
-  @Field(() => FamilyWhereInput, { nullable: true })
-  @Type(() => FamilyWhereInput)
-  where?: FamilyWhereInput;
+
+    @Field(() => FamilyWhereInput, {nullable:true})
+    @Type(() => FamilyWhereInput)
+    where?: FamilyWhereInput;
 }

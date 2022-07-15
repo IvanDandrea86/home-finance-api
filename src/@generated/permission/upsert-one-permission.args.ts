@@ -7,15 +7,16 @@ import { PermissionUpdateInput } from './permission-update.input';
 
 @ArgsType()
 export class UpsertOnePermissionArgs {
-  @Field(() => PermissionWhereUniqueInput, { nullable: false })
-  @Type(() => PermissionWhereUniqueInput)
-  where!: PermissionWhereUniqueInput;
 
-  @Field(() => PermissionCreateInput, { nullable: false })
-  @Type(() => PermissionCreateInput)
-  create!: PermissionCreateInput;
+    @Field(() => PermissionWhereUniqueInput, {nullable:false})
+    @Type(() => PermissionWhereUniqueInput)
+    where!: PermissionWhereUniqueInput;
 
-  @Field(() => PermissionUpdateInput, { nullable: false })
-  @Type(() => PermissionUpdateInput)
-  update!: PermissionUpdateInput;
+    @Field(() => PermissionCreateInput, {nullable:false})
+    @Type(() => PermissionCreateInput)
+    create!: PermissionCreateInput;
+
+    @Field(() => PermissionUpdateInput, {nullable:false})
+    @Type(() => PermissionUpdateInput)
+    update!: PermissionUpdateInput;
 }

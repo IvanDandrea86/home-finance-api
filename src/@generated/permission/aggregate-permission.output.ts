@@ -6,12 +6,13 @@ import { PermissionMaxAggregate } from './permission-max-aggregate.output';
 
 @ObjectType()
 export class AggregatePermission {
-  @Field(() => PermissionCountAggregate, { nullable: true })
-  _count?: PermissionCountAggregate;
 
-  @Field(() => PermissionMinAggregate, { nullable: true })
-  _min?: PermissionMinAggregate;
+    @Field(() => PermissionCountAggregate, {nullable:true})
+    _count?: PermissionCountAggregate;
 
-  @Field(() => PermissionMaxAggregate, { nullable: true })
-  _max?: PermissionMaxAggregate;
+    @Field(() => PermissionMinAggregate, {nullable:true})
+    _min?: PermissionMinAggregate;
+
+    @Field(() => PermissionMaxAggregate, {nullable:true})
+    _max?: PermissionMaxAggregate;
 }

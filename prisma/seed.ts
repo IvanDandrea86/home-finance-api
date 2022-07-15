@@ -14,6 +14,25 @@ async function seed() {
         lastName: 'dand',
         validationToken: '',
         password: 'Qwerty1Q',
+        permission: {
+          create: {
+            type: 'ADMIN',
+          },
+        },
+      },
+    });
+    await prisma.user.create({
+      data: {
+        email: 'ivan@user.it',
+        firstName: 'test',
+        lastName: 'user',
+        validationToken: '',
+        password: 'Qwerty1Q',
+        permission: {
+          create: {
+            type: 'USER',
+          },
+        },
       },
     });
   } catch (err: any) {

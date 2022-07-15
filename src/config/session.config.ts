@@ -18,8 +18,8 @@ export const sessionConfig: SessionOptions = {
     disableTouch: true,
   }),
   secret: SESSIONSECRET,
-  saveUninitialized: true,
-  resave: true,
+  saveUninitialized: false,
+  resave: false,
   cookie: {
     secure: __prod__, // cookie only works in https
     maxAge: ONEDAY,

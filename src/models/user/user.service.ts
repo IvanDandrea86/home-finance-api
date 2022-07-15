@@ -23,8 +23,8 @@ export class UserService {
     return this.prisma.user.findMany(args);
   }
 
-  findOne(where: UserWhereUniqueInput) {
-    return this.prisma.user.findUnique({ where });
+  findOne(where: UserWhereUniqueInput, include?: Prisma.UserInclude) {
+    return this.prisma.user.findUnique({ where, include });
   }
 
   update(where: UserWhereUniqueInput, updateUserInput: UserUpdateInput) {

@@ -7,30 +7,31 @@ import { EnumRoleFilter } from '../prisma/enum-role-filter.input';
 
 @InputType()
 export class PermissionWhereInput {
-  @Field(() => [PermissionWhereInput], { nullable: true })
-  AND?: Array<PermissionWhereInput>;
 
-  @Field(() => [PermissionWhereInput], { nullable: true })
-  OR?: Array<PermissionWhereInput>;
+    @Field(() => [PermissionWhereInput], {nullable:true})
+    AND?: Array<PermissionWhereInput>;
 
-  @Field(() => [PermissionWhereInput], { nullable: true })
-  NOT?: Array<PermissionWhereInput>;
+    @Field(() => [PermissionWhereInput], {nullable:true})
+    OR?: Array<PermissionWhereInput>;
 
-  @Field(() => StringFilter, { nullable: true })
-  id?: StringFilter;
+    @Field(() => [PermissionWhereInput], {nullable:true})
+    NOT?: Array<PermissionWhereInput>;
 
-  @Field(() => DateTimeFilter, { nullable: true })
-  createdAt?: DateTimeFilter;
+    @Field(() => StringFilter, {nullable:true})
+    id?: StringFilter;
 
-  @Field(() => DateTimeFilter, { nullable: true })
-  updatedAt?: DateTimeFilter;
+    @Field(() => DateTimeFilter, {nullable:true})
+    createdAt?: DateTimeFilter;
 
-  @Field(() => UserRelationFilter, { nullable: true })
-  user?: UserRelationFilter;
+    @Field(() => DateTimeFilter, {nullable:true})
+    updatedAt?: DateTimeFilter;
 
-  @Field(() => StringFilter, { nullable: true })
-  userId?: StringFilter;
+    @Field(() => UserRelationFilter, {nullable:true})
+    user?: UserRelationFilter;
 
-  @Field(() => EnumRoleFilter, { nullable: true })
-  type?: EnumRoleFilter;
+    @Field(() => StringFilter, {nullable:true})
+    userId?: StringFilter;
+
+    @Field(() => EnumRoleFilter, {nullable:true})
+    type?: EnumRoleFilter;
 }

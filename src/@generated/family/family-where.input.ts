@@ -5,21 +5,22 @@ import { DateTimeFilter } from '../prisma/date-time-filter.input';
 
 @InputType()
 export class FamilyWhereInput {
-  @Field(() => [FamilyWhereInput], { nullable: true })
-  AND?: Array<FamilyWhereInput>;
 
-  @Field(() => [FamilyWhereInput], { nullable: true })
-  OR?: Array<FamilyWhereInput>;
+    @Field(() => [FamilyWhereInput], {nullable:true})
+    AND?: Array<FamilyWhereInput>;
 
-  @Field(() => [FamilyWhereInput], { nullable: true })
-  NOT?: Array<FamilyWhereInput>;
+    @Field(() => [FamilyWhereInput], {nullable:true})
+    OR?: Array<FamilyWhereInput>;
 
-  @Field(() => StringFilter, { nullable: true })
-  id?: StringFilter;
+    @Field(() => [FamilyWhereInput], {nullable:true})
+    NOT?: Array<FamilyWhereInput>;
 
-  @Field(() => DateTimeFilter, { nullable: true })
-  createdAt?: DateTimeFilter;
+    @Field(() => StringFilter, {nullable:true})
+    id?: StringFilter;
 
-  @Field(() => DateTimeFilter, { nullable: true })
-  updatedAt?: DateTimeFilter;
+    @Field(() => DateTimeFilter, {nullable:true})
+    createdAt?: DateTimeFilter;
+
+    @Field(() => DateTimeFilter, {nullable:true})
+    updatedAt?: DateTimeFilter;
 }

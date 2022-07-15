@@ -5,10 +5,11 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class CreateManyPermissionArgs {
-  @Field(() => [PermissionCreateManyInput], { nullable: false })
-  @Type(() => PermissionCreateManyInput)
-  data!: Array<PermissionCreateManyInput>;
 
-  @Field(() => Boolean, { nullable: true })
-  skipDuplicates?: boolean;
+    @Field(() => [PermissionCreateManyInput], {nullable:false})
+    @Type(() => PermissionCreateManyInput)
+    data!: Array<PermissionCreateManyInput>;
+
+    @Field(() => Boolean, {nullable:true})
+    skipDuplicates?: boolean;
 }

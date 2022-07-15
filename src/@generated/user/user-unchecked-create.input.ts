@@ -5,38 +5,37 @@ import { PermissionUncheckedCreateNestedOneWithoutUserInput } from '../permissio
 
 @InputType()
 export class UserUncheckedCreateInput {
-  @Field(() => String, { nullable: true })
-  id?: string;
 
-  @Field(() => Date, { nullable: true })
-  createdAt?: Date | string;
+    @Field(() => String, {nullable:true})
+    id?: string;
 
-  @Field(() => Date, { nullable: true })
-  updatedAt?: Date | string;
+    @Field(() => Date, {nullable:true})
+    createdAt?: Date | string;
 
-  @Field(() => String, { nullable: false })
-  firstName!: string;
+    @Field(() => Date, {nullable:true})
+    updatedAt?: Date | string;
 
-  @Field(() => String, { nullable: false })
-  lastName!: string;
+    @Field(() => String, {nullable:false})
+    firstName!: string;
 
-  @Field(() => String, { nullable: false })
-  email!: string;
+    @Field(() => String, {nullable:false})
+    lastName!: string;
 
-  @Field(() => String, { nullable: true })
-  password?: string;
+    @Field(() => String, {nullable:false})
+    email!: string;
 
-  @Field(() => String, { nullable: false })
-  validationToken!: string;
+    @Field(() => String, {nullable:true})
+    password?: string;
 
-  @Field(() => Date, { nullable: true })
-  lastLogin?: Date | string;
+    @Field(() => String, {nullable:false})
+    validationToken!: string;
 
-  @Field(() => VerificationStatus, { nullable: true })
-  verificationStatus?: keyof typeof VerificationStatus;
+    @Field(() => Date, {nullable:true})
+    lastLogin?: Date | string;
 
-  @Field(() => PermissionUncheckedCreateNestedOneWithoutUserInput, {
-    nullable: true,
-  })
-  permission?: PermissionUncheckedCreateNestedOneWithoutUserInput;
+    @Field(() => VerificationStatus, {nullable:true})
+    verificationStatus?: keyof typeof VerificationStatus;
+
+    @Field(() => PermissionUncheckedCreateNestedOneWithoutUserInput, {nullable:true})
+    permission?: PermissionUncheckedCreateNestedOneWithoutUserInput;
 }

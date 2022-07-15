@@ -5,11 +5,16 @@
   "author": "",
   "private": true,
   "license": "UNLICENSED",
+  "prisma": {
+    "seed": "node --loader ts-node/esm prisma/seed.ts"
+  },
   "scripts": {
     "prebuild": "rimraf dist",
     "gen-typings": " ts-node ./src/utils/generate-typings",
     "build": "nest build",
+    "prisma:db:seed:dev":"npx prisma db seed",
     "prisma:generate": "npx prisma generate  && yarn format",
+    "prisma:migrate:dev": "npx prisma migrate dev db",
     "docker:up": "  sudo docker-compose  up -d ",
     "docker:down": "  sudo docker-compose down",
     "docker:reset": "sudo docker stop $(sudo docker ps -a -q);sudo docker system prune; sudo docker rmi $( sudo docker images -a -q); sudo docker rm $(sudo  docker ps -a -q)",
