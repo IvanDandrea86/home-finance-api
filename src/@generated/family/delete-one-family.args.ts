@@ -5,8 +5,7 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class DeleteOneFamilyArgs {
-
-    @Field(() => FamilyWhereUniqueInput, {nullable:false})
-    @Type(() => FamilyWhereUniqueInput)
-    where!: FamilyWhereUniqueInput;
+  @Field(() => FamilyWhereUniqueInput, { nullable: false })
+  @Type(() => FamilyWhereUniqueInput)
+  where!: FamilyWhereUniqueInput;
 }

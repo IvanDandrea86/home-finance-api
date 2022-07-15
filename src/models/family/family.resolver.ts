@@ -1,3 +1,4 @@
+import { UseGuards } from '@nestjs/common';
 import {
   Args,
   Mutation,
@@ -11,6 +12,9 @@ import { FamilyUpdateInput } from 'src/@generated/family/family-update.input';
 import { FamilyWhereUniqueInput } from 'src/@generated/family/family-where-unique.input';
 import { Family } from 'src/@generated/family/family.model';
 import { FindManyFamilyArgs } from 'src/@generated/family/find-many-family.args';
+import { IsAuthenticated } from 'src/auth/guards/check.authentication.guard';
+import { isAuthorizedGuard } from 'src/auth/guards/chek.authorization.guard';
+import { Roles } from 'src/decorator/roles.decorator';
 
 import { FamilyService } from './family.service';
 
@@ -21,6 +25,7 @@ export class FamilyResolver {
   // CRUD
 
   @Mutation(() => Family)
+  @UseGuards(IsAuthenticated)
   createFamily(
     @Args('createFamilyInput') createFamilyInput: FamilyCreateInput,
   ) {
@@ -28,16 +33,21 @@ export class FamilyResolver {
   }
 
   @Query(() => [Family], { name: 'familys' })
+  @Roles('ADMIN')
+  @UseGuards(isAuthorizedGuard)
   findAll(@Args() args: FindManyFamilyArgs) {
     return this.familyService.findAll(args);
   }
 
   @Query(() => Family, { name: 'family', nullable: true })
+  @Roles('ADMIN')
+  @UseGuards(isAuthorizedGuard)
   findOne(@Args('where') where: FamilyWhereUniqueInput) {
     return this.familyService.findOne(where);
   }
 
   @Mutation(() => Family)
+  @UseGuards(IsAuthenticated)
   updateFamily(
     @Args('where') where: FamilyWhereUniqueInput,
     @Args('updateFamilyInput') updateFamilyInput: FamilyUpdateInput,
@@ -46,6 +56,8 @@ export class FamilyResolver {
   }
 
   @Mutation(() => Family)
+  @Roles('ADMIN')
+  @UseGuards(isAuthorizedGuard)
   removeFamily(@Args('where') where: FamilyWhereUniqueInput) {
     return this.familyService.remove(where);
   }

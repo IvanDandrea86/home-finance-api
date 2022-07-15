@@ -7,28 +7,27 @@ import { PermissionMinOrderByAggregateInput } from './permission-min-order-by-ag
 
 @InputType()
 export class PermissionOrderByWithAggregationInput {
+  @Field(() => SortOrder, { nullable: true })
+  id?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    id?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  createdAt?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    createdAt?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  updatedAt?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    updatedAt?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  userId?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    userId?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  type?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    type?: keyof typeof SortOrder;
+  @Field(() => PermissionCountOrderByAggregateInput, { nullable: true })
+  _count?: PermissionCountOrderByAggregateInput;
 
-    @Field(() => PermissionCountOrderByAggregateInput, {nullable:true})
-    _count?: PermissionCountOrderByAggregateInput;
+  @Field(() => PermissionMaxOrderByAggregateInput, { nullable: true })
+  _max?: PermissionMaxOrderByAggregateInput;
 
-    @Field(() => PermissionMaxOrderByAggregateInput, {nullable:true})
-    _max?: PermissionMaxOrderByAggregateInput;
-
-    @Field(() => PermissionMinOrderByAggregateInput, {nullable:true})
-    _min?: PermissionMinOrderByAggregateInput;
+  @Field(() => PermissionMinOrderByAggregateInput, { nullable: true })
+  _min?: PermissionMinOrderByAggregateInput;
 }

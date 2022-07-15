@@ -7,16 +7,15 @@ import { PermissionWhereUniqueInput } from './permission-where-unique.input';
 
 @InputType()
 export class PermissionCreateNestedOneWithoutUserInput {
+  @Field(() => PermissionCreateWithoutUserInput, { nullable: true })
+  @Type(() => PermissionCreateWithoutUserInput)
+  create?: PermissionCreateWithoutUserInput;
 
-    @Field(() => PermissionCreateWithoutUserInput, {nullable:true})
-    @Type(() => PermissionCreateWithoutUserInput)
-    create?: PermissionCreateWithoutUserInput;
+  @Field(() => PermissionCreateOrConnectWithoutUserInput, { nullable: true })
+  @Type(() => PermissionCreateOrConnectWithoutUserInput)
+  connectOrCreate?: PermissionCreateOrConnectWithoutUserInput;
 
-    @Field(() => PermissionCreateOrConnectWithoutUserInput, {nullable:true})
-    @Type(() => PermissionCreateOrConnectWithoutUserInput)
-    connectOrCreate?: PermissionCreateOrConnectWithoutUserInput;
-
-    @Field(() => PermissionWhereUniqueInput, {nullable:true})
-    @Type(() => PermissionWhereUniqueInput)
-    connect?: PermissionWhereUniqueInput;
+  @Field(() => PermissionWhereUniqueInput, { nullable: true })
+  @Type(() => PermissionWhereUniqueInput)
+  connect?: PermissionWhereUniqueInput;
 }

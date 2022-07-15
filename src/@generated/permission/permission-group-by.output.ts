@@ -7,28 +7,27 @@ import { PermissionMaxAggregate } from './permission-max-aggregate.output';
 
 @ObjectType()
 export class PermissionGroupBy {
+  @Field(() => String, { nullable: false })
+  id!: string;
 
-    @Field(() => String, {nullable:false})
-    id!: string;
+  @Field(() => Date, { nullable: false })
+  createdAt!: Date | string;
 
-    @Field(() => Date, {nullable:false})
-    createdAt!: Date | string;
+  @Field(() => Date, { nullable: false })
+  updatedAt!: Date | string;
 
-    @Field(() => Date, {nullable:false})
-    updatedAt!: Date | string;
+  @Field(() => String, { nullable: false })
+  userId!: string;
 
-    @Field(() => String, {nullable:false})
-    userId!: string;
+  @Field(() => Role, { nullable: false })
+  type!: keyof typeof Role;
 
-    @Field(() => Role, {nullable:false})
-    type!: keyof typeof Role;
+  @Field(() => PermissionCountAggregate, { nullable: true })
+  _count?: PermissionCountAggregate;
 
-    @Field(() => PermissionCountAggregate, {nullable:true})
-    _count?: PermissionCountAggregate;
+  @Field(() => PermissionMinAggregate, { nullable: true })
+  _min?: PermissionMinAggregate;
 
-    @Field(() => PermissionMinAggregate, {nullable:true})
-    _min?: PermissionMinAggregate;
-
-    @Field(() => PermissionMaxAggregate, {nullable:true})
-    _max?: PermissionMaxAggregate;
+  @Field(() => PermissionMaxAggregate, { nullable: true })
+  _max?: PermissionMaxAggregate;
 }

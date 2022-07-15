@@ -7,43 +7,45 @@ import { UserMaxAggregate } from './user-max-aggregate.output';
 
 @ObjectType()
 export class UserGroupBy {
+  @Field(() => String, { nullable: false })
+  id!: string;
 
-    @Field(() => String, {nullable:false})
-    id!: string;
+  @Field(() => Date, { nullable: false })
+  createdAt!: Date | string;
 
-    @Field(() => Date, {nullable:false})
-    createdAt!: Date | string;
+  @Field(() => Date, { nullable: false })
+  updatedAt!: Date | string;
 
-    @Field(() => Date, {nullable:false})
-    updatedAt!: Date | string;
+  @Field(() => String, { nullable: false })
+  firstName!: string;
 
-    @Field(() => String, {nullable:false})
-    firstName!: string;
+  @Field(() => String, { nullable: false })
+  lastName!: string;
 
-    @Field(() => String, {nullable:false})
-    lastName!: string;
+  @Field(() => String, { nullable: false })
+  email!: string;
 
-    @Field(() => String, {nullable:false})
-    email!: string;
+  @Field(() => String, { nullable: true })
+  password?: string;
 
-    @Field(() => String, {nullable:true})
-    password?: string;
+  @Field(() => String, { nullable: false })
+  validationToken!: string;
 
-    @Field(() => String, {nullable:false})
-    validationToken!: string;
+  @Field(() => Date, { nullable: true })
+  lastLogin?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    lastLogin?: Date | string;
+  @Field(() => VerificationStatus, { nullable: false })
+  verificationStatus!: keyof typeof VerificationStatus;
 
-    @Field(() => VerificationStatus, {nullable:false})
-    verificationStatus!: keyof typeof VerificationStatus;
+  @Field(() => String, { nullable: true })
+  familyId?: string;
 
-    @Field(() => UserCountAggregate, {nullable:true})
-    _count?: UserCountAggregate;
+  @Field(() => UserCountAggregate, { nullable: true })
+  _count?: UserCountAggregate;
 
-    @Field(() => UserMinAggregate, {nullable:true})
-    _min?: UserMinAggregate;
+  @Field(() => UserMinAggregate, { nullable: true })
+  _min?: UserMinAggregate;
 
-    @Field(() => UserMaxAggregate, {nullable:true})
-    _max?: UserMaxAggregate;
+  @Field(() => UserMaxAggregate, { nullable: true })
+  _max?: UserMaxAggregate;
 }

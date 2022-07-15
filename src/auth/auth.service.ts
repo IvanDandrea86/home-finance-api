@@ -23,7 +23,7 @@ export class AuthService {
       {
         email: email,
       },
-      { permission: true },
+      { Permission: true },
     );
     if (!user) {
       throw new NotFoundException('constant.EMAIL_NOT_FOUND');

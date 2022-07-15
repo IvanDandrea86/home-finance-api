@@ -5,19 +5,18 @@ import { Role } from '../prisma/role.enum';
 
 @InputType()
 export class PermissionCreateInput {
+  @Field(() => String, { nullable: true })
+  id?: string;
 
-    @Field(() => String, {nullable:true})
-    id?: string;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    updatedAt?: Date | string;
+  @Field(() => UserCreateNestedOneWithoutPermissionInput, { nullable: true })
+  User?: UserCreateNestedOneWithoutPermissionInput;
 
-    @Field(() => UserCreateNestedOneWithoutPermissionInput, {nullable:true})
-    user?: UserCreateNestedOneWithoutPermissionInput;
-
-    @Field(() => Role, {nullable:false})
-    type!: keyof typeof Role;
+  @Field(() => Role, { nullable: false })
+  type!: keyof typeof Role;
 }

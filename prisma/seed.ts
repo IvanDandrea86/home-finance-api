@@ -14,7 +14,7 @@ async function seed() {
         lastName: 'dand',
         validationToken: '',
         password: 'Qwerty1Q',
-        permission: {
+        Permission: {
           create: {
             type: 'ADMIN',
           },
@@ -28,7 +28,7 @@ async function seed() {
         lastName: 'user',
         validationToken: '',
         password: 'Qwerty1Q',
-        permission: {
+        Permission: {
           create: {
             type: 'USER',
           },

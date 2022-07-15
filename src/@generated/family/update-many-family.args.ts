@@ -6,12 +6,11 @@ import { FamilyWhereInput } from './family-where.input';
 
 @ArgsType()
 export class UpdateManyFamilyArgs {
+  @Field(() => FamilyUpdateManyMutationInput, { nullable: false })
+  @Type(() => FamilyUpdateManyMutationInput)
+  data!: FamilyUpdateManyMutationInput;
 
-    @Field(() => FamilyUpdateManyMutationInput, {nullable:false})
-    @Type(() => FamilyUpdateManyMutationInput)
-    data!: FamilyUpdateManyMutationInput;
-
-    @Field(() => FamilyWhereInput, {nullable:true})
-    @Type(() => FamilyWhereInput)
-    where?: FamilyWhereInput;
+  @Field(() => FamilyWhereInput, { nullable: true })
+  @Type(() => FamilyWhereInput)
+  where?: FamilyWhereInput;
 }

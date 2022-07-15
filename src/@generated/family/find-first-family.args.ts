@@ -9,23 +9,22 @@ import { FamilyScalarFieldEnum } from './family-scalar-field.enum';
 
 @ArgsType()
 export class FindFirstFamilyArgs {
+  @Field(() => FamilyWhereInput, { nullable: true })
+  @Type(() => FamilyWhereInput)
+  where?: FamilyWhereInput;
 
-    @Field(() => FamilyWhereInput, {nullable:true})
-    @Type(() => FamilyWhereInput)
-    where?: FamilyWhereInput;
+  @Field(() => [FamilyOrderByWithRelationInput], { nullable: true })
+  orderBy?: Array<FamilyOrderByWithRelationInput>;
 
-    @Field(() => [FamilyOrderByWithRelationInput], {nullable:true})
-    orderBy?: Array<FamilyOrderByWithRelationInput>;
+  @Field(() => FamilyWhereUniqueInput, { nullable: true })
+  cursor?: FamilyWhereUniqueInput;
 
-    @Field(() => FamilyWhereUniqueInput, {nullable:true})
-    cursor?: FamilyWhereUniqueInput;
+  @Field(() => Int, { nullable: true })
+  take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+  @Field(() => Int, { nullable: true })
+  skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
-
-    @Field(() => [FamilyScalarFieldEnum], {nullable:true})
-    distinct?: Array<keyof typeof FamilyScalarFieldEnum>;
+  @Field(() => [FamilyScalarFieldEnum], { nullable: true })
+  distinct?: Array<keyof typeof FamilyScalarFieldEnum>;
 }

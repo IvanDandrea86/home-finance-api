@@ -6,12 +6,11 @@ import { UserCreateWithoutPermissionInput } from './user-create-without-permissi
 
 @InputType()
 export class UserCreateOrConnectWithoutPermissionInput {
+  @Field(() => UserWhereUniqueInput, { nullable: false })
+  @Type(() => UserWhereUniqueInput)
+  where!: UserWhereUniqueInput;
 
-    @Field(() => UserWhereUniqueInput, {nullable:false})
-    @Type(() => UserWhereUniqueInput)
-    where!: UserWhereUniqueInput;
-
-    @Field(() => UserCreateWithoutPermissionInput, {nullable:false})
-    @Type(() => UserCreateWithoutPermissionInput)
-    create!: UserCreateWithoutPermissionInput;
+  @Field(() => UserCreateWithoutPermissionInput, { nullable: false })
+  @Type(() => UserCreateWithoutPermissionInput)
+  create!: UserCreateWithoutPermissionInput;
 }

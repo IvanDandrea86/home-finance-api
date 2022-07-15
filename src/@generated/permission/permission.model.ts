@@ -6,22 +6,21 @@ import { Role } from '../prisma/role.enum';
 
 @ObjectType()
 export class Permission {
+  @Field(() => ID, { nullable: false })
+  id!: string;
 
-    @Field(() => ID, {nullable:false})
-    id!: string;
+  @Field(() => Date, { nullable: false })
+  createdAt!: Date;
 
-    @Field(() => Date, {nullable:false})
-    createdAt!: Date;
+  @Field(() => Date, { nullable: false })
+  updatedAt!: Date;
 
-    @Field(() => Date, {nullable:false})
-    updatedAt!: Date;
+  @Field(() => User, { nullable: true })
+  User?: User | null;
 
-    @Field(() => User, {nullable:true})
-    user?: User | null;
+  @Field(() => String, { nullable: false })
+  userId!: string;
 
-    @Field(() => String, {nullable:false})
-    userId!: string;
-
-    @Field(() => Role, {nullable:false})
-    type!: keyof typeof Role;
+  @Field(() => Role, { nullable: false })
+  type!: keyof typeof Role;
 }

@@ -6,12 +6,11 @@ import { PermissionWhereInput } from './permission-where.input';
 
 @ArgsType()
 export class UpdateManyPermissionArgs {
+  @Field(() => PermissionUpdateManyMutationInput, { nullable: false })
+  @Type(() => PermissionUpdateManyMutationInput)
+  data!: PermissionUpdateManyMutationInput;
 
-    @Field(() => PermissionUpdateManyMutationInput, {nullable:false})
-    @Type(() => PermissionUpdateManyMutationInput)
-    data!: PermissionUpdateManyMutationInput;
-
-    @Field(() => PermissionWhereInput, {nullable:true})
-    @Type(() => PermissionWhereInput)
-    where?: PermissionWhereInput;
+  @Field(() => PermissionWhereInput, { nullable: true })
+  @Type(() => PermissionWhereInput)
+  where?: PermissionWhereInput;
 }

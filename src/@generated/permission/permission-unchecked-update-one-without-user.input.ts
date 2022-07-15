@@ -9,30 +9,29 @@ import { PermissionUpdateWithoutUserInput } from './permission-update-without-us
 
 @InputType()
 export class PermissionUncheckedUpdateOneWithoutUserInput {
+  @Field(() => PermissionCreateWithoutUserInput, { nullable: true })
+  @Type(() => PermissionCreateWithoutUserInput)
+  create?: PermissionCreateWithoutUserInput;
 
-    @Field(() => PermissionCreateWithoutUserInput, {nullable:true})
-    @Type(() => PermissionCreateWithoutUserInput)
-    create?: PermissionCreateWithoutUserInput;
+  @Field(() => PermissionCreateOrConnectWithoutUserInput, { nullable: true })
+  @Type(() => PermissionCreateOrConnectWithoutUserInput)
+  connectOrCreate?: PermissionCreateOrConnectWithoutUserInput;
 
-    @Field(() => PermissionCreateOrConnectWithoutUserInput, {nullable:true})
-    @Type(() => PermissionCreateOrConnectWithoutUserInput)
-    connectOrCreate?: PermissionCreateOrConnectWithoutUserInput;
+  @Field(() => PermissionUpsertWithoutUserInput, { nullable: true })
+  @Type(() => PermissionUpsertWithoutUserInput)
+  upsert?: PermissionUpsertWithoutUserInput;
 
-    @Field(() => PermissionUpsertWithoutUserInput, {nullable:true})
-    @Type(() => PermissionUpsertWithoutUserInput)
-    upsert?: PermissionUpsertWithoutUserInput;
+  @Field(() => Boolean, { nullable: true })
+  disconnect?: boolean;
 
-    @Field(() => Boolean, {nullable:true})
-    disconnect?: boolean;
+  @Field(() => Boolean, { nullable: true })
+  delete?: boolean;
 
-    @Field(() => Boolean, {nullable:true})
-    delete?: boolean;
+  @Field(() => PermissionWhereUniqueInput, { nullable: true })
+  @Type(() => PermissionWhereUniqueInput)
+  connect?: PermissionWhereUniqueInput;
 
-    @Field(() => PermissionWhereUniqueInput, {nullable:true})
-    @Type(() => PermissionWhereUniqueInput)
-    connect?: PermissionWhereUniqueInput;
-
-    @Field(() => PermissionUpdateWithoutUserInput, {nullable:true})
-    @Type(() => PermissionUpdateWithoutUserInput)
-    update?: PermissionUpdateWithoutUserInput;
+  @Field(() => PermissionUpdateWithoutUserInput, { nullable: true })
+  @Type(() => PermissionUpdateWithoutUserInput)
+  update?: PermissionUpdateWithoutUserInput;
 }

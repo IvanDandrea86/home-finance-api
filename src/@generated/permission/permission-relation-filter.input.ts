@@ -4,10 +4,9 @@ import { PermissionWhereInput } from './permission-where.input';
 
 @InputType()
 export class PermissionRelationFilter {
+  @Field(() => PermissionWhereInput, { nullable: true })
+  is?: PermissionWhereInput;
 
-    @Field(() => PermissionWhereInput, {nullable:true})
-    is?: PermissionWhereInput;
-
-    @Field(() => PermissionWhereInput, {nullable:true})
-    isNot?: PermissionWhereInput;
+  @Field(() => PermissionWhereInput, { nullable: true })
+  isNot?: PermissionWhereInput;
 }

@@ -6,22 +6,21 @@ import { FamilyMaxAggregate } from './family-max-aggregate.output';
 
 @ObjectType()
 export class FamilyGroupBy {
+  @Field(() => String, { nullable: false })
+  id!: string;
 
-    @Field(() => String, {nullable:false})
-    id!: string;
+  @Field(() => Date, { nullable: false })
+  createdAt!: Date | string;
 
-    @Field(() => Date, {nullable:false})
-    createdAt!: Date | string;
+  @Field(() => Date, { nullable: false })
+  updatedAt!: Date | string;
 
-    @Field(() => Date, {nullable:false})
-    updatedAt!: Date | string;
+  @Field(() => FamilyCountAggregate, { nullable: true })
+  _count?: FamilyCountAggregate;
 
-    @Field(() => FamilyCountAggregate, {nullable:true})
-    _count?: FamilyCountAggregate;
+  @Field(() => FamilyMinAggregate, { nullable: true })
+  _min?: FamilyMinAggregate;
 
-    @Field(() => FamilyMinAggregate, {nullable:true})
-    _min?: FamilyMinAggregate;
-
-    @Field(() => FamilyMaxAggregate, {nullable:true})
-    _max?: FamilyMaxAggregate;
+  @Field(() => FamilyMaxAggregate, { nullable: true })
+  _max?: FamilyMaxAggregate;
 }

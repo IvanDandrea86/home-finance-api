@@ -5,8 +5,7 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class DeleteOnePermissionArgs {
-
-    @Field(() => PermissionWhereUniqueInput, {nullable:false})
-    @Type(() => PermissionWhereUniqueInput)
-    where!: PermissionWhereUniqueInput;
+  @Field(() => PermissionWhereUniqueInput, { nullable: false })
+  @Type(() => PermissionWhereUniqueInput)
+  where!: PermissionWhereUniqueInput;
 }

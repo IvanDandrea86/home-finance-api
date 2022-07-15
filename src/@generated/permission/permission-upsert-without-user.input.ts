@@ -6,12 +6,11 @@ import { PermissionCreateWithoutUserInput } from './permission-create-without-us
 
 @InputType()
 export class PermissionUpsertWithoutUserInput {
+  @Field(() => PermissionUpdateWithoutUserInput, { nullable: false })
+  @Type(() => PermissionUpdateWithoutUserInput)
+  update!: PermissionUpdateWithoutUserInput;
 
-    @Field(() => PermissionUpdateWithoutUserInput, {nullable:false})
-    @Type(() => PermissionUpdateWithoutUserInput)
-    update!: PermissionUpdateWithoutUserInput;
-
-    @Field(() => PermissionCreateWithoutUserInput, {nullable:false})
-    @Type(() => PermissionCreateWithoutUserInput)
-    create!: PermissionCreateWithoutUserInput;
+  @Field(() => PermissionCreateWithoutUserInput, { nullable: false })
+  @Type(() => PermissionCreateWithoutUserInput)
+  create!: PermissionCreateWithoutUserInput;
 }

@@ -6,28 +6,27 @@ import { EnumRoleWithAggregatesFilter } from '../prisma/enum-role-with-aggregate
 
 @InputType()
 export class PermissionScalarWhereWithAggregatesInput {
+  @Field(() => [PermissionScalarWhereWithAggregatesInput], { nullable: true })
+  AND?: Array<PermissionScalarWhereWithAggregatesInput>;
 
-    @Field(() => [PermissionScalarWhereWithAggregatesInput], {nullable:true})
-    AND?: Array<PermissionScalarWhereWithAggregatesInput>;
+  @Field(() => [PermissionScalarWhereWithAggregatesInput], { nullable: true })
+  OR?: Array<PermissionScalarWhereWithAggregatesInput>;
 
-    @Field(() => [PermissionScalarWhereWithAggregatesInput], {nullable:true})
-    OR?: Array<PermissionScalarWhereWithAggregatesInput>;
+  @Field(() => [PermissionScalarWhereWithAggregatesInput], { nullable: true })
+  NOT?: Array<PermissionScalarWhereWithAggregatesInput>;
 
-    @Field(() => [PermissionScalarWhereWithAggregatesInput], {nullable:true})
-    NOT?: Array<PermissionScalarWhereWithAggregatesInput>;
+  @Field(() => StringWithAggregatesFilter, { nullable: true })
+  id?: StringWithAggregatesFilter;
 
-    @Field(() => StringWithAggregatesFilter, {nullable:true})
-    id?: StringWithAggregatesFilter;
+  @Field(() => DateTimeWithAggregatesFilter, { nullable: true })
+  createdAt?: DateTimeWithAggregatesFilter;
 
-    @Field(() => DateTimeWithAggregatesFilter, {nullable:true})
-    createdAt?: DateTimeWithAggregatesFilter;
+  @Field(() => DateTimeWithAggregatesFilter, { nullable: true })
+  updatedAt?: DateTimeWithAggregatesFilter;
 
-    @Field(() => DateTimeWithAggregatesFilter, {nullable:true})
-    updatedAt?: DateTimeWithAggregatesFilter;
+  @Field(() => StringWithAggregatesFilter, { nullable: true })
+  userId?: StringWithAggregatesFilter;
 
-    @Field(() => StringWithAggregatesFilter, {nullable:true})
-    userId?: StringWithAggregatesFilter;
-
-    @Field(() => EnumRoleWithAggregatesFilter, {nullable:true})
-    type?: EnumRoleWithAggregatesFilter;
+  @Field(() => EnumRoleWithAggregatesFilter, { nullable: true })
+  type?: EnumRoleWithAggregatesFilter;
 }

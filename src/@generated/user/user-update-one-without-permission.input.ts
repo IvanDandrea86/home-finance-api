@@ -9,30 +9,29 @@ import { UserUpdateWithoutPermissionInput } from './user-update-without-permissi
 
 @InputType()
 export class UserUpdateOneWithoutPermissionInput {
+  @Field(() => UserCreateWithoutPermissionInput, { nullable: true })
+  @Type(() => UserCreateWithoutPermissionInput)
+  create?: UserCreateWithoutPermissionInput;
 
-    @Field(() => UserCreateWithoutPermissionInput, {nullable:true})
-    @Type(() => UserCreateWithoutPermissionInput)
-    create?: UserCreateWithoutPermissionInput;
+  @Field(() => UserCreateOrConnectWithoutPermissionInput, { nullable: true })
+  @Type(() => UserCreateOrConnectWithoutPermissionInput)
+  connectOrCreate?: UserCreateOrConnectWithoutPermissionInput;
 
-    @Field(() => UserCreateOrConnectWithoutPermissionInput, {nullable:true})
-    @Type(() => UserCreateOrConnectWithoutPermissionInput)
-    connectOrCreate?: UserCreateOrConnectWithoutPermissionInput;
+  @Field(() => UserUpsertWithoutPermissionInput, { nullable: true })
+  @Type(() => UserUpsertWithoutPermissionInput)
+  upsert?: UserUpsertWithoutPermissionInput;
 
-    @Field(() => UserUpsertWithoutPermissionInput, {nullable:true})
-    @Type(() => UserUpsertWithoutPermissionInput)
-    upsert?: UserUpsertWithoutPermissionInput;
+  @Field(() => Boolean, { nullable: true })
+  disconnect?: boolean;
 
-    @Field(() => Boolean, {nullable:true})
-    disconnect?: boolean;
+  @Field(() => Boolean, { nullable: true })
+  delete?: boolean;
 
-    @Field(() => Boolean, {nullable:true})
-    delete?: boolean;
+  @Field(() => UserWhereUniqueInput, { nullable: true })
+  @Type(() => UserWhereUniqueInput)
+  connect?: UserWhereUniqueInput;
 
-    @Field(() => UserWhereUniqueInput, {nullable:true})
-    @Type(() => UserWhereUniqueInput)
-    connect?: UserWhereUniqueInput;
-
-    @Field(() => UserUpdateWithoutPermissionInput, {nullable:true})
-    @Type(() => UserUpdateWithoutPermissionInput)
-    update?: UserUpdateWithoutPermissionInput;
+  @Field(() => UserUpdateWithoutPermissionInput, { nullable: true })
+  @Type(() => UserUpdateWithoutPermissionInput)
+  update?: UserUpdateWithoutPermissionInput;
 }

@@ -7,16 +7,15 @@ import { FamilyUpdateInput } from './family-update.input';
 
 @ArgsType()
 export class UpsertOneFamilyArgs {
+  @Field(() => FamilyWhereUniqueInput, { nullable: false })
+  @Type(() => FamilyWhereUniqueInput)
+  where!: FamilyWhereUniqueInput;
 
-    @Field(() => FamilyWhereUniqueInput, {nullable:false})
-    @Type(() => FamilyWhereUniqueInput)
-    where!: FamilyWhereUniqueInput;
+  @Field(() => FamilyCreateInput, { nullable: false })
+  @Type(() => FamilyCreateInput)
+  create!: FamilyCreateInput;
 
-    @Field(() => FamilyCreateInput, {nullable:false})
-    @Type(() => FamilyCreateInput)
-    create!: FamilyCreateInput;
-
-    @Field(() => FamilyUpdateInput, {nullable:false})
-    @Type(() => FamilyUpdateInput)
-    update!: FamilyUpdateInput;
+  @Field(() => FamilyUpdateInput, { nullable: false })
+  @Type(() => FamilyUpdateInput)
+  update!: FamilyUpdateInput;
 }

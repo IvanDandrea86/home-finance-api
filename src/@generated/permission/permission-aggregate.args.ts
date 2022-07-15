@@ -11,29 +11,28 @@ import { PermissionMaxAggregateInput } from './permission-max-aggregate.input';
 
 @ArgsType()
 export class PermissionAggregateArgs {
+  @Field(() => PermissionWhereInput, { nullable: true })
+  @Type(() => PermissionWhereInput)
+  where?: PermissionWhereInput;
 
-    @Field(() => PermissionWhereInput, {nullable:true})
-    @Type(() => PermissionWhereInput)
-    where?: PermissionWhereInput;
+  @Field(() => [PermissionOrderByWithRelationInput], { nullable: true })
+  orderBy?: Array<PermissionOrderByWithRelationInput>;
 
-    @Field(() => [PermissionOrderByWithRelationInput], {nullable:true})
-    orderBy?: Array<PermissionOrderByWithRelationInput>;
+  @Field(() => PermissionWhereUniqueInput, { nullable: true })
+  cursor?: PermissionWhereUniqueInput;
 
-    @Field(() => PermissionWhereUniqueInput, {nullable:true})
-    cursor?: PermissionWhereUniqueInput;
+  @Field(() => Int, { nullable: true })
+  take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+  @Field(() => Int, { nullable: true })
+  skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
+  @Field(() => PermissionCountAggregateInput, { nullable: true })
+  _count?: PermissionCountAggregateInput;
 
-    @Field(() => PermissionCountAggregateInput, {nullable:true})
-    _count?: PermissionCountAggregateInput;
+  @Field(() => PermissionMinAggregateInput, { nullable: true })
+  _min?: PermissionMinAggregateInput;
 
-    @Field(() => PermissionMinAggregateInput, {nullable:true})
-    _min?: PermissionMinAggregateInput;
-
-    @Field(() => PermissionMaxAggregateInput, {nullable:true})
-    _max?: PermissionMaxAggregateInput;
+  @Field(() => PermissionMaxAggregateInput, { nullable: true })
+  _max?: PermissionMaxAggregateInput;
 }

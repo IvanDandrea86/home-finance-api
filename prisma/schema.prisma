@@ -2,8 +2,8 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-  provider = "prisma-client-js"
-  engineType="library"
+  provider   = "prisma-client-js"
+  engineType = "library"
 
 
 }
@@ -14,10 +14,10 @@ generator jsonSchema {
 }
 
 generator nestgraphql {
-    provider = "node node_modules/prisma-nestjs-graphql"
-    // for yarn monorepos
-    // provider = "prisma-nestjs-graphql"
-    output = "../src/@generated"
+  provider = "node node_modules/prisma-nestjs-graphql"
+  // for yarn monorepos
+  // provider = "prisma-nestjs-graphql"
+  output   = "../src/@generated"
 }
 
 // generator nestgraphql {
@@ -33,7 +33,6 @@ datasource db {
   shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
 
-
 model User {
   id                 String             @id @default(uuid())
   createdAt          DateTime           @default(now())
@@ -45,8 +44,10 @@ model User {
   validationToken    String
   lastLogin          DateTime?
   verificationStatus VerificationStatus @default(NOT_VERIFIED)
-  permission         Permission?
-
+  Permission         Permission?
+  Family             Family?            @relation(fields: [familyId], references: [id])
+  familyId           String?
+  Revenue            Revenue[]
 }
 
 enum VerificationStatus {
@@ -59,7 +60,7 @@ model Permission {
   id        String   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  user      User?    @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  User      User?    @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   userId    String   @unique
   type      Role
 }
@@ -70,8 +71,55 @@ enum Role {
 }
 
 model Family {
+  id        String    @id @default(uuid())
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  members   User[]
+  expenses  Expense[]
+  revenues  Revenue[]
+}
+
+model Revenue {
   id        String   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  User      User     @relation(fields: [userId], references: [id])
+  Family    Family   @relation(fields: [familyId], references: [id])
+  userId    String
+  familyId  String
+}
 
+model Expense {
+  id             String           @id @default(uuid())
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+  name           String           @unique
+  expenseDetails ExpenseDetails[]
+  monthlyCost    Int              @default(0)
+  Family         Family?          @relation(fields: [familyId], references: [id])
+  familyId       String?
+}
+
+model ExpenseDetails {
+  id          String   @id @default(uuid())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  Expense     Expense? @relation(fields: [expenseId], references: [id])
+  expenseId   String?
+  monthlyCost Int      @default(0)
+}
+
+model Account {
+  id            String      @id @default(uuid())
+  createdAt     DateTime    @default(now())
+  type          AccountType
+  updatedAt     DateTime    @updatedAt
+  name          String      @unique
+  monthlyBudget Int         @default(0)
+  sold          Int         @default(0)
+}
+
+enum AccountType {
+  SAVING
+  EXPENSE
 }

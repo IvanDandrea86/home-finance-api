@@ -5,8 +5,7 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class CreateOneFamilyArgs {
-
-    @Field(() => FamilyCreateInput, {nullable:false})
-    @Type(() => FamilyCreateInput)
-    data!: FamilyCreateInput;
+  @Field(() => FamilyCreateInput, { nullable: false })
+  @Type(() => FamilyCreateInput)
+  data!: FamilyCreateInput;
 }

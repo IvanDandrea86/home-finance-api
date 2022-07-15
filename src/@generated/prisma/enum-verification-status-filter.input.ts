@@ -5,16 +5,15 @@ import { NestedEnumVerificationStatusFilter } from './nested-enum-verification-s
 
 @InputType()
 export class EnumVerificationStatusFilter {
+  @Field(() => VerificationStatus, { nullable: true })
+  equals?: keyof typeof VerificationStatus;
 
-    @Field(() => VerificationStatus, {nullable:true})
-    equals?: keyof typeof VerificationStatus;
+  @Field(() => [VerificationStatus], { nullable: true })
+  in?: Array<keyof typeof VerificationStatus>;
 
-    @Field(() => [VerificationStatus], {nullable:true})
-    in?: Array<keyof typeof VerificationStatus>;
+  @Field(() => [VerificationStatus], { nullable: true })
+  notIn?: Array<keyof typeof VerificationStatus>;
 
-    @Field(() => [VerificationStatus], {nullable:true})
-    notIn?: Array<keyof typeof VerificationStatus>;
-
-    @Field(() => NestedEnumVerificationStatusFilter, {nullable:true})
-    not?: NestedEnumVerificationStatusFilter;
+  @Field(() => NestedEnumVerificationStatusFilter, { nullable: true })
+  not?: NestedEnumVerificationStatusFilter;
 }

@@ -5,22 +5,21 @@ import { DateTimeWithAggregatesFilter } from '../prisma/date-time-with-aggregate
 
 @InputType()
 export class FamilyScalarWhereWithAggregatesInput {
+  @Field(() => [FamilyScalarWhereWithAggregatesInput], { nullable: true })
+  AND?: Array<FamilyScalarWhereWithAggregatesInput>;
 
-    @Field(() => [FamilyScalarWhereWithAggregatesInput], {nullable:true})
-    AND?: Array<FamilyScalarWhereWithAggregatesInput>;
+  @Field(() => [FamilyScalarWhereWithAggregatesInput], { nullable: true })
+  OR?: Array<FamilyScalarWhereWithAggregatesInput>;
 
-    @Field(() => [FamilyScalarWhereWithAggregatesInput], {nullable:true})
-    OR?: Array<FamilyScalarWhereWithAggregatesInput>;
+  @Field(() => [FamilyScalarWhereWithAggregatesInput], { nullable: true })
+  NOT?: Array<FamilyScalarWhereWithAggregatesInput>;
 
-    @Field(() => [FamilyScalarWhereWithAggregatesInput], {nullable:true})
-    NOT?: Array<FamilyScalarWhereWithAggregatesInput>;
+  @Field(() => StringWithAggregatesFilter, { nullable: true })
+  id?: StringWithAggregatesFilter;
 
-    @Field(() => StringWithAggregatesFilter, {nullable:true})
-    id?: StringWithAggregatesFilter;
+  @Field(() => DateTimeWithAggregatesFilter, { nullable: true })
+  createdAt?: DateTimeWithAggregatesFilter;
 
-    @Field(() => DateTimeWithAggregatesFilter, {nullable:true})
-    createdAt?: DateTimeWithAggregatesFilter;
-
-    @Field(() => DateTimeWithAggregatesFilter, {nullable:true})
-    updatedAt?: DateTimeWithAggregatesFilter;
+  @Field(() => DateTimeWithAggregatesFilter, { nullable: true })
+  updatedAt?: DateTimeWithAggregatesFilter;
 }

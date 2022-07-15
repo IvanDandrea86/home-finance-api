@@ -49,7 +49,7 @@
             "PENDING"
           ]
         },
-        "permission": {
+        "Permission": {
           "anyOf": [
             {
               "$ref": "#/definitions/Permission"
@@ -58,6 +58,22 @@
               "type": "null"
             }
           ]
+        },
+        "Family": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Family"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "Revenue": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Revenue"
+          }
         }
       }
     },
@@ -75,7 +91,7 @@
           "type": "string",
           "format": "date-time"
         },
-        "user": {
+        "User": {
           "anyOf": [
             {
               "$ref": "#/definitions/User"
@@ -107,6 +123,149 @@
         "updatedAt": {
           "type": "string",
           "format": "date-time"
+        },
+        "members": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/User"
+          }
+        },
+        "expenses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Expense"
+          }
+        },
+        "revenues": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Revenue"
+          }
+        }
+      }
+    },
+    "Revenue": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "User": {
+          "$ref": "#/definitions/User"
+        },
+        "Family": {
+          "$ref": "#/definitions/Family"
+        }
+      }
+    },
+    "Expense": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "name": {
+          "type": "string"
+        },
+        "expenseDetails": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ExpenseDetails"
+          }
+        },
+        "monthlyCost": {
+          "type": "integer",
+          "default": 0
+        },
+        "Family": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Family"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "ExpenseDetails": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "Expense": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Expense"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "monthlyCost": {
+          "type": "integer",
+          "default": 0
+        }
+      }
+    },
+    "Account": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "SAVING",
+            "EXPENSE"
+          ]
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "name": {
+          "type": "string"
+        },
+        "monthlyBudget": {
+          "type": "integer",
+          "default": 0
+        },
+        "sold": {
+          "type": "integer",
+          "default": 0
         }
       }
     }
@@ -121,6 +280,18 @@
     },
     "family": {
       "$ref": "#/definitions/Family"
+    },
+    "revenue": {
+      "$ref": "#/definitions/Revenue"
+    },
+    "expense": {
+      "$ref": "#/definitions/Expense"
+    },
+    "expenseDetails": {
+      "$ref": "#/definitions/ExpenseDetails"
+    },
+    "account": {
+      "$ref": "#/definitions/Account"
     }
   }
 }

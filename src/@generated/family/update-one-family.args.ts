@@ -6,12 +6,11 @@ import { FamilyWhereUniqueInput } from './family-where-unique.input';
 
 @ArgsType()
 export class UpdateOneFamilyArgs {
+  @Field(() => FamilyUpdateInput, { nullable: false })
+  @Type(() => FamilyUpdateInput)
+  data!: FamilyUpdateInput;
 
-    @Field(() => FamilyUpdateInput, {nullable:false})
-    @Type(() => FamilyUpdateInput)
-    data!: FamilyUpdateInput;
-
-    @Field(() => FamilyWhereUniqueInput, {nullable:false})
-    @Type(() => FamilyWhereUniqueInput)
-    where!: FamilyWhereUniqueInput;
+  @Field(() => FamilyWhereUniqueInput, { nullable: false })
+  @Type(() => FamilyWhereUniqueInput)
+  where!: FamilyWhereUniqueInput;
 }

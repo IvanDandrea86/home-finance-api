@@ -38,6 +38,8 @@ export class UserResolver {
   }
 
   @Query(() => User, { name: 'user', nullable: true })
+  @Roles('ADMIN')
+  @UseGuards(isAuthorizedGuard)
   findOne(
     @Args('where') where: UserWhereUniqueInput,
     include?: Prisma.UserInclude,
@@ -55,6 +57,8 @@ export class UserResolver {
   }
 
   @Mutation(() => User)
+  @Roles('ADMIN')
+  @UseGuards(isAuthorizedGuard)
   removeUser(@Args('where') where: UserWhereUniqueInput) {
     return this.userService.remove(where);
   }
