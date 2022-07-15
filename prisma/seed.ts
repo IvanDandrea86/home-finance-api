@@ -33,6 +33,11 @@ async function seed() {
             type: 'USER',
           },
         },
+        Family: {
+          create: {
+            accounts: { create: { name: 'Fondo risparmi', type: 'SAVING' } },
+          },
+        },
       },
     });
   } catch (err: any) {

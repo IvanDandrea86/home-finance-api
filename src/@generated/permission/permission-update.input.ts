@@ -2,7 +2,7 @@ import { Field } from '@nestjs/graphql';
 import { InputType } from '@nestjs/graphql';
 import { StringFieldUpdateOperationsInput } from '../prisma/string-field-update-operations.input';
 import { DateTimeFieldUpdateOperationsInput } from '../prisma/date-time-field-update-operations.input';
-import { UserUpdateOneWithoutPermissionInput } from '../user/user-update-one-without-permission.input';
+import { UserUpdateOneWithoutPermissionNestedInput } from '../user/user-update-one-without-permission-nested.input';
 import { EnumRoleFieldUpdateOperationsInput } from '../prisma/enum-role-field-update-operations.input';
 
 @InputType()
@@ -16,8 +16,8 @@ export class PermissionUpdateInput {
   @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
   updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-  @Field(() => UserUpdateOneWithoutPermissionInput, { nullable: true })
-  User?: UserUpdateOneWithoutPermissionInput;
+  @Field(() => UserUpdateOneWithoutPermissionNestedInput, { nullable: true })
+  User?: UserUpdateOneWithoutPermissionNestedInput;
 
   @Field(() => EnumRoleFieldUpdateOperationsInput, { nullable: true })
   type?: EnumRoleFieldUpdateOperationsInput;

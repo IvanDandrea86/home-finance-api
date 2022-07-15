@@ -21,13 +21,14 @@ enum Role {
   USER
 }
 
-type ExpenseDetails {
+type Detail {
   id: ID!
   createdAt: DateTime!
   updatedAt: DateTime!
   Expense: Expense
   expenseId: String
   monthlyCost: Int!
+  period: Int
 }
 
 type ExpenseCount {
@@ -39,7 +40,7 @@ type Expense {
   createdAt: DateTime!
   updatedAt: DateTime!
   name: String!
-  expenseDetails: [ExpenseDetails!]
+  expenseDetails: [Detail!]
   monthlyCost: Int!
   Family: Family
   familyId: String
@@ -56,10 +57,28 @@ type Revenue {
   familyId: String!
 }
 
+type Account {
+  id: ID!
+  createdAt: DateTime!
+  type: AccountType!
+  updatedAt: DateTime!
+  name: String!
+  monthlyBudget: Int!
+  sold: Int!
+  Family: Family
+  familyId: String
+}
+
+enum AccountType {
+  SAVING
+  EXPENSE
+}
+
 type FamilyCount {
   members: Int!
   expenses: Int!
   revenues: Int!
+  accounts: Int!
 }
 
 type Family {
@@ -69,6 +88,7 @@ type Family {
   members: [User!]
   expenses: [Expense!]
   revenues: [Revenue!]
+  accounts: [Account!]
   _count: FamilyCount!
 }
 
@@ -107,6 +127,16 @@ type AuthResponse {
 }
 
 type Query {
+  details(where: DetailWhereInput, orderBy: [DetailOrderByWithRelationInput!], cursor: DetailWhereUniqueInput, take: Int, skip: Int, distinct: [DetailScalarFieldEnum!]): [Detail!]!
+  detail(where: DetailWhereUniqueInput!): Detail
+  accounts(where: AccountWhereInput, orderBy: [AccountOrderByWithRelationInput!], cursor: AccountWhereUniqueInput, take: Int, skip: Int, distinct: [AccountScalarFieldEnum!]): [Account!]!
+  account(where: AccountWhereUniqueInput!): Account
+  accountsUser: [Account!]!
+  accountUser(where: AccountWhereUniqueInput!): Account
+  expenses(where: ExpenseWhereInput, orderBy: [ExpenseOrderByWithRelationInput!], cursor: ExpenseWhereUniqueInput, take: Int, skip: Int, distinct: [ExpenseScalarFieldEnum!]): [Expense!]!
+  expense(where: ExpenseWhereUniqueInput!): Expense
+  revenues(where: RevenueWhereInput, orderBy: [RevenueOrderByWithRelationInput!], cursor: RevenueWhereUniqueInput, take: Int, skip: Int, distinct: [RevenueScalarFieldEnum!]): [Revenue!]!
+  revenue(where: RevenueWhereUniqueInput!): Revenue
   familys(where: FamilyWhereInput, orderBy: [FamilyOrderByWithRelationInput!], cursor: FamilyWhereUniqueInput, take: Int, skip: Int, distinct: [FamilyScalarFieldEnum!]): [Family!]!
   family(where: FamilyWhereUniqueInput!): Family
   permissions(where: PermissionWhereInput, orderBy: [PermissionOrderByWithRelationInput!], cursor: PermissionWhereUniqueInput, take: Int, skip: Int, distinct: [PermissionScalarFieldEnum!]): [Permission!]!
@@ -116,16 +146,17 @@ type Query {
   whoAmI: User
 }
 
-input FamilyWhereInput {
-  AND: [FamilyWhereInput!]
-  OR: [FamilyWhereInput!]
-  NOT: [FamilyWhereInput!]
+input DetailWhereInput {
+  AND: [DetailWhereInput!]
+  OR: [DetailWhereInput!]
+  NOT: [DetailWhereInput!]
   id: StringFilter
   createdAt: DateTimeFilter
   updatedAt: DateTimeFilter
-  members: UserListRelationFilter
-  expenses: ExpenseListRelationFilter
-  revenues: RevenueListRelationFilter
+  Expense: ExpenseRelationFilter
+  expenseId: StringNullableFilter
+  monthlyCost: IntFilter
+  period: IntNullableFilter
 }
 
 input StringFilter {
@@ -182,6 +213,71 @@ input NestedDateTimeFilter {
   gt: DateTime
   gte: DateTime
   not: NestedDateTimeFilter
+}
+
+input ExpenseRelationFilter {
+  is: ExpenseWhereInput
+  isNot: ExpenseWhereInput
+}
+
+input ExpenseWhereInput {
+  AND: [ExpenseWhereInput!]
+  OR: [ExpenseWhereInput!]
+  NOT: [ExpenseWhereInput!]
+  id: StringFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  name: StringFilter
+  expenseDetails: DetailListRelationFilter
+  monthlyCost: IntFilter
+  Family: FamilyRelationFilter
+  familyId: StringNullableFilter
+}
+
+input DetailListRelationFilter {
+  every: DetailWhereInput
+  some: DetailWhereInput
+  none: DetailWhereInput
+}
+
+input IntFilter {
+  equals: Int
+  in: [Int!]
+  notIn: [Int!]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: NestedIntFilter
+}
+
+input NestedIntFilter {
+  equals: Int
+  in: [Int!]
+  notIn: [Int!]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: NestedIntFilter
+}
+
+input FamilyRelationFilter {
+  is: FamilyWhereInput
+  isNot: FamilyWhereInput
+}
+
+input FamilyWhereInput {
+  AND: [FamilyWhereInput!]
+  OR: [FamilyWhereInput!]
+  NOT: [FamilyWhereInput!]
+  id: StringFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  members: UserListRelationFilter
+  expenses: ExpenseListRelationFilter
+  revenues: RevenueListRelationFilter
+  accounts: AccountListRelationFilter
 }
 
 input UserListRelationFilter {
@@ -311,11 +407,6 @@ input NestedEnumRoleFilter {
   not: NestedEnumRoleFilter
 }
 
-input FamilyRelationFilter {
-  is: FamilyWhereInput
-  isNot: FamilyWhereInput
-}
-
 input RevenueListRelationFilter {
   every: RevenueWhereInput
   some: RevenueWhereInput
@@ -341,44 +432,42 @@ input ExpenseListRelationFilter {
   none: ExpenseWhereInput
 }
 
-input ExpenseWhereInput {
-  AND: [ExpenseWhereInput!]
-  OR: [ExpenseWhereInput!]
-  NOT: [ExpenseWhereInput!]
+input AccountListRelationFilter {
+  every: AccountWhereInput
+  some: AccountWhereInput
+  none: AccountWhereInput
+}
+
+input AccountWhereInput {
+  AND: [AccountWhereInput!]
+  OR: [AccountWhereInput!]
+  NOT: [AccountWhereInput!]
   id: StringFilter
   createdAt: DateTimeFilter
+  type: EnumAccountTypeFilter
   updatedAt: DateTimeFilter
   name: StringFilter
-  expenseDetails: ExpenseDetailsListRelationFilter
-  monthlyCost: IntFilter
+  monthlyBudget: IntFilter
+  sold: IntFilter
   Family: FamilyRelationFilter
   familyId: StringNullableFilter
 }
 
-input ExpenseDetailsListRelationFilter {
-  every: ExpenseDetailsWhereInput
-  some: ExpenseDetailsWhereInput
-  none: ExpenseDetailsWhereInput
+input EnumAccountTypeFilter {
+  equals: AccountType
+  in: [AccountType!]
+  notIn: [AccountType!]
+  not: NestedEnumAccountTypeFilter
 }
 
-input ExpenseDetailsWhereInput {
-  AND: [ExpenseDetailsWhereInput!]
-  OR: [ExpenseDetailsWhereInput!]
-  NOT: [ExpenseDetailsWhereInput!]
-  id: StringFilter
-  createdAt: DateTimeFilter
-  updatedAt: DateTimeFilter
-  Expense: ExpenseRelationFilter
-  expenseId: StringNullableFilter
-  monthlyCost: IntFilter
+input NestedEnumAccountTypeFilter {
+  equals: AccountType
+  in: [AccountType!]
+  notIn: [AccountType!]
+  not: NestedEnumAccountTypeFilter
 }
 
-input ExpenseRelationFilter {
-  is: ExpenseWhereInput
-  isNot: ExpenseWhereInput
-}
-
-input IntFilter {
+input IntNullableFilter {
   equals: Int
   in: [Int!]
   notIn: [Int!]
@@ -386,10 +475,10 @@ input IntFilter {
   lte: Int
   gt: Int
   gte: Int
-  not: NestedIntFilter
+  not: NestedIntNullableFilter
 }
 
-input NestedIntFilter {
+input NestedIntNullableFilter {
   equals: Int
   in: [Int!]
   notIn: [Int!]
@@ -397,7 +486,37 @@ input NestedIntFilter {
   lte: Int
   gt: Int
   gte: Int
-  not: NestedIntFilter
+  not: NestedIntNullableFilter
+}
+
+input DetailOrderByWithRelationInput {
+  id: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  Expense: ExpenseOrderByWithRelationInput
+  expenseId: SortOrder
+  monthlyCost: SortOrder
+  period: SortOrder
+}
+
+enum SortOrder {
+  asc
+  desc
+}
+
+input ExpenseOrderByWithRelationInput {
+  id: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  name: SortOrder
+  expenseDetails: DetailOrderByRelationAggregateInput
+  monthlyCost: SortOrder
+  Family: FamilyOrderByWithRelationInput
+  familyId: SortOrder
+}
+
+input DetailOrderByRelationAggregateInput {
+  _count: SortOrder
 }
 
 input FamilyOrderByWithRelationInput {
@@ -407,11 +526,7 @@ input FamilyOrderByWithRelationInput {
   members: UserOrderByRelationAggregateInput
   expenses: ExpenseOrderByRelationAggregateInput
   revenues: RevenueOrderByRelationAggregateInput
-}
-
-enum SortOrder {
-  asc
-  desc
+  accounts: AccountOrderByRelationAggregateInput
 }
 
 input UserOrderByRelationAggregateInput {
@@ -426,23 +541,73 @@ input RevenueOrderByRelationAggregateInput {
   _count: SortOrder
 }
 
-input FamilyWhereUniqueInput {
+input AccountOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input DetailWhereUniqueInput {
   id: String
 }
 
-enum FamilyScalarFieldEnum {
+enum DetailScalarFieldEnum {
   id
   createdAt
   updatedAt
+  expenseId
+  monthlyCost
+  period
 }
 
-input PermissionOrderByWithRelationInput {
+input AccountOrderByWithRelationInput {
+  id: SortOrder
+  createdAt: SortOrder
+  type: SortOrder
+  updatedAt: SortOrder
+  name: SortOrder
+  monthlyBudget: SortOrder
+  sold: SortOrder
+  Family: FamilyOrderByWithRelationInput
+  familyId: SortOrder
+}
+
+input AccountWhereUniqueInput {
+  id: String
+  name: String
+}
+
+enum AccountScalarFieldEnum {
+  id
+  createdAt
+  type
+  updatedAt
+  name
+  monthlyBudget
+  sold
+  familyId
+}
+
+input ExpenseWhereUniqueInput {
+  id: String
+  name: String
+}
+
+enum ExpenseScalarFieldEnum {
+  id
+  createdAt
+  updatedAt
+  name
+  monthlyCost
+  familyId
+}
+
+input RevenueOrderByWithRelationInput {
   id: SortOrder
   createdAt: SortOrder
   updatedAt: SortOrder
   User: UserOrderByWithRelationInput
+  Family: FamilyOrderByWithRelationInput
   userId: SortOrder
-  type: SortOrder
+  familyId: SortOrder
 }
 
 input UserOrderByWithRelationInput {
@@ -460,6 +625,37 @@ input UserOrderByWithRelationInput {
   Family: FamilyOrderByWithRelationInput
   familyId: SortOrder
   Revenue: RevenueOrderByRelationAggregateInput
+}
+
+input PermissionOrderByWithRelationInput {
+  id: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  User: UserOrderByWithRelationInput
+  userId: SortOrder
+  type: SortOrder
+}
+
+input RevenueWhereUniqueInput {
+  id: String
+}
+
+enum RevenueScalarFieldEnum {
+  id
+  createdAt
+  updatedAt
+  userId
+  familyId
+}
+
+input FamilyWhereUniqueInput {
+  id: String
+}
+
+enum FamilyScalarFieldEnum {
+  id
+  createdAt
+  updatedAt
 }
 
 input PermissionWhereUniqueInput {
@@ -495,6 +691,19 @@ enum UserScalarFieldEnum {
 }
 
 type Mutation {
+  createDetail(createDetailInput: DetailCreateInput!): Detail!
+  updateDetail(where: DetailWhereUniqueInput!, updateDetailInput: DetailUpdateInput!): Detail!
+  removeDetail(where: DetailWhereUniqueInput!): Detail!
+  createAccount(createAccountInput: AccountCreateInput!): Account!
+  updateAccount(where: AccountWhereUniqueInput!, updateAccountInput: AccountUpdateInput!): Account!
+  removeAccount(where: AccountWhereUniqueInput!): Account!
+  updateAccountUser(where: AccountWhereUniqueInput!, updateAccountInput: AccountUpdateInput!): Account!
+  createExpense(createExpenseInput: ExpenseCreateInput!): Expense!
+  updateExpense(where: ExpenseWhereUniqueInput!, updateExpenseInput: ExpenseUpdateInput!): Expense!
+  removeExpense(where: ExpenseWhereUniqueInput!): Expense!
+  createRevenue(createRevenueInput: RevenueCreateInput!): Revenue!
+  updateRevenue(where: RevenueWhereUniqueInput!, updateRevenueInput: RevenueUpdateInput!): Revenue!
+  removeRevenue(where: RevenueWhereUniqueInput!): Revenue!
   createFamily(createFamilyInput: FamilyCreateInput!): Family!
   updateFamily(where: FamilyWhereUniqueInput!, updateFamilyInput: FamilyUpdateInput!): Family!
   removeFamily(where: FamilyWhereUniqueInput!): Family!
@@ -508,13 +717,43 @@ type Mutation {
   logout: AuthResponse
 }
 
-input FamilyCreateInput {
+input DetailCreateInput {
+  id: String
+  createdAt: DateTime
+  updatedAt: DateTime
+  Expense: ExpenseCreateNestedOneWithoutExpenseDetailsInput
+  monthlyCost: Int
+  period: Int
+}
+
+input ExpenseCreateNestedOneWithoutExpenseDetailsInput {
+  create: ExpenseCreateWithoutExpenseDetailsInput
+  connectOrCreate: ExpenseCreateOrConnectWithoutExpenseDetailsInput
+  connect: ExpenseWhereUniqueInput
+}
+
+input ExpenseCreateWithoutExpenseDetailsInput {
+  id: String
+  createdAt: DateTime
+  updatedAt: DateTime
+  name: String!
+  monthlyCost: Int
+  Family: FamilyCreateNestedOneWithoutExpensesInput
+}
+
+input FamilyCreateNestedOneWithoutExpensesInput {
+  create: FamilyCreateWithoutExpensesInput
+  connectOrCreate: FamilyCreateOrConnectWithoutExpensesInput
+  connect: FamilyWhereUniqueInput
+}
+
+input FamilyCreateWithoutExpensesInput {
   id: String
   createdAt: DateTime
   updatedAt: DateTime
   members: UserCreateNestedManyWithoutFamilyInput
-  expenses: ExpenseCreateNestedManyWithoutFamilyInput
   revenues: RevenueCreateNestedManyWithoutFamilyInput
+  accounts: AccountCreateNestedManyWithoutFamilyInput
 }
 
 input UserCreateNestedManyWithoutFamilyInput {
@@ -583,6 +822,7 @@ input FamilyCreateWithoutRevenuesInput {
   updatedAt: DateTime
   members: UserCreateNestedManyWithoutFamilyInput
   expenses: ExpenseCreateNestedManyWithoutFamilyInput
+  accounts: AccountCreateNestedManyWithoutFamilyInput
 }
 
 input ExpenseCreateNestedManyWithoutFamilyInput {
@@ -597,53 +837,46 @@ input ExpenseCreateWithoutFamilyInput {
   createdAt: DateTime
   updatedAt: DateTime
   name: String!
-  expenseDetails: ExpenseDetailsCreateNestedManyWithoutExpenseInput
+  expenseDetails: DetailCreateNestedManyWithoutExpenseInput
   monthlyCost: Int
 }
 
-input ExpenseDetailsCreateNestedManyWithoutExpenseInput {
-  create: [ExpenseDetailsCreateWithoutExpenseInput!]
-  connectOrCreate: [ExpenseDetailsCreateOrConnectWithoutExpenseInput!]
-  createMany: ExpenseDetailsCreateManyExpenseInputEnvelope
-  connect: [ExpenseDetailsWhereUniqueInput!]
+input DetailCreateNestedManyWithoutExpenseInput {
+  create: [DetailCreateWithoutExpenseInput!]
+  connectOrCreate: [DetailCreateOrConnectWithoutExpenseInput!]
+  createMany: DetailCreateManyExpenseInputEnvelope
+  connect: [DetailWhereUniqueInput!]
 }
 
-input ExpenseDetailsCreateWithoutExpenseInput {
+input DetailCreateWithoutExpenseInput {
   id: String
   createdAt: DateTime
   updatedAt: DateTime
   monthlyCost: Int
+  period: Int
 }
 
-input ExpenseDetailsCreateOrConnectWithoutExpenseInput {
-  where: ExpenseDetailsWhereUniqueInput!
-  create: ExpenseDetailsCreateWithoutExpenseInput!
+input DetailCreateOrConnectWithoutExpenseInput {
+  where: DetailWhereUniqueInput!
+  create: DetailCreateWithoutExpenseInput!
 }
 
-input ExpenseDetailsWhereUniqueInput {
-  id: String
-}
-
-input ExpenseDetailsCreateManyExpenseInputEnvelope {
-  data: [ExpenseDetailsCreateManyExpenseInput!]!
+input DetailCreateManyExpenseInputEnvelope {
+  data: [DetailCreateManyExpenseInput!]!
   skipDuplicates: Boolean
 }
 
-input ExpenseDetailsCreateManyExpenseInput {
+input DetailCreateManyExpenseInput {
   id: String
   createdAt: DateTime
   updatedAt: DateTime
   monthlyCost: Int
+  period: Int
 }
 
 input ExpenseCreateOrConnectWithoutFamilyInput {
   where: ExpenseWhereUniqueInput!
   create: ExpenseCreateWithoutFamilyInput!
-}
-
-input ExpenseWhereUniqueInput {
-  id: String
-  name: String
 }
 
 input ExpenseCreateManyFamilyInputEnvelope {
@@ -659,6 +892,43 @@ input ExpenseCreateManyFamilyInput {
   monthlyCost: Int
 }
 
+input AccountCreateNestedManyWithoutFamilyInput {
+  create: [AccountCreateWithoutFamilyInput!]
+  connectOrCreate: [AccountCreateOrConnectWithoutFamilyInput!]
+  createMany: AccountCreateManyFamilyInputEnvelope
+  connect: [AccountWhereUniqueInput!]
+}
+
+input AccountCreateWithoutFamilyInput {
+  id: String
+  createdAt: DateTime
+  type: AccountType!
+  updatedAt: DateTime
+  name: String!
+  monthlyBudget: Int
+  sold: Int
+}
+
+input AccountCreateOrConnectWithoutFamilyInput {
+  where: AccountWhereUniqueInput!
+  create: AccountCreateWithoutFamilyInput!
+}
+
+input AccountCreateManyFamilyInputEnvelope {
+  data: [AccountCreateManyFamilyInput!]!
+  skipDuplicates: Boolean
+}
+
+input AccountCreateManyFamilyInput {
+  id: String
+  createdAt: DateTime
+  type: AccountType!
+  updatedAt: DateTime
+  name: String!
+  monthlyBudget: Int
+  sold: Int
+}
+
 input FamilyCreateOrConnectWithoutRevenuesInput {
   where: FamilyWhereUniqueInput!
   create: FamilyCreateWithoutRevenuesInput!
@@ -667,10 +937,6 @@ input FamilyCreateOrConnectWithoutRevenuesInput {
 input RevenueCreateOrConnectWithoutUserInput {
   where: RevenueWhereUniqueInput!
   create: RevenueCreateWithoutUserInput!
-}
-
-input RevenueWhereUniqueInput {
-  id: String
 }
 
 input RevenueCreateManyUserInputEnvelope {
@@ -755,6 +1021,7 @@ input FamilyCreateWithoutMembersInput {
   updatedAt: DateTime
   expenses: ExpenseCreateNestedManyWithoutFamilyInput
   revenues: RevenueCreateNestedManyWithoutFamilyInput
+  accounts: AccountCreateNestedManyWithoutFamilyInput
 }
 
 input FamilyCreateOrConnectWithoutMembersInput {
@@ -784,13 +1051,23 @@ input RevenueCreateManyFamilyInput {
   userId: String!
 }
 
-input FamilyUpdateInput {
+input FamilyCreateOrConnectWithoutExpensesInput {
+  where: FamilyWhereUniqueInput!
+  create: FamilyCreateWithoutExpensesInput!
+}
+
+input ExpenseCreateOrConnectWithoutExpenseDetailsInput {
+  where: ExpenseWhereUniqueInput!
+  create: ExpenseCreateWithoutExpenseDetailsInput!
+}
+
+input DetailUpdateInput {
   id: StringFieldUpdateOperationsInput
   createdAt: DateTimeFieldUpdateOperationsInput
   updatedAt: DateTimeFieldUpdateOperationsInput
-  members: UserUpdateManyWithoutFamilyInput
-  expenses: ExpenseUpdateManyWithoutFamilyInput
-  revenues: RevenueUpdateManyWithoutFamilyInput
+  Expense: ExpenseUpdateOneWithoutExpenseDetailsNestedInput
+  monthlyCost: IntFieldUpdateOperationsInput
+  period: NullableIntFieldUpdateOperationsInput
 }
 
 input StringFieldUpdateOperationsInput {
@@ -801,7 +1078,63 @@ input DateTimeFieldUpdateOperationsInput {
   set: DateTime
 }
 
-input UserUpdateManyWithoutFamilyInput {
+input ExpenseUpdateOneWithoutExpenseDetailsNestedInput {
+  create: ExpenseCreateWithoutExpenseDetailsInput
+  connectOrCreate: ExpenseCreateOrConnectWithoutExpenseDetailsInput
+  upsert: ExpenseUpsertWithoutExpenseDetailsInput
+  disconnect: Boolean
+  delete: Boolean
+  connect: ExpenseWhereUniqueInput
+  update: ExpenseUpdateWithoutExpenseDetailsInput
+}
+
+input ExpenseUpsertWithoutExpenseDetailsInput {
+  update: ExpenseUpdateWithoutExpenseDetailsInput!
+  create: ExpenseCreateWithoutExpenseDetailsInput!
+}
+
+input ExpenseUpdateWithoutExpenseDetailsInput {
+  id: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  name: StringFieldUpdateOperationsInput
+  monthlyCost: IntFieldUpdateOperationsInput
+  Family: FamilyUpdateOneWithoutExpensesNestedInput
+}
+
+input IntFieldUpdateOperationsInput {
+  set: Int
+  increment: Int
+  decrement: Int
+  multiply: Int
+  divide: Int
+}
+
+input FamilyUpdateOneWithoutExpensesNestedInput {
+  create: FamilyCreateWithoutExpensesInput
+  connectOrCreate: FamilyCreateOrConnectWithoutExpensesInput
+  upsert: FamilyUpsertWithoutExpensesInput
+  disconnect: Boolean
+  delete: Boolean
+  connect: FamilyWhereUniqueInput
+  update: FamilyUpdateWithoutExpensesInput
+}
+
+input FamilyUpsertWithoutExpensesInput {
+  update: FamilyUpdateWithoutExpensesInput!
+  create: FamilyCreateWithoutExpensesInput!
+}
+
+input FamilyUpdateWithoutExpensesInput {
+  id: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  members: UserUpdateManyWithoutFamilyNestedInput
+  revenues: RevenueUpdateManyWithoutFamilyNestedInput
+  accounts: AccountUpdateManyWithoutFamilyNestedInput
+}
+
+input UserUpdateManyWithoutFamilyNestedInput {
   create: [UserCreateWithoutFamilyInput!]
   connectOrCreate: [UserCreateOrConnectWithoutFamilyInput!]
   upsert: [UserUpsertWithWhereUniqueWithoutFamilyInput!]
@@ -832,8 +1165,8 @@ input UserUpdateWithoutFamilyInput {
   validationToken: StringFieldUpdateOperationsInput
   lastLogin: NullableDateTimeFieldUpdateOperationsInput
   verificationStatus: EnumVerificationStatusFieldUpdateOperationsInput
-  Permission: PermissionUpdateOneWithoutUserInput
-  Revenue: RevenueUpdateManyWithoutUserInput
+  Permission: PermissionUpdateOneWithoutUserNestedInput
+  Revenue: RevenueUpdateManyWithoutUserNestedInput
 }
 
 input NullableStringFieldUpdateOperationsInput {
@@ -848,7 +1181,7 @@ input EnumVerificationStatusFieldUpdateOperationsInput {
   set: VerificationStatus
 }
 
-input PermissionUpdateOneWithoutUserInput {
+input PermissionUpdateOneWithoutUserNestedInput {
   create: PermissionCreateWithoutUserInput
   connectOrCreate: PermissionCreateOrConnectWithoutUserInput
   upsert: PermissionUpsertWithoutUserInput
@@ -874,7 +1207,7 @@ input EnumRoleFieldUpdateOperationsInput {
   set: Role
 }
 
-input RevenueUpdateManyWithoutUserInput {
+input RevenueUpdateManyWithoutUserNestedInput {
   create: [RevenueCreateWithoutUserInput!]
   connectOrCreate: [RevenueCreateOrConnectWithoutUserInput!]
   upsert: [RevenueUpsertWithWhereUniqueWithoutUserInput!]
@@ -898,10 +1231,10 @@ input RevenueUpdateWithoutUserInput {
   id: StringFieldUpdateOperationsInput
   createdAt: DateTimeFieldUpdateOperationsInput
   updatedAt: DateTimeFieldUpdateOperationsInput
-  Family: FamilyUpdateOneRequiredWithoutRevenuesInput
+  Family: FamilyUpdateOneRequiredWithoutRevenuesNestedInput
 }
 
-input FamilyUpdateOneRequiredWithoutRevenuesInput {
+input FamilyUpdateOneRequiredWithoutRevenuesNestedInput {
   create: FamilyCreateWithoutRevenuesInput
   connectOrCreate: FamilyCreateOrConnectWithoutRevenuesInput
   upsert: FamilyUpsertWithoutRevenuesInput
@@ -918,11 +1251,12 @@ input FamilyUpdateWithoutRevenuesInput {
   id: StringFieldUpdateOperationsInput
   createdAt: DateTimeFieldUpdateOperationsInput
   updatedAt: DateTimeFieldUpdateOperationsInput
-  members: UserUpdateManyWithoutFamilyInput
-  expenses: ExpenseUpdateManyWithoutFamilyInput
+  members: UserUpdateManyWithoutFamilyNestedInput
+  expenses: ExpenseUpdateManyWithoutFamilyNestedInput
+  accounts: AccountUpdateManyWithoutFamilyNestedInput
 }
 
-input ExpenseUpdateManyWithoutFamilyInput {
+input ExpenseUpdateManyWithoutFamilyNestedInput {
   create: [ExpenseCreateWithoutFamilyInput!]
   connectOrCreate: [ExpenseCreateOrConnectWithoutFamilyInput!]
   upsert: [ExpenseUpsertWithWhereUniqueWithoutFamilyInput!]
@@ -947,38 +1281,39 @@ input ExpenseUpdateWithoutFamilyInput {
   createdAt: DateTimeFieldUpdateOperationsInput
   updatedAt: DateTimeFieldUpdateOperationsInput
   name: StringFieldUpdateOperationsInput
-  expenseDetails: ExpenseDetailsUpdateManyWithoutExpenseInput
+  expenseDetails: DetailUpdateManyWithoutExpenseNestedInput
   monthlyCost: IntFieldUpdateOperationsInput
 }
 
-input ExpenseDetailsUpdateManyWithoutExpenseInput {
-  create: [ExpenseDetailsCreateWithoutExpenseInput!]
-  connectOrCreate: [ExpenseDetailsCreateOrConnectWithoutExpenseInput!]
-  upsert: [ExpenseDetailsUpsertWithWhereUniqueWithoutExpenseInput!]
-  createMany: ExpenseDetailsCreateManyExpenseInputEnvelope
-  set: [ExpenseDetailsWhereUniqueInput!]
-  disconnect: [ExpenseDetailsWhereUniqueInput!]
-  delete: [ExpenseDetailsWhereUniqueInput!]
-  connect: [ExpenseDetailsWhereUniqueInput!]
-  update: [ExpenseDetailsUpdateWithWhereUniqueWithoutExpenseInput!]
-  updateMany: [ExpenseDetailsUpdateManyWithWhereWithoutExpenseInput!]
-  deleteMany: [ExpenseDetailsScalarWhereInput!]
+input DetailUpdateManyWithoutExpenseNestedInput {
+  create: [DetailCreateWithoutExpenseInput!]
+  connectOrCreate: [DetailCreateOrConnectWithoutExpenseInput!]
+  upsert: [DetailUpsertWithWhereUniqueWithoutExpenseInput!]
+  createMany: DetailCreateManyExpenseInputEnvelope
+  set: [DetailWhereUniqueInput!]
+  disconnect: [DetailWhereUniqueInput!]
+  delete: [DetailWhereUniqueInput!]
+  connect: [DetailWhereUniqueInput!]
+  update: [DetailUpdateWithWhereUniqueWithoutExpenseInput!]
+  updateMany: [DetailUpdateManyWithWhereWithoutExpenseInput!]
+  deleteMany: [DetailScalarWhereInput!]
 }
 
-input ExpenseDetailsUpsertWithWhereUniqueWithoutExpenseInput {
-  where: ExpenseDetailsWhereUniqueInput!
-  update: ExpenseDetailsUpdateWithoutExpenseInput!
-  create: ExpenseDetailsCreateWithoutExpenseInput!
+input DetailUpsertWithWhereUniqueWithoutExpenseInput {
+  where: DetailWhereUniqueInput!
+  update: DetailUpdateWithoutExpenseInput!
+  create: DetailCreateWithoutExpenseInput!
 }
 
-input ExpenseDetailsUpdateWithoutExpenseInput {
+input DetailUpdateWithoutExpenseInput {
   id: StringFieldUpdateOperationsInput
   createdAt: DateTimeFieldUpdateOperationsInput
   updatedAt: DateTimeFieldUpdateOperationsInput
   monthlyCost: IntFieldUpdateOperationsInput
+  period: NullableIntFieldUpdateOperationsInput
 }
 
-input IntFieldUpdateOperationsInput {
+input NullableIntFieldUpdateOperationsInput {
   set: Int
   increment: Int
   decrement: Int
@@ -986,32 +1321,34 @@ input IntFieldUpdateOperationsInput {
   divide: Int
 }
 
-input ExpenseDetailsUpdateWithWhereUniqueWithoutExpenseInput {
-  where: ExpenseDetailsWhereUniqueInput!
-  data: ExpenseDetailsUpdateWithoutExpenseInput!
+input DetailUpdateWithWhereUniqueWithoutExpenseInput {
+  where: DetailWhereUniqueInput!
+  data: DetailUpdateWithoutExpenseInput!
 }
 
-input ExpenseDetailsUpdateManyWithWhereWithoutExpenseInput {
-  where: ExpenseDetailsScalarWhereInput!
-  data: ExpenseDetailsUpdateManyMutationInput!
+input DetailUpdateManyWithWhereWithoutExpenseInput {
+  where: DetailScalarWhereInput!
+  data: DetailUpdateManyMutationInput!
 }
 
-input ExpenseDetailsScalarWhereInput {
-  AND: [ExpenseDetailsScalarWhereInput!]
-  OR: [ExpenseDetailsScalarWhereInput!]
-  NOT: [ExpenseDetailsScalarWhereInput!]
+input DetailScalarWhereInput {
+  AND: [DetailScalarWhereInput!]
+  OR: [DetailScalarWhereInput!]
+  NOT: [DetailScalarWhereInput!]
   id: StringFilter
   createdAt: DateTimeFilter
   updatedAt: DateTimeFilter
   expenseId: StringNullableFilter
   monthlyCost: IntFilter
+  period: IntNullableFilter
 }
 
-input ExpenseDetailsUpdateManyMutationInput {
+input DetailUpdateManyMutationInput {
   id: StringFieldUpdateOperationsInput
   createdAt: DateTimeFieldUpdateOperationsInput
   updatedAt: DateTimeFieldUpdateOperationsInput
   monthlyCost: IntFieldUpdateOperationsInput
+  period: NullableIntFieldUpdateOperationsInput
 }
 
 input ExpenseUpdateWithWhereUniqueWithoutFamilyInput {
@@ -1042,6 +1379,74 @@ input ExpenseUpdateManyMutationInput {
   updatedAt: DateTimeFieldUpdateOperationsInput
   name: StringFieldUpdateOperationsInput
   monthlyCost: IntFieldUpdateOperationsInput
+}
+
+input AccountUpdateManyWithoutFamilyNestedInput {
+  create: [AccountCreateWithoutFamilyInput!]
+  connectOrCreate: [AccountCreateOrConnectWithoutFamilyInput!]
+  upsert: [AccountUpsertWithWhereUniqueWithoutFamilyInput!]
+  createMany: AccountCreateManyFamilyInputEnvelope
+  set: [AccountWhereUniqueInput!]
+  disconnect: [AccountWhereUniqueInput!]
+  delete: [AccountWhereUniqueInput!]
+  connect: [AccountWhereUniqueInput!]
+  update: [AccountUpdateWithWhereUniqueWithoutFamilyInput!]
+  updateMany: [AccountUpdateManyWithWhereWithoutFamilyInput!]
+  deleteMany: [AccountScalarWhereInput!]
+}
+
+input AccountUpsertWithWhereUniqueWithoutFamilyInput {
+  where: AccountWhereUniqueInput!
+  update: AccountUpdateWithoutFamilyInput!
+  create: AccountCreateWithoutFamilyInput!
+}
+
+input AccountUpdateWithoutFamilyInput {
+  id: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  type: EnumAccountTypeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  name: StringFieldUpdateOperationsInput
+  monthlyBudget: IntFieldUpdateOperationsInput
+  sold: IntFieldUpdateOperationsInput
+}
+
+input EnumAccountTypeFieldUpdateOperationsInput {
+  set: AccountType
+}
+
+input AccountUpdateWithWhereUniqueWithoutFamilyInput {
+  where: AccountWhereUniqueInput!
+  data: AccountUpdateWithoutFamilyInput!
+}
+
+input AccountUpdateManyWithWhereWithoutFamilyInput {
+  where: AccountScalarWhereInput!
+  data: AccountUpdateManyMutationInput!
+}
+
+input AccountScalarWhereInput {
+  AND: [AccountScalarWhereInput!]
+  OR: [AccountScalarWhereInput!]
+  NOT: [AccountScalarWhereInput!]
+  id: StringFilter
+  createdAt: DateTimeFilter
+  type: EnumAccountTypeFilter
+  updatedAt: DateTimeFilter
+  name: StringFilter
+  monthlyBudget: IntFilter
+  sold: IntFilter
+  familyId: StringNullableFilter
+}
+
+input AccountUpdateManyMutationInput {
+  id: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  type: EnumAccountTypeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  name: StringFieldUpdateOperationsInput
+  monthlyBudget: IntFieldUpdateOperationsInput
+  sold: IntFieldUpdateOperationsInput
 }
 
 input RevenueUpdateWithWhereUniqueWithoutUserInput {
@@ -1111,7 +1516,7 @@ input UserUpdateManyMutationInput {
   verificationStatus: EnumVerificationStatusFieldUpdateOperationsInput
 }
 
-input RevenueUpdateManyWithoutFamilyInput {
+input RevenueUpdateManyWithoutFamilyNestedInput {
   create: [RevenueCreateWithoutFamilyInput!]
   connectOrCreate: [RevenueCreateOrConnectWithoutFamilyInput!]
   upsert: [RevenueUpsertWithWhereUniqueWithoutFamilyInput!]
@@ -1135,10 +1540,10 @@ input RevenueUpdateWithoutFamilyInput {
   id: StringFieldUpdateOperationsInput
   createdAt: DateTimeFieldUpdateOperationsInput
   updatedAt: DateTimeFieldUpdateOperationsInput
-  User: UserUpdateOneRequiredWithoutRevenueInput
+  User: UserUpdateOneRequiredWithoutRevenueNestedInput
 }
 
-input UserUpdateOneRequiredWithoutRevenueInput {
+input UserUpdateOneRequiredWithoutRevenueNestedInput {
   create: UserCreateWithoutRevenueInput
   connectOrCreate: UserCreateOrConnectWithoutRevenueInput
   upsert: UserUpsertWithoutRevenueInput
@@ -1162,11 +1567,11 @@ input UserUpdateWithoutRevenueInput {
   validationToken: StringFieldUpdateOperationsInput
   lastLogin: NullableDateTimeFieldUpdateOperationsInput
   verificationStatus: EnumVerificationStatusFieldUpdateOperationsInput
-  Permission: PermissionUpdateOneWithoutUserInput
-  Family: FamilyUpdateOneWithoutMembersInput
+  Permission: PermissionUpdateOneWithoutUserNestedInput
+  Family: FamilyUpdateOneWithoutMembersNestedInput
 }
 
-input FamilyUpdateOneWithoutMembersInput {
+input FamilyUpdateOneWithoutMembersNestedInput {
   create: FamilyCreateWithoutMembersInput
   connectOrCreate: FamilyCreateOrConnectWithoutMembersInput
   upsert: FamilyUpsertWithoutMembersInput
@@ -1185,8 +1590,9 @@ input FamilyUpdateWithoutMembersInput {
   id: StringFieldUpdateOperationsInput
   createdAt: DateTimeFieldUpdateOperationsInput
   updatedAt: DateTimeFieldUpdateOperationsInput
-  expenses: ExpenseUpdateManyWithoutFamilyInput
-  revenues: RevenueUpdateManyWithoutFamilyInput
+  expenses: ExpenseUpdateManyWithoutFamilyNestedInput
+  revenues: RevenueUpdateManyWithoutFamilyNestedInput
+  accounts: AccountUpdateManyWithoutFamilyNestedInput
 }
 
 input RevenueUpdateWithWhereUniqueWithoutFamilyInput {
@@ -1197,6 +1603,128 @@ input RevenueUpdateWithWhereUniqueWithoutFamilyInput {
 input RevenueUpdateManyWithWhereWithoutFamilyInput {
   where: RevenueScalarWhereInput!
   data: RevenueUpdateManyMutationInput!
+}
+
+input AccountCreateInput {
+  id: String
+  createdAt: DateTime
+  type: AccountType!
+  updatedAt: DateTime
+  name: String!
+  monthlyBudget: Int
+  sold: Int
+  Family: FamilyCreateNestedOneWithoutAccountsInput
+}
+
+input FamilyCreateNestedOneWithoutAccountsInput {
+  create: FamilyCreateWithoutAccountsInput
+  connectOrCreate: FamilyCreateOrConnectWithoutAccountsInput
+  connect: FamilyWhereUniqueInput
+}
+
+input FamilyCreateWithoutAccountsInput {
+  id: String
+  createdAt: DateTime
+  updatedAt: DateTime
+  members: UserCreateNestedManyWithoutFamilyInput
+  expenses: ExpenseCreateNestedManyWithoutFamilyInput
+  revenues: RevenueCreateNestedManyWithoutFamilyInput
+}
+
+input FamilyCreateOrConnectWithoutAccountsInput {
+  where: FamilyWhereUniqueInput!
+  create: FamilyCreateWithoutAccountsInput!
+}
+
+input AccountUpdateInput {
+  id: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  type: EnumAccountTypeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  name: StringFieldUpdateOperationsInput
+  monthlyBudget: IntFieldUpdateOperationsInput
+  sold: IntFieldUpdateOperationsInput
+  Family: FamilyUpdateOneWithoutAccountsNestedInput
+}
+
+input FamilyUpdateOneWithoutAccountsNestedInput {
+  create: FamilyCreateWithoutAccountsInput
+  connectOrCreate: FamilyCreateOrConnectWithoutAccountsInput
+  upsert: FamilyUpsertWithoutAccountsInput
+  disconnect: Boolean
+  delete: Boolean
+  connect: FamilyWhereUniqueInput
+  update: FamilyUpdateWithoutAccountsInput
+}
+
+input FamilyUpsertWithoutAccountsInput {
+  update: FamilyUpdateWithoutAccountsInput!
+  create: FamilyCreateWithoutAccountsInput!
+}
+
+input FamilyUpdateWithoutAccountsInput {
+  id: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  members: UserUpdateManyWithoutFamilyNestedInput
+  expenses: ExpenseUpdateManyWithoutFamilyNestedInput
+  revenues: RevenueUpdateManyWithoutFamilyNestedInput
+}
+
+input ExpenseCreateInput {
+  id: String
+  createdAt: DateTime
+  updatedAt: DateTime
+  name: String!
+  expenseDetails: DetailCreateNestedManyWithoutExpenseInput
+  monthlyCost: Int
+  Family: FamilyCreateNestedOneWithoutExpensesInput
+}
+
+input ExpenseUpdateInput {
+  id: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  name: StringFieldUpdateOperationsInput
+  expenseDetails: DetailUpdateManyWithoutExpenseNestedInput
+  monthlyCost: IntFieldUpdateOperationsInput
+  Family: FamilyUpdateOneWithoutExpensesNestedInput
+}
+
+input RevenueCreateInput {
+  id: String
+  createdAt: DateTime
+  updatedAt: DateTime
+  User: UserCreateNestedOneWithoutRevenueInput!
+  Family: FamilyCreateNestedOneWithoutRevenuesInput!
+}
+
+input RevenueUpdateInput {
+  id: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  User: UserUpdateOneRequiredWithoutRevenueNestedInput
+  Family: FamilyUpdateOneRequiredWithoutRevenuesNestedInput
+}
+
+input FamilyCreateInput {
+  id: String
+  createdAt: DateTime
+  updatedAt: DateTime
+  members: UserCreateNestedManyWithoutFamilyInput
+  expenses: ExpenseCreateNestedManyWithoutFamilyInput
+  revenues: RevenueCreateNestedManyWithoutFamilyInput
+  accounts: AccountCreateNestedManyWithoutFamilyInput
+}
+
+input FamilyUpdateInput {
+  id: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  members: UserUpdateManyWithoutFamilyNestedInput
+  expenses: ExpenseUpdateManyWithoutFamilyNestedInput
+  revenues: RevenueUpdateManyWithoutFamilyNestedInput
+  accounts: AccountUpdateManyWithoutFamilyNestedInput
 }
 
 input PermissionCreateInput {
@@ -1237,11 +1765,11 @@ input PermissionUpdateInput {
   id: StringFieldUpdateOperationsInput
   createdAt: DateTimeFieldUpdateOperationsInput
   updatedAt: DateTimeFieldUpdateOperationsInput
-  User: UserUpdateOneWithoutPermissionInput
+  User: UserUpdateOneWithoutPermissionNestedInput
   type: EnumRoleFieldUpdateOperationsInput
 }
 
-input UserUpdateOneWithoutPermissionInput {
+input UserUpdateOneWithoutPermissionNestedInput {
   create: UserCreateWithoutPermissionInput
   connectOrCreate: UserCreateOrConnectWithoutPermissionInput
   upsert: UserUpsertWithoutPermissionInput
@@ -1267,8 +1795,8 @@ input UserUpdateWithoutPermissionInput {
   validationToken: StringFieldUpdateOperationsInput
   lastLogin: NullableDateTimeFieldUpdateOperationsInput
   verificationStatus: EnumVerificationStatusFieldUpdateOperationsInput
-  Family: FamilyUpdateOneWithoutMembersInput
-  Revenue: RevenueUpdateManyWithoutUserInput
+  Family: FamilyUpdateOneWithoutMembersNestedInput
+  Revenue: RevenueUpdateManyWithoutUserNestedInput
 }
 
 input UserCreateInput {
@@ -1298,9 +1826,9 @@ input UserUpdateInput {
   validationToken: StringFieldUpdateOperationsInput
   lastLogin: NullableDateTimeFieldUpdateOperationsInput
   verificationStatus: EnumVerificationStatusFieldUpdateOperationsInput
-  Permission: PermissionUpdateOneWithoutUserInput
-  Family: FamilyUpdateOneWithoutMembersInput
-  Revenue: RevenueUpdateManyWithoutUserInput
+  Permission: PermissionUpdateOneWithoutUserNestedInput
+  Family: FamilyUpdateOneWithoutMembersNestedInput
+  Revenue: RevenueUpdateManyWithoutUserNestedInput
 }
 
 input AuthInput {

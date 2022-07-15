@@ -5,6 +5,7 @@ import { DateTimeFilter } from '../prisma/date-time-filter.input';
 import { UserListRelationFilter } from '../user/user-list-relation-filter.input';
 import { ExpenseListRelationFilter } from '../expense/expense-list-relation-filter.input';
 import { RevenueListRelationFilter } from '../revenue/revenue-list-relation-filter.input';
+import { AccountListRelationFilter } from '../account/account-list-relation-filter.input';
 
 @InputType()
 export class FamilyWhereInput {
@@ -34,4 +35,7 @@ export class FamilyWhereInput {
 
   @Field(() => RevenueListRelationFilter, { nullable: true })
   revenues?: RevenueListRelationFilter;
+
+  @Field(() => AccountListRelationFilter, { nullable: true })
+  accounts?: AccountListRelationFilter;
 }

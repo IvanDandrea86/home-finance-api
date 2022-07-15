@@ -25,5 +25,8 @@ export class AccountCountAggregateInput {
   sold?: true;
 
   @Field(() => Boolean, { nullable: true })
+  familyId?: true;
+
+  @Field(() => Boolean, { nullable: true })
   _all?: true;
 }

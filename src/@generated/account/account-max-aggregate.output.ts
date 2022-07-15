@@ -25,4 +25,7 @@ export class AccountMaxAggregate {
 
   @Field(() => Int, { nullable: true })
   sold?: number;
+
+  @Field(() => String, { nullable: true })
+  familyId?: string;
 }

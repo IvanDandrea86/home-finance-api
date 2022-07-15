@@ -141,6 +141,12 @@
           "items": {
             "$ref": "#/definitions/Revenue"
           }
+        },
+        "accounts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Account"
+          }
         }
       }
     },
@@ -186,7 +192,7 @@
         "expenseDetails": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/ExpenseDetails"
+            "$ref": "#/definitions/Detail"
           }
         },
         "monthlyCost": {
@@ -205,7 +211,7 @@
         }
       }
     },
-    "ExpenseDetails": {
+    "Detail": {
       "type": "object",
       "properties": {
         "id": {
@@ -232,6 +238,13 @@
         "monthlyCost": {
           "type": "integer",
           "default": 0
+        },
+        "period": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "default": 1
         }
       }
     },
@@ -266,6 +279,16 @@
         "sold": {
           "type": "integer",
           "default": 0
+        },
+        "Family": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Family"
+            },
+            {
+              "type": "null"
+            }
+          ]
         }
       }
     }
@@ -287,8 +310,8 @@
     "expense": {
       "$ref": "#/definitions/Expense"
     },
-    "expenseDetails": {
-      "$ref": "#/definitions/ExpenseDetails"
+    "detail": {
+      "$ref": "#/definitions/Detail"
     },
     "account": {
       "$ref": "#/definitions/Account"

@@ -3,7 +3,7 @@ import { InputType } from '@nestjs/graphql';
 import { StringFieldUpdateOperationsInput } from '../prisma/string-field-update-operations.input';
 import { DateTimeFieldUpdateOperationsInput } from '../prisma/date-time-field-update-operations.input';
 import { IntFieldUpdateOperationsInput } from '../prisma/int-field-update-operations.input';
-import { FamilyUpdateOneWithoutExpensesInput } from '../family/family-update-one-without-expenses.input';
+import { FamilyUpdateOneWithoutExpensesNestedInput } from '../family/family-update-one-without-expenses-nested.input';
 
 @InputType()
 export class ExpenseUpdateWithoutExpenseDetailsInput {
@@ -22,6 +22,6 @@ export class ExpenseUpdateWithoutExpenseDetailsInput {
   @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
   monthlyCost?: IntFieldUpdateOperationsInput;
 
-  @Field(() => FamilyUpdateOneWithoutExpensesInput, { nullable: true })
-  Family?: FamilyUpdateOneWithoutExpensesInput;
+  @Field(() => FamilyUpdateOneWithoutExpensesNestedInput, { nullable: true })
+  Family?: FamilyUpdateOneWithoutExpensesNestedInput;
 }

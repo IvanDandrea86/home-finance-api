@@ -4,6 +4,7 @@ import { SortOrder } from '../prisma/sort-order.enum';
 import { UserOrderByRelationAggregateInput } from '../user/user-order-by-relation-aggregate.input';
 import { ExpenseOrderByRelationAggregateInput } from '../expense/expense-order-by-relation-aggregate.input';
 import { RevenueOrderByRelationAggregateInput } from '../revenue/revenue-order-by-relation-aggregate.input';
+import { AccountOrderByRelationAggregateInput } from '../account/account-order-by-relation-aggregate.input';
 
 @InputType()
 export class FamilyOrderByWithRelationInput {
@@ -24,4 +25,7 @@ export class FamilyOrderByWithRelationInput {
 
   @Field(() => RevenueOrderByRelationAggregateInput, { nullable: true })
   revenues?: RevenueOrderByRelationAggregateInput;
+
+  @Field(() => AccountOrderByRelationAggregateInput, { nullable: true })
+  accounts?: AccountOrderByRelationAggregateInput;
 }

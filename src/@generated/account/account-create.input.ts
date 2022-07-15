@@ -2,6 +2,7 @@ import { Field } from '@nestjs/graphql';
 import { InputType } from '@nestjs/graphql';
 import { AccountType } from '../prisma/account-type.enum';
 import { Int } from '@nestjs/graphql';
+import { FamilyCreateNestedOneWithoutAccountsInput } from '../family/family-create-nested-one-without-accounts.input';
 
 @InputType()
 export class AccountCreateInput {
@@ -25,4 +26,7 @@ export class AccountCreateInput {
 
   @Field(() => Int, { nullable: true })
   sold?: number;
+
+  @Field(() => FamilyCreateNestedOneWithoutAccountsInput, { nullable: true })
+  Family?: FamilyCreateNestedOneWithoutAccountsInput;
 }

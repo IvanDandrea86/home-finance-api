@@ -12,8 +12,7 @@ import { PermissionCreateInput } from 'src/@generated/permission/permission-crea
 import { PermissionUpdateInput } from 'src/@generated/permission/permission-update.input';
 import { PermissionWhereUniqueInput } from 'src/@generated/permission/permission-where-unique.input';
 import { Permission } from 'src/@generated/permission/permission.model';
-import { isAuthorizedGuard } from 'src/auth/guards/chek.authorization.guard';
-import { Roles } from 'src/decorator/roles.decorator';
+import { Auth } from 'src/decorator/auth.decorator';
 
 import { PermissionService } from './permission.service';
 
@@ -24,8 +23,7 @@ export class PermissionResolver {
   // CRUD
 
   @Mutation(() => Permission)
-  @Roles('ADMIN')
-  @UseGuards(isAuthorizedGuard)
+  @Auth('ADMIN')
   createPermission(
     @Args('createPermissionInput') createPermissionInput: PermissionCreateInput,
   ) {
@@ -33,22 +31,19 @@ export class PermissionResolver {
   }
 
   @Query(() => [Permission], { name: 'permissions' })
-  @Roles('ADMIN')
-  @UseGuards(isAuthorizedGuard)
+  @Auth('ADMIN')
   findAll(@Args() args: FindManyPermissionArgs) {
     return this.permissionService.findAll(args);
   }
 
   @Query(() => Permission, { name: 'permission', nullable: true })
-  @Roles('ADMIN')
-  @UseGuards(isAuthorizedGuard)
+  @Auth('ADMIN')
   findOne(@Args('where') where: PermissionWhereUniqueInput) {
     return this.permissionService.findOne(where);
   }
 
   @Mutation(() => Permission)
-  @Roles('ADMIN')
-  @UseGuards(isAuthorizedGuard)
+  @Auth('ADMIN')
   updatePermission(
     @Args('where') where: PermissionWhereUniqueInput,
     @Args('updatePermissionInput') updatePermissionInput: PermissionUpdateInput,
@@ -57,8 +52,7 @@ export class PermissionResolver {
   }
 
   @Mutation(() => Permission)
-  @Roles('ADMIN')
-  @UseGuards(isAuthorizedGuard)
+  @Auth('ADMIN')
   removePermission(@Args('where') where: PermissionWhereUniqueInput) {
     return this.permissionService.remove(where);
   }

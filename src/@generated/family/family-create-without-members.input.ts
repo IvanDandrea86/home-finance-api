@@ -2,6 +2,7 @@ import { Field } from '@nestjs/graphql';
 import { InputType } from '@nestjs/graphql';
 import { ExpenseCreateNestedManyWithoutFamilyInput } from '../expense/expense-create-nested-many-without-family.input';
 import { RevenueCreateNestedManyWithoutFamilyInput } from '../revenue/revenue-create-nested-many-without-family.input';
+import { AccountCreateNestedManyWithoutFamilyInput } from '../account/account-create-nested-many-without-family.input';
 
 @InputType()
 export class FamilyCreateWithoutMembersInput {
@@ -19,4 +20,7 @@ export class FamilyCreateWithoutMembersInput {
 
   @Field(() => RevenueCreateNestedManyWithoutFamilyInput, { nullable: true })
   revenues?: RevenueCreateNestedManyWithoutFamilyInput;
+
+  @Field(() => AccountCreateNestedManyWithoutFamilyInput, { nullable: true })
+  accounts?: AccountCreateNestedManyWithoutFamilyInput;
 }

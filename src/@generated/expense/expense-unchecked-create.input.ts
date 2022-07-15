@@ -1,6 +1,6 @@
 import { Field } from '@nestjs/graphql';
 import { InputType } from '@nestjs/graphql';
-import { ExpenseDetailsUncheckedCreateNestedManyWithoutExpenseInput } from '../expense-details/expense-details-unchecked-create-nested-many-without-expense.input';
+import { DetailUncheckedCreateNestedManyWithoutExpenseInput } from '../detail/detail-unchecked-create-nested-many-without-expense.input';
 import { Int } from '@nestjs/graphql';
 
 @InputType()
@@ -17,10 +17,10 @@ export class ExpenseUncheckedCreateInput {
   @Field(() => String, { nullable: false })
   name!: string;
 
-  @Field(() => ExpenseDetailsUncheckedCreateNestedManyWithoutExpenseInput, {
+  @Field(() => DetailUncheckedCreateNestedManyWithoutExpenseInput, {
     nullable: true,
   })
-  expenseDetails?: ExpenseDetailsUncheckedCreateNestedManyWithoutExpenseInput;
+  expenseDetails?: DetailUncheckedCreateNestedManyWithoutExpenseInput;
 
   @Field(() => Int, { nullable: true })
   monthlyCost?: number;

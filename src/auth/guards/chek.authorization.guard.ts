@@ -7,7 +7,7 @@ import { AuthenticationError } from 'apollo-server-express';
 import { matchRoles } from 'src/utils';
 
 @Injectable()
-export class isAuthorizedGuard implements CanActivate {
+export class isAuthorized implements CanActivate {
   constructor(private reflector: Reflector) {}
 
   async canActivate(context: ExecutionContext) {
@@ -19,6 +19,6 @@ export class isAuthorizedGuard implements CanActivate {
     const req = ctx.getContext().req;
     const user = req.user;
     console.log(user);
-    return matchRoles(roles, user.permission.type);
+    return matchRoles(roles, user.Permission.type);
   }
 }

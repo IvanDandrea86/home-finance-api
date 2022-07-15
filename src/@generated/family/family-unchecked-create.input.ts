@@ -3,6 +3,7 @@ import { InputType } from '@nestjs/graphql';
 import { UserUncheckedCreateNestedManyWithoutFamilyInput } from '../user/user-unchecked-create-nested-many-without-family.input';
 import { ExpenseUncheckedCreateNestedManyWithoutFamilyInput } from '../expense/expense-unchecked-create-nested-many-without-family.input';
 import { RevenueUncheckedCreateNestedManyWithoutFamilyInput } from '../revenue/revenue-unchecked-create-nested-many-without-family.input';
+import { AccountUncheckedCreateNestedManyWithoutFamilyInput } from '../account/account-unchecked-create-nested-many-without-family.input';
 
 @InputType()
 export class FamilyUncheckedCreateInput {
@@ -29,4 +30,9 @@ export class FamilyUncheckedCreateInput {
     nullable: true,
   })
   revenues?: RevenueUncheckedCreateNestedManyWithoutFamilyInput;
+
+  @Field(() => AccountUncheckedCreateNestedManyWithoutFamilyInput, {
+    nullable: true,
+  })
+  accounts?: AccountUncheckedCreateNestedManyWithoutFamilyInput;
 }

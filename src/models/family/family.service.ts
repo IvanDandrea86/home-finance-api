@@ -1,13 +1,11 @@
 import { Injectable } from '@nestjs/common';
 
 import { PrismaService } from '../../services/prisma/prisma.service';
-import { Prisma } from '.prisma/client';
+import { Prisma } from '@prisma/client';
 import { FamilyCreateInput } from 'src/@generated/family/family-create.input';
 import { FamilyUpdateInput } from 'src/@generated/family/family-update.input';
 import { FamilyWhereUniqueInput } from 'src/@generated/family/family-where-unique.input';
 import { FindManyFamilyArgs } from 'src/@generated/family/find-many-family.args';
-
-type NewType = FindManyFamilyArgs;
 
 @Injectable()
 export class FamilyService {
@@ -21,7 +19,7 @@ export class FamilyService {
     });
   }
 
-  findAll(args: NewType) {
+  findAll(args: FindManyFamilyArgs) {
     return this.prisma.family.findMany(args);
   }
 

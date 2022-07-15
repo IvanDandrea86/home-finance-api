@@ -8,6 +8,7 @@ export enum AccountScalarFieldEnum {
   name = 'name',
   monthlyBudget = 'monthlyBudget',
   sold = 'sold',
+  familyId = 'familyId',
 }
 
 registerEnumType(AccountScalarFieldEnum, {

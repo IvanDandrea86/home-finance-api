@@ -1,7 +1,7 @@
 import { Field } from '@nestjs/graphql';
 import { InputType } from '@nestjs/graphql';
 import { SortOrder } from '../prisma/sort-order.enum';
-import { ExpenseDetailsOrderByRelationAggregateInput } from '../expense-details/expense-details-order-by-relation-aggregate.input';
+import { DetailOrderByRelationAggregateInput } from '../detail/detail-order-by-relation-aggregate.input';
 import { FamilyOrderByWithRelationInput } from '../family/family-order-by-with-relation.input';
 
 @InputType()
@@ -18,8 +18,8 @@ export class ExpenseOrderByWithRelationInput {
   @Field(() => SortOrder, { nullable: true })
   name?: keyof typeof SortOrder;
 
-  @Field(() => ExpenseDetailsOrderByRelationAggregateInput, { nullable: true })
-  expenseDetails?: ExpenseDetailsOrderByRelationAggregateInput;
+  @Field(() => DetailOrderByRelationAggregateInput, { nullable: true })
+  expenseDetails?: DetailOrderByRelationAggregateInput;
 
   @Field(() => SortOrder, { nullable: true })
   monthlyCost?: keyof typeof SortOrder;

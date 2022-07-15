@@ -2,7 +2,7 @@ import { Field } from '@nestjs/graphql';
 import { InputType } from '@nestjs/graphql';
 import { StringFieldUpdateOperationsInput } from '../prisma/string-field-update-operations.input';
 import { DateTimeFieldUpdateOperationsInput } from '../prisma/date-time-field-update-operations.input';
-import { ExpenseDetailsUncheckedUpdateManyWithoutExpenseInput } from '../expense-details/expense-details-unchecked-update-many-without-expense.input';
+import { DetailUncheckedUpdateManyWithoutExpenseNestedInput } from '../detail/detail-unchecked-update-many-without-expense-nested.input';
 import { IntFieldUpdateOperationsInput } from '../prisma/int-field-update-operations.input';
 import { NullableStringFieldUpdateOperationsInput } from '../prisma/nullable-string-field-update-operations.input';
 
@@ -20,10 +20,10 @@ export class ExpenseUncheckedUpdateInput {
   @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
   name?: StringFieldUpdateOperationsInput;
 
-  @Field(() => ExpenseDetailsUncheckedUpdateManyWithoutExpenseInput, {
+  @Field(() => DetailUncheckedUpdateManyWithoutExpenseNestedInput, {
     nullable: true,
   })
-  expenseDetails?: ExpenseDetailsUncheckedUpdateManyWithoutExpenseInput;
+  expenseDetails?: DetailUncheckedUpdateManyWithoutExpenseNestedInput;
 
   @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
   monthlyCost?: IntFieldUpdateOperationsInput;

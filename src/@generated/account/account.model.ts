@@ -3,6 +3,7 @@ import { ObjectType } from '@nestjs/graphql';
 import { ID } from '@nestjs/graphql';
 import { AccountType } from '../prisma/account-type.enum';
 import { Int } from '@nestjs/graphql';
+import { Family } from '../family/family.model';
 
 @ObjectType()
 export class Account {
@@ -26,4 +27,10 @@ export class Account {
 
   @Field(() => Int, { nullable: false, defaultValue: 0 })
   sold!: number;
+
+  @Field(() => Family, { nullable: true })
+  Family?: Family | null;
+
+  @Field(() => String, { nullable: true })
+  familyId!: string | null;
 }

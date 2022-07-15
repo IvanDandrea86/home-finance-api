@@ -23,4 +23,7 @@ export class AccountMinAggregateInput {
 
   @Field(() => Boolean, { nullable: true })
   sold?: true;
+
+  @Field(() => Boolean, { nullable: true })
+  familyId?: true;
 }

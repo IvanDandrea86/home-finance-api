@@ -1,7 +1,7 @@
 import { Field } from '@nestjs/graphql';
 import { ObjectType } from '@nestjs/graphql';
 import { ID } from '@nestjs/graphql';
-import { ExpenseDetails } from '../expense-details/expense-details.model';
+import { Detail } from '../detail/detail.model';
 import { Int } from '@nestjs/graphql';
 import { Family } from '../family/family.model';
 import { ExpenseCount } from './expense-count.output';
@@ -20,8 +20,8 @@ export class Expense {
   @Field(() => String, { nullable: false })
   name!: string;
 
-  @Field(() => [ExpenseDetails], { nullable: true })
-  expenseDetails?: Array<ExpenseDetails>;
+  @Field(() => [Detail], { nullable: true })
+  expenseDetails?: Array<Detail>;
 
   @Field(() => Int, { nullable: false, defaultValue: 0 })
   monthlyCost!: number;

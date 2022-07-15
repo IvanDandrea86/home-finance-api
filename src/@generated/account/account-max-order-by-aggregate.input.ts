@@ -24,4 +24,7 @@ export class AccountMaxOrderByAggregateInput {
 
   @Field(() => SortOrder, { nullable: true })
   sold?: keyof typeof SortOrder;
+
+  @Field(() => SortOrder, { nullable: true })
+  familyId?: keyof typeof SortOrder;
 }

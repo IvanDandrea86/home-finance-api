@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 
 import { PrismaService } from '../../services/prisma/prisma.service';
-import { Prisma } from '.prisma/client';
+import { Prisma } from '@prisma/client';
 import { PermissionCreateInput } from 'src/@generated/permission/permission-create.input';
 import { FindManyPermissionArgs } from 'src/@generated/permission/find-many-permission.args';
 import { PermissionUpdateInput } from 'src/@generated/permission/permission-update.input';

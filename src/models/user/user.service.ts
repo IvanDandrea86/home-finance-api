@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 
 import { PrismaService } from '../../services/prisma/prisma.service';
-import { Prisma } from '.prisma/client';
+import { Prisma } from '@prisma/client';
 import { FindManyUserArgs } from 'src/@generated/user/find-many-user.args';
 import { UserCreateInput } from 'src/@generated/user/user-create.input';
 import { UserUpdateInput } from 'src/@generated/user/user-update.input';
@@ -24,7 +24,10 @@ export class UserService {
   }
 
   findOne(where: UserWhereUniqueInput, include?: Prisma.UserInclude) {
-    return this.prisma.user.findUnique({ where, include });
+    return this.prisma.user.findUnique({
+      where,
+      include: { Family: true, Permission: true },
+    });
   }
 
   update(where: UserWhereUniqueInput, updateUserInput: UserUpdateInput) {

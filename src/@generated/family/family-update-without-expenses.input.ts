@@ -2,8 +2,9 @@ import { Field } from '@nestjs/graphql';
 import { InputType } from '@nestjs/graphql';
 import { StringFieldUpdateOperationsInput } from '../prisma/string-field-update-operations.input';
 import { DateTimeFieldUpdateOperationsInput } from '../prisma/date-time-field-update-operations.input';
-import { UserUpdateManyWithoutFamilyInput } from '../user/user-update-many-without-family.input';
-import { RevenueUpdateManyWithoutFamilyInput } from '../revenue/revenue-update-many-without-family.input';
+import { UserUpdateManyWithoutFamilyNestedInput } from '../user/user-update-many-without-family-nested.input';
+import { RevenueUpdateManyWithoutFamilyNestedInput } from '../revenue/revenue-update-many-without-family-nested.input';
+import { AccountUpdateManyWithoutFamilyNestedInput } from '../account/account-update-many-without-family-nested.input';
 
 @InputType()
 export class FamilyUpdateWithoutExpensesInput {
@@ -16,9 +17,12 @@ export class FamilyUpdateWithoutExpensesInput {
   @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
   updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-  @Field(() => UserUpdateManyWithoutFamilyInput, { nullable: true })
-  members?: UserUpdateManyWithoutFamilyInput;
+  @Field(() => UserUpdateManyWithoutFamilyNestedInput, { nullable: true })
+  members?: UserUpdateManyWithoutFamilyNestedInput;
 
-  @Field(() => RevenueUpdateManyWithoutFamilyInput, { nullable: true })
-  revenues?: RevenueUpdateManyWithoutFamilyInput;
+  @Field(() => RevenueUpdateManyWithoutFamilyNestedInput, { nullable: true })
+  revenues?: RevenueUpdateManyWithoutFamilyNestedInput;
+
+  @Field(() => AccountUpdateManyWithoutFamilyNestedInput, { nullable: true })
+  accounts?: AccountUpdateManyWithoutFamilyNestedInput;
 }

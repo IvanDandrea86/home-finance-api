@@ -5,8 +5,8 @@ import { DateTimeFieldUpdateOperationsInput } from '../prisma/date-time-field-up
 import { NullableStringFieldUpdateOperationsInput } from '../prisma/nullable-string-field-update-operations.input';
 import { NullableDateTimeFieldUpdateOperationsInput } from '../prisma/nullable-date-time-field-update-operations.input';
 import { EnumVerificationStatusFieldUpdateOperationsInput } from '../prisma/enum-verification-status-field-update-operations.input';
-import { PermissionUpdateOneWithoutUserInput } from '../permission/permission-update-one-without-user.input';
-import { RevenueUpdateManyWithoutUserInput } from '../revenue/revenue-update-many-without-user.input';
+import { PermissionUpdateOneWithoutUserNestedInput } from '../permission/permission-update-one-without-user-nested.input';
+import { RevenueUpdateManyWithoutUserNestedInput } from '../revenue/revenue-update-many-without-user-nested.input';
 
 @InputType()
 export class UserUpdateWithoutFamilyInput {
@@ -42,9 +42,9 @@ export class UserUpdateWithoutFamilyInput {
   })
   verificationStatus?: EnumVerificationStatusFieldUpdateOperationsInput;
 
-  @Field(() => PermissionUpdateOneWithoutUserInput, { nullable: true })
-  Permission?: PermissionUpdateOneWithoutUserInput;
+  @Field(() => PermissionUpdateOneWithoutUserNestedInput, { nullable: true })
+  Permission?: PermissionUpdateOneWithoutUserNestedInput;
 
-  @Field(() => RevenueUpdateManyWithoutUserInput, { nullable: true })
-  Revenue?: RevenueUpdateManyWithoutUserInput;
+  @Field(() => RevenueUpdateManyWithoutUserNestedInput, { nullable: true })
+  Revenue?: RevenueUpdateManyWithoutUserNestedInput;
 }

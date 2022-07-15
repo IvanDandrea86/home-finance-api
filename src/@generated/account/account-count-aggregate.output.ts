@@ -26,5 +26,8 @@ export class AccountCountAggregate {
   sold!: number;
 
   @Field(() => Int, { nullable: false })
+  familyId!: number;
+
+  @Field(() => Int, { nullable: false })
   _all!: number;
 }

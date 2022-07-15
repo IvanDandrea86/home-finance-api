@@ -7,17 +7,16 @@ import {
   ResolveField,
   Parent,
 } from '@nestjs/graphql';
-import { Prisma } from '@prisma/client';
+import { Prisma } from '.prisma/client';
 import { FindManyUserArgs } from 'src/@generated/user/find-many-user.args';
 import { UserCreateInput } from 'src/@generated/user/user-create.input';
 import { UserUpdateInput } from 'src/@generated/user/user-update.input';
 import { UserWhereUniqueInput } from 'src/@generated/user/user-where-unique.input';
 import { User } from 'src/@generated/user/user.model';
 import { IsAuthenticated } from 'src/auth/guards/check.authentication.guard';
-import { isAuthorizedGuard } from 'src/auth/guards/chek.authorization.guard';
-import { Roles } from 'src/decorator/roles.decorator';
-
 import { UserService } from './user.service';
+import { Auth } from 'src/decorator/auth.decorator';
+import { Permission } from 'src/@generated/permission/permission.model';
 
 @Resolver(() => User)
 export class UserResolver {
@@ -31,20 +30,15 @@ export class UserResolver {
   }
 
   @Query(() => [User], { name: 'users' })
-  @Roles('ADMIN')
-  @UseGuards(isAuthorizedGuard)
+  @Auth('ADMIN')
   findAll(@Args() args: FindManyUserArgs) {
     return this.userService.findAll(args);
   }
 
   @Query(() => User, { name: 'user', nullable: true })
-  @Roles('ADMIN')
-  @UseGuards(isAuthorizedGuard)
-  findOne(
-    @Args('where') where: UserWhereUniqueInput,
-    include?: Prisma.UserInclude,
-  ) {
-    return this.userService.findOne(where, include);
+  @Auth('ADMIN')
+  findOne(@Args('where') where: UserWhereUniqueInput) {
+    return this.userService.findOne(where);
   }
 
   @Mutation(() => User)
@@ -57,8 +51,7 @@ export class UserResolver {
   }
 
   @Mutation(() => User)
-  @Roles('ADMIN')
-  @UseGuards(isAuthorizedGuard)
+  @Auth('ADMIN')
   removeUser(@Args('where') where: UserWhereUniqueInput) {
     return this.userService.remove(where);
   }

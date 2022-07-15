@@ -31,6 +31,9 @@ export class AccountGroupBy {
   @Field(() => Int, { nullable: false })
   sold!: number;
 
+  @Field(() => String, { nullable: true })
+  familyId?: string;
+
   @Field(() => AccountCountAggregate, { nullable: true })
   _count?: AccountCountAggregate;
 
