@@ -3,20 +3,25 @@ import {
   Injectable,
   NotFoundException,
 } from '@nestjs/common';
-import { Permission } from '@prisma/client';
 import * as bcrypt from 'bcrypt';
-import { Request } from 'express';
-import { COOKIENAME } from 'src/constants';
 import { PermissionService } from 'src/models/permission/permission.service';
 import { User } from '../@generated/user/user.model';
 import { UserService } from '../models/user/user.service';
 
+class EnhanceError implements Error {
+  message: string;
+  name: string;
+  cause: string;
+  constructor(message: string, name: string, cause: string) {
+    this.message = message;
+    this.name = name;
+    this.cause = cause;
+  }
+}
+
 @Injectable()
 export class AuthService {
-  constructor(
-    private userService: UserService,
-    private permissionService: PermissionService,
-  ) {}
+  constructor(private userService: UserService) {}
 
   async validateUser(email: string, password: string): Promise<any> {
     const user = await this.userService.findOne(
@@ -26,12 +31,12 @@ export class AuthService {
       { Permission: true },
     );
     if (!user) {
-      throw new NotFoundException('constant.EMAIL_NOT_FOUND');
+      throw new NotFoundException('email', 'Email not found');
     }
     const passwordIsValid = await bcrypt.compare(password, user.password);
-    console.log(passwordIsValid);
+
     if (passwordIsValid) return user;
-    else throw new BadGatewayException('constant.PROVIDED_WRONG_PASSWORD');
+    else throw new BadGatewayException('password', 'Bad passowrd');
   }
 
   async login(user: User) {

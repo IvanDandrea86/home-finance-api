@@ -7,7 +7,6 @@ import { AuthenticationError } from 'apollo-server-express';
 export class SessionLocalAuthGuard extends AuthGuard('local') {
   async canActivate(context: ExecutionContext): Promise<boolean> {
     const ctxRequest = GqlExecutionContext.create(context).getContext().req;
-    console.log(ctxRequest.user);
     await super.logIn(ctxRequest);
     return ctxRequest ? true : false;
   }

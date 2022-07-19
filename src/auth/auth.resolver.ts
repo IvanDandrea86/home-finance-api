@@ -27,10 +27,13 @@ export class AuthResolver {
   }
 
   @Query(() => User, { nullable: true })
-  whoAmI(@CurrentUser() user: User | null) {
+  async whoAmI(@CurrentUser() user: User | null, @Context() context: any) {
+    console.log(context.req.isAuthenticated());
+    console.log(user);
     if (user) {
-      return this.userService.findOne({ id: user.id });
+      return await this.userService.findOne({ id: user.id });
     }
+
     return null;
   }
 
