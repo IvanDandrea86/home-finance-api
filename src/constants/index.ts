@@ -4,6 +4,6 @@ export const SECRET = process.env.SECRET;
 export const ALLOW_ORIGIN = process.env.ALLOW_ORIGIN;
 export const ONEDAY = 1000 * 60 * 60 * 24;
 
-export const REDIS_URL = process.env.REDIS_URL;
+export const REDIS_URL = process.env.REDISCLOUD_URL;
 
 export const SESSIONSECRET = process.env.SESSIONSECRET;
