@@ -3,6 +3,7 @@ import { InputType } from '@nestjs/graphql';
 import { VerificationStatus } from '../prisma/verification-status.enum';
 import { FamilyCreateNestedOneWithoutMembersInput } from '../family/family-create-nested-one-without-members.input';
 import { RevenueCreateNestedManyWithoutUserInput } from '../revenue/revenue-create-nested-many-without-user.input';
+import { DetailCreateNestedManyWithoutUserInput } from '../detail/detail-create-nested-many-without-user.input';
 
 @InputType()
 export class UserCreateWithoutPermissionInput {
@@ -41,4 +42,7 @@ export class UserCreateWithoutPermissionInput {
 
   @Field(() => RevenueCreateNestedManyWithoutUserInput, { nullable: true })
   Revenue?: RevenueCreateNestedManyWithoutUserInput;
+
+  @Field(() => DetailCreateNestedManyWithoutUserInput, { nullable: true })
+  Mandate?: DetailCreateNestedManyWithoutUserInput;
 }

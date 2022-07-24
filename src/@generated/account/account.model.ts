@@ -2,8 +2,11 @@ import { Field } from '@nestjs/graphql';
 import { ObjectType } from '@nestjs/graphql';
 import { ID } from '@nestjs/graphql';
 import { AccountType } from '../prisma/account-type.enum';
-import { Int } from '@nestjs/graphql';
+import { Charge } from '../charge/charge.model';
+import { Float } from '@nestjs/graphql';
 import { Family } from '../family/family.model';
+import { Expense } from '../expense/expense.model';
+import { AccountCount } from './account-count.output';
 
 @ObjectType()
 export class Account {
@@ -22,10 +25,13 @@ export class Account {
   @Field(() => String, { nullable: false })
   name!: string;
 
-  @Field(() => Int, { nullable: false, defaultValue: 0 })
+  @Field(() => [Charge], { nullable: true })
+  charge?: Array<Charge>;
+
+  @Field(() => Float, { nullable: false, defaultValue: 0 })
   monthlyBudget!: number;
 
-  @Field(() => Int, { nullable: false, defaultValue: 0 })
+  @Field(() => Float, { nullable: false, defaultValue: 0 })
   sold!: number;
 
   @Field(() => Family, { nullable: true })
@@ -33,4 +39,10 @@ export class Account {
 
   @Field(() => String, { nullable: true })
   familyId!: string | null;
+
+  @Field(() => [Expense], { nullable: true })
+  Expense?: Array<Expense>;
+
+  @Field(() => AccountCount, { nullable: false })
+  _count?: AccountCount;
 }

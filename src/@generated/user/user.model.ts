@@ -5,6 +5,7 @@ import { VerificationStatus } from '../prisma/verification-status.enum';
 import { Permission } from '../permission/permission.model';
 import { Family } from '../family/family.model';
 import { Revenue } from '../revenue/revenue.model';
+import { Detail } from '../detail/detail.model';
 import { UserCount } from './user-count.output';
 
 @ObjectType()
@@ -53,6 +54,9 @@ export class User {
 
   @Field(() => [Revenue], { nullable: true })
   Revenue?: Array<Revenue>;
+
+  @Field(() => [Detail], { nullable: true })
+  Mandate?: Array<Detail>;
 
   @Field(() => UserCount, { nullable: false })
   _count?: UserCount;

@@ -1,5 +1,6 @@
 import { Field } from '@nestjs/graphql';
 import { ObjectType } from '@nestjs/graphql';
+import { Float } from '@nestjs/graphql';
 import { Int } from '@nestjs/graphql';
 import { DetailCountAggregate } from './detail-count-aggregate.output';
 import { DetailAvgAggregate } from './detail-avg-aggregate.output';
@@ -18,14 +19,20 @@ export class DetailGroupBy {
   @Field(() => Date, { nullable: false })
   updatedAt!: Date | string;
 
+  @Field(() => String, { nullable: false })
+  name!: string;
+
   @Field(() => String, { nullable: true })
   expenseId?: string;
 
-  @Field(() => Int, { nullable: false })
-  monthlyCost!: number;
+  @Field(() => Float, { nullable: false })
+  cost!: number;
 
   @Field(() => Int, { nullable: true })
   period?: number;
+
+  @Field(() => String, { nullable: true })
+  userId?: string;
 
   @Field(() => DetailCountAggregate, { nullable: true })
   _count?: DetailCountAggregate;

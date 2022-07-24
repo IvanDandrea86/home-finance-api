@@ -7,7 +7,7 @@ import {
   ResolveField,
   Parent,
 } from '@nestjs/graphql';
-import { Prisma } from '.prisma/client';
+import { Prisma } from '@prisma/client';
 import { FindManyUserArgs } from 'src/@generated/user/find-many-user.args';
 import { UserCreateInput } from 'src/@generated/user/user-create.input';
 import { UserUpdateInput } from 'src/@generated/user/user-update.input';
@@ -36,7 +36,7 @@ export class UserResolver {
   }
 
   @Query(() => User, { name: 'user', nullable: true })
-  @Auth('ADMIN')
+  // @Auth('ADMIN')
   findOne(@Args('where') where: UserWhereUniqueInput) {
     return this.userService.findOne(where);
   }

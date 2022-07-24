@@ -3,7 +3,7 @@ import { InputType } from '@nestjs/graphql';
 import { StringFilter } from '../prisma/string-filter.input';
 import { DateTimeFilter } from '../prisma/date-time-filter.input';
 import { EnumAccountTypeFilter } from '../prisma/enum-account-type-filter.input';
-import { IntFilter } from '../prisma/int-filter.input';
+import { FloatFilter } from '../prisma/float-filter.input';
 import { StringNullableFilter } from '../prisma/string-nullable-filter.input';
 
 @InputType()
@@ -32,11 +32,11 @@ export class AccountScalarWhereInput {
   @Field(() => StringFilter, { nullable: true })
   name?: StringFilter;
 
-  @Field(() => IntFilter, { nullable: true })
-  monthlyBudget?: IntFilter;
+  @Field(() => FloatFilter, { nullable: true })
+  monthlyBudget?: FloatFilter;
 
-  @Field(() => IntFilter, { nullable: true })
-  sold?: IntFilter;
+  @Field(() => FloatFilter, { nullable: true })
+  sold?: FloatFilter;
 
   @Field(() => StringNullableFilter, { nullable: true })
   familyId?: StringNullableFilter;

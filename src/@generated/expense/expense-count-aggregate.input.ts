@@ -22,5 +22,8 @@ export class ExpenseCountAggregateInput {
   familyId?: true;
 
   @Field(() => Boolean, { nullable: true })
+  accountId?: true;
+
+  @Field(() => Boolean, { nullable: true })
   _all?: true;
 }

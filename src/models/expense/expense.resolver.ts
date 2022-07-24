@@ -1,3 +1,4 @@
+import { UseGuards } from '@nestjs/common';
 import {
   Args,
   Mutation,
@@ -11,6 +12,7 @@ import { ExpenseUpdateInput } from 'src/@generated/expense/expense-update.input'
 import { ExpenseWhereUniqueInput } from 'src/@generated/expense/expense-where-unique.input';
 import { Expense } from 'src/@generated/expense/expense.model';
 import { FindManyExpenseArgs } from 'src/@generated/expense/find-many-expense.args';
+import { IsAuthenticated } from 'src/auth/guards/check.authentication.guard';
 
 import { ExpenseService } from './expense.service';
 
@@ -28,11 +30,13 @@ export class ExpenseResolver {
   }
 
   @Query(() => [Expense], { name: 'expenses' })
+  @UseGuards(IsAuthenticated)
   findAll(@Args() args: FindManyExpenseArgs) {
     return this.expenseService.findAll(args);
   }
 
   @Query(() => Expense, { name: 'expense', nullable: true })
+  @UseGuards(IsAuthenticated)
   findOne(@Args('where') where: ExpenseWhereUniqueInput) {
     return this.expenseService.findOne(where);
   }

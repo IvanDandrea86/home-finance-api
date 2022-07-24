@@ -14,13 +14,19 @@ export class DetailCountAggregate {
   updatedAt!: number;
 
   @Field(() => Int, { nullable: false })
+  name!: number;
+
+  @Field(() => Int, { nullable: false })
   expenseId!: number;
 
   @Field(() => Int, { nullable: false })
-  monthlyCost!: number;
+  cost!: number;
 
   @Field(() => Int, { nullable: false })
   period!: number;
+
+  @Field(() => Int, { nullable: false })
+  userId!: number;
 
   @Field(() => Int, { nullable: false })
   _all!: number;

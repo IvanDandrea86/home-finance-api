@@ -8,6 +8,7 @@ import { EnumVerificationStatusFieldUpdateOperationsInput } from '../prisma/enum
 import { PermissionUpdateOneWithoutUserNestedInput } from '../permission/permission-update-one-without-user-nested.input';
 import { FamilyUpdateOneWithoutMembersNestedInput } from '../family/family-update-one-without-members-nested.input';
 import { RevenueUpdateManyWithoutUserNestedInput } from '../revenue/revenue-update-many-without-user-nested.input';
+import { DetailUpdateManyWithoutUserNestedInput } from '../detail/detail-update-many-without-user-nested.input';
 
 @InputType()
 export class UserUpdateInput {
@@ -51,4 +52,7 @@ export class UserUpdateInput {
 
   @Field(() => RevenueUpdateManyWithoutUserNestedInput, { nullable: true })
   Revenue?: RevenueUpdateManyWithoutUserNestedInput;
+
+  @Field(() => DetailUpdateManyWithoutUserNestedInput, { nullable: true })
+  Mandate?: DetailUpdateManyWithoutUserNestedInput;
 }

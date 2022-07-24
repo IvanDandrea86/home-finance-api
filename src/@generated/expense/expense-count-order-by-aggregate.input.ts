@@ -21,4 +21,7 @@ export class ExpenseCountOrderByAggregateInput {
 
   @Field(() => SortOrder, { nullable: true })
   familyId?: keyof typeof SortOrder;
+
+  @Field(() => SortOrder, { nullable: true })
+  accountId?: keyof typeof SortOrder;
 }

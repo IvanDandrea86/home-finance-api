@@ -1,7 +1,9 @@
 import { Field } from '@nestjs/graphql';
 import { InputType } from '@nestjs/graphql';
 import { AccountType } from '../prisma/account-type.enum';
-import { Int } from '@nestjs/graphql';
+import { ChargeCreateNestedManyWithoutAccountInput } from '../charge/charge-create-nested-many-without-account.input';
+import { Float } from '@nestjs/graphql';
+import { ExpenseCreateNestedManyWithoutAccountInput } from '../expense/expense-create-nested-many-without-account.input';
 
 @InputType()
 export class AccountCreateWithoutFamilyInput {
@@ -20,9 +22,15 @@ export class AccountCreateWithoutFamilyInput {
   @Field(() => String, { nullable: false })
   name!: string;
 
-  @Field(() => Int, { nullable: true })
+  @Field(() => ChargeCreateNestedManyWithoutAccountInput, { nullable: true })
+  charge?: ChargeCreateNestedManyWithoutAccountInput;
+
+  @Field(() => Float, { nullable: true })
   monthlyBudget?: number;
 
-  @Field(() => Int, { nullable: true })
+  @Field(() => Float, { nullable: true })
   sold?: number;
+
+  @Field(() => ExpenseCreateNestedManyWithoutAccountInput, { nullable: true })
+  Expense?: ExpenseCreateNestedManyWithoutAccountInput;
 }

@@ -1,7 +1,6 @@
 import { InputType, Field, ObjectType } from '@nestjs/graphql';
 import { Role } from '@prisma/client';
 import { User } from '../..//@generated/user/user.model';
-import { Error } from '../../../src/types/index';
 
 @ObjectType()
 export class AuthResponse {
@@ -13,7 +12,7 @@ export class AuthResponse {
   user: User;
 }
 @ObjectType()
-export class AuthError implements Error {
+export class AuthError extends Error {
   @Field(() => String, { nullable: true })
   message: string;
   @Field(() => String, { nullable: true })

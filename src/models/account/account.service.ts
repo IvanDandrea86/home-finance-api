@@ -20,7 +20,10 @@ export class AccountService {
   }
 
   async findAll(args: FindManyAccountArgs) {
-    return this.prisma.account.findMany(args);
+    return this.prisma.account.findMany({
+      ...args,
+      include: { charge: true, Expense: true },
+    });
   }
 
   findOne(where: AccountWhereUniqueInput) {

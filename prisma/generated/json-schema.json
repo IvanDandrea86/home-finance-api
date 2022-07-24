@@ -74,6 +74,12 @@
           "items": {
             "$ref": "#/definitions/Revenue"
           }
+        },
+        "Mandate": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Detail"
+          }
         }
       }
     },
@@ -196,13 +202,23 @@
           }
         },
         "monthlyCost": {
-          "type": "integer",
+          "type": "number",
           "default": 0
         },
         "Family": {
           "anyOf": [
             {
               "$ref": "#/definitions/Family"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "Account": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Account"
             },
             {
               "type": "null"
@@ -225,6 +241,9 @@
           "type": "string",
           "format": "date-time"
         },
+        "name": {
+          "type": "string"
+        },
         "Expense": {
           "anyOf": [
             {
@@ -235,8 +254,8 @@
             }
           ]
         },
-        "monthlyCost": {
-          "type": "integer",
+        "cost": {
+          "type": "number",
           "default": 0
         },
         "period": {
@@ -244,7 +263,17 @@
             "integer",
             "null"
           ],
-          "default": 1
+          "default": 12
+        },
+        "user": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/User"
+            },
+            {
+              "type": "null"
+            }
+          ]
         }
       }
     },
@@ -272,18 +301,62 @@
         "name": {
           "type": "string"
         },
+        "charge": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Charge"
+          }
+        },
         "monthlyBudget": {
-          "type": "integer",
+          "type": "number",
           "default": 0
         },
         "sold": {
-          "type": "integer",
+          "type": "number",
           "default": 0
         },
         "Family": {
           "anyOf": [
             {
               "$ref": "#/definitions/Family"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "Expense": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Expense"
+          }
+        }
+      }
+    },
+    "Charge": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "name": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "cost": {
+          "type": "number"
+        },
+        "Account": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Account"
             },
             {
               "type": "null"
@@ -315,6 +388,9 @@
     },
     "account": {
       "$ref": "#/definitions/Account"
+    },
+    "charge": {
+      "$ref": "#/definitions/Charge"
     }
   }
 }

@@ -46,7 +46,8 @@ export class AccountResolver {
 
   // ADMINLAND
   @Query(() => [Account], { name: 'accounts' })
-  @Auth('ADMIN')
+  // @Auth('ADMIN')
+  // @UseGuards(IsAuthenticated)
   findAll(@Args() args: FindManyAccountArgs) {
     return this.accountService.findAll(args);
   }
@@ -57,7 +58,7 @@ export class AccountResolver {
   }
 
   @Mutation(() => Account)
-  @Auth('ADMIN')
+  // @Auth('ADMIN')
   updateAccount(
     @Args('where') where: AccountWhereUniqueInput,
     @Args('updateAccountInput') updateAccountInput: AccountUpdateInput,
@@ -73,7 +74,7 @@ export class AccountResolver {
 
   // USERLAND
   @Query(() => [Account], { name: 'accountsUser' })
-  @UseGuards(IsAuthenticated)
+  // @UseGuards(IsAuthenticated)
   async findAllUser(@Context() context: any) {
     return this.accountService.findAll({
       where: { familyId: { equals: context.req.user.familyId } },

@@ -3,9 +3,11 @@ import { InputType } from '@nestjs/graphql';
 import { StringFilter } from '../prisma/string-filter.input';
 import { DateTimeFilter } from '../prisma/date-time-filter.input';
 import { EnumAccountTypeFilter } from '../prisma/enum-account-type-filter.input';
-import { IntFilter } from '../prisma/int-filter.input';
+import { ChargeListRelationFilter } from '../charge/charge-list-relation-filter.input';
+import { FloatFilter } from '../prisma/float-filter.input';
 import { FamilyRelationFilter } from '../family/family-relation-filter.input';
 import { StringNullableFilter } from '../prisma/string-nullable-filter.input';
+import { ExpenseListRelationFilter } from '../expense/expense-list-relation-filter.input';
 
 @InputType()
 export class AccountWhereInput {
@@ -33,15 +35,21 @@ export class AccountWhereInput {
   @Field(() => StringFilter, { nullable: true })
   name?: StringFilter;
 
-  @Field(() => IntFilter, { nullable: true })
-  monthlyBudget?: IntFilter;
+  @Field(() => ChargeListRelationFilter, { nullable: true })
+  charge?: ChargeListRelationFilter;
 
-  @Field(() => IntFilter, { nullable: true })
-  sold?: IntFilter;
+  @Field(() => FloatFilter, { nullable: true })
+  monthlyBudget?: FloatFilter;
+
+  @Field(() => FloatFilter, { nullable: true })
+  sold?: FloatFilter;
 
   @Field(() => FamilyRelationFilter, { nullable: true })
   Family?: FamilyRelationFilter;
 
   @Field(() => StringNullableFilter, { nullable: true })
   familyId?: StringNullableFilter;
+
+  @Field(() => ExpenseListRelationFilter, { nullable: true })
+  Expense?: ExpenseListRelationFilter;
 }

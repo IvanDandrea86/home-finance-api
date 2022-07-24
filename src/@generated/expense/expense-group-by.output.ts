@@ -1,6 +1,6 @@
 import { Field } from '@nestjs/graphql';
 import { ObjectType } from '@nestjs/graphql';
-import { Int } from '@nestjs/graphql';
+import { Float } from '@nestjs/graphql';
 import { ExpenseCountAggregate } from './expense-count-aggregate.output';
 import { ExpenseAvgAggregate } from './expense-avg-aggregate.output';
 import { ExpenseSumAggregate } from './expense-sum-aggregate.output';
@@ -21,11 +21,14 @@ export class ExpenseGroupBy {
   @Field(() => String, { nullable: false })
   name!: string;
 
-  @Field(() => Int, { nullable: false })
+  @Field(() => Float, { nullable: false })
   monthlyCost!: number;
 
   @Field(() => String, { nullable: true })
   familyId?: string;
+
+  @Field(() => String, { nullable: true })
+  accountId?: string;
 
   @Field(() => ExpenseCountAggregate, { nullable: true })
   _count?: ExpenseCountAggregate;

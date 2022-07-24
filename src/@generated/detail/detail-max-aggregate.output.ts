@@ -1,5 +1,6 @@
 import { Field } from '@nestjs/graphql';
 import { ObjectType } from '@nestjs/graphql';
+import { Float } from '@nestjs/graphql';
 import { Int } from '@nestjs/graphql';
 
 @ObjectType()
@@ -14,11 +15,17 @@ export class DetailMaxAggregate {
   updatedAt?: Date | string;
 
   @Field(() => String, { nullable: true })
+  name?: string;
+
+  @Field(() => String, { nullable: true })
   expenseId?: string;
 
-  @Field(() => Int, { nullable: true })
-  monthlyCost?: number;
+  @Field(() => Float, { nullable: true })
+  cost?: number;
 
   @Field(() => Int, { nullable: true })
   period?: number;
+
+  @Field(() => String, { nullable: true })
+  userId?: string;
 }

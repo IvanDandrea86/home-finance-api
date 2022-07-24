@@ -1,6 +1,6 @@
 import { Field } from '@nestjs/graphql';
 import { InputType } from '@nestjs/graphql';
-import { Int } from '@nestjs/graphql';
+import { Float } from '@nestjs/graphql';
 
 @InputType()
 export class ExpenseCreateManyInput {
@@ -16,9 +16,12 @@ export class ExpenseCreateManyInput {
   @Field(() => String, { nullable: false })
   name!: string;
 
-  @Field(() => Int, { nullable: true })
+  @Field(() => Float, { nullable: true })
   monthlyCost?: number;
 
   @Field(() => String, { nullable: true })
   familyId?: string;
+
+  @Field(() => String, { nullable: true })
+  accountId?: string;
 }

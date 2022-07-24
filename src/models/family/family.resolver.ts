@@ -32,7 +32,7 @@ export class FamilyResolver {
   }
 
   @Query(() => [Family], { name: 'familys' })
-  @UseGuards(IsAuthenticated)
+  // @UseGuards(IsAuthenticated)
   findAll(@Args() args: FindManyFamilyArgs) {
     return this.familyService.findAll(args);
   }

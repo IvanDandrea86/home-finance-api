@@ -20,4 +20,7 @@ export class ExpenseMinAggregateInput {
 
   @Field(() => Boolean, { nullable: true })
   familyId?: true;
+
+  @Field(() => Boolean, { nullable: true })
+  accountId?: true;
 }

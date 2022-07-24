@@ -2,7 +2,7 @@ import { Field } from '@nestjs/graphql';
 import { InputType } from '@nestjs/graphql';
 import { StringWithAggregatesFilter } from '../prisma/string-with-aggregates-filter.input';
 import { DateTimeWithAggregatesFilter } from '../prisma/date-time-with-aggregates-filter.input';
-import { IntWithAggregatesFilter } from '../prisma/int-with-aggregates-filter.input';
+import { FloatWithAggregatesFilter } from '../prisma/float-with-aggregates-filter.input';
 import { StringNullableWithAggregatesFilter } from '../prisma/string-nullable-with-aggregates-filter.input';
 
 @InputType()
@@ -28,9 +28,12 @@ export class ExpenseScalarWhereWithAggregatesInput {
   @Field(() => StringWithAggregatesFilter, { nullable: true })
   name?: StringWithAggregatesFilter;
 
-  @Field(() => IntWithAggregatesFilter, { nullable: true })
-  monthlyCost?: IntWithAggregatesFilter;
+  @Field(() => FloatWithAggregatesFilter, { nullable: true })
+  monthlyCost?: FloatWithAggregatesFilter;
 
   @Field(() => StringNullableWithAggregatesFilter, { nullable: true })
   familyId?: StringNullableWithAggregatesFilter;
+
+  @Field(() => StringNullableWithAggregatesFilter, { nullable: true })
+  accountId?: StringNullableWithAggregatesFilter;
 }

@@ -5,7 +5,7 @@ import { Float } from '@nestjs/graphql';
 @ObjectType()
 export class DetailAvgAggregate {
   @Field(() => Float, { nullable: true })
-  monthlyCost?: number;
+  cost?: number;
 
   @Field(() => Float, { nullable: true })
   period?: number;

@@ -4,9 +4,11 @@ export enum DetailScalarFieldEnum {
   id = 'id',
   createdAt = 'createdAt',
   updatedAt = 'updatedAt',
+  name = 'name',
   expenseId = 'expenseId',
-  monthlyCost = 'monthlyCost',
+  cost = 'cost',
   period = 'period',
+  userId = 'userId',
 }
 
 registerEnumType(DetailScalarFieldEnum, {

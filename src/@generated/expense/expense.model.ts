@@ -2,8 +2,9 @@ import { Field } from '@nestjs/graphql';
 import { ObjectType } from '@nestjs/graphql';
 import { ID } from '@nestjs/graphql';
 import { Detail } from '../detail/detail.model';
-import { Int } from '@nestjs/graphql';
+import { Float } from '@nestjs/graphql';
 import { Family } from '../family/family.model';
+import { Account } from '../account/account.model';
 import { ExpenseCount } from './expense-count.output';
 
 @ObjectType()
@@ -23,7 +24,7 @@ export class Expense {
   @Field(() => [Detail], { nullable: true })
   expenseDetails?: Array<Detail>;
 
-  @Field(() => Int, { nullable: false, defaultValue: 0 })
+  @Field(() => Float, { nullable: false, defaultValue: 0 })
   monthlyCost!: number;
 
   @Field(() => Family, { nullable: true })
@@ -31,6 +32,12 @@ export class Expense {
 
   @Field(() => String, { nullable: true })
   familyId!: string | null;
+
+  @Field(() => Account, { nullable: true })
+  Account?: Account | null;
+
+  @Field(() => String, { nullable: true })
+  accountId!: string | null;
 
   @Field(() => ExpenseCount, { nullable: false })
   _count?: ExpenseCount;

@@ -8,6 +8,7 @@ import { EnumVerificationStatusFilter } from '../prisma/enum-verification-status
 import { PermissionRelationFilter } from '../permission/permission-relation-filter.input';
 import { FamilyRelationFilter } from '../family/family-relation-filter.input';
 import { RevenueListRelationFilter } from '../revenue/revenue-list-relation-filter.input';
+import { DetailListRelationFilter } from '../detail/detail-list-relation-filter.input';
 
 @InputType()
 export class UserWhereInput {
@@ -61,4 +62,7 @@ export class UserWhereInput {
 
   @Field(() => RevenueListRelationFilter, { nullable: true })
   Revenue?: RevenueListRelationFilter;
+
+  @Field(() => DetailListRelationFilter, { nullable: true })
+  Mandate?: DetailListRelationFilter;
 }

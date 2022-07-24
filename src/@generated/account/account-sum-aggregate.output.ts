@@ -1,12 +1,12 @@
 import { Field } from '@nestjs/graphql';
 import { ObjectType } from '@nestjs/graphql';
-import { Int } from '@nestjs/graphql';
+import { Float } from '@nestjs/graphql';
 
 @ObjectType()
 export class AccountSumAggregate {
-  @Field(() => Int, { nullable: true })
+  @Field(() => Float, { nullable: true })
   monthlyBudget?: number;
 
-  @Field(() => Int, { nullable: true })
+  @Field(() => Float, { nullable: true })
   sold?: number;
 }

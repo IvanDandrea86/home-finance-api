@@ -7,9 +7,11 @@ import { RevenueModule } from './revenue/revenue.module';
 import { ExpenseModule } from './expense/expense.module';
 import { AccountModule } from './account/account.module';
 import { DetailModule } from './detail/detail.module';
+import { ChargeModule } from './charge/charge.module';
 
 @Module({
   imports: [
+    ChargeModule,
     DetailModule,
     AccountModule,
     ExpenseModule,
@@ -19,6 +21,7 @@ import { DetailModule } from './detail/detail.module';
     UserModule,
   ],
   exports: [
+    ChargeModule,
     DetailModule,
     AccountModule,
     ExpenseModule,

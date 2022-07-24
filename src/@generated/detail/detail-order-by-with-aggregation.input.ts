@@ -19,13 +19,19 @@ export class DetailOrderByWithAggregationInput {
   updatedAt?: keyof typeof SortOrder;
 
   @Field(() => SortOrder, { nullable: true })
+  name?: keyof typeof SortOrder;
+
+  @Field(() => SortOrder, { nullable: true })
   expenseId?: keyof typeof SortOrder;
 
   @Field(() => SortOrder, { nullable: true })
-  monthlyCost?: keyof typeof SortOrder;
+  cost?: keyof typeof SortOrder;
 
   @Field(() => SortOrder, { nullable: true })
   period?: keyof typeof SortOrder;
+
+  @Field(() => SortOrder, { nullable: true })
+  userId?: keyof typeof SortOrder;
 
   @Field(() => DetailCountOrderByAggregateInput, { nullable: true })
   _count?: DetailCountOrderByAggregateInput;

@@ -40,6 +40,7 @@ model User {
   Family             Family?            @relation(fields: [familyId], references: [id])
   familyId           String?
   Revenue            Revenue[]
+  Mandate            Detail[]
 }
 
 enum VerificationStatus {
@@ -88,19 +89,24 @@ model Expense {
   updatedAt      DateTime @updatedAt
   name           String   @unique
   expenseDetails Detail[]
-  monthlyCost    Int      @default(0)
+  monthlyCost    Float    @default(0)
   Family         Family?  @relation(fields: [familyId], references: [id])
   familyId       String?
+  Account        Account? @relation(fields: [accountId], references: [id])
+  accountId      String?
 }
 
 model Detail {
-  id          String   @id @default(uuid())
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-  Expense     Expense? @relation(fields: [expenseId], references: [id])
-  expenseId   String?
-  monthlyCost Int      @default(0)
-  period      Int?     @default(1)
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  name      String
+  Expense   Expense? @relation(fields: [expenseId], references: [id])
+  expenseId String?
+  cost      Float    @default(0)
+  period    Int?     @default(12)
+  user      User?    @relation(fields: [userId], references: [id])
+  userId    String?
 }
 
 model Account {
@@ -109,10 +115,22 @@ model Account {
   type          AccountType
   updatedAt     DateTime    @updatedAt
   name          String
-  monthlyBudget Int         @default(0)
-  sold          Int         @default(0)
+  charge        Charge[]
+  monthlyBudget Float       @default(0)
+  sold          Float       @default(0)
   Family        Family?     @relation(fields: [familyId], references: [id])
   familyId      String?
+  Expense       Expense[]
+}
+
+model Charge {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  name      String
+  updatedAt DateTime @updatedAt
+  cost      Float
+  Account   Account? @relation(fields: [accountId], references: [id])
+  accountId String?
 }
 
 enum AccountType {

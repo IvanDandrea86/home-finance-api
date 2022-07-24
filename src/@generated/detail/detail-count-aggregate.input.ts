@@ -13,13 +13,19 @@ export class DetailCountAggregateInput {
   updatedAt?: true;
 
   @Field(() => Boolean, { nullable: true })
+  name?: true;
+
+  @Field(() => Boolean, { nullable: true })
   expenseId?: true;
 
   @Field(() => Boolean, { nullable: true })
-  monthlyCost?: true;
+  cost?: true;
 
   @Field(() => Boolean, { nullable: true })
   period?: true;
+
+  @Field(() => Boolean, { nullable: true })
+  userId?: true;
 
   @Field(() => Boolean, { nullable: true })
   _all?: true;

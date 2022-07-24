@@ -20,7 +20,10 @@ export class ExpenseService {
   }
 
   findAll(args: FindManyExpenseArgs) {
-    return this.prisma.expense.findMany(args);
+    return this.prisma.expense.findMany({
+      ...args,
+      include: { expenseDetails: { include: { user: true } }, Account: true },
+    });
   }
 
   findOne(where: ExpenseWhereUniqueInput) {

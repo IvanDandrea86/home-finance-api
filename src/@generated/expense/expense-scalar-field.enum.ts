@@ -7,6 +7,7 @@ export enum ExpenseScalarFieldEnum {
   name = 'name',
   monthlyCost = 'monthlyCost',
   familyId = 'familyId',
+  accountId = 'accountId',
 }
 
 registerEnumType(ExpenseScalarFieldEnum, {

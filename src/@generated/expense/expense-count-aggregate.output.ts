@@ -23,5 +23,8 @@ export class ExpenseCountAggregate {
   familyId!: number;
 
   @Field(() => Int, { nullable: false })
+  accountId!: number;
+
+  @Field(() => Int, { nullable: false })
   _all!: number;
 }

@@ -7,6 +7,7 @@ import { NullableDateTimeFieldUpdateOperationsInput } from '../prisma/nullable-d
 import { EnumVerificationStatusFieldUpdateOperationsInput } from '../prisma/enum-verification-status-field-update-operations.input';
 import { PermissionUncheckedUpdateOneWithoutUserNestedInput } from '../permission/permission-unchecked-update-one-without-user-nested.input';
 import { RevenueUncheckedUpdateManyWithoutUserNestedInput } from '../revenue/revenue-unchecked-update-many-without-user-nested.input';
+import { DetailUncheckedUpdateManyWithoutUserNestedInput } from '../detail/detail-unchecked-update-many-without-user-nested.input';
 
 @InputType()
 export class UserUncheckedUpdateInput {
@@ -54,4 +55,9 @@ export class UserUncheckedUpdateInput {
     nullable: true,
   })
   Revenue?: RevenueUncheckedUpdateManyWithoutUserNestedInput;
+
+  @Field(() => DetailUncheckedUpdateManyWithoutUserNestedInput, {
+    nullable: true,
+  })
+  Mandate?: DetailUncheckedUpdateManyWithoutUserNestedInput;
 }

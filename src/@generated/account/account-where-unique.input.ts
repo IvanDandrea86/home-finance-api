@@ -5,7 +5,4 @@ import { InputType } from '@nestjs/graphql';
 export class AccountWhereUniqueInput {
   @Field(() => String, { nullable: true })
   id?: string;
-
-  @Field(() => String, { nullable: true })
-  name?: string;
 }

@@ -1,7 +1,7 @@
 import { Field } from '@nestjs/graphql';
 import { InputType } from '@nestjs/graphql';
 import { AccountType } from '../prisma/account-type.enum';
-import { Int } from '@nestjs/graphql';
+import { Float } from '@nestjs/graphql';
 
 @InputType()
 export class AccountCreateManyInput {
@@ -20,10 +20,10 @@ export class AccountCreateManyInput {
   @Field(() => String, { nullable: false })
   name!: string;
 
-  @Field(() => Int, { nullable: true })
+  @Field(() => Float, { nullable: true })
   monthlyBudget?: number;
 
-  @Field(() => Int, { nullable: true })
+  @Field(() => Float, { nullable: true })
   sold?: number;
 
   @Field(() => String, { nullable: true })

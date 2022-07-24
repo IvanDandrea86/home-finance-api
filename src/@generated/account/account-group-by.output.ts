@@ -1,7 +1,7 @@
 import { Field } from '@nestjs/graphql';
 import { ObjectType } from '@nestjs/graphql';
 import { AccountType } from '../prisma/account-type.enum';
-import { Int } from '@nestjs/graphql';
+import { Float } from '@nestjs/graphql';
 import { AccountCountAggregate } from './account-count-aggregate.output';
 import { AccountAvgAggregate } from './account-avg-aggregate.output';
 import { AccountSumAggregate } from './account-sum-aggregate.output';
@@ -25,10 +25,10 @@ export class AccountGroupBy {
   @Field(() => String, { nullable: false })
   name!: string;
 
-  @Field(() => Int, { nullable: false })
+  @Field(() => Float, { nullable: false })
   monthlyBudget!: number;
 
-  @Field(() => Int, { nullable: false })
+  @Field(() => Float, { nullable: false })
   sold!: number;
 
   @Field(() => String, { nullable: true })
