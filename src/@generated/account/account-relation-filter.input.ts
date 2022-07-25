@@ -4,9 +4,10 @@ import { AccountWhereInput } from './account-where.input';
 
 @InputType()
 export class AccountRelationFilter {
-  @Field(() => AccountWhereInput, { nullable: true })
-  is?: AccountWhereInput;
 
-  @Field(() => AccountWhereInput, { nullable: true })
-  isNot?: AccountWhereInput;
+    @Field(() => AccountWhereInput, {nullable:true})
+    is?: AccountWhereInput;
+
+    @Field(() => AccountWhereInput, {nullable:true})
+    isNot?: AccountWhereInput;
 }

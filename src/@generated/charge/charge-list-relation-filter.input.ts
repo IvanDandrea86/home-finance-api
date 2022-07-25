@@ -4,12 +4,13 @@ import { ChargeWhereInput } from './charge-where.input';
 
 @InputType()
 export class ChargeListRelationFilter {
-  @Field(() => ChargeWhereInput, { nullable: true })
-  every?: ChargeWhereInput;
 
-  @Field(() => ChargeWhereInput, { nullable: true })
-  some?: ChargeWhereInput;
+    @Field(() => ChargeWhereInput, {nullable:true})
+    every?: ChargeWhereInput;
 
-  @Field(() => ChargeWhereInput, { nullable: true })
-  none?: ChargeWhereInput;
+    @Field(() => ChargeWhereInput, {nullable:true})
+    some?: ChargeWhereInput;
+
+    @Field(() => ChargeWhereInput, {nullable:true})
+    none?: ChargeWhereInput;
 }

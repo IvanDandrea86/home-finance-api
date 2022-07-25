@@ -6,12 +6,13 @@ import { RevenueMaxAggregate } from './revenue-max-aggregate.output';
 
 @ObjectType()
 export class AggregateRevenue {
-  @Field(() => RevenueCountAggregate, { nullable: true })
-  _count?: RevenueCountAggregate;
 
-  @Field(() => RevenueMinAggregate, { nullable: true })
-  _min?: RevenueMinAggregate;
+    @Field(() => RevenueCountAggregate, {nullable:true})
+    _count?: RevenueCountAggregate;
 
-  @Field(() => RevenueMaxAggregate, { nullable: true })
-  _max?: RevenueMaxAggregate;
+    @Field(() => RevenueMinAggregate, {nullable:true})
+    _min?: RevenueMinAggregate;
+
+    @Field(() => RevenueMaxAggregate, {nullable:true})
+    _max?: RevenueMaxAggregate;
 }

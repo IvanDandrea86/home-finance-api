@@ -3,6 +3,7 @@ import { InputType } from '@nestjs/graphql';
 
 @InputType()
 export class ExpenseSumAggregateInput {
-  @Field(() => Boolean, { nullable: true })
-  monthlyCost?: true;
+
+    @Field(() => Boolean, {nullable:true})
+    monthlyCost?: true;
 }

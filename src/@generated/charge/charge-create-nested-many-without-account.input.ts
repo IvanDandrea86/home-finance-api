@@ -8,19 +8,20 @@ import { ChargeWhereUniqueInput } from './charge-where-unique.input';
 
 @InputType()
 export class ChargeCreateNestedManyWithoutAccountInput {
-  @Field(() => [ChargeCreateWithoutAccountInput], { nullable: true })
-  @Type(() => ChargeCreateWithoutAccountInput)
-  create?: Array<ChargeCreateWithoutAccountInput>;
 
-  @Field(() => [ChargeCreateOrConnectWithoutAccountInput], { nullable: true })
-  @Type(() => ChargeCreateOrConnectWithoutAccountInput)
-  connectOrCreate?: Array<ChargeCreateOrConnectWithoutAccountInput>;
+    @Field(() => [ChargeCreateWithoutAccountInput], {nullable:true})
+    @Type(() => ChargeCreateWithoutAccountInput)
+    create?: Array<ChargeCreateWithoutAccountInput>;
 
-  @Field(() => ChargeCreateManyAccountInputEnvelope, { nullable: true })
-  @Type(() => ChargeCreateManyAccountInputEnvelope)
-  createMany?: ChargeCreateManyAccountInputEnvelope;
+    @Field(() => [ChargeCreateOrConnectWithoutAccountInput], {nullable:true})
+    @Type(() => ChargeCreateOrConnectWithoutAccountInput)
+    connectOrCreate?: Array<ChargeCreateOrConnectWithoutAccountInput>;
 
-  @Field(() => [ChargeWhereUniqueInput], { nullable: true })
-  @Type(() => ChargeWhereUniqueInput)
-  connect?: Array<ChargeWhereUniqueInput>;
+    @Field(() => ChargeCreateManyAccountInputEnvelope, {nullable:true})
+    @Type(() => ChargeCreateManyAccountInputEnvelope)
+    createMany?: ChargeCreateManyAccountInputEnvelope;
+
+    @Field(() => [ChargeWhereUniqueInput], {nullable:true})
+    @Type(() => ChargeWhereUniqueInput)
+    connect?: Array<ChargeWhereUniqueInput>;
 }

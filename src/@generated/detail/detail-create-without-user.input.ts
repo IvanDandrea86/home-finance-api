@@ -6,26 +6,25 @@ import { Int } from '@nestjs/graphql';
 
 @InputType()
 export class DetailCreateWithoutUserInput {
-  @Field(() => String, { nullable: true })
-  id?: string;
 
-  @Field(() => Date, { nullable: true })
-  createdAt?: Date | string;
+    @Field(() => String, {nullable:true})
+    id?: string;
 
-  @Field(() => Date, { nullable: true })
-  updatedAt?: Date | string;
+    @Field(() => Date, {nullable:true})
+    createdAt?: Date | string;
 
-  @Field(() => String, { nullable: false })
-  name!: string;
+    @Field(() => Date, {nullable:true})
+    updatedAt?: Date | string;
 
-  @Field(() => ExpenseCreateNestedOneWithoutExpenseDetailsInput, {
-    nullable: true,
-  })
-  Expense?: ExpenseCreateNestedOneWithoutExpenseDetailsInput;
+    @Field(() => String, {nullable:false})
+    name!: string;
 
-  @Field(() => Float, { nullable: true })
-  cost?: number;
+    @Field(() => ExpenseCreateNestedOneWithoutExpenseDetailsInput, {nullable:true})
+    Expense?: ExpenseCreateNestedOneWithoutExpenseDetailsInput;
 
-  @Field(() => Int, { nullable: true })
-  period?: number;
+    @Field(() => Float, {nullable:true})
+    cost?: number;
+
+    @Field(() => Int, {nullable:true})
+    period?: number;
 }

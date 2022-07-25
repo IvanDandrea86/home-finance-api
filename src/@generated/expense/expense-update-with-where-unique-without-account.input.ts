@@ -6,11 +6,12 @@ import { ExpenseUpdateWithoutAccountInput } from './expense-update-without-accou
 
 @InputType()
 export class ExpenseUpdateWithWhereUniqueWithoutAccountInput {
-  @Field(() => ExpenseWhereUniqueInput, { nullable: false })
-  @Type(() => ExpenseWhereUniqueInput)
-  where!: ExpenseWhereUniqueInput;
 
-  @Field(() => ExpenseUpdateWithoutAccountInput, { nullable: false })
-  @Type(() => ExpenseUpdateWithoutAccountInput)
-  data!: ExpenseUpdateWithoutAccountInput;
+    @Field(() => ExpenseWhereUniqueInput, {nullable:false})
+    @Type(() => ExpenseWhereUniqueInput)
+    where!: ExpenseWhereUniqueInput;
+
+    @Field(() => ExpenseUpdateWithoutAccountInput, {nullable:false})
+    @Type(() => ExpenseUpdateWithoutAccountInput)
+    data!: ExpenseUpdateWithoutAccountInput;
 }

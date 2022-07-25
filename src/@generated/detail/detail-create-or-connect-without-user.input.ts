@@ -6,11 +6,12 @@ import { DetailCreateWithoutUserInput } from './detail-create-without-user.input
 
 @InputType()
 export class DetailCreateOrConnectWithoutUserInput {
-  @Field(() => DetailWhereUniqueInput, { nullable: false })
-  @Type(() => DetailWhereUniqueInput)
-  where!: DetailWhereUniqueInput;
 
-  @Field(() => DetailCreateWithoutUserInput, { nullable: false })
-  @Type(() => DetailCreateWithoutUserInput)
-  create!: DetailCreateWithoutUserInput;
+    @Field(() => DetailWhereUniqueInput, {nullable:false})
+    @Type(() => DetailWhereUniqueInput)
+    where!: DetailWhereUniqueInput;
+
+    @Field(() => DetailCreateWithoutUserInput, {nullable:false})
+    @Type(() => DetailCreateWithoutUserInput)
+    create!: DetailCreateWithoutUserInput;
 }

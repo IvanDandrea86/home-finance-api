@@ -5,7 +5,8 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class DeleteManyChargeArgs {
-  @Field(() => ChargeWhereInput, { nullable: true })
-  @Type(() => ChargeWhereInput)
-  where?: ChargeWhereInput;
+
+    @Field(() => ChargeWhereInput, {nullable:true})
+    @Type(() => ChargeWhereInput)
+    where?: ChargeWhereInput;
 }

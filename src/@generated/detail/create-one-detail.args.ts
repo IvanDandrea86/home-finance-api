@@ -5,7 +5,8 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class CreateOneDetailArgs {
-  @Field(() => DetailCreateInput, { nullable: false })
-  @Type(() => DetailCreateInput)
-  data!: DetailCreateInput;
+
+    @Field(() => DetailCreateInput, {nullable:false})
+    @Type(() => DetailCreateInput)
+    data!: DetailCreateInput;
 }

@@ -6,11 +6,12 @@ import { ChargeUpdateWithoutAccountInput } from './charge-update-without-account
 
 @InputType()
 export class ChargeUpdateWithWhereUniqueWithoutAccountInput {
-  @Field(() => ChargeWhereUniqueInput, { nullable: false })
-  @Type(() => ChargeWhereUniqueInput)
-  where!: ChargeWhereUniqueInput;
 
-  @Field(() => ChargeUpdateWithoutAccountInput, { nullable: false })
-  @Type(() => ChargeUpdateWithoutAccountInput)
-  data!: ChargeUpdateWithoutAccountInput;
+    @Field(() => ChargeWhereUniqueInput, {nullable:false})
+    @Type(() => ChargeWhereUniqueInput)
+    where!: ChargeWhereUniqueInput;
+
+    @Field(() => ChargeUpdateWithoutAccountInput, {nullable:false})
+    @Type(() => ChargeUpdateWithoutAccountInput)
+    data!: ChargeUpdateWithoutAccountInput;
 }

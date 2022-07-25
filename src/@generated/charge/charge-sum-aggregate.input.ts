@@ -3,6 +3,7 @@ import { InputType } from '@nestjs/graphql';
 
 @InputType()
 export class ChargeSumAggregateInput {
-  @Field(() => Boolean, { nullable: true })
-  cost?: true;
+
+    @Field(() => Boolean, {nullable:true})
+    cost?: true;
 }

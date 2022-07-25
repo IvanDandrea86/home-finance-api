@@ -5,7 +5,8 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class CreateOneExpenseArgs {
-  @Field(() => ExpenseCreateInput, { nullable: false })
-  @Type(() => ExpenseCreateInput)
-  data!: ExpenseCreateInput;
+
+    @Field(() => ExpenseCreateInput, {nullable:false})
+    @Type(() => ExpenseCreateInput)
+    data!: ExpenseCreateInput;
 }

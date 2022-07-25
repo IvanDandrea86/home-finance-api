@@ -6,11 +6,12 @@ import { UserCreateWithoutRevenueInput } from './user-create-without-revenue.inp
 
 @InputType()
 export class UserCreateOrConnectWithoutRevenueInput {
-  @Field(() => UserWhereUniqueInput, { nullable: false })
-  @Type(() => UserWhereUniqueInput)
-  where!: UserWhereUniqueInput;
 
-  @Field(() => UserCreateWithoutRevenueInput, { nullable: false })
-  @Type(() => UserCreateWithoutRevenueInput)
-  create!: UserCreateWithoutRevenueInput;
+    @Field(() => UserWhereUniqueInput, {nullable:false})
+    @Type(() => UserWhereUniqueInput)
+    where!: UserWhereUniqueInput;
+
+    @Field(() => UserCreateWithoutRevenueInput, {nullable:false})
+    @Type(() => UserCreateWithoutRevenueInput)
+    create!: UserCreateWithoutRevenueInput;
 }

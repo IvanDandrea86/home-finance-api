@@ -10,42 +10,43 @@ import { DetailMaxAggregate } from './detail-max-aggregate.output';
 
 @ObjectType()
 export class DetailGroupBy {
-  @Field(() => String, { nullable: false })
-  id!: string;
 
-  @Field(() => Date, { nullable: false })
-  createdAt!: Date | string;
+    @Field(() => String, {nullable:false})
+    id!: string;
 
-  @Field(() => Date, { nullable: false })
-  updatedAt!: Date | string;
+    @Field(() => Date, {nullable:false})
+    createdAt!: Date | string;
 
-  @Field(() => String, { nullable: false })
-  name!: string;
+    @Field(() => Date, {nullable:false})
+    updatedAt!: Date | string;
 
-  @Field(() => String, { nullable: true })
-  expenseId?: string;
+    @Field(() => String, {nullable:false})
+    name!: string;
 
-  @Field(() => Float, { nullable: false })
-  cost!: number;
+    @Field(() => String, {nullable:true})
+    expenseId?: string;
 
-  @Field(() => Int, { nullable: true })
-  period?: number;
+    @Field(() => Float, {nullable:false})
+    cost!: number;
 
-  @Field(() => String, { nullable: true })
-  userId?: string;
+    @Field(() => Int, {nullable:true})
+    period?: number;
 
-  @Field(() => DetailCountAggregate, { nullable: true })
-  _count?: DetailCountAggregate;
+    @Field(() => String, {nullable:true})
+    userId?: string;
 
-  @Field(() => DetailAvgAggregate, { nullable: true })
-  _avg?: DetailAvgAggregate;
+    @Field(() => DetailCountAggregate, {nullable:true})
+    _count?: DetailCountAggregate;
 
-  @Field(() => DetailSumAggregate, { nullable: true })
-  _sum?: DetailSumAggregate;
+    @Field(() => DetailAvgAggregate, {nullable:true})
+    _avg?: DetailAvgAggregate;
 
-  @Field(() => DetailMinAggregate, { nullable: true })
-  _min?: DetailMinAggregate;
+    @Field(() => DetailSumAggregate, {nullable:true})
+    _sum?: DetailSumAggregate;
 
-  @Field(() => DetailMaxAggregate, { nullable: true })
-  _max?: DetailMaxAggregate;
+    @Field(() => DetailMinAggregate, {nullable:true})
+    _min?: DetailMinAggregate;
+
+    @Field(() => DetailMaxAggregate, {nullable:true})
+    _max?: DetailMaxAggregate;
 }

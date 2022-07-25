@@ -6,32 +6,31 @@ import { ExpenseUncheckedCreateNestedManyWithoutAccountInput } from '../expense/
 
 @InputType()
 export class AccountUncheckedCreateWithoutChargeInput {
-  @Field(() => String, { nullable: true })
-  id?: string;
 
-  @Field(() => Date, { nullable: true })
-  createdAt?: Date | string;
+    @Field(() => String, {nullable:true})
+    id?: string;
 
-  @Field(() => AccountType, { nullable: false })
-  type!: keyof typeof AccountType;
+    @Field(() => Date, {nullable:true})
+    createdAt?: Date | string;
 
-  @Field(() => Date, { nullable: true })
-  updatedAt?: Date | string;
+    @Field(() => AccountType, {nullable:false})
+    type!: keyof typeof AccountType;
 
-  @Field(() => String, { nullable: false })
-  name!: string;
+    @Field(() => Date, {nullable:true})
+    updatedAt?: Date | string;
 
-  @Field(() => Float, { nullable: true })
-  monthlyBudget?: number;
+    @Field(() => String, {nullable:false})
+    name!: string;
 
-  @Field(() => Float, { nullable: true })
-  sold?: number;
+    @Field(() => Float, {nullable:true})
+    monthlyBudget?: number;
 
-  @Field(() => String, { nullable: true })
-  familyId?: string;
+    @Field(() => Float, {nullable:true})
+    sold?: number;
 
-  @Field(() => ExpenseUncheckedCreateNestedManyWithoutAccountInput, {
-    nullable: true,
-  })
-  Expense?: ExpenseUncheckedCreateNestedManyWithoutAccountInput;
+    @Field(() => String, {nullable:true})
+    familyId?: string;
+
+    @Field(() => ExpenseUncheckedCreateNestedManyWithoutAccountInput, {nullable:true})
+    Expense?: ExpenseUncheckedCreateNestedManyWithoutAccountInput;
 }

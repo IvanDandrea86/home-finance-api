@@ -6,11 +6,12 @@ import { ChargeWhereInput } from './charge-where.input';
 
 @ArgsType()
 export class UpdateManyChargeArgs {
-  @Field(() => ChargeUpdateManyMutationInput, { nullable: false })
-  @Type(() => ChargeUpdateManyMutationInput)
-  data!: ChargeUpdateManyMutationInput;
 
-  @Field(() => ChargeWhereInput, { nullable: true })
-  @Type(() => ChargeWhereInput)
-  where?: ChargeWhereInput;
+    @Field(() => ChargeUpdateManyMutationInput, {nullable:false})
+    @Type(() => ChargeUpdateManyMutationInput)
+    data!: ChargeUpdateManyMutationInput;
+
+    @Field(() => ChargeWhereInput, {nullable:true})
+    @Type(() => ChargeWhereInput)
+    where?: ChargeWhereInput;
 }

@@ -9,33 +9,34 @@ import { AccountListRelationFilter } from '../account/account-list-relation-filt
 
 @InputType()
 export class FamilyWhereInput {
-  @Field(() => [FamilyWhereInput], { nullable: true })
-  AND?: Array<FamilyWhereInput>;
 
-  @Field(() => [FamilyWhereInput], { nullable: true })
-  OR?: Array<FamilyWhereInput>;
+    @Field(() => [FamilyWhereInput], {nullable:true})
+    AND?: Array<FamilyWhereInput>;
 
-  @Field(() => [FamilyWhereInput], { nullable: true })
-  NOT?: Array<FamilyWhereInput>;
+    @Field(() => [FamilyWhereInput], {nullable:true})
+    OR?: Array<FamilyWhereInput>;
 
-  @Field(() => StringFilter, { nullable: true })
-  id?: StringFilter;
+    @Field(() => [FamilyWhereInput], {nullable:true})
+    NOT?: Array<FamilyWhereInput>;
 
-  @Field(() => DateTimeFilter, { nullable: true })
-  createdAt?: DateTimeFilter;
+    @Field(() => StringFilter, {nullable:true})
+    id?: StringFilter;
 
-  @Field(() => DateTimeFilter, { nullable: true })
-  updatedAt?: DateTimeFilter;
+    @Field(() => DateTimeFilter, {nullable:true})
+    createdAt?: DateTimeFilter;
 
-  @Field(() => UserListRelationFilter, { nullable: true })
-  members?: UserListRelationFilter;
+    @Field(() => DateTimeFilter, {nullable:true})
+    updatedAt?: DateTimeFilter;
 
-  @Field(() => ExpenseListRelationFilter, { nullable: true })
-  expenses?: ExpenseListRelationFilter;
+    @Field(() => UserListRelationFilter, {nullable:true})
+    members?: UserListRelationFilter;
 
-  @Field(() => RevenueListRelationFilter, { nullable: true })
-  revenues?: RevenueListRelationFilter;
+    @Field(() => ExpenseListRelationFilter, {nullable:true})
+    expenses?: ExpenseListRelationFilter;
 
-  @Field(() => AccountListRelationFilter, { nullable: true })
-  accounts?: AccountListRelationFilter;
+    @Field(() => RevenueListRelationFilter, {nullable:true})
+    revenues?: RevenueListRelationFilter;
+
+    @Field(() => AccountListRelationFilter, {nullable:true})
+    accounts?: AccountListRelationFilter;
 }

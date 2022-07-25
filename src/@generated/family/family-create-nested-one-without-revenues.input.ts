@@ -7,15 +7,16 @@ import { FamilyWhereUniqueInput } from './family-where-unique.input';
 
 @InputType()
 export class FamilyCreateNestedOneWithoutRevenuesInput {
-  @Field(() => FamilyCreateWithoutRevenuesInput, { nullable: true })
-  @Type(() => FamilyCreateWithoutRevenuesInput)
-  create?: FamilyCreateWithoutRevenuesInput;
 
-  @Field(() => FamilyCreateOrConnectWithoutRevenuesInput, { nullable: true })
-  @Type(() => FamilyCreateOrConnectWithoutRevenuesInput)
-  connectOrCreate?: FamilyCreateOrConnectWithoutRevenuesInput;
+    @Field(() => FamilyCreateWithoutRevenuesInput, {nullable:true})
+    @Type(() => FamilyCreateWithoutRevenuesInput)
+    create?: FamilyCreateWithoutRevenuesInput;
 
-  @Field(() => FamilyWhereUniqueInput, { nullable: true })
-  @Type(() => FamilyWhereUniqueInput)
-  connect?: FamilyWhereUniqueInput;
+    @Field(() => FamilyCreateOrConnectWithoutRevenuesInput, {nullable:true})
+    @Type(() => FamilyCreateOrConnectWithoutRevenuesInput)
+    connectOrCreate?: FamilyCreateOrConnectWithoutRevenuesInput;
+
+    @Field(() => FamilyWhereUniqueInput, {nullable:true})
+    @Type(() => FamilyWhereUniqueInput)
+    connect?: FamilyWhereUniqueInput;
 }

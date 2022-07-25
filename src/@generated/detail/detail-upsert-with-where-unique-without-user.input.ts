@@ -7,15 +7,16 @@ import { DetailCreateWithoutUserInput } from './detail-create-without-user.input
 
 @InputType()
 export class DetailUpsertWithWhereUniqueWithoutUserInput {
-  @Field(() => DetailWhereUniqueInput, { nullable: false })
-  @Type(() => DetailWhereUniqueInput)
-  where!: DetailWhereUniqueInput;
 
-  @Field(() => DetailUpdateWithoutUserInput, { nullable: false })
-  @Type(() => DetailUpdateWithoutUserInput)
-  update!: DetailUpdateWithoutUserInput;
+    @Field(() => DetailWhereUniqueInput, {nullable:false})
+    @Type(() => DetailWhereUniqueInput)
+    where!: DetailWhereUniqueInput;
 
-  @Field(() => DetailCreateWithoutUserInput, { nullable: false })
-  @Type(() => DetailCreateWithoutUserInput)
-  create!: DetailCreateWithoutUserInput;
+    @Field(() => DetailUpdateWithoutUserInput, {nullable:false})
+    @Type(() => DetailUpdateWithoutUserInput)
+    update!: DetailUpdateWithoutUserInput;
+
+    @Field(() => DetailCreateWithoutUserInput, {nullable:false})
+    @Type(() => DetailCreateWithoutUserInput)
+    create!: DetailCreateWithoutUserInput;
 }

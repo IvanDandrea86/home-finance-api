@@ -13,34 +13,35 @@ import { DetailMaxAggregateInput } from './detail-max-aggregate.input';
 
 @ArgsType()
 export class DetailAggregateArgs {
-  @Field(() => DetailWhereInput, { nullable: true })
-  @Type(() => DetailWhereInput)
-  where?: DetailWhereInput;
 
-  @Field(() => [DetailOrderByWithRelationInput], { nullable: true })
-  orderBy?: Array<DetailOrderByWithRelationInput>;
+    @Field(() => DetailWhereInput, {nullable:true})
+    @Type(() => DetailWhereInput)
+    where?: DetailWhereInput;
 
-  @Field(() => DetailWhereUniqueInput, { nullable: true })
-  cursor?: DetailWhereUniqueInput;
+    @Field(() => [DetailOrderByWithRelationInput], {nullable:true})
+    orderBy?: Array<DetailOrderByWithRelationInput>;
 
-  @Field(() => Int, { nullable: true })
-  take?: number;
+    @Field(() => DetailWhereUniqueInput, {nullable:true})
+    cursor?: DetailWhereUniqueInput;
 
-  @Field(() => Int, { nullable: true })
-  skip?: number;
+    @Field(() => Int, {nullable:true})
+    take?: number;
 
-  @Field(() => DetailCountAggregateInput, { nullable: true })
-  _count?: DetailCountAggregateInput;
+    @Field(() => Int, {nullable:true})
+    skip?: number;
 
-  @Field(() => DetailAvgAggregateInput, { nullable: true })
-  _avg?: DetailAvgAggregateInput;
+    @Field(() => DetailCountAggregateInput, {nullable:true})
+    _count?: DetailCountAggregateInput;
 
-  @Field(() => DetailSumAggregateInput, { nullable: true })
-  _sum?: DetailSumAggregateInput;
+    @Field(() => DetailAvgAggregateInput, {nullable:true})
+    _avg?: DetailAvgAggregateInput;
 
-  @Field(() => DetailMinAggregateInput, { nullable: true })
-  _min?: DetailMinAggregateInput;
+    @Field(() => DetailSumAggregateInput, {nullable:true})
+    _sum?: DetailSumAggregateInput;
 
-  @Field(() => DetailMaxAggregateInput, { nullable: true })
-  _max?: DetailMaxAggregateInput;
+    @Field(() => DetailMinAggregateInput, {nullable:true})
+    _min?: DetailMinAggregateInput;
+
+    @Field(() => DetailMaxAggregateInput, {nullable:true})
+    _max?: DetailMaxAggregateInput;
 }

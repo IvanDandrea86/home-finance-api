@@ -4,6 +4,7 @@ import { Int } from '@nestjs/graphql';
 
 @ObjectType()
 export class ExpenseCount {
-  @Field(() => Int, { nullable: false })
-  expenseDetails?: number;
+
+    @Field(() => Int, {nullable:false})
+    expenseDetails?: number;
 }

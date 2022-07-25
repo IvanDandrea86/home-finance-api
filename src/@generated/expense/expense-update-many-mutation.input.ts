@@ -6,18 +6,19 @@ import { FloatFieldUpdateOperationsInput } from '../prisma/float-field-update-op
 
 @InputType()
 export class ExpenseUpdateManyMutationInput {
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  id?: StringFieldUpdateOperationsInput;
 
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: DateTimeFieldUpdateOperationsInput;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    id?: StringFieldUpdateOperationsInput;
 
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: DateTimeFieldUpdateOperationsInput;
+    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
+    createdAt?: DateTimeFieldUpdateOperationsInput;
 
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  name?: StringFieldUpdateOperationsInput;
+    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
+    updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-  @Field(() => FloatFieldUpdateOperationsInput, { nullable: true })
-  monthlyCost?: FloatFieldUpdateOperationsInput;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    name?: StringFieldUpdateOperationsInput;
+
+    @Field(() => FloatFieldUpdateOperationsInput, {nullable:true})
+    monthlyCost?: FloatFieldUpdateOperationsInput;
 }

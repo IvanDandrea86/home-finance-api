@@ -14,37 +14,38 @@ import { ChargeMaxAggregateInput } from './charge-max-aggregate.input';
 
 @ArgsType()
 export class ChargeGroupByArgs {
-  @Field(() => ChargeWhereInput, { nullable: true })
-  @Type(() => ChargeWhereInput)
-  where?: ChargeWhereInput;
 
-  @Field(() => [ChargeOrderByWithAggregationInput], { nullable: true })
-  orderBy?: Array<ChargeOrderByWithAggregationInput>;
+    @Field(() => ChargeWhereInput, {nullable:true})
+    @Type(() => ChargeWhereInput)
+    where?: ChargeWhereInput;
 
-  @Field(() => [ChargeScalarFieldEnum], { nullable: false })
-  by!: Array<keyof typeof ChargeScalarFieldEnum>;
+    @Field(() => [ChargeOrderByWithAggregationInput], {nullable:true})
+    orderBy?: Array<ChargeOrderByWithAggregationInput>;
 
-  @Field(() => ChargeScalarWhereWithAggregatesInput, { nullable: true })
-  having?: ChargeScalarWhereWithAggregatesInput;
+    @Field(() => [ChargeScalarFieldEnum], {nullable:false})
+    by!: Array<keyof typeof ChargeScalarFieldEnum>;
 
-  @Field(() => Int, { nullable: true })
-  take?: number;
+    @Field(() => ChargeScalarWhereWithAggregatesInput, {nullable:true})
+    having?: ChargeScalarWhereWithAggregatesInput;
 
-  @Field(() => Int, { nullable: true })
-  skip?: number;
+    @Field(() => Int, {nullable:true})
+    take?: number;
 
-  @Field(() => ChargeCountAggregateInput, { nullable: true })
-  _count?: ChargeCountAggregateInput;
+    @Field(() => Int, {nullable:true})
+    skip?: number;
 
-  @Field(() => ChargeAvgAggregateInput, { nullable: true })
-  _avg?: ChargeAvgAggregateInput;
+    @Field(() => ChargeCountAggregateInput, {nullable:true})
+    _count?: ChargeCountAggregateInput;
 
-  @Field(() => ChargeSumAggregateInput, { nullable: true })
-  _sum?: ChargeSumAggregateInput;
+    @Field(() => ChargeAvgAggregateInput, {nullable:true})
+    _avg?: ChargeAvgAggregateInput;
 
-  @Field(() => ChargeMinAggregateInput, { nullable: true })
-  _min?: ChargeMinAggregateInput;
+    @Field(() => ChargeSumAggregateInput, {nullable:true})
+    _sum?: ChargeSumAggregateInput;
 
-  @Field(() => ChargeMaxAggregateInput, { nullable: true })
-  _max?: ChargeMaxAggregateInput;
+    @Field(() => ChargeMinAggregateInput, {nullable:true})
+    _min?: ChargeMinAggregateInput;
+
+    @Field(() => ChargeMaxAggregateInput, {nullable:true})
+    _max?: ChargeMaxAggregateInput;
 }

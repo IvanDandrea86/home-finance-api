@@ -5,7 +5,8 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class DeleteManyPermissionArgs {
-  @Field(() => PermissionWhereInput, { nullable: true })
-  @Type(() => PermissionWhereInput)
-  where?: PermissionWhereInput;
+
+    @Field(() => PermissionWhereInput, {nullable:true})
+    @Type(() => PermissionWhereInput)
+    where?: PermissionWhereInput;
 }

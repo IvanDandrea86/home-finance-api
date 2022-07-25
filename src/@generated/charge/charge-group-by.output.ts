@@ -9,36 +9,37 @@ import { ChargeMaxAggregate } from './charge-max-aggregate.output';
 
 @ObjectType()
 export class ChargeGroupBy {
-  @Field(() => String, { nullable: false })
-  id!: string;
 
-  @Field(() => Date, { nullable: false })
-  createdAt!: Date | string;
+    @Field(() => String, {nullable:false})
+    id!: string;
 
-  @Field(() => String, { nullable: false })
-  name!: string;
+    @Field(() => Date, {nullable:false})
+    createdAt!: Date | string;
 
-  @Field(() => Date, { nullable: false })
-  updatedAt!: Date | string;
+    @Field(() => String, {nullable:false})
+    name!: string;
 
-  @Field(() => Float, { nullable: false })
-  cost!: number;
+    @Field(() => Date, {nullable:false})
+    updatedAt!: Date | string;
 
-  @Field(() => String, { nullable: true })
-  accountId?: string;
+    @Field(() => Float, {nullable:false})
+    cost!: number;
 
-  @Field(() => ChargeCountAggregate, { nullable: true })
-  _count?: ChargeCountAggregate;
+    @Field(() => String, {nullable:true})
+    accountId?: string;
 
-  @Field(() => ChargeAvgAggregate, { nullable: true })
-  _avg?: ChargeAvgAggregate;
+    @Field(() => ChargeCountAggregate, {nullable:true})
+    _count?: ChargeCountAggregate;
 
-  @Field(() => ChargeSumAggregate, { nullable: true })
-  _sum?: ChargeSumAggregate;
+    @Field(() => ChargeAvgAggregate, {nullable:true})
+    _avg?: ChargeAvgAggregate;
 
-  @Field(() => ChargeMinAggregate, { nullable: true })
-  _min?: ChargeMinAggregate;
+    @Field(() => ChargeSumAggregate, {nullable:true})
+    _sum?: ChargeSumAggregate;
 
-  @Field(() => ChargeMaxAggregate, { nullable: true })
-  _max?: ChargeMaxAggregate;
+    @Field(() => ChargeMinAggregate, {nullable:true})
+    _min?: ChargeMinAggregate;
+
+    @Field(() => ChargeMaxAggregate, {nullable:true})
+    _max?: ChargeMaxAggregate;
 }

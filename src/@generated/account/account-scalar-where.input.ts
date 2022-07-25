@@ -8,36 +8,37 @@ import { StringNullableFilter } from '../prisma/string-nullable-filter.input';
 
 @InputType()
 export class AccountScalarWhereInput {
-  @Field(() => [AccountScalarWhereInput], { nullable: true })
-  AND?: Array<AccountScalarWhereInput>;
 
-  @Field(() => [AccountScalarWhereInput], { nullable: true })
-  OR?: Array<AccountScalarWhereInput>;
+    @Field(() => [AccountScalarWhereInput], {nullable:true})
+    AND?: Array<AccountScalarWhereInput>;
 
-  @Field(() => [AccountScalarWhereInput], { nullable: true })
-  NOT?: Array<AccountScalarWhereInput>;
+    @Field(() => [AccountScalarWhereInput], {nullable:true})
+    OR?: Array<AccountScalarWhereInput>;
 
-  @Field(() => StringFilter, { nullable: true })
-  id?: StringFilter;
+    @Field(() => [AccountScalarWhereInput], {nullable:true})
+    NOT?: Array<AccountScalarWhereInput>;
 
-  @Field(() => DateTimeFilter, { nullable: true })
-  createdAt?: DateTimeFilter;
+    @Field(() => StringFilter, {nullable:true})
+    id?: StringFilter;
 
-  @Field(() => EnumAccountTypeFilter, { nullable: true })
-  type?: EnumAccountTypeFilter;
+    @Field(() => DateTimeFilter, {nullable:true})
+    createdAt?: DateTimeFilter;
 
-  @Field(() => DateTimeFilter, { nullable: true })
-  updatedAt?: DateTimeFilter;
+    @Field(() => EnumAccountTypeFilter, {nullable:true})
+    type?: EnumAccountTypeFilter;
 
-  @Field(() => StringFilter, { nullable: true })
-  name?: StringFilter;
+    @Field(() => DateTimeFilter, {nullable:true})
+    updatedAt?: DateTimeFilter;
 
-  @Field(() => FloatFilter, { nullable: true })
-  monthlyBudget?: FloatFilter;
+    @Field(() => StringFilter, {nullable:true})
+    name?: StringFilter;
 
-  @Field(() => FloatFilter, { nullable: true })
-  sold?: FloatFilter;
+    @Field(() => FloatFilter, {nullable:true})
+    monthlyBudget?: FloatFilter;
 
-  @Field(() => StringNullableFilter, { nullable: true })
-  familyId?: StringNullableFilter;
+    @Field(() => FloatFilter, {nullable:true})
+    sold?: FloatFilter;
+
+    @Field(() => StringNullableFilter, {nullable:true})
+    familyId?: StringNullableFilter;
 }

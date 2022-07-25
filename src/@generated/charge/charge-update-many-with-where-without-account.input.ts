@@ -6,11 +6,12 @@ import { ChargeUpdateManyMutationInput } from './charge-update-many-mutation.inp
 
 @InputType()
 export class ChargeUpdateManyWithWhereWithoutAccountInput {
-  @Field(() => ChargeScalarWhereInput, { nullable: false })
-  @Type(() => ChargeScalarWhereInput)
-  where!: ChargeScalarWhereInput;
 
-  @Field(() => ChargeUpdateManyMutationInput, { nullable: false })
-  @Type(() => ChargeUpdateManyMutationInput)
-  data!: ChargeUpdateManyMutationInput;
+    @Field(() => ChargeScalarWhereInput, {nullable:false})
+    @Type(() => ChargeScalarWhereInput)
+    where!: ChargeScalarWhereInput;
+
+    @Field(() => ChargeUpdateManyMutationInput, {nullable:false})
+    @Type(() => ChargeUpdateManyMutationInput)
+    data!: ChargeUpdateManyMutationInput;
 }

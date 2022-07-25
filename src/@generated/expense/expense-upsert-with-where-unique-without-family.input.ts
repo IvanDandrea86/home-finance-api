@@ -7,15 +7,16 @@ import { ExpenseCreateWithoutFamilyInput } from './expense-create-without-family
 
 @InputType()
 export class ExpenseUpsertWithWhereUniqueWithoutFamilyInput {
-  @Field(() => ExpenseWhereUniqueInput, { nullable: false })
-  @Type(() => ExpenseWhereUniqueInput)
-  where!: ExpenseWhereUniqueInput;
 
-  @Field(() => ExpenseUpdateWithoutFamilyInput, { nullable: false })
-  @Type(() => ExpenseUpdateWithoutFamilyInput)
-  update!: ExpenseUpdateWithoutFamilyInput;
+    @Field(() => ExpenseWhereUniqueInput, {nullable:false})
+    @Type(() => ExpenseWhereUniqueInput)
+    where!: ExpenseWhereUniqueInput;
 
-  @Field(() => ExpenseCreateWithoutFamilyInput, { nullable: false })
-  @Type(() => ExpenseCreateWithoutFamilyInput)
-  create!: ExpenseCreateWithoutFamilyInput;
+    @Field(() => ExpenseUpdateWithoutFamilyInput, {nullable:false})
+    @Type(() => ExpenseUpdateWithoutFamilyInput)
+    update!: ExpenseUpdateWithoutFamilyInput;
+
+    @Field(() => ExpenseCreateWithoutFamilyInput, {nullable:false})
+    @Type(() => ExpenseCreateWithoutFamilyInput)
+    create!: ExpenseCreateWithoutFamilyInput;
 }

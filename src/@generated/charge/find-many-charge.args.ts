@@ -9,22 +9,23 @@ import { ChargeScalarFieldEnum } from './charge-scalar-field.enum';
 
 @ArgsType()
 export class FindManyChargeArgs {
-  @Field(() => ChargeWhereInput, { nullable: true })
-  @Type(() => ChargeWhereInput)
-  where?: ChargeWhereInput;
 
-  @Field(() => [ChargeOrderByWithRelationInput], { nullable: true })
-  orderBy?: Array<ChargeOrderByWithRelationInput>;
+    @Field(() => ChargeWhereInput, {nullable:true})
+    @Type(() => ChargeWhereInput)
+    where?: ChargeWhereInput;
 
-  @Field(() => ChargeWhereUniqueInput, { nullable: true })
-  cursor?: ChargeWhereUniqueInput;
+    @Field(() => [ChargeOrderByWithRelationInput], {nullable:true})
+    orderBy?: Array<ChargeOrderByWithRelationInput>;
 
-  @Field(() => Int, { nullable: true })
-  take?: number;
+    @Field(() => ChargeWhereUniqueInput, {nullable:true})
+    cursor?: ChargeWhereUniqueInput;
 
-  @Field(() => Int, { nullable: true })
-  skip?: number;
+    @Field(() => Int, {nullable:true})
+    take?: number;
 
-  @Field(() => [ChargeScalarFieldEnum], { nullable: true })
-  distinct?: Array<keyof typeof ChargeScalarFieldEnum>;
+    @Field(() => Int, {nullable:true})
+    skip?: number;
+
+    @Field(() => [ChargeScalarFieldEnum], {nullable:true})
+    distinct?: Array<keyof typeof ChargeScalarFieldEnum>;
 }

@@ -7,21 +7,22 @@ import { NullableStringFieldUpdateOperationsInput } from '../prisma/nullable-str
 
 @InputType()
 export class ChargeUncheckedUpdateManyInput {
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  id?: StringFieldUpdateOperationsInput;
 
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: DateTimeFieldUpdateOperationsInput;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    id?: StringFieldUpdateOperationsInput;
 
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  name?: StringFieldUpdateOperationsInput;
+    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
+    createdAt?: DateTimeFieldUpdateOperationsInput;
 
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: DateTimeFieldUpdateOperationsInput;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    name?: StringFieldUpdateOperationsInput;
 
-  @Field(() => FloatFieldUpdateOperationsInput, { nullable: true })
-  cost?: FloatFieldUpdateOperationsInput;
+    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
+    updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-  @Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
-  accountId?: NullableStringFieldUpdateOperationsInput;
+    @Field(() => FloatFieldUpdateOperationsInput, {nullable:true})
+    cost?: FloatFieldUpdateOperationsInput;
+
+    @Field(() => NullableStringFieldUpdateOperationsInput, {nullable:true})
+    accountId?: NullableStringFieldUpdateOperationsInput;
 }

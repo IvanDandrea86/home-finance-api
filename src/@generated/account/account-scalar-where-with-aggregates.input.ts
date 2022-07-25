@@ -8,36 +8,37 @@ import { StringNullableWithAggregatesFilter } from '../prisma/string-nullable-wi
 
 @InputType()
 export class AccountScalarWhereWithAggregatesInput {
-  @Field(() => [AccountScalarWhereWithAggregatesInput], { nullable: true })
-  AND?: Array<AccountScalarWhereWithAggregatesInput>;
 
-  @Field(() => [AccountScalarWhereWithAggregatesInput], { nullable: true })
-  OR?: Array<AccountScalarWhereWithAggregatesInput>;
+    @Field(() => [AccountScalarWhereWithAggregatesInput], {nullable:true})
+    AND?: Array<AccountScalarWhereWithAggregatesInput>;
 
-  @Field(() => [AccountScalarWhereWithAggregatesInput], { nullable: true })
-  NOT?: Array<AccountScalarWhereWithAggregatesInput>;
+    @Field(() => [AccountScalarWhereWithAggregatesInput], {nullable:true})
+    OR?: Array<AccountScalarWhereWithAggregatesInput>;
 
-  @Field(() => StringWithAggregatesFilter, { nullable: true })
-  id?: StringWithAggregatesFilter;
+    @Field(() => [AccountScalarWhereWithAggregatesInput], {nullable:true})
+    NOT?: Array<AccountScalarWhereWithAggregatesInput>;
 
-  @Field(() => DateTimeWithAggregatesFilter, { nullable: true })
-  createdAt?: DateTimeWithAggregatesFilter;
+    @Field(() => StringWithAggregatesFilter, {nullable:true})
+    id?: StringWithAggregatesFilter;
 
-  @Field(() => EnumAccountTypeWithAggregatesFilter, { nullable: true })
-  type?: EnumAccountTypeWithAggregatesFilter;
+    @Field(() => DateTimeWithAggregatesFilter, {nullable:true})
+    createdAt?: DateTimeWithAggregatesFilter;
 
-  @Field(() => DateTimeWithAggregatesFilter, { nullable: true })
-  updatedAt?: DateTimeWithAggregatesFilter;
+    @Field(() => EnumAccountTypeWithAggregatesFilter, {nullable:true})
+    type?: EnumAccountTypeWithAggregatesFilter;
 
-  @Field(() => StringWithAggregatesFilter, { nullable: true })
-  name?: StringWithAggregatesFilter;
+    @Field(() => DateTimeWithAggregatesFilter, {nullable:true})
+    updatedAt?: DateTimeWithAggregatesFilter;
 
-  @Field(() => FloatWithAggregatesFilter, { nullable: true })
-  monthlyBudget?: FloatWithAggregatesFilter;
+    @Field(() => StringWithAggregatesFilter, {nullable:true})
+    name?: StringWithAggregatesFilter;
 
-  @Field(() => FloatWithAggregatesFilter, { nullable: true })
-  sold?: FloatWithAggregatesFilter;
+    @Field(() => FloatWithAggregatesFilter, {nullable:true})
+    monthlyBudget?: FloatWithAggregatesFilter;
 
-  @Field(() => StringNullableWithAggregatesFilter, { nullable: true })
-  familyId?: StringNullableWithAggregatesFilter;
+    @Field(() => FloatWithAggregatesFilter, {nullable:true})
+    sold?: FloatWithAggregatesFilter;
+
+    @Field(() => StringNullableWithAggregatesFilter, {nullable:true})
+    familyId?: StringNullableWithAggregatesFilter;
 }

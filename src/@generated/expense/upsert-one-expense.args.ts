@@ -7,15 +7,16 @@ import { ExpenseUpdateInput } from './expense-update.input';
 
 @ArgsType()
 export class UpsertOneExpenseArgs {
-  @Field(() => ExpenseWhereUniqueInput, { nullable: false })
-  @Type(() => ExpenseWhereUniqueInput)
-  where!: ExpenseWhereUniqueInput;
 
-  @Field(() => ExpenseCreateInput, { nullable: false })
-  @Type(() => ExpenseCreateInput)
-  create!: ExpenseCreateInput;
+    @Field(() => ExpenseWhereUniqueInput, {nullable:false})
+    @Type(() => ExpenseWhereUniqueInput)
+    where!: ExpenseWhereUniqueInput;
 
-  @Field(() => ExpenseUpdateInput, { nullable: false })
-  @Type(() => ExpenseUpdateInput)
-  update!: ExpenseUpdateInput;
+    @Field(() => ExpenseCreateInput, {nullable:false})
+    @Type(() => ExpenseCreateInput)
+    create!: ExpenseCreateInput;
+
+    @Field(() => ExpenseUpdateInput, {nullable:false})
+    @Type(() => ExpenseUpdateInput)
+    update!: ExpenseUpdateInput;
 }

@@ -9,29 +9,30 @@ import { AccountUpdateWithoutChargeInput } from './account-update-without-charge
 
 @InputType()
 export class AccountUpdateOneWithoutChargeNestedInput {
-  @Field(() => AccountCreateWithoutChargeInput, { nullable: true })
-  @Type(() => AccountCreateWithoutChargeInput)
-  create?: AccountCreateWithoutChargeInput;
 
-  @Field(() => AccountCreateOrConnectWithoutChargeInput, { nullable: true })
-  @Type(() => AccountCreateOrConnectWithoutChargeInput)
-  connectOrCreate?: AccountCreateOrConnectWithoutChargeInput;
+    @Field(() => AccountCreateWithoutChargeInput, {nullable:true})
+    @Type(() => AccountCreateWithoutChargeInput)
+    create?: AccountCreateWithoutChargeInput;
 
-  @Field(() => AccountUpsertWithoutChargeInput, { nullable: true })
-  @Type(() => AccountUpsertWithoutChargeInput)
-  upsert?: AccountUpsertWithoutChargeInput;
+    @Field(() => AccountCreateOrConnectWithoutChargeInput, {nullable:true})
+    @Type(() => AccountCreateOrConnectWithoutChargeInput)
+    connectOrCreate?: AccountCreateOrConnectWithoutChargeInput;
 
-  @Field(() => Boolean, { nullable: true })
-  disconnect?: boolean;
+    @Field(() => AccountUpsertWithoutChargeInput, {nullable:true})
+    @Type(() => AccountUpsertWithoutChargeInput)
+    upsert?: AccountUpsertWithoutChargeInput;
 
-  @Field(() => Boolean, { nullable: true })
-  delete?: boolean;
+    @Field(() => Boolean, {nullable:true})
+    disconnect?: boolean;
 
-  @Field(() => AccountWhereUniqueInput, { nullable: true })
-  @Type(() => AccountWhereUniqueInput)
-  connect?: AccountWhereUniqueInput;
+    @Field(() => Boolean, {nullable:true})
+    delete?: boolean;
 
-  @Field(() => AccountUpdateWithoutChargeInput, { nullable: true })
-  @Type(() => AccountUpdateWithoutChargeInput)
-  update?: AccountUpdateWithoutChargeInput;
+    @Field(() => AccountWhereUniqueInput, {nullable:true})
+    @Type(() => AccountWhereUniqueInput)
+    connect?: AccountWhereUniqueInput;
+
+    @Field(() => AccountUpdateWithoutChargeInput, {nullable:true})
+    @Type(() => AccountUpdateWithoutChargeInput)
+    update?: AccountUpdateWithoutChargeInput;
 }

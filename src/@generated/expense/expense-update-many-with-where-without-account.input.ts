@@ -6,11 +6,12 @@ import { ExpenseUpdateManyMutationInput } from './expense-update-many-mutation.i
 
 @InputType()
 export class ExpenseUpdateManyWithWhereWithoutAccountInput {
-  @Field(() => ExpenseScalarWhereInput, { nullable: false })
-  @Type(() => ExpenseScalarWhereInput)
-  where!: ExpenseScalarWhereInput;
 
-  @Field(() => ExpenseUpdateManyMutationInput, { nullable: false })
-  @Type(() => ExpenseUpdateManyMutationInput)
-  data!: ExpenseUpdateManyMutationInput;
+    @Field(() => ExpenseScalarWhereInput, {nullable:false})
+    @Type(() => ExpenseScalarWhereInput)
+    where!: ExpenseScalarWhereInput;
+
+    @Field(() => ExpenseUpdateManyMutationInput, {nullable:false})
+    @Type(() => ExpenseUpdateManyMutationInput)
+    data!: ExpenseUpdateManyMutationInput;
 }

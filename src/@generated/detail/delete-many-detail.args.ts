@@ -5,7 +5,8 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class DeleteManyDetailArgs {
-  @Field(() => DetailWhereInput, { nullable: true })
-  @Type(() => DetailWhereInput)
-  where?: DetailWhereInput;
+
+    @Field(() => DetailWhereInput, {nullable:true})
+    @Type(() => DetailWhereInput)
+    where?: DetailWhereInput;
 }

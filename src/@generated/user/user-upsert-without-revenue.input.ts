@@ -6,11 +6,12 @@ import { UserCreateWithoutRevenueInput } from './user-create-without-revenue.inp
 
 @InputType()
 export class UserUpsertWithoutRevenueInput {
-  @Field(() => UserUpdateWithoutRevenueInput, { nullable: false })
-  @Type(() => UserUpdateWithoutRevenueInput)
-  update!: UserUpdateWithoutRevenueInput;
 
-  @Field(() => UserCreateWithoutRevenueInput, { nullable: false })
-  @Type(() => UserCreateWithoutRevenueInput)
-  create!: UserCreateWithoutRevenueInput;
+    @Field(() => UserUpdateWithoutRevenueInput, {nullable:false})
+    @Type(() => UserUpdateWithoutRevenueInput)
+    update!: UserUpdateWithoutRevenueInput;
+
+    @Field(() => UserCreateWithoutRevenueInput, {nullable:false})
+    @Type(() => UserCreateWithoutRevenueInput)
+    create!: UserCreateWithoutRevenueInput;
 }

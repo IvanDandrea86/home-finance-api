@@ -6,24 +6,25 @@ import { FamilyCreateNestedOneWithoutExpensesInput } from '../family/family-crea
 
 @InputType()
 export class ExpenseCreateWithoutAccountInput {
-  @Field(() => String, { nullable: true })
-  id?: string;
 
-  @Field(() => Date, { nullable: true })
-  createdAt?: Date | string;
+    @Field(() => String, {nullable:true})
+    id?: string;
 
-  @Field(() => Date, { nullable: true })
-  updatedAt?: Date | string;
+    @Field(() => Date, {nullable:true})
+    createdAt?: Date | string;
 
-  @Field(() => String, { nullable: false })
-  name!: string;
+    @Field(() => Date, {nullable:true})
+    updatedAt?: Date | string;
 
-  @Field(() => DetailCreateNestedManyWithoutExpenseInput, { nullable: true })
-  expenseDetails?: DetailCreateNestedManyWithoutExpenseInput;
+    @Field(() => String, {nullable:false})
+    name!: string;
 
-  @Field(() => Float, { nullable: true })
-  monthlyCost?: number;
+    @Field(() => DetailCreateNestedManyWithoutExpenseInput, {nullable:true})
+    expenseDetails?: DetailCreateNestedManyWithoutExpenseInput;
 
-  @Field(() => FamilyCreateNestedOneWithoutExpensesInput, { nullable: true })
-  Family?: FamilyCreateNestedOneWithoutExpensesInput;
+    @Field(() => Float, {nullable:true})
+    monthlyCost?: number;
+
+    @Field(() => FamilyCreateNestedOneWithoutExpensesInput, {nullable:true})
+    Family?: FamilyCreateNestedOneWithoutExpensesInput;
 }

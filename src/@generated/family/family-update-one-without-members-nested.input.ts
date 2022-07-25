@@ -9,29 +9,30 @@ import { FamilyUpdateWithoutMembersInput } from './family-update-without-members
 
 @InputType()
 export class FamilyUpdateOneWithoutMembersNestedInput {
-  @Field(() => FamilyCreateWithoutMembersInput, { nullable: true })
-  @Type(() => FamilyCreateWithoutMembersInput)
-  create?: FamilyCreateWithoutMembersInput;
 
-  @Field(() => FamilyCreateOrConnectWithoutMembersInput, { nullable: true })
-  @Type(() => FamilyCreateOrConnectWithoutMembersInput)
-  connectOrCreate?: FamilyCreateOrConnectWithoutMembersInput;
+    @Field(() => FamilyCreateWithoutMembersInput, {nullable:true})
+    @Type(() => FamilyCreateWithoutMembersInput)
+    create?: FamilyCreateWithoutMembersInput;
 
-  @Field(() => FamilyUpsertWithoutMembersInput, { nullable: true })
-  @Type(() => FamilyUpsertWithoutMembersInput)
-  upsert?: FamilyUpsertWithoutMembersInput;
+    @Field(() => FamilyCreateOrConnectWithoutMembersInput, {nullable:true})
+    @Type(() => FamilyCreateOrConnectWithoutMembersInput)
+    connectOrCreate?: FamilyCreateOrConnectWithoutMembersInput;
 
-  @Field(() => Boolean, { nullable: true })
-  disconnect?: boolean;
+    @Field(() => FamilyUpsertWithoutMembersInput, {nullable:true})
+    @Type(() => FamilyUpsertWithoutMembersInput)
+    upsert?: FamilyUpsertWithoutMembersInput;
 
-  @Field(() => Boolean, { nullable: true })
-  delete?: boolean;
+    @Field(() => Boolean, {nullable:true})
+    disconnect?: boolean;
 
-  @Field(() => FamilyWhereUniqueInput, { nullable: true })
-  @Type(() => FamilyWhereUniqueInput)
-  connect?: FamilyWhereUniqueInput;
+    @Field(() => Boolean, {nullable:true})
+    delete?: boolean;
 
-  @Field(() => FamilyUpdateWithoutMembersInput, { nullable: true })
-  @Type(() => FamilyUpdateWithoutMembersInput)
-  update?: FamilyUpdateWithoutMembersInput;
+    @Field(() => FamilyWhereUniqueInput, {nullable:true})
+    @Type(() => FamilyWhereUniqueInput)
+    connect?: FamilyWhereUniqueInput;
+
+    @Field(() => FamilyUpdateWithoutMembersInput, {nullable:true})
+    @Type(() => FamilyUpdateWithoutMembersInput)
+    update?: FamilyUpdateWithoutMembersInput;
 }

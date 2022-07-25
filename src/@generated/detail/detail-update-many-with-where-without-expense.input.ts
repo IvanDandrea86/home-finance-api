@@ -6,11 +6,12 @@ import { DetailUpdateManyMutationInput } from './detail-update-many-mutation.inp
 
 @InputType()
 export class DetailUpdateManyWithWhereWithoutExpenseInput {
-  @Field(() => DetailScalarWhereInput, { nullable: false })
-  @Type(() => DetailScalarWhereInput)
-  where!: DetailScalarWhereInput;
 
-  @Field(() => DetailUpdateManyMutationInput, { nullable: false })
-  @Type(() => DetailUpdateManyMutationInput)
-  data!: DetailUpdateManyMutationInput;
+    @Field(() => DetailScalarWhereInput, {nullable:false})
+    @Type(() => DetailScalarWhereInput)
+    where!: DetailScalarWhereInput;
+
+    @Field(() => DetailUpdateManyMutationInput, {nullable:false})
+    @Type(() => DetailUpdateManyMutationInput)
+    data!: DetailUpdateManyMutationInput;
 }

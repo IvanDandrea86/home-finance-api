@@ -6,11 +6,12 @@ import { ExpenseCreateWithoutAccountInput } from './expense-create-without-accou
 
 @InputType()
 export class ExpenseCreateOrConnectWithoutAccountInput {
-  @Field(() => ExpenseWhereUniqueInput, { nullable: false })
-  @Type(() => ExpenseWhereUniqueInput)
-  where!: ExpenseWhereUniqueInput;
 
-  @Field(() => ExpenseCreateWithoutAccountInput, { nullable: false })
-  @Type(() => ExpenseCreateWithoutAccountInput)
-  create!: ExpenseCreateWithoutAccountInput;
+    @Field(() => ExpenseWhereUniqueInput, {nullable:false})
+    @Type(() => ExpenseWhereUniqueInput)
+    where!: ExpenseWhereUniqueInput;
+
+    @Field(() => ExpenseCreateWithoutAccountInput, {nullable:false})
+    @Type(() => ExpenseCreateWithoutAccountInput)
+    create!: ExpenseCreateWithoutAccountInput;
 }

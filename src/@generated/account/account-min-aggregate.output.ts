@@ -5,27 +5,28 @@ import { Float } from '@nestjs/graphql';
 
 @ObjectType()
 export class AccountMinAggregate {
-  @Field(() => String, { nullable: true })
-  id?: string;
 
-  @Field(() => Date, { nullable: true })
-  createdAt?: Date | string;
+    @Field(() => String, {nullable:true})
+    id?: string;
 
-  @Field(() => AccountType, { nullable: true })
-  type?: keyof typeof AccountType;
+    @Field(() => Date, {nullable:true})
+    createdAt?: Date | string;
 
-  @Field(() => Date, { nullable: true })
-  updatedAt?: Date | string;
+    @Field(() => AccountType, {nullable:true})
+    type?: keyof typeof AccountType;
 
-  @Field(() => String, { nullable: true })
-  name?: string;
+    @Field(() => Date, {nullable:true})
+    updatedAt?: Date | string;
 
-  @Field(() => Float, { nullable: true })
-  monthlyBudget?: number;
+    @Field(() => String, {nullable:true})
+    name?: string;
 
-  @Field(() => Float, { nullable: true })
-  sold?: number;
+    @Field(() => Float, {nullable:true})
+    monthlyBudget?: number;
 
-  @Field(() => String, { nullable: true })
-  familyId?: string;
+    @Field(() => Float, {nullable:true})
+    sold?: number;
+
+    @Field(() => String, {nullable:true})
+    familyId?: string;
 }

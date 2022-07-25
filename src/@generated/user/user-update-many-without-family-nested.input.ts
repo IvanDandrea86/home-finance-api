@@ -12,51 +12,48 @@ import { UserScalarWhereInput } from './user-scalar-where.input';
 
 @InputType()
 export class UserUpdateManyWithoutFamilyNestedInput {
-  @Field(() => [UserCreateWithoutFamilyInput], { nullable: true })
-  @Type(() => UserCreateWithoutFamilyInput)
-  create?: Array<UserCreateWithoutFamilyInput>;
 
-  @Field(() => [UserCreateOrConnectWithoutFamilyInput], { nullable: true })
-  @Type(() => UserCreateOrConnectWithoutFamilyInput)
-  connectOrCreate?: Array<UserCreateOrConnectWithoutFamilyInput>;
+    @Field(() => [UserCreateWithoutFamilyInput], {nullable:true})
+    @Type(() => UserCreateWithoutFamilyInput)
+    create?: Array<UserCreateWithoutFamilyInput>;
 
-  @Field(() => [UserUpsertWithWhereUniqueWithoutFamilyInput], {
-    nullable: true,
-  })
-  @Type(() => UserUpsertWithWhereUniqueWithoutFamilyInput)
-  upsert?: Array<UserUpsertWithWhereUniqueWithoutFamilyInput>;
+    @Field(() => [UserCreateOrConnectWithoutFamilyInput], {nullable:true})
+    @Type(() => UserCreateOrConnectWithoutFamilyInput)
+    connectOrCreate?: Array<UserCreateOrConnectWithoutFamilyInput>;
 
-  @Field(() => UserCreateManyFamilyInputEnvelope, { nullable: true })
-  @Type(() => UserCreateManyFamilyInputEnvelope)
-  createMany?: UserCreateManyFamilyInputEnvelope;
+    @Field(() => [UserUpsertWithWhereUniqueWithoutFamilyInput], {nullable:true})
+    @Type(() => UserUpsertWithWhereUniqueWithoutFamilyInput)
+    upsert?: Array<UserUpsertWithWhereUniqueWithoutFamilyInput>;
 
-  @Field(() => [UserWhereUniqueInput], { nullable: true })
-  @Type(() => UserWhereUniqueInput)
-  set?: Array<UserWhereUniqueInput>;
+    @Field(() => UserCreateManyFamilyInputEnvelope, {nullable:true})
+    @Type(() => UserCreateManyFamilyInputEnvelope)
+    createMany?: UserCreateManyFamilyInputEnvelope;
 
-  @Field(() => [UserWhereUniqueInput], { nullable: true })
-  @Type(() => UserWhereUniqueInput)
-  disconnect?: Array<UserWhereUniqueInput>;
+    @Field(() => [UserWhereUniqueInput], {nullable:true})
+    @Type(() => UserWhereUniqueInput)
+    set?: Array<UserWhereUniqueInput>;
 
-  @Field(() => [UserWhereUniqueInput], { nullable: true })
-  @Type(() => UserWhereUniqueInput)
-  delete?: Array<UserWhereUniqueInput>;
+    @Field(() => [UserWhereUniqueInput], {nullable:true})
+    @Type(() => UserWhereUniqueInput)
+    disconnect?: Array<UserWhereUniqueInput>;
 
-  @Field(() => [UserWhereUniqueInput], { nullable: true })
-  @Type(() => UserWhereUniqueInput)
-  connect?: Array<UserWhereUniqueInput>;
+    @Field(() => [UserWhereUniqueInput], {nullable:true})
+    @Type(() => UserWhereUniqueInput)
+    delete?: Array<UserWhereUniqueInput>;
 
-  @Field(() => [UserUpdateWithWhereUniqueWithoutFamilyInput], {
-    nullable: true,
-  })
-  @Type(() => UserUpdateWithWhereUniqueWithoutFamilyInput)
-  update?: Array<UserUpdateWithWhereUniqueWithoutFamilyInput>;
+    @Field(() => [UserWhereUniqueInput], {nullable:true})
+    @Type(() => UserWhereUniqueInput)
+    connect?: Array<UserWhereUniqueInput>;
 
-  @Field(() => [UserUpdateManyWithWhereWithoutFamilyInput], { nullable: true })
-  @Type(() => UserUpdateManyWithWhereWithoutFamilyInput)
-  updateMany?: Array<UserUpdateManyWithWhereWithoutFamilyInput>;
+    @Field(() => [UserUpdateWithWhereUniqueWithoutFamilyInput], {nullable:true})
+    @Type(() => UserUpdateWithWhereUniqueWithoutFamilyInput)
+    update?: Array<UserUpdateWithWhereUniqueWithoutFamilyInput>;
 
-  @Field(() => [UserScalarWhereInput], { nullable: true })
-  @Type(() => UserScalarWhereInput)
-  deleteMany?: Array<UserScalarWhereInput>;
+    @Field(() => [UserUpdateManyWithWhereWithoutFamilyInput], {nullable:true})
+    @Type(() => UserUpdateManyWithWhereWithoutFamilyInput)
+    updateMany?: Array<UserUpdateManyWithWhereWithoutFamilyInput>;
+
+    @Field(() => [UserScalarWhereInput], {nullable:true})
+    @Type(() => UserScalarWhereInput)
+    deleteMany?: Array<UserScalarWhereInput>;
 }

@@ -9,39 +9,40 @@ import { ExpenseSumOrderByAggregateInput } from './expense-sum-order-by-aggregat
 
 @InputType()
 export class ExpenseOrderByWithAggregationInput {
-  @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    createdAt?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  name?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    updatedAt?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  monthlyCost?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    name?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  familyId?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    monthlyCost?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  accountId?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    familyId?: keyof typeof SortOrder;
 
-  @Field(() => ExpenseCountOrderByAggregateInput, { nullable: true })
-  _count?: ExpenseCountOrderByAggregateInput;
+    @Field(() => SortOrder, {nullable:true})
+    accountId?: keyof typeof SortOrder;
 
-  @Field(() => ExpenseAvgOrderByAggregateInput, { nullable: true })
-  _avg?: ExpenseAvgOrderByAggregateInput;
+    @Field(() => ExpenseCountOrderByAggregateInput, {nullable:true})
+    _count?: ExpenseCountOrderByAggregateInput;
 
-  @Field(() => ExpenseMaxOrderByAggregateInput, { nullable: true })
-  _max?: ExpenseMaxOrderByAggregateInput;
+    @Field(() => ExpenseAvgOrderByAggregateInput, {nullable:true})
+    _avg?: ExpenseAvgOrderByAggregateInput;
 
-  @Field(() => ExpenseMinOrderByAggregateInput, { nullable: true })
-  _min?: ExpenseMinOrderByAggregateInput;
+    @Field(() => ExpenseMaxOrderByAggregateInput, {nullable:true})
+    _max?: ExpenseMaxOrderByAggregateInput;
 
-  @Field(() => ExpenseSumOrderByAggregateInput, { nullable: true })
-  _sum?: ExpenseSumOrderByAggregateInput;
+    @Field(() => ExpenseMinOrderByAggregateInput, {nullable:true})
+    _min?: ExpenseMinOrderByAggregateInput;
+
+    @Field(() => ExpenseSumOrderByAggregateInput, {nullable:true})
+    _sum?: ExpenseSumOrderByAggregateInput;
 }

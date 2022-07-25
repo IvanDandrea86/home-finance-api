@@ -6,11 +6,12 @@ import { ExpenseWhereUniqueInput } from './expense-where-unique.input';
 
 @ArgsType()
 export class UpdateOneExpenseArgs {
-  @Field(() => ExpenseUpdateInput, { nullable: false })
-  @Type(() => ExpenseUpdateInput)
-  data!: ExpenseUpdateInput;
 
-  @Field(() => ExpenseWhereUniqueInput, { nullable: false })
-  @Type(() => ExpenseWhereUniqueInput)
-  where!: ExpenseWhereUniqueInput;
+    @Field(() => ExpenseUpdateInput, {nullable:false})
+    @Type(() => ExpenseUpdateInput)
+    data!: ExpenseUpdateInput;
+
+    @Field(() => ExpenseWhereUniqueInput, {nullable:false})
+    @Type(() => ExpenseWhereUniqueInput)
+    where!: ExpenseWhereUniqueInput;
 }

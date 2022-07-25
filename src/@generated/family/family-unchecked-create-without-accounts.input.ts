@@ -6,27 +6,22 @@ import { RevenueUncheckedCreateNestedManyWithoutFamilyInput } from '../revenue/r
 
 @InputType()
 export class FamilyUncheckedCreateWithoutAccountsInput {
-  @Field(() => String, { nullable: true })
-  id?: string;
 
-  @Field(() => Date, { nullable: true })
-  createdAt?: Date | string;
+    @Field(() => String, {nullable:true})
+    id?: string;
 
-  @Field(() => Date, { nullable: true })
-  updatedAt?: Date | string;
+    @Field(() => Date, {nullable:true})
+    createdAt?: Date | string;
 
-  @Field(() => UserUncheckedCreateNestedManyWithoutFamilyInput, {
-    nullable: true,
-  })
-  members?: UserUncheckedCreateNestedManyWithoutFamilyInput;
+    @Field(() => Date, {nullable:true})
+    updatedAt?: Date | string;
 
-  @Field(() => ExpenseUncheckedCreateNestedManyWithoutFamilyInput, {
-    nullable: true,
-  })
-  expenses?: ExpenseUncheckedCreateNestedManyWithoutFamilyInput;
+    @Field(() => UserUncheckedCreateNestedManyWithoutFamilyInput, {nullable:true})
+    members?: UserUncheckedCreateNestedManyWithoutFamilyInput;
 
-  @Field(() => RevenueUncheckedCreateNestedManyWithoutFamilyInput, {
-    nullable: true,
-  })
-  revenues?: RevenueUncheckedCreateNestedManyWithoutFamilyInput;
+    @Field(() => ExpenseUncheckedCreateNestedManyWithoutFamilyInput, {nullable:true})
+    expenses?: ExpenseUncheckedCreateNestedManyWithoutFamilyInput;
+
+    @Field(() => RevenueUncheckedCreateNestedManyWithoutFamilyInput, {nullable:true})
+    revenues?: RevenueUncheckedCreateNestedManyWithoutFamilyInput;
 }

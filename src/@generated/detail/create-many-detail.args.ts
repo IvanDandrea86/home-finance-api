@@ -5,10 +5,11 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class CreateManyDetailArgs {
-  @Field(() => [DetailCreateManyInput], { nullable: false })
-  @Type(() => DetailCreateManyInput)
-  data!: Array<DetailCreateManyInput>;
 
-  @Field(() => Boolean, { nullable: true })
-  skipDuplicates?: boolean;
+    @Field(() => [DetailCreateManyInput], {nullable:false})
+    @Type(() => DetailCreateManyInput)
+    data!: Array<DetailCreateManyInput>;
+
+    @Field(() => Boolean, {nullable:true})
+    skipDuplicates?: boolean;
 }

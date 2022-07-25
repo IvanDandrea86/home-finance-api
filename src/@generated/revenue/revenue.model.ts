@@ -6,24 +6,25 @@ import { Family } from '../family/family.model';
 
 @ObjectType()
 export class Revenue {
-  @Field(() => ID, { nullable: false })
-  id!: string;
 
-  @Field(() => Date, { nullable: false })
-  createdAt!: Date;
+    @Field(() => ID, {nullable:false})
+    id!: string;
 
-  @Field(() => Date, { nullable: false })
-  updatedAt!: Date;
+    @Field(() => Date, {nullable:false})
+    createdAt!: Date;
 
-  @Field(() => User, { nullable: false })
-  User?: User;
+    @Field(() => Date, {nullable:false})
+    updatedAt!: Date;
 
-  @Field(() => Family, { nullable: false })
-  Family?: Family;
+    @Field(() => User, {nullable:false})
+    User?: User;
 
-  @Field(() => String, { nullable: false })
-  userId!: string;
+    @Field(() => Family, {nullable:false})
+    Family?: Family;
 
-  @Field(() => String, { nullable: false })
-  familyId!: string;
+    @Field(() => String, {nullable:false})
+    userId!: string;
+
+    @Field(() => String, {nullable:false})
+    familyId!: string;
 }

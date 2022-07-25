@@ -13,34 +13,35 @@ import { ChargeMaxAggregateInput } from './charge-max-aggregate.input';
 
 @ArgsType()
 export class ChargeAggregateArgs {
-  @Field(() => ChargeWhereInput, { nullable: true })
-  @Type(() => ChargeWhereInput)
-  where?: ChargeWhereInput;
 
-  @Field(() => [ChargeOrderByWithRelationInput], { nullable: true })
-  orderBy?: Array<ChargeOrderByWithRelationInput>;
+    @Field(() => ChargeWhereInput, {nullable:true})
+    @Type(() => ChargeWhereInput)
+    where?: ChargeWhereInput;
 
-  @Field(() => ChargeWhereUniqueInput, { nullable: true })
-  cursor?: ChargeWhereUniqueInput;
+    @Field(() => [ChargeOrderByWithRelationInput], {nullable:true})
+    orderBy?: Array<ChargeOrderByWithRelationInput>;
 
-  @Field(() => Int, { nullable: true })
-  take?: number;
+    @Field(() => ChargeWhereUniqueInput, {nullable:true})
+    cursor?: ChargeWhereUniqueInput;
 
-  @Field(() => Int, { nullable: true })
-  skip?: number;
+    @Field(() => Int, {nullable:true})
+    take?: number;
 
-  @Field(() => ChargeCountAggregateInput, { nullable: true })
-  _count?: ChargeCountAggregateInput;
+    @Field(() => Int, {nullable:true})
+    skip?: number;
 
-  @Field(() => ChargeAvgAggregateInput, { nullable: true })
-  _avg?: ChargeAvgAggregateInput;
+    @Field(() => ChargeCountAggregateInput, {nullable:true})
+    _count?: ChargeCountAggregateInput;
 
-  @Field(() => ChargeSumAggregateInput, { nullable: true })
-  _sum?: ChargeSumAggregateInput;
+    @Field(() => ChargeAvgAggregateInput, {nullable:true})
+    _avg?: ChargeAvgAggregateInput;
 
-  @Field(() => ChargeMinAggregateInput, { nullable: true })
-  _min?: ChargeMinAggregateInput;
+    @Field(() => ChargeSumAggregateInput, {nullable:true})
+    _sum?: ChargeSumAggregateInput;
 
-  @Field(() => ChargeMaxAggregateInput, { nullable: true })
-  _max?: ChargeMaxAggregateInput;
+    @Field(() => ChargeMinAggregateInput, {nullable:true})
+    _min?: ChargeMinAggregateInput;
+
+    @Field(() => ChargeMaxAggregateInput, {nullable:true})
+    _max?: ChargeMaxAggregateInput;
 }

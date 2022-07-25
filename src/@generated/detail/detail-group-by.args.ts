@@ -14,37 +14,38 @@ import { DetailMaxAggregateInput } from './detail-max-aggregate.input';
 
 @ArgsType()
 export class DetailGroupByArgs {
-  @Field(() => DetailWhereInput, { nullable: true })
-  @Type(() => DetailWhereInput)
-  where?: DetailWhereInput;
 
-  @Field(() => [DetailOrderByWithAggregationInput], { nullable: true })
-  orderBy?: Array<DetailOrderByWithAggregationInput>;
+    @Field(() => DetailWhereInput, {nullable:true})
+    @Type(() => DetailWhereInput)
+    where?: DetailWhereInput;
 
-  @Field(() => [DetailScalarFieldEnum], { nullable: false })
-  by!: Array<keyof typeof DetailScalarFieldEnum>;
+    @Field(() => [DetailOrderByWithAggregationInput], {nullable:true})
+    orderBy?: Array<DetailOrderByWithAggregationInput>;
 
-  @Field(() => DetailScalarWhereWithAggregatesInput, { nullable: true })
-  having?: DetailScalarWhereWithAggregatesInput;
+    @Field(() => [DetailScalarFieldEnum], {nullable:false})
+    by!: Array<keyof typeof DetailScalarFieldEnum>;
 
-  @Field(() => Int, { nullable: true })
-  take?: number;
+    @Field(() => DetailScalarWhereWithAggregatesInput, {nullable:true})
+    having?: DetailScalarWhereWithAggregatesInput;
 
-  @Field(() => Int, { nullable: true })
-  skip?: number;
+    @Field(() => Int, {nullable:true})
+    take?: number;
 
-  @Field(() => DetailCountAggregateInput, { nullable: true })
-  _count?: DetailCountAggregateInput;
+    @Field(() => Int, {nullable:true})
+    skip?: number;
 
-  @Field(() => DetailAvgAggregateInput, { nullable: true })
-  _avg?: DetailAvgAggregateInput;
+    @Field(() => DetailCountAggregateInput, {nullable:true})
+    _count?: DetailCountAggregateInput;
 
-  @Field(() => DetailSumAggregateInput, { nullable: true })
-  _sum?: DetailSumAggregateInput;
+    @Field(() => DetailAvgAggregateInput, {nullable:true})
+    _avg?: DetailAvgAggregateInput;
 
-  @Field(() => DetailMinAggregateInput, { nullable: true })
-  _min?: DetailMinAggregateInput;
+    @Field(() => DetailSumAggregateInput, {nullable:true})
+    _sum?: DetailSumAggregateInput;
 
-  @Field(() => DetailMaxAggregateInput, { nullable: true })
-  _max?: DetailMaxAggregateInput;
+    @Field(() => DetailMinAggregateInput, {nullable:true})
+    _min?: DetailMinAggregateInput;
+
+    @Field(() => DetailMaxAggregateInput, {nullable:true})
+    _max?: DetailMaxAggregateInput;
 }

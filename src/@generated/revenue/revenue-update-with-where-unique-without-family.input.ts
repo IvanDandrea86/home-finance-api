@@ -6,11 +6,12 @@ import { RevenueUpdateWithoutFamilyInput } from './revenue-update-without-family
 
 @InputType()
 export class RevenueUpdateWithWhereUniqueWithoutFamilyInput {
-  @Field(() => RevenueWhereUniqueInput, { nullable: false })
-  @Type(() => RevenueWhereUniqueInput)
-  where!: RevenueWhereUniqueInput;
 
-  @Field(() => RevenueUpdateWithoutFamilyInput, { nullable: false })
-  @Type(() => RevenueUpdateWithoutFamilyInput)
-  data!: RevenueUpdateWithoutFamilyInput;
+    @Field(() => RevenueWhereUniqueInput, {nullable:false})
+    @Type(() => RevenueWhereUniqueInput)
+    where!: RevenueWhereUniqueInput;
+
+    @Field(() => RevenueUpdateWithoutFamilyInput, {nullable:false})
+    @Type(() => RevenueUpdateWithoutFamilyInput)
+    data!: RevenueUpdateWithoutFamilyInput;
 }

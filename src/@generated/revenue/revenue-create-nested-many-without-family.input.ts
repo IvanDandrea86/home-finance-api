@@ -8,19 +8,20 @@ import { RevenueWhereUniqueInput } from './revenue-where-unique.input';
 
 @InputType()
 export class RevenueCreateNestedManyWithoutFamilyInput {
-  @Field(() => [RevenueCreateWithoutFamilyInput], { nullable: true })
-  @Type(() => RevenueCreateWithoutFamilyInput)
-  create?: Array<RevenueCreateWithoutFamilyInput>;
 
-  @Field(() => [RevenueCreateOrConnectWithoutFamilyInput], { nullable: true })
-  @Type(() => RevenueCreateOrConnectWithoutFamilyInput)
-  connectOrCreate?: Array<RevenueCreateOrConnectWithoutFamilyInput>;
+    @Field(() => [RevenueCreateWithoutFamilyInput], {nullable:true})
+    @Type(() => RevenueCreateWithoutFamilyInput)
+    create?: Array<RevenueCreateWithoutFamilyInput>;
 
-  @Field(() => RevenueCreateManyFamilyInputEnvelope, { nullable: true })
-  @Type(() => RevenueCreateManyFamilyInputEnvelope)
-  createMany?: RevenueCreateManyFamilyInputEnvelope;
+    @Field(() => [RevenueCreateOrConnectWithoutFamilyInput], {nullable:true})
+    @Type(() => RevenueCreateOrConnectWithoutFamilyInput)
+    connectOrCreate?: Array<RevenueCreateOrConnectWithoutFamilyInput>;
 
-  @Field(() => [RevenueWhereUniqueInput], { nullable: true })
-  @Type(() => RevenueWhereUniqueInput)
-  connect?: Array<RevenueWhereUniqueInput>;
+    @Field(() => RevenueCreateManyFamilyInputEnvelope, {nullable:true})
+    @Type(() => RevenueCreateManyFamilyInputEnvelope)
+    createMany?: RevenueCreateManyFamilyInputEnvelope;
+
+    @Field(() => [RevenueWhereUniqueInput], {nullable:true})
+    @Type(() => RevenueWhereUniqueInput)
+    connect?: Array<RevenueWhereUniqueInput>;
 }

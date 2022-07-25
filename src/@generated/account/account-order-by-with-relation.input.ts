@@ -7,36 +7,37 @@ import { ExpenseOrderByRelationAggregateInput } from '../expense/expense-order-b
 
 @InputType()
 export class AccountOrderByWithRelationInput {
-  @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  type?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    createdAt?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    type?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  name?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    updatedAt?: keyof typeof SortOrder;
 
-  @Field(() => ChargeOrderByRelationAggregateInput, { nullable: true })
-  charge?: ChargeOrderByRelationAggregateInput;
+    @Field(() => SortOrder, {nullable:true})
+    name?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  monthlyBudget?: keyof typeof SortOrder;
+    @Field(() => ChargeOrderByRelationAggregateInput, {nullable:true})
+    charge?: ChargeOrderByRelationAggregateInput;
 
-  @Field(() => SortOrder, { nullable: true })
-  sold?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    monthlyBudget?: keyof typeof SortOrder;
 
-  @Field(() => FamilyOrderByWithRelationInput, { nullable: true })
-  Family?: FamilyOrderByWithRelationInput;
+    @Field(() => SortOrder, {nullable:true})
+    sold?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  familyId?: keyof typeof SortOrder;
+    @Field(() => FamilyOrderByWithRelationInput, {nullable:true})
+    Family?: FamilyOrderByWithRelationInput;
 
-  @Field(() => ExpenseOrderByRelationAggregateInput, { nullable: true })
-  Expense?: ExpenseOrderByRelationAggregateInput;
+    @Field(() => SortOrder, {nullable:true})
+    familyId?: keyof typeof SortOrder;
+
+    @Field(() => ExpenseOrderByRelationAggregateInput, {nullable:true})
+    Expense?: ExpenseOrderByRelationAggregateInput;
 }

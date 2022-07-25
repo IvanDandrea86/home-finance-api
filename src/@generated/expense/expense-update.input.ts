@@ -9,27 +9,28 @@ import { AccountUpdateOneWithoutExpenseNestedInput } from '../account/account-up
 
 @InputType()
 export class ExpenseUpdateInput {
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  id?: StringFieldUpdateOperationsInput;
 
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: DateTimeFieldUpdateOperationsInput;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    id?: StringFieldUpdateOperationsInput;
 
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: DateTimeFieldUpdateOperationsInput;
+    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
+    createdAt?: DateTimeFieldUpdateOperationsInput;
 
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  name?: StringFieldUpdateOperationsInput;
+    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
+    updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-  @Field(() => DetailUpdateManyWithoutExpenseNestedInput, { nullable: true })
-  expenseDetails?: DetailUpdateManyWithoutExpenseNestedInput;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    name?: StringFieldUpdateOperationsInput;
 
-  @Field(() => FloatFieldUpdateOperationsInput, { nullable: true })
-  monthlyCost?: FloatFieldUpdateOperationsInput;
+    @Field(() => DetailUpdateManyWithoutExpenseNestedInput, {nullable:true})
+    expenseDetails?: DetailUpdateManyWithoutExpenseNestedInput;
 
-  @Field(() => FamilyUpdateOneWithoutExpensesNestedInput, { nullable: true })
-  Family?: FamilyUpdateOneWithoutExpensesNestedInput;
+    @Field(() => FloatFieldUpdateOperationsInput, {nullable:true})
+    monthlyCost?: FloatFieldUpdateOperationsInput;
 
-  @Field(() => AccountUpdateOneWithoutExpenseNestedInput, { nullable: true })
-  Account?: AccountUpdateOneWithoutExpenseNestedInput;
+    @Field(() => FamilyUpdateOneWithoutExpensesNestedInput, {nullable:true})
+    Family?: FamilyUpdateOneWithoutExpensesNestedInput;
+
+    @Field(() => AccountUpdateOneWithoutExpenseNestedInput, {nullable:true})
+    Account?: AccountUpdateOneWithoutExpenseNestedInput;
 }

@@ -7,33 +7,34 @@ import { FamilyRelationFilter } from '../family/family-relation-filter.input';
 
 @InputType()
 export class RevenueWhereInput {
-  @Field(() => [RevenueWhereInput], { nullable: true })
-  AND?: Array<RevenueWhereInput>;
 
-  @Field(() => [RevenueWhereInput], { nullable: true })
-  OR?: Array<RevenueWhereInput>;
+    @Field(() => [RevenueWhereInput], {nullable:true})
+    AND?: Array<RevenueWhereInput>;
 
-  @Field(() => [RevenueWhereInput], { nullable: true })
-  NOT?: Array<RevenueWhereInput>;
+    @Field(() => [RevenueWhereInput], {nullable:true})
+    OR?: Array<RevenueWhereInput>;
 
-  @Field(() => StringFilter, { nullable: true })
-  id?: StringFilter;
+    @Field(() => [RevenueWhereInput], {nullable:true})
+    NOT?: Array<RevenueWhereInput>;
 
-  @Field(() => DateTimeFilter, { nullable: true })
-  createdAt?: DateTimeFilter;
+    @Field(() => StringFilter, {nullable:true})
+    id?: StringFilter;
 
-  @Field(() => DateTimeFilter, { nullable: true })
-  updatedAt?: DateTimeFilter;
+    @Field(() => DateTimeFilter, {nullable:true})
+    createdAt?: DateTimeFilter;
 
-  @Field(() => UserRelationFilter, { nullable: true })
-  User?: UserRelationFilter;
+    @Field(() => DateTimeFilter, {nullable:true})
+    updatedAt?: DateTimeFilter;
 
-  @Field(() => FamilyRelationFilter, { nullable: true })
-  Family?: FamilyRelationFilter;
+    @Field(() => UserRelationFilter, {nullable:true})
+    User?: UserRelationFilter;
 
-  @Field(() => StringFilter, { nullable: true })
-  userId?: StringFilter;
+    @Field(() => FamilyRelationFilter, {nullable:true})
+    Family?: FamilyRelationFilter;
 
-  @Field(() => StringFilter, { nullable: true })
-  familyId?: StringFilter;
+    @Field(() => StringFilter, {nullable:true})
+    userId?: StringFilter;
+
+    @Field(() => StringFilter, {nullable:true})
+    familyId?: StringFilter;
 }

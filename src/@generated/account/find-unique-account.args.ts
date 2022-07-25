@@ -5,7 +5,8 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class FindUniqueAccountArgs {
-  @Field(() => AccountWhereUniqueInput, { nullable: false })
-  @Type(() => AccountWhereUniqueInput)
-  where!: AccountWhereUniqueInput;
+
+    @Field(() => AccountWhereUniqueInput, {nullable:false})
+    @Type(() => AccountWhereUniqueInput)
+    where!: AccountWhereUniqueInput;
 }

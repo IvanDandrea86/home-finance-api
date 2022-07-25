@@ -5,7 +5,8 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class DeleteOneChargeArgs {
-  @Field(() => ChargeWhereUniqueInput, { nullable: false })
-  @Type(() => ChargeWhereUniqueInput)
-  where!: ChargeWhereUniqueInput;
+
+    @Field(() => ChargeWhereUniqueInput, {nullable:false})
+    @Type(() => ChargeWhereUniqueInput)
+    where!: ChargeWhereUniqueInput;
 }

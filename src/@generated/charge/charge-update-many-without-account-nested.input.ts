@@ -12,53 +12,48 @@ import { ChargeScalarWhereInput } from './charge-scalar-where.input';
 
 @InputType()
 export class ChargeUpdateManyWithoutAccountNestedInput {
-  @Field(() => [ChargeCreateWithoutAccountInput], { nullable: true })
-  @Type(() => ChargeCreateWithoutAccountInput)
-  create?: Array<ChargeCreateWithoutAccountInput>;
 
-  @Field(() => [ChargeCreateOrConnectWithoutAccountInput], { nullable: true })
-  @Type(() => ChargeCreateOrConnectWithoutAccountInput)
-  connectOrCreate?: Array<ChargeCreateOrConnectWithoutAccountInput>;
+    @Field(() => [ChargeCreateWithoutAccountInput], {nullable:true})
+    @Type(() => ChargeCreateWithoutAccountInput)
+    create?: Array<ChargeCreateWithoutAccountInput>;
 
-  @Field(() => [ChargeUpsertWithWhereUniqueWithoutAccountInput], {
-    nullable: true,
-  })
-  @Type(() => ChargeUpsertWithWhereUniqueWithoutAccountInput)
-  upsert?: Array<ChargeUpsertWithWhereUniqueWithoutAccountInput>;
+    @Field(() => [ChargeCreateOrConnectWithoutAccountInput], {nullable:true})
+    @Type(() => ChargeCreateOrConnectWithoutAccountInput)
+    connectOrCreate?: Array<ChargeCreateOrConnectWithoutAccountInput>;
 
-  @Field(() => ChargeCreateManyAccountInputEnvelope, { nullable: true })
-  @Type(() => ChargeCreateManyAccountInputEnvelope)
-  createMany?: ChargeCreateManyAccountInputEnvelope;
+    @Field(() => [ChargeUpsertWithWhereUniqueWithoutAccountInput], {nullable:true})
+    @Type(() => ChargeUpsertWithWhereUniqueWithoutAccountInput)
+    upsert?: Array<ChargeUpsertWithWhereUniqueWithoutAccountInput>;
 
-  @Field(() => [ChargeWhereUniqueInput], { nullable: true })
-  @Type(() => ChargeWhereUniqueInput)
-  set?: Array<ChargeWhereUniqueInput>;
+    @Field(() => ChargeCreateManyAccountInputEnvelope, {nullable:true})
+    @Type(() => ChargeCreateManyAccountInputEnvelope)
+    createMany?: ChargeCreateManyAccountInputEnvelope;
 
-  @Field(() => [ChargeWhereUniqueInput], { nullable: true })
-  @Type(() => ChargeWhereUniqueInput)
-  disconnect?: Array<ChargeWhereUniqueInput>;
+    @Field(() => [ChargeWhereUniqueInput], {nullable:true})
+    @Type(() => ChargeWhereUniqueInput)
+    set?: Array<ChargeWhereUniqueInput>;
 
-  @Field(() => [ChargeWhereUniqueInput], { nullable: true })
-  @Type(() => ChargeWhereUniqueInput)
-  delete?: Array<ChargeWhereUniqueInput>;
+    @Field(() => [ChargeWhereUniqueInput], {nullable:true})
+    @Type(() => ChargeWhereUniqueInput)
+    disconnect?: Array<ChargeWhereUniqueInput>;
 
-  @Field(() => [ChargeWhereUniqueInput], { nullable: true })
-  @Type(() => ChargeWhereUniqueInput)
-  connect?: Array<ChargeWhereUniqueInput>;
+    @Field(() => [ChargeWhereUniqueInput], {nullable:true})
+    @Type(() => ChargeWhereUniqueInput)
+    delete?: Array<ChargeWhereUniqueInput>;
 
-  @Field(() => [ChargeUpdateWithWhereUniqueWithoutAccountInput], {
-    nullable: true,
-  })
-  @Type(() => ChargeUpdateWithWhereUniqueWithoutAccountInput)
-  update?: Array<ChargeUpdateWithWhereUniqueWithoutAccountInput>;
+    @Field(() => [ChargeWhereUniqueInput], {nullable:true})
+    @Type(() => ChargeWhereUniqueInput)
+    connect?: Array<ChargeWhereUniqueInput>;
 
-  @Field(() => [ChargeUpdateManyWithWhereWithoutAccountInput], {
-    nullable: true,
-  })
-  @Type(() => ChargeUpdateManyWithWhereWithoutAccountInput)
-  updateMany?: Array<ChargeUpdateManyWithWhereWithoutAccountInput>;
+    @Field(() => [ChargeUpdateWithWhereUniqueWithoutAccountInput], {nullable:true})
+    @Type(() => ChargeUpdateWithWhereUniqueWithoutAccountInput)
+    update?: Array<ChargeUpdateWithWhereUniqueWithoutAccountInput>;
 
-  @Field(() => [ChargeScalarWhereInput], { nullable: true })
-  @Type(() => ChargeScalarWhereInput)
-  deleteMany?: Array<ChargeScalarWhereInput>;
+    @Field(() => [ChargeUpdateManyWithWhereWithoutAccountInput], {nullable:true})
+    @Type(() => ChargeUpdateManyWithWhereWithoutAccountInput)
+    updateMany?: Array<ChargeUpdateManyWithWhereWithoutAccountInput>;
+
+    @Field(() => [ChargeScalarWhereInput], {nullable:true})
+    @Type(() => ChargeScalarWhereInput)
+    deleteMany?: Array<ChargeScalarWhereInput>;
 }

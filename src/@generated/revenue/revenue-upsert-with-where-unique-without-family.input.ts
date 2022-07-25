@@ -7,15 +7,16 @@ import { RevenueCreateWithoutFamilyInput } from './revenue-create-without-family
 
 @InputType()
 export class RevenueUpsertWithWhereUniqueWithoutFamilyInput {
-  @Field(() => RevenueWhereUniqueInput, { nullable: false })
-  @Type(() => RevenueWhereUniqueInput)
-  where!: RevenueWhereUniqueInput;
 
-  @Field(() => RevenueUpdateWithoutFamilyInput, { nullable: false })
-  @Type(() => RevenueUpdateWithoutFamilyInput)
-  update!: RevenueUpdateWithoutFamilyInput;
+    @Field(() => RevenueWhereUniqueInput, {nullable:false})
+    @Type(() => RevenueWhereUniqueInput)
+    where!: RevenueWhereUniqueInput;
 
-  @Field(() => RevenueCreateWithoutFamilyInput, { nullable: false })
-  @Type(() => RevenueCreateWithoutFamilyInput)
-  create!: RevenueCreateWithoutFamilyInput;
+    @Field(() => RevenueUpdateWithoutFamilyInput, {nullable:false})
+    @Type(() => RevenueUpdateWithoutFamilyInput)
+    update!: RevenueUpdateWithoutFamilyInput;
+
+    @Field(() => RevenueCreateWithoutFamilyInput, {nullable:false})
+    @Type(() => RevenueCreateWithoutFamilyInput)
+    create!: RevenueCreateWithoutFamilyInput;
 }

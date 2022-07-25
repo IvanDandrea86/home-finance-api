@@ -12,57 +12,58 @@ import { DetailListRelationFilter } from '../detail/detail-list-relation-filter.
 
 @InputType()
 export class UserWhereInput {
-  @Field(() => [UserWhereInput], { nullable: true })
-  AND?: Array<UserWhereInput>;
 
-  @Field(() => [UserWhereInput], { nullable: true })
-  OR?: Array<UserWhereInput>;
+    @Field(() => [UserWhereInput], {nullable:true})
+    AND?: Array<UserWhereInput>;
 
-  @Field(() => [UserWhereInput], { nullable: true })
-  NOT?: Array<UserWhereInput>;
+    @Field(() => [UserWhereInput], {nullable:true})
+    OR?: Array<UserWhereInput>;
 
-  @Field(() => StringFilter, { nullable: true })
-  id?: StringFilter;
+    @Field(() => [UserWhereInput], {nullable:true})
+    NOT?: Array<UserWhereInput>;
 
-  @Field(() => DateTimeFilter, { nullable: true })
-  createdAt?: DateTimeFilter;
+    @Field(() => StringFilter, {nullable:true})
+    id?: StringFilter;
 
-  @Field(() => DateTimeFilter, { nullable: true })
-  updatedAt?: DateTimeFilter;
+    @Field(() => DateTimeFilter, {nullable:true})
+    createdAt?: DateTimeFilter;
 
-  @Field(() => StringFilter, { nullable: true })
-  firstName?: StringFilter;
+    @Field(() => DateTimeFilter, {nullable:true})
+    updatedAt?: DateTimeFilter;
 
-  @Field(() => StringFilter, { nullable: true })
-  lastName?: StringFilter;
+    @Field(() => StringFilter, {nullable:true})
+    firstName?: StringFilter;
 
-  @Field(() => StringFilter, { nullable: true })
-  email?: StringFilter;
+    @Field(() => StringFilter, {nullable:true})
+    lastName?: StringFilter;
 
-  @Field(() => StringNullableFilter, { nullable: true })
-  password?: StringNullableFilter;
+    @Field(() => StringFilter, {nullable:true})
+    email?: StringFilter;
 
-  @Field(() => StringFilter, { nullable: true })
-  validationToken?: StringFilter;
+    @Field(() => StringNullableFilter, {nullable:true})
+    password?: StringNullableFilter;
 
-  @Field(() => DateTimeNullableFilter, { nullable: true })
-  lastLogin?: DateTimeNullableFilter;
+    @Field(() => StringFilter, {nullable:true})
+    validationToken?: StringFilter;
 
-  @Field(() => EnumVerificationStatusFilter, { nullable: true })
-  verificationStatus?: EnumVerificationStatusFilter;
+    @Field(() => DateTimeNullableFilter, {nullable:true})
+    lastLogin?: DateTimeNullableFilter;
 
-  @Field(() => PermissionRelationFilter, { nullable: true })
-  Permission?: PermissionRelationFilter;
+    @Field(() => EnumVerificationStatusFilter, {nullable:true})
+    verificationStatus?: EnumVerificationStatusFilter;
 
-  @Field(() => FamilyRelationFilter, { nullable: true })
-  Family?: FamilyRelationFilter;
+    @Field(() => PermissionRelationFilter, {nullable:true})
+    Permission?: PermissionRelationFilter;
 
-  @Field(() => StringNullableFilter, { nullable: true })
-  familyId?: StringNullableFilter;
+    @Field(() => FamilyRelationFilter, {nullable:true})
+    Family?: FamilyRelationFilter;
 
-  @Field(() => RevenueListRelationFilter, { nullable: true })
-  Revenue?: RevenueListRelationFilter;
+    @Field(() => StringNullableFilter, {nullable:true})
+    familyId?: StringNullableFilter;
 
-  @Field(() => DetailListRelationFilter, { nullable: true })
-  Mandate?: DetailListRelationFilter;
+    @Field(() => RevenueListRelationFilter, {nullable:true})
+    Revenue?: RevenueListRelationFilter;
+
+    @Field(() => DetailListRelationFilter, {nullable:true})
+    Mandate?: DetailListRelationFilter;
 }

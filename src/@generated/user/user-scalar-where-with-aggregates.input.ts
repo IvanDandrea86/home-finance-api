@@ -8,45 +8,46 @@ import { EnumVerificationStatusWithAggregatesFilter } from '../prisma/enum-verif
 
 @InputType()
 export class UserScalarWhereWithAggregatesInput {
-  @Field(() => [UserScalarWhereWithAggregatesInput], { nullable: true })
-  AND?: Array<UserScalarWhereWithAggregatesInput>;
 
-  @Field(() => [UserScalarWhereWithAggregatesInput], { nullable: true })
-  OR?: Array<UserScalarWhereWithAggregatesInput>;
+    @Field(() => [UserScalarWhereWithAggregatesInput], {nullable:true})
+    AND?: Array<UserScalarWhereWithAggregatesInput>;
 
-  @Field(() => [UserScalarWhereWithAggregatesInput], { nullable: true })
-  NOT?: Array<UserScalarWhereWithAggregatesInput>;
+    @Field(() => [UserScalarWhereWithAggregatesInput], {nullable:true})
+    OR?: Array<UserScalarWhereWithAggregatesInput>;
 
-  @Field(() => StringWithAggregatesFilter, { nullable: true })
-  id?: StringWithAggregatesFilter;
+    @Field(() => [UserScalarWhereWithAggregatesInput], {nullable:true})
+    NOT?: Array<UserScalarWhereWithAggregatesInput>;
 
-  @Field(() => DateTimeWithAggregatesFilter, { nullable: true })
-  createdAt?: DateTimeWithAggregatesFilter;
+    @Field(() => StringWithAggregatesFilter, {nullable:true})
+    id?: StringWithAggregatesFilter;
 
-  @Field(() => DateTimeWithAggregatesFilter, { nullable: true })
-  updatedAt?: DateTimeWithAggregatesFilter;
+    @Field(() => DateTimeWithAggregatesFilter, {nullable:true})
+    createdAt?: DateTimeWithAggregatesFilter;
 
-  @Field(() => StringWithAggregatesFilter, { nullable: true })
-  firstName?: StringWithAggregatesFilter;
+    @Field(() => DateTimeWithAggregatesFilter, {nullable:true})
+    updatedAt?: DateTimeWithAggregatesFilter;
 
-  @Field(() => StringWithAggregatesFilter, { nullable: true })
-  lastName?: StringWithAggregatesFilter;
+    @Field(() => StringWithAggregatesFilter, {nullable:true})
+    firstName?: StringWithAggregatesFilter;
 
-  @Field(() => StringWithAggregatesFilter, { nullable: true })
-  email?: StringWithAggregatesFilter;
+    @Field(() => StringWithAggregatesFilter, {nullable:true})
+    lastName?: StringWithAggregatesFilter;
 
-  @Field(() => StringNullableWithAggregatesFilter, { nullable: true })
-  password?: StringNullableWithAggregatesFilter;
+    @Field(() => StringWithAggregatesFilter, {nullable:true})
+    email?: StringWithAggregatesFilter;
 
-  @Field(() => StringWithAggregatesFilter, { nullable: true })
-  validationToken?: StringWithAggregatesFilter;
+    @Field(() => StringNullableWithAggregatesFilter, {nullable:true})
+    password?: StringNullableWithAggregatesFilter;
 
-  @Field(() => DateTimeNullableWithAggregatesFilter, { nullable: true })
-  lastLogin?: DateTimeNullableWithAggregatesFilter;
+    @Field(() => StringWithAggregatesFilter, {nullable:true})
+    validationToken?: StringWithAggregatesFilter;
 
-  @Field(() => EnumVerificationStatusWithAggregatesFilter, { nullable: true })
-  verificationStatus?: EnumVerificationStatusWithAggregatesFilter;
+    @Field(() => DateTimeNullableWithAggregatesFilter, {nullable:true})
+    lastLogin?: DateTimeNullableWithAggregatesFilter;
 
-  @Field(() => StringNullableWithAggregatesFilter, { nullable: true })
-  familyId?: StringNullableWithAggregatesFilter;
+    @Field(() => EnumVerificationStatusWithAggregatesFilter, {nullable:true})
+    verificationStatus?: EnumVerificationStatusWithAggregatesFilter;
+
+    @Field(() => StringNullableWithAggregatesFilter, {nullable:true})
+    familyId?: StringNullableWithAggregatesFilter;
 }

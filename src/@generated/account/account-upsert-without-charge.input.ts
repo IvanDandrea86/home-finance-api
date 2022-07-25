@@ -6,11 +6,12 @@ import { AccountCreateWithoutChargeInput } from './account-create-without-charge
 
 @InputType()
 export class AccountUpsertWithoutChargeInput {
-  @Field(() => AccountUpdateWithoutChargeInput, { nullable: false })
-  @Type(() => AccountUpdateWithoutChargeInput)
-  update!: AccountUpdateWithoutChargeInput;
 
-  @Field(() => AccountCreateWithoutChargeInput, { nullable: false })
-  @Type(() => AccountCreateWithoutChargeInput)
-  create!: AccountCreateWithoutChargeInput;
+    @Field(() => AccountUpdateWithoutChargeInput, {nullable:false})
+    @Type(() => AccountUpdateWithoutChargeInput)
+    update!: AccountUpdateWithoutChargeInput;
+
+    @Field(() => AccountCreateWithoutChargeInput, {nullable:false})
+    @Type(() => AccountCreateWithoutChargeInput)
+    create!: AccountCreateWithoutChargeInput;
 }

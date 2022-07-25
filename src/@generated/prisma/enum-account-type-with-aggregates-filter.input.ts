@@ -7,24 +7,25 @@ import { NestedEnumAccountTypeFilter } from './nested-enum-account-type-filter.i
 
 @InputType()
 export class EnumAccountTypeWithAggregatesFilter {
-  @Field(() => AccountType, { nullable: true })
-  equals?: keyof typeof AccountType;
 
-  @Field(() => [AccountType], { nullable: true })
-  in?: Array<keyof typeof AccountType>;
+    @Field(() => AccountType, {nullable:true})
+    equals?: keyof typeof AccountType;
 
-  @Field(() => [AccountType], { nullable: true })
-  notIn?: Array<keyof typeof AccountType>;
+    @Field(() => [AccountType], {nullable:true})
+    in?: Array<keyof typeof AccountType>;
 
-  @Field(() => NestedEnumAccountTypeWithAggregatesFilter, { nullable: true })
-  not?: NestedEnumAccountTypeWithAggregatesFilter;
+    @Field(() => [AccountType], {nullable:true})
+    notIn?: Array<keyof typeof AccountType>;
 
-  @Field(() => NestedIntFilter, { nullable: true })
-  _count?: NestedIntFilter;
+    @Field(() => NestedEnumAccountTypeWithAggregatesFilter, {nullable:true})
+    not?: NestedEnumAccountTypeWithAggregatesFilter;
 
-  @Field(() => NestedEnumAccountTypeFilter, { nullable: true })
-  _min?: NestedEnumAccountTypeFilter;
+    @Field(() => NestedIntFilter, {nullable:true})
+    _count?: NestedIntFilter;
 
-  @Field(() => NestedEnumAccountTypeFilter, { nullable: true })
-  _max?: NestedEnumAccountTypeFilter;
+    @Field(() => NestedEnumAccountTypeFilter, {nullable:true})
+    _min?: NestedEnumAccountTypeFilter;
+
+    @Field(() => NestedEnumAccountTypeFilter, {nullable:true})
+    _max?: NestedEnumAccountTypeFilter;
 }

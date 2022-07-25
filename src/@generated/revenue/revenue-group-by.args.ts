@@ -12,31 +12,32 @@ import { RevenueMaxAggregateInput } from './revenue-max-aggregate.input';
 
 @ArgsType()
 export class RevenueGroupByArgs {
-  @Field(() => RevenueWhereInput, { nullable: true })
-  @Type(() => RevenueWhereInput)
-  where?: RevenueWhereInput;
 
-  @Field(() => [RevenueOrderByWithAggregationInput], { nullable: true })
-  orderBy?: Array<RevenueOrderByWithAggregationInput>;
+    @Field(() => RevenueWhereInput, {nullable:true})
+    @Type(() => RevenueWhereInput)
+    where?: RevenueWhereInput;
 
-  @Field(() => [RevenueScalarFieldEnum], { nullable: false })
-  by!: Array<keyof typeof RevenueScalarFieldEnum>;
+    @Field(() => [RevenueOrderByWithAggregationInput], {nullable:true})
+    orderBy?: Array<RevenueOrderByWithAggregationInput>;
 
-  @Field(() => RevenueScalarWhereWithAggregatesInput, { nullable: true })
-  having?: RevenueScalarWhereWithAggregatesInput;
+    @Field(() => [RevenueScalarFieldEnum], {nullable:false})
+    by!: Array<keyof typeof RevenueScalarFieldEnum>;
 
-  @Field(() => Int, { nullable: true })
-  take?: number;
+    @Field(() => RevenueScalarWhereWithAggregatesInput, {nullable:true})
+    having?: RevenueScalarWhereWithAggregatesInput;
 
-  @Field(() => Int, { nullable: true })
-  skip?: number;
+    @Field(() => Int, {nullable:true})
+    take?: number;
 
-  @Field(() => RevenueCountAggregateInput, { nullable: true })
-  _count?: RevenueCountAggregateInput;
+    @Field(() => Int, {nullable:true})
+    skip?: number;
 
-  @Field(() => RevenueMinAggregateInput, { nullable: true })
-  _min?: RevenueMinAggregateInput;
+    @Field(() => RevenueCountAggregateInput, {nullable:true})
+    _count?: RevenueCountAggregateInput;
 
-  @Field(() => RevenueMaxAggregateInput, { nullable: true })
-  _max?: RevenueMaxAggregateInput;
+    @Field(() => RevenueMinAggregateInput, {nullable:true})
+    _min?: RevenueMinAggregateInput;
+
+    @Field(() => RevenueMaxAggregateInput, {nullable:true})
+    _max?: RevenueMaxAggregateInput;
 }

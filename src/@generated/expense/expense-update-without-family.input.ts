@@ -8,24 +8,25 @@ import { AccountUpdateOneWithoutExpenseNestedInput } from '../account/account-up
 
 @InputType()
 export class ExpenseUpdateWithoutFamilyInput {
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  id?: StringFieldUpdateOperationsInput;
 
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: DateTimeFieldUpdateOperationsInput;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    id?: StringFieldUpdateOperationsInput;
 
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: DateTimeFieldUpdateOperationsInput;
+    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
+    createdAt?: DateTimeFieldUpdateOperationsInput;
 
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  name?: StringFieldUpdateOperationsInput;
+    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
+    updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-  @Field(() => DetailUpdateManyWithoutExpenseNestedInput, { nullable: true })
-  expenseDetails?: DetailUpdateManyWithoutExpenseNestedInput;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    name?: StringFieldUpdateOperationsInput;
 
-  @Field(() => FloatFieldUpdateOperationsInput, { nullable: true })
-  monthlyCost?: FloatFieldUpdateOperationsInput;
+    @Field(() => DetailUpdateManyWithoutExpenseNestedInput, {nullable:true})
+    expenseDetails?: DetailUpdateManyWithoutExpenseNestedInput;
 
-  @Field(() => AccountUpdateOneWithoutExpenseNestedInput, { nullable: true })
-  Account?: AccountUpdateOneWithoutExpenseNestedInput;
+    @Field(() => FloatFieldUpdateOperationsInput, {nullable:true})
+    monthlyCost?: FloatFieldUpdateOperationsInput;
+
+    @Field(() => AccountUpdateOneWithoutExpenseNestedInput, {nullable:true})
+    Account?: AccountUpdateOneWithoutExpenseNestedInput;
 }

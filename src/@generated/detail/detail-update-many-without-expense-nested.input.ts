@@ -12,53 +12,48 @@ import { DetailScalarWhereInput } from './detail-scalar-where.input';
 
 @InputType()
 export class DetailUpdateManyWithoutExpenseNestedInput {
-  @Field(() => [DetailCreateWithoutExpenseInput], { nullable: true })
-  @Type(() => DetailCreateWithoutExpenseInput)
-  create?: Array<DetailCreateWithoutExpenseInput>;
 
-  @Field(() => [DetailCreateOrConnectWithoutExpenseInput], { nullable: true })
-  @Type(() => DetailCreateOrConnectWithoutExpenseInput)
-  connectOrCreate?: Array<DetailCreateOrConnectWithoutExpenseInput>;
+    @Field(() => [DetailCreateWithoutExpenseInput], {nullable:true})
+    @Type(() => DetailCreateWithoutExpenseInput)
+    create?: Array<DetailCreateWithoutExpenseInput>;
 
-  @Field(() => [DetailUpsertWithWhereUniqueWithoutExpenseInput], {
-    nullable: true,
-  })
-  @Type(() => DetailUpsertWithWhereUniqueWithoutExpenseInput)
-  upsert?: Array<DetailUpsertWithWhereUniqueWithoutExpenseInput>;
+    @Field(() => [DetailCreateOrConnectWithoutExpenseInput], {nullable:true})
+    @Type(() => DetailCreateOrConnectWithoutExpenseInput)
+    connectOrCreate?: Array<DetailCreateOrConnectWithoutExpenseInput>;
 
-  @Field(() => DetailCreateManyExpenseInputEnvelope, { nullable: true })
-  @Type(() => DetailCreateManyExpenseInputEnvelope)
-  createMany?: DetailCreateManyExpenseInputEnvelope;
+    @Field(() => [DetailUpsertWithWhereUniqueWithoutExpenseInput], {nullable:true})
+    @Type(() => DetailUpsertWithWhereUniqueWithoutExpenseInput)
+    upsert?: Array<DetailUpsertWithWhereUniqueWithoutExpenseInput>;
 
-  @Field(() => [DetailWhereUniqueInput], { nullable: true })
-  @Type(() => DetailWhereUniqueInput)
-  set?: Array<DetailWhereUniqueInput>;
+    @Field(() => DetailCreateManyExpenseInputEnvelope, {nullable:true})
+    @Type(() => DetailCreateManyExpenseInputEnvelope)
+    createMany?: DetailCreateManyExpenseInputEnvelope;
 
-  @Field(() => [DetailWhereUniqueInput], { nullable: true })
-  @Type(() => DetailWhereUniqueInput)
-  disconnect?: Array<DetailWhereUniqueInput>;
+    @Field(() => [DetailWhereUniqueInput], {nullable:true})
+    @Type(() => DetailWhereUniqueInput)
+    set?: Array<DetailWhereUniqueInput>;
 
-  @Field(() => [DetailWhereUniqueInput], { nullable: true })
-  @Type(() => DetailWhereUniqueInput)
-  delete?: Array<DetailWhereUniqueInput>;
+    @Field(() => [DetailWhereUniqueInput], {nullable:true})
+    @Type(() => DetailWhereUniqueInput)
+    disconnect?: Array<DetailWhereUniqueInput>;
 
-  @Field(() => [DetailWhereUniqueInput], { nullable: true })
-  @Type(() => DetailWhereUniqueInput)
-  connect?: Array<DetailWhereUniqueInput>;
+    @Field(() => [DetailWhereUniqueInput], {nullable:true})
+    @Type(() => DetailWhereUniqueInput)
+    delete?: Array<DetailWhereUniqueInput>;
 
-  @Field(() => [DetailUpdateWithWhereUniqueWithoutExpenseInput], {
-    nullable: true,
-  })
-  @Type(() => DetailUpdateWithWhereUniqueWithoutExpenseInput)
-  update?: Array<DetailUpdateWithWhereUniqueWithoutExpenseInput>;
+    @Field(() => [DetailWhereUniqueInput], {nullable:true})
+    @Type(() => DetailWhereUniqueInput)
+    connect?: Array<DetailWhereUniqueInput>;
 
-  @Field(() => [DetailUpdateManyWithWhereWithoutExpenseInput], {
-    nullable: true,
-  })
-  @Type(() => DetailUpdateManyWithWhereWithoutExpenseInput)
-  updateMany?: Array<DetailUpdateManyWithWhereWithoutExpenseInput>;
+    @Field(() => [DetailUpdateWithWhereUniqueWithoutExpenseInput], {nullable:true})
+    @Type(() => DetailUpdateWithWhereUniqueWithoutExpenseInput)
+    update?: Array<DetailUpdateWithWhereUniqueWithoutExpenseInput>;
 
-  @Field(() => [DetailScalarWhereInput], { nullable: true })
-  @Type(() => DetailScalarWhereInput)
-  deleteMany?: Array<DetailScalarWhereInput>;
+    @Field(() => [DetailUpdateManyWithWhereWithoutExpenseInput], {nullable:true})
+    @Type(() => DetailUpdateManyWithWhereWithoutExpenseInput)
+    updateMany?: Array<DetailUpdateManyWithWhereWithoutExpenseInput>;
+
+    @Field(() => [DetailScalarWhereInput], {nullable:true})
+    @Type(() => DetailScalarWhereInput)
+    deleteMany?: Array<DetailScalarWhereInput>;
 }

@@ -6,11 +6,12 @@ import { UserCreateWithoutMandateInput } from './user-create-without-mandate.inp
 
 @InputType()
 export class UserUpsertWithoutMandateInput {
-  @Field(() => UserUpdateWithoutMandateInput, { nullable: false })
-  @Type(() => UserUpdateWithoutMandateInput)
-  update!: UserUpdateWithoutMandateInput;
 
-  @Field(() => UserCreateWithoutMandateInput, { nullable: false })
-  @Type(() => UserCreateWithoutMandateInput)
-  create!: UserCreateWithoutMandateInput;
+    @Field(() => UserUpdateWithoutMandateInput, {nullable:false})
+    @Type(() => UserUpdateWithoutMandateInput)
+    update!: UserUpdateWithoutMandateInput;
+
+    @Field(() => UserCreateWithoutMandateInput, {nullable:false})
+    @Type(() => UserCreateWithoutMandateInput)
+    create!: UserCreateWithoutMandateInput;
 }

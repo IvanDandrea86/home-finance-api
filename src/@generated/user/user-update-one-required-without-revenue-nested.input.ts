@@ -9,23 +9,24 @@ import { UserUpdateWithoutRevenueInput } from './user-update-without-revenue.inp
 
 @InputType()
 export class UserUpdateOneRequiredWithoutRevenueNestedInput {
-  @Field(() => UserCreateWithoutRevenueInput, { nullable: true })
-  @Type(() => UserCreateWithoutRevenueInput)
-  create?: UserCreateWithoutRevenueInput;
 
-  @Field(() => UserCreateOrConnectWithoutRevenueInput, { nullable: true })
-  @Type(() => UserCreateOrConnectWithoutRevenueInput)
-  connectOrCreate?: UserCreateOrConnectWithoutRevenueInput;
+    @Field(() => UserCreateWithoutRevenueInput, {nullable:true})
+    @Type(() => UserCreateWithoutRevenueInput)
+    create?: UserCreateWithoutRevenueInput;
 
-  @Field(() => UserUpsertWithoutRevenueInput, { nullable: true })
-  @Type(() => UserUpsertWithoutRevenueInput)
-  upsert?: UserUpsertWithoutRevenueInput;
+    @Field(() => UserCreateOrConnectWithoutRevenueInput, {nullable:true})
+    @Type(() => UserCreateOrConnectWithoutRevenueInput)
+    connectOrCreate?: UserCreateOrConnectWithoutRevenueInput;
 
-  @Field(() => UserWhereUniqueInput, { nullable: true })
-  @Type(() => UserWhereUniqueInput)
-  connect?: UserWhereUniqueInput;
+    @Field(() => UserUpsertWithoutRevenueInput, {nullable:true})
+    @Type(() => UserUpsertWithoutRevenueInput)
+    upsert?: UserUpsertWithoutRevenueInput;
 
-  @Field(() => UserUpdateWithoutRevenueInput, { nullable: true })
-  @Type(() => UserUpdateWithoutRevenueInput)
-  update?: UserUpdateWithoutRevenueInput;
+    @Field(() => UserWhereUniqueInput, {nullable:true})
+    @Type(() => UserWhereUniqueInput)
+    connect?: UserWhereUniqueInput;
+
+    @Field(() => UserUpdateWithoutRevenueInput, {nullable:true})
+    @Type(() => UserUpdateWithoutRevenueInput)
+    update?: UserUpdateWithoutRevenueInput;
 }

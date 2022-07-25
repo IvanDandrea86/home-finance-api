@@ -6,11 +6,12 @@ import { AccountCreateWithoutFamilyInput } from './account-create-without-family
 
 @InputType()
 export class AccountCreateOrConnectWithoutFamilyInput {
-  @Field(() => AccountWhereUniqueInput, { nullable: false })
-  @Type(() => AccountWhereUniqueInput)
-  where!: AccountWhereUniqueInput;
 
-  @Field(() => AccountCreateWithoutFamilyInput, { nullable: false })
-  @Type(() => AccountCreateWithoutFamilyInput)
-  create!: AccountCreateWithoutFamilyInput;
+    @Field(() => AccountWhereUniqueInput, {nullable:false})
+    @Type(() => AccountWhereUniqueInput)
+    where!: AccountWhereUniqueInput;
+
+    @Field(() => AccountCreateWithoutFamilyInput, {nullable:false})
+    @Type(() => AccountCreateWithoutFamilyInput)
+    create!: AccountCreateWithoutFamilyInput;
 }

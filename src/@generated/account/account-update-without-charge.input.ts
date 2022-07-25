@@ -9,30 +9,31 @@ import { ExpenseUpdateManyWithoutAccountNestedInput } from '../expense/expense-u
 
 @InputType()
 export class AccountUpdateWithoutChargeInput {
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  id?: StringFieldUpdateOperationsInput;
 
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: DateTimeFieldUpdateOperationsInput;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    id?: StringFieldUpdateOperationsInput;
 
-  @Field(() => EnumAccountTypeFieldUpdateOperationsInput, { nullable: true })
-  type?: EnumAccountTypeFieldUpdateOperationsInput;
+    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
+    createdAt?: DateTimeFieldUpdateOperationsInput;
 
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: DateTimeFieldUpdateOperationsInput;
+    @Field(() => EnumAccountTypeFieldUpdateOperationsInput, {nullable:true})
+    type?: EnumAccountTypeFieldUpdateOperationsInput;
 
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  name?: StringFieldUpdateOperationsInput;
+    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
+    updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-  @Field(() => FloatFieldUpdateOperationsInput, { nullable: true })
-  monthlyBudget?: FloatFieldUpdateOperationsInput;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    name?: StringFieldUpdateOperationsInput;
 
-  @Field(() => FloatFieldUpdateOperationsInput, { nullable: true })
-  sold?: FloatFieldUpdateOperationsInput;
+    @Field(() => FloatFieldUpdateOperationsInput, {nullable:true})
+    monthlyBudget?: FloatFieldUpdateOperationsInput;
 
-  @Field(() => FamilyUpdateOneWithoutAccountsNestedInput, { nullable: true })
-  Family?: FamilyUpdateOneWithoutAccountsNestedInput;
+    @Field(() => FloatFieldUpdateOperationsInput, {nullable:true})
+    sold?: FloatFieldUpdateOperationsInput;
 
-  @Field(() => ExpenseUpdateManyWithoutAccountNestedInput, { nullable: true })
-  Expense?: ExpenseUpdateManyWithoutAccountNestedInput;
+    @Field(() => FamilyUpdateOneWithoutAccountsNestedInput, {nullable:true})
+    Family?: FamilyUpdateOneWithoutAccountsNestedInput;
+
+    @Field(() => ExpenseUpdateManyWithoutAccountNestedInput, {nullable:true})
+    Expense?: ExpenseUpdateManyWithoutAccountNestedInput;
 }

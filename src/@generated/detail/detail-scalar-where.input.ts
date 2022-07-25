@@ -8,36 +8,37 @@ import { IntNullableFilter } from '../prisma/int-nullable-filter.input';
 
 @InputType()
 export class DetailScalarWhereInput {
-  @Field(() => [DetailScalarWhereInput], { nullable: true })
-  AND?: Array<DetailScalarWhereInput>;
 
-  @Field(() => [DetailScalarWhereInput], { nullable: true })
-  OR?: Array<DetailScalarWhereInput>;
+    @Field(() => [DetailScalarWhereInput], {nullable:true})
+    AND?: Array<DetailScalarWhereInput>;
 
-  @Field(() => [DetailScalarWhereInput], { nullable: true })
-  NOT?: Array<DetailScalarWhereInput>;
+    @Field(() => [DetailScalarWhereInput], {nullable:true})
+    OR?: Array<DetailScalarWhereInput>;
 
-  @Field(() => StringFilter, { nullable: true })
-  id?: StringFilter;
+    @Field(() => [DetailScalarWhereInput], {nullable:true})
+    NOT?: Array<DetailScalarWhereInput>;
 
-  @Field(() => DateTimeFilter, { nullable: true })
-  createdAt?: DateTimeFilter;
+    @Field(() => StringFilter, {nullable:true})
+    id?: StringFilter;
 
-  @Field(() => DateTimeFilter, { nullable: true })
-  updatedAt?: DateTimeFilter;
+    @Field(() => DateTimeFilter, {nullable:true})
+    createdAt?: DateTimeFilter;
 
-  @Field(() => StringFilter, { nullable: true })
-  name?: StringFilter;
+    @Field(() => DateTimeFilter, {nullable:true})
+    updatedAt?: DateTimeFilter;
 
-  @Field(() => StringNullableFilter, { nullable: true })
-  expenseId?: StringNullableFilter;
+    @Field(() => StringFilter, {nullable:true})
+    name?: StringFilter;
 
-  @Field(() => FloatFilter, { nullable: true })
-  cost?: FloatFilter;
+    @Field(() => StringNullableFilter, {nullable:true})
+    expenseId?: StringNullableFilter;
 
-  @Field(() => IntNullableFilter, { nullable: true })
-  period?: IntNullableFilter;
+    @Field(() => FloatFilter, {nullable:true})
+    cost?: FloatFilter;
 
-  @Field(() => StringNullableFilter, { nullable: true })
-  userId?: StringNullableFilter;
+    @Field(() => IntNullableFilter, {nullable:true})
+    period?: IntNullableFilter;
+
+    @Field(() => StringNullableFilter, {nullable:true})
+    userId?: StringNullableFilter;
 }

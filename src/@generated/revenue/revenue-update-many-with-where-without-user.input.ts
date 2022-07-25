@@ -6,11 +6,12 @@ import { RevenueUpdateManyMutationInput } from './revenue-update-many-mutation.i
 
 @InputType()
 export class RevenueUpdateManyWithWhereWithoutUserInput {
-  @Field(() => RevenueScalarWhereInput, { nullable: false })
-  @Type(() => RevenueScalarWhereInput)
-  where!: RevenueScalarWhereInput;
 
-  @Field(() => RevenueUpdateManyMutationInput, { nullable: false })
-  @Type(() => RevenueUpdateManyMutationInput)
-  data!: RevenueUpdateManyMutationInput;
+    @Field(() => RevenueScalarWhereInput, {nullable:false})
+    @Type(() => RevenueScalarWhereInput)
+    where!: RevenueScalarWhereInput;
+
+    @Field(() => RevenueUpdateManyMutationInput, {nullable:false})
+    @Type(() => RevenueUpdateManyMutationInput)
+    data!: RevenueUpdateManyMutationInput;
 }

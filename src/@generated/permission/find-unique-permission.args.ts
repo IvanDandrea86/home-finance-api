@@ -5,7 +5,8 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class FindUniquePermissionArgs {
-  @Field(() => PermissionWhereUniqueInput, { nullable: false })
-  @Type(() => PermissionWhereUniqueInput)
-  where!: PermissionWhereUniqueInput;
+
+    @Field(() => PermissionWhereUniqueInput, {nullable:false})
+    @Type(() => PermissionWhereUniqueInput)
+    where!: PermissionWhereUniqueInput;
 }

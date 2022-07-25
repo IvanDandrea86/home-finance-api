@@ -4,9 +4,10 @@ import { SortOrder } from '../prisma/sort-order.enum';
 
 @InputType()
 export class DetailSumOrderByAggregateInput {
-  @Field(() => SortOrder, { nullable: true })
-  cost?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  period?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    cost?: keyof typeof SortOrder;
+
+    @Field(() => SortOrder, {nullable:true})
+    period?: keyof typeof SortOrder;
 }

@@ -6,11 +6,12 @@ import { DetailUpdateWithoutExpenseInput } from './detail-update-without-expense
 
 @InputType()
 export class DetailUpdateWithWhereUniqueWithoutExpenseInput {
-  @Field(() => DetailWhereUniqueInput, { nullable: false })
-  @Type(() => DetailWhereUniqueInput)
-  where!: DetailWhereUniqueInput;
 
-  @Field(() => DetailUpdateWithoutExpenseInput, { nullable: false })
-  @Type(() => DetailUpdateWithoutExpenseInput)
-  data!: DetailUpdateWithoutExpenseInput;
+    @Field(() => DetailWhereUniqueInput, {nullable:false})
+    @Type(() => DetailWhereUniqueInput)
+    where!: DetailWhereUniqueInput;
+
+    @Field(() => DetailUpdateWithoutExpenseInput, {nullable:false})
+    @Type(() => DetailUpdateWithoutExpenseInput)
+    data!: DetailUpdateWithoutExpenseInput;
 }

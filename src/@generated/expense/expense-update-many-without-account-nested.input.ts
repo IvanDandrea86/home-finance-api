@@ -12,53 +12,48 @@ import { ExpenseScalarWhereInput } from './expense-scalar-where.input';
 
 @InputType()
 export class ExpenseUpdateManyWithoutAccountNestedInput {
-  @Field(() => [ExpenseCreateWithoutAccountInput], { nullable: true })
-  @Type(() => ExpenseCreateWithoutAccountInput)
-  create?: Array<ExpenseCreateWithoutAccountInput>;
 
-  @Field(() => [ExpenseCreateOrConnectWithoutAccountInput], { nullable: true })
-  @Type(() => ExpenseCreateOrConnectWithoutAccountInput)
-  connectOrCreate?: Array<ExpenseCreateOrConnectWithoutAccountInput>;
+    @Field(() => [ExpenseCreateWithoutAccountInput], {nullable:true})
+    @Type(() => ExpenseCreateWithoutAccountInput)
+    create?: Array<ExpenseCreateWithoutAccountInput>;
 
-  @Field(() => [ExpenseUpsertWithWhereUniqueWithoutAccountInput], {
-    nullable: true,
-  })
-  @Type(() => ExpenseUpsertWithWhereUniqueWithoutAccountInput)
-  upsert?: Array<ExpenseUpsertWithWhereUniqueWithoutAccountInput>;
+    @Field(() => [ExpenseCreateOrConnectWithoutAccountInput], {nullable:true})
+    @Type(() => ExpenseCreateOrConnectWithoutAccountInput)
+    connectOrCreate?: Array<ExpenseCreateOrConnectWithoutAccountInput>;
 
-  @Field(() => ExpenseCreateManyAccountInputEnvelope, { nullable: true })
-  @Type(() => ExpenseCreateManyAccountInputEnvelope)
-  createMany?: ExpenseCreateManyAccountInputEnvelope;
+    @Field(() => [ExpenseUpsertWithWhereUniqueWithoutAccountInput], {nullable:true})
+    @Type(() => ExpenseUpsertWithWhereUniqueWithoutAccountInput)
+    upsert?: Array<ExpenseUpsertWithWhereUniqueWithoutAccountInput>;
 
-  @Field(() => [ExpenseWhereUniqueInput], { nullable: true })
-  @Type(() => ExpenseWhereUniqueInput)
-  set?: Array<ExpenseWhereUniqueInput>;
+    @Field(() => ExpenseCreateManyAccountInputEnvelope, {nullable:true})
+    @Type(() => ExpenseCreateManyAccountInputEnvelope)
+    createMany?: ExpenseCreateManyAccountInputEnvelope;
 
-  @Field(() => [ExpenseWhereUniqueInput], { nullable: true })
-  @Type(() => ExpenseWhereUniqueInput)
-  disconnect?: Array<ExpenseWhereUniqueInput>;
+    @Field(() => [ExpenseWhereUniqueInput], {nullable:true})
+    @Type(() => ExpenseWhereUniqueInput)
+    set?: Array<ExpenseWhereUniqueInput>;
 
-  @Field(() => [ExpenseWhereUniqueInput], { nullable: true })
-  @Type(() => ExpenseWhereUniqueInput)
-  delete?: Array<ExpenseWhereUniqueInput>;
+    @Field(() => [ExpenseWhereUniqueInput], {nullable:true})
+    @Type(() => ExpenseWhereUniqueInput)
+    disconnect?: Array<ExpenseWhereUniqueInput>;
 
-  @Field(() => [ExpenseWhereUniqueInput], { nullable: true })
-  @Type(() => ExpenseWhereUniqueInput)
-  connect?: Array<ExpenseWhereUniqueInput>;
+    @Field(() => [ExpenseWhereUniqueInput], {nullable:true})
+    @Type(() => ExpenseWhereUniqueInput)
+    delete?: Array<ExpenseWhereUniqueInput>;
 
-  @Field(() => [ExpenseUpdateWithWhereUniqueWithoutAccountInput], {
-    nullable: true,
-  })
-  @Type(() => ExpenseUpdateWithWhereUniqueWithoutAccountInput)
-  update?: Array<ExpenseUpdateWithWhereUniqueWithoutAccountInput>;
+    @Field(() => [ExpenseWhereUniqueInput], {nullable:true})
+    @Type(() => ExpenseWhereUniqueInput)
+    connect?: Array<ExpenseWhereUniqueInput>;
 
-  @Field(() => [ExpenseUpdateManyWithWhereWithoutAccountInput], {
-    nullable: true,
-  })
-  @Type(() => ExpenseUpdateManyWithWhereWithoutAccountInput)
-  updateMany?: Array<ExpenseUpdateManyWithWhereWithoutAccountInput>;
+    @Field(() => [ExpenseUpdateWithWhereUniqueWithoutAccountInput], {nullable:true})
+    @Type(() => ExpenseUpdateWithWhereUniqueWithoutAccountInput)
+    update?: Array<ExpenseUpdateWithWhereUniqueWithoutAccountInput>;
 
-  @Field(() => [ExpenseScalarWhereInput], { nullable: true })
-  @Type(() => ExpenseScalarWhereInput)
-  deleteMany?: Array<ExpenseScalarWhereInput>;
+    @Field(() => [ExpenseUpdateManyWithWhereWithoutAccountInput], {nullable:true})
+    @Type(() => ExpenseUpdateManyWithWhereWithoutAccountInput)
+    updateMany?: Array<ExpenseUpdateManyWithWhereWithoutAccountInput>;
+
+    @Field(() => [ExpenseScalarWhereInput], {nullable:true})
+    @Type(() => ExpenseScalarWhereInput)
+    deleteMany?: Array<ExpenseScalarWhereInput>;
 }

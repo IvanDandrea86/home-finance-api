@@ -8,45 +8,46 @@ import { EnumVerificationStatusFilter } from '../prisma/enum-verification-status
 
 @InputType()
 export class UserScalarWhereInput {
-  @Field(() => [UserScalarWhereInput], { nullable: true })
-  AND?: Array<UserScalarWhereInput>;
 
-  @Field(() => [UserScalarWhereInput], { nullable: true })
-  OR?: Array<UserScalarWhereInput>;
+    @Field(() => [UserScalarWhereInput], {nullable:true})
+    AND?: Array<UserScalarWhereInput>;
 
-  @Field(() => [UserScalarWhereInput], { nullable: true })
-  NOT?: Array<UserScalarWhereInput>;
+    @Field(() => [UserScalarWhereInput], {nullable:true})
+    OR?: Array<UserScalarWhereInput>;
 
-  @Field(() => StringFilter, { nullable: true })
-  id?: StringFilter;
+    @Field(() => [UserScalarWhereInput], {nullable:true})
+    NOT?: Array<UserScalarWhereInput>;
 
-  @Field(() => DateTimeFilter, { nullable: true })
-  createdAt?: DateTimeFilter;
+    @Field(() => StringFilter, {nullable:true})
+    id?: StringFilter;
 
-  @Field(() => DateTimeFilter, { nullable: true })
-  updatedAt?: DateTimeFilter;
+    @Field(() => DateTimeFilter, {nullable:true})
+    createdAt?: DateTimeFilter;
 
-  @Field(() => StringFilter, { nullable: true })
-  firstName?: StringFilter;
+    @Field(() => DateTimeFilter, {nullable:true})
+    updatedAt?: DateTimeFilter;
 
-  @Field(() => StringFilter, { nullable: true })
-  lastName?: StringFilter;
+    @Field(() => StringFilter, {nullable:true})
+    firstName?: StringFilter;
 
-  @Field(() => StringFilter, { nullable: true })
-  email?: StringFilter;
+    @Field(() => StringFilter, {nullable:true})
+    lastName?: StringFilter;
 
-  @Field(() => StringNullableFilter, { nullable: true })
-  password?: StringNullableFilter;
+    @Field(() => StringFilter, {nullable:true})
+    email?: StringFilter;
 
-  @Field(() => StringFilter, { nullable: true })
-  validationToken?: StringFilter;
+    @Field(() => StringNullableFilter, {nullable:true})
+    password?: StringNullableFilter;
 
-  @Field(() => DateTimeNullableFilter, { nullable: true })
-  lastLogin?: DateTimeNullableFilter;
+    @Field(() => StringFilter, {nullable:true})
+    validationToken?: StringFilter;
 
-  @Field(() => EnumVerificationStatusFilter, { nullable: true })
-  verificationStatus?: EnumVerificationStatusFilter;
+    @Field(() => DateTimeNullableFilter, {nullable:true})
+    lastLogin?: DateTimeNullableFilter;
 
-  @Field(() => StringNullableFilter, { nullable: true })
-  familyId?: StringNullableFilter;
+    @Field(() => EnumVerificationStatusFilter, {nullable:true})
+    verificationStatus?: EnumVerificationStatusFilter;
+
+    @Field(() => StringNullableFilter, {nullable:true})
+    familyId?: StringNullableFilter;
 }

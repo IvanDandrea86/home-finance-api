@@ -8,33 +8,34 @@ import { User } from '../user/user.model';
 
 @ObjectType()
 export class Detail {
-  @Field(() => ID, { nullable: false })
-  id!: string;
 
-  @Field(() => Date, { nullable: false })
-  createdAt!: Date;
+    @Field(() => ID, {nullable:false})
+    id!: string;
 
-  @Field(() => Date, { nullable: false })
-  updatedAt!: Date;
+    @Field(() => Date, {nullable:false})
+    createdAt!: Date;
 
-  @Field(() => String, { nullable: false })
-  name!: string;
+    @Field(() => Date, {nullable:false})
+    updatedAt!: Date;
 
-  @Field(() => Expense, { nullable: true })
-  Expense?: Expense | null;
+    @Field(() => String, {nullable:false})
+    name!: string;
 
-  @Field(() => String, { nullable: true })
-  expenseId!: string | null;
+    @Field(() => Expense, {nullable:true})
+    Expense?: Expense | null;
 
-  @Field(() => Float, { nullable: false, defaultValue: 0 })
-  cost!: number;
+    @Field(() => String, {nullable:true})
+    expenseId!: string | null;
 
-  @Field(() => Int, { nullable: true, defaultValue: 12 })
-  period!: number | null;
+    @Field(() => Float, {nullable:false,defaultValue:0})
+    cost!: number;
 
-  @Field(() => User, { nullable: true })
-  user?: User | null;
+    @Field(() => Int, {nullable:true,defaultValue:12})
+    period!: number | null;
 
-  @Field(() => String, { nullable: true })
-  userId!: string | null;
+    @Field(() => User, {nullable:true})
+    user?: User | null;
+
+    @Field(() => String, {nullable:true})
+    userId!: string | null;
 }

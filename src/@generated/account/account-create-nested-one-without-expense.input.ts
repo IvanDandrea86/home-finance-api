@@ -7,15 +7,16 @@ import { AccountWhereUniqueInput } from './account-where-unique.input';
 
 @InputType()
 export class AccountCreateNestedOneWithoutExpenseInput {
-  @Field(() => AccountCreateWithoutExpenseInput, { nullable: true })
-  @Type(() => AccountCreateWithoutExpenseInput)
-  create?: AccountCreateWithoutExpenseInput;
 
-  @Field(() => AccountCreateOrConnectWithoutExpenseInput, { nullable: true })
-  @Type(() => AccountCreateOrConnectWithoutExpenseInput)
-  connectOrCreate?: AccountCreateOrConnectWithoutExpenseInput;
+    @Field(() => AccountCreateWithoutExpenseInput, {nullable:true})
+    @Type(() => AccountCreateWithoutExpenseInput)
+    create?: AccountCreateWithoutExpenseInput;
 
-  @Field(() => AccountWhereUniqueInput, { nullable: true })
-  @Type(() => AccountWhereUniqueInput)
-  connect?: AccountWhereUniqueInput;
+    @Field(() => AccountCreateOrConnectWithoutExpenseInput, {nullable:true})
+    @Type(() => AccountCreateOrConnectWithoutExpenseInput)
+    connectOrCreate?: AccountCreateOrConnectWithoutExpenseInput;
+
+    @Field(() => AccountWhereUniqueInput, {nullable:true})
+    @Type(() => AccountWhereUniqueInput)
+    connect?: AccountWhereUniqueInput;
 }

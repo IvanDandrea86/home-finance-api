@@ -4,6 +4,7 @@ import { Float } from '@nestjs/graphql';
 
 @ObjectType()
 export class ChargeSumAggregate {
-  @Field(() => Float, { nullable: true })
-  cost?: number;
+
+    @Field(() => Float, {nullable:true})
+    cost?: number;
 }

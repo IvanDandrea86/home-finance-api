@@ -7,18 +7,19 @@ import { EnumRoleFieldUpdateOperationsInput } from '../prisma/enum-role-field-up
 
 @InputType()
 export class PermissionUpdateInput {
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  id?: StringFieldUpdateOperationsInput;
 
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: DateTimeFieldUpdateOperationsInput;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    id?: StringFieldUpdateOperationsInput;
 
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: DateTimeFieldUpdateOperationsInput;
+    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
+    createdAt?: DateTimeFieldUpdateOperationsInput;
 
-  @Field(() => UserUpdateOneWithoutPermissionNestedInput, { nullable: true })
-  User?: UserUpdateOneWithoutPermissionNestedInput;
+    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
+    updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-  @Field(() => EnumRoleFieldUpdateOperationsInput, { nullable: true })
-  type?: EnumRoleFieldUpdateOperationsInput;
+    @Field(() => UserUpdateOneWithoutPermissionNestedInput, {nullable:true})
+    User?: UserUpdateOneWithoutPermissionNestedInput;
+
+    @Field(() => EnumRoleFieldUpdateOperationsInput, {nullable:true})
+    type?: EnumRoleFieldUpdateOperationsInput;
 }

@@ -9,22 +9,23 @@ import { AccountScalarFieldEnum } from './account-scalar-field.enum';
 
 @ArgsType()
 export class FindManyAccountArgs {
-  @Field(() => AccountWhereInput, { nullable: true })
-  @Type(() => AccountWhereInput)
-  where?: AccountWhereInput;
 
-  @Field(() => [AccountOrderByWithRelationInput], { nullable: true })
-  orderBy?: Array<AccountOrderByWithRelationInput>;
+    @Field(() => AccountWhereInput, {nullable:true})
+    @Type(() => AccountWhereInput)
+    where?: AccountWhereInput;
 
-  @Field(() => AccountWhereUniqueInput, { nullable: true })
-  cursor?: AccountWhereUniqueInput;
+    @Field(() => [AccountOrderByWithRelationInput], {nullable:true})
+    orderBy?: Array<AccountOrderByWithRelationInput>;
 
-  @Field(() => Int, { nullable: true })
-  take?: number;
+    @Field(() => AccountWhereUniqueInput, {nullable:true})
+    cursor?: AccountWhereUniqueInput;
 
-  @Field(() => Int, { nullable: true })
-  skip?: number;
+    @Field(() => Int, {nullable:true})
+    take?: number;
 
-  @Field(() => [AccountScalarFieldEnum], { nullable: true })
-  distinct?: Array<keyof typeof AccountScalarFieldEnum>;
+    @Field(() => Int, {nullable:true})
+    skip?: number;
+
+    @Field(() => [AccountScalarFieldEnum], {nullable:true})
+    distinct?: Array<keyof typeof AccountScalarFieldEnum>;
 }

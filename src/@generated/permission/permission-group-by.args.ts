@@ -12,31 +12,32 @@ import { PermissionMaxAggregateInput } from './permission-max-aggregate.input';
 
 @ArgsType()
 export class PermissionGroupByArgs {
-  @Field(() => PermissionWhereInput, { nullable: true })
-  @Type(() => PermissionWhereInput)
-  where?: PermissionWhereInput;
 
-  @Field(() => [PermissionOrderByWithAggregationInput], { nullable: true })
-  orderBy?: Array<PermissionOrderByWithAggregationInput>;
+    @Field(() => PermissionWhereInput, {nullable:true})
+    @Type(() => PermissionWhereInput)
+    where?: PermissionWhereInput;
 
-  @Field(() => [PermissionScalarFieldEnum], { nullable: false })
-  by!: Array<keyof typeof PermissionScalarFieldEnum>;
+    @Field(() => [PermissionOrderByWithAggregationInput], {nullable:true})
+    orderBy?: Array<PermissionOrderByWithAggregationInput>;
 
-  @Field(() => PermissionScalarWhereWithAggregatesInput, { nullable: true })
-  having?: PermissionScalarWhereWithAggregatesInput;
+    @Field(() => [PermissionScalarFieldEnum], {nullable:false})
+    by!: Array<keyof typeof PermissionScalarFieldEnum>;
 
-  @Field(() => Int, { nullable: true })
-  take?: number;
+    @Field(() => PermissionScalarWhereWithAggregatesInput, {nullable:true})
+    having?: PermissionScalarWhereWithAggregatesInput;
 
-  @Field(() => Int, { nullable: true })
-  skip?: number;
+    @Field(() => Int, {nullable:true})
+    take?: number;
 
-  @Field(() => PermissionCountAggregateInput, { nullable: true })
-  _count?: PermissionCountAggregateInput;
+    @Field(() => Int, {nullable:true})
+    skip?: number;
 
-  @Field(() => PermissionMinAggregateInput, { nullable: true })
-  _min?: PermissionMinAggregateInput;
+    @Field(() => PermissionCountAggregateInput, {nullable:true})
+    _count?: PermissionCountAggregateInput;
 
-  @Field(() => PermissionMaxAggregateInput, { nullable: true })
-  _max?: PermissionMaxAggregateInput;
+    @Field(() => PermissionMinAggregateInput, {nullable:true})
+    _min?: PermissionMinAggregateInput;
+
+    @Field(() => PermissionMaxAggregateInput, {nullable:true})
+    _max?: PermissionMaxAggregateInput;
 }

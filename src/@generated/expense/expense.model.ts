@@ -9,36 +9,37 @@ import { ExpenseCount } from './expense-count.output';
 
 @ObjectType()
 export class Expense {
-  @Field(() => ID, { nullable: false })
-  id!: string;
 
-  @Field(() => Date, { nullable: false })
-  createdAt!: Date;
+    @Field(() => ID, {nullable:false})
+    id!: string;
 
-  @Field(() => Date, { nullable: false })
-  updatedAt!: Date;
+    @Field(() => Date, {nullable:false})
+    createdAt!: Date;
 
-  @Field(() => String, { nullable: false })
-  name!: string;
+    @Field(() => Date, {nullable:false})
+    updatedAt!: Date;
 
-  @Field(() => [Detail], { nullable: true })
-  expenseDetails?: Array<Detail>;
+    @Field(() => String, {nullable:false})
+    name!: string;
 
-  @Field(() => Float, { nullable: false, defaultValue: 0 })
-  monthlyCost!: number;
+    @Field(() => [Detail], {nullable:true})
+    expenseDetails?: Array<Detail>;
 
-  @Field(() => Family, { nullable: true })
-  Family?: Family | null;
+    @Field(() => Float, {nullable:false,defaultValue:0})
+    monthlyCost!: number;
 
-  @Field(() => String, { nullable: true })
-  familyId!: string | null;
+    @Field(() => Family, {nullable:true})
+    Family?: Family | null;
 
-  @Field(() => Account, { nullable: true })
-  Account?: Account | null;
+    @Field(() => String, {nullable:true})
+    familyId!: string | null;
 
-  @Field(() => String, { nullable: true })
-  accountId!: string | null;
+    @Field(() => Account, {nullable:true})
+    Account?: Account | null;
 
-  @Field(() => ExpenseCount, { nullable: false })
-  _count?: ExpenseCount;
+    @Field(() => String, {nullable:true})
+    accountId!: string | null;
+
+    @Field(() => ExpenseCount, {nullable:false})
+    _count?: ExpenseCount;
 }

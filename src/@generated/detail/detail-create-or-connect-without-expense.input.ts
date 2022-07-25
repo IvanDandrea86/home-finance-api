@@ -6,11 +6,12 @@ import { DetailCreateWithoutExpenseInput } from './detail-create-without-expense
 
 @InputType()
 export class DetailCreateOrConnectWithoutExpenseInput {
-  @Field(() => DetailWhereUniqueInput, { nullable: false })
-  @Type(() => DetailWhereUniqueInput)
-  where!: DetailWhereUniqueInput;
 
-  @Field(() => DetailCreateWithoutExpenseInput, { nullable: false })
-  @Type(() => DetailCreateWithoutExpenseInput)
-  create!: DetailCreateWithoutExpenseInput;
+    @Field(() => DetailWhereUniqueInput, {nullable:false})
+    @Type(() => DetailWhereUniqueInput)
+    where!: DetailWhereUniqueInput;
+
+    @Field(() => DetailCreateWithoutExpenseInput, {nullable:false})
+    @Type(() => DetailCreateWithoutExpenseInput)
+    create!: DetailCreateWithoutExpenseInput;
 }

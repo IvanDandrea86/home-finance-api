@@ -5,7 +5,8 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class CreateOneAccountArgs {
-  @Field(() => AccountCreateInput, { nullable: false })
-  @Type(() => AccountCreateInput)
-  data!: AccountCreateInput;
+
+    @Field(() => AccountCreateInput, {nullable:false})
+    @Type(() => AccountCreateInput)
+    data!: AccountCreateInput;
 }

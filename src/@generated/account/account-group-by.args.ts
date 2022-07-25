@@ -14,37 +14,38 @@ import { AccountMaxAggregateInput } from './account-max-aggregate.input';
 
 @ArgsType()
 export class AccountGroupByArgs {
-  @Field(() => AccountWhereInput, { nullable: true })
-  @Type(() => AccountWhereInput)
-  where?: AccountWhereInput;
 
-  @Field(() => [AccountOrderByWithAggregationInput], { nullable: true })
-  orderBy?: Array<AccountOrderByWithAggregationInput>;
+    @Field(() => AccountWhereInput, {nullable:true})
+    @Type(() => AccountWhereInput)
+    where?: AccountWhereInput;
 
-  @Field(() => [AccountScalarFieldEnum], { nullable: false })
-  by!: Array<keyof typeof AccountScalarFieldEnum>;
+    @Field(() => [AccountOrderByWithAggregationInput], {nullable:true})
+    orderBy?: Array<AccountOrderByWithAggregationInput>;
 
-  @Field(() => AccountScalarWhereWithAggregatesInput, { nullable: true })
-  having?: AccountScalarWhereWithAggregatesInput;
+    @Field(() => [AccountScalarFieldEnum], {nullable:false})
+    by!: Array<keyof typeof AccountScalarFieldEnum>;
 
-  @Field(() => Int, { nullable: true })
-  take?: number;
+    @Field(() => AccountScalarWhereWithAggregatesInput, {nullable:true})
+    having?: AccountScalarWhereWithAggregatesInput;
 
-  @Field(() => Int, { nullable: true })
-  skip?: number;
+    @Field(() => Int, {nullable:true})
+    take?: number;
 
-  @Field(() => AccountCountAggregateInput, { nullable: true })
-  _count?: AccountCountAggregateInput;
+    @Field(() => Int, {nullable:true})
+    skip?: number;
 
-  @Field(() => AccountAvgAggregateInput, { nullable: true })
-  _avg?: AccountAvgAggregateInput;
+    @Field(() => AccountCountAggregateInput, {nullable:true})
+    _count?: AccountCountAggregateInput;
 
-  @Field(() => AccountSumAggregateInput, { nullable: true })
-  _sum?: AccountSumAggregateInput;
+    @Field(() => AccountAvgAggregateInput, {nullable:true})
+    _avg?: AccountAvgAggregateInput;
 
-  @Field(() => AccountMinAggregateInput, { nullable: true })
-  _min?: AccountMinAggregateInput;
+    @Field(() => AccountSumAggregateInput, {nullable:true})
+    _sum?: AccountSumAggregateInput;
 
-  @Field(() => AccountMaxAggregateInput, { nullable: true })
-  _max?: AccountMaxAggregateInput;
+    @Field(() => AccountMinAggregateInput, {nullable:true})
+    _min?: AccountMinAggregateInput;
+
+    @Field(() => AccountMaxAggregateInput, {nullable:true})
+    _max?: AccountMaxAggregateInput;
 }

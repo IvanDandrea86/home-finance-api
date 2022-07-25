@@ -9,27 +9,28 @@ import { FamilyCount } from './family-count.output';
 
 @ObjectType()
 export class Family {
-  @Field(() => ID, { nullable: false })
-  id!: string;
 
-  @Field(() => Date, { nullable: false })
-  createdAt!: Date;
+    @Field(() => ID, {nullable:false})
+    id!: string;
 
-  @Field(() => Date, { nullable: false })
-  updatedAt!: Date;
+    @Field(() => Date, {nullable:false})
+    createdAt!: Date;
 
-  @Field(() => [User], { nullable: true })
-  members?: Array<User>;
+    @Field(() => Date, {nullable:false})
+    updatedAt!: Date;
 
-  @Field(() => [Expense], { nullable: true })
-  expenses?: Array<Expense>;
+    @Field(() => [User], {nullable:true})
+    members?: Array<User>;
 
-  @Field(() => [Revenue], { nullable: true })
-  revenues?: Array<Revenue>;
+    @Field(() => [Expense], {nullable:true})
+    expenses?: Array<Expense>;
 
-  @Field(() => [Account], { nullable: true })
-  accounts?: Array<Account>;
+    @Field(() => [Revenue], {nullable:true})
+    revenues?: Array<Revenue>;
 
-  @Field(() => FamilyCount, { nullable: false })
-  _count?: FamilyCount;
+    @Field(() => [Account], {nullable:true})
+    accounts?: Array<Account>;
+
+    @Field(() => FamilyCount, {nullable:false})
+    _count?: FamilyCount;
 }

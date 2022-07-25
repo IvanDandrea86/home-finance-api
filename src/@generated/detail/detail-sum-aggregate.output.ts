@@ -5,9 +5,10 @@ import { Int } from '@nestjs/graphql';
 
 @ObjectType()
 export class DetailSumAggregate {
-  @Field(() => Float, { nullable: true })
-  cost?: number;
 
-  @Field(() => Int, { nullable: true })
-  period?: number;
+    @Field(() => Float, {nullable:true})
+    cost?: number;
+
+    @Field(() => Int, {nullable:true})
+    period?: number;
 }

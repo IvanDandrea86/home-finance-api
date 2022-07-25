@@ -7,30 +7,31 @@ import { StringNullableFilter } from '../prisma/string-nullable-filter.input';
 
 @InputType()
 export class ChargeScalarWhereInput {
-  @Field(() => [ChargeScalarWhereInput], { nullable: true })
-  AND?: Array<ChargeScalarWhereInput>;
 
-  @Field(() => [ChargeScalarWhereInput], { nullable: true })
-  OR?: Array<ChargeScalarWhereInput>;
+    @Field(() => [ChargeScalarWhereInput], {nullable:true})
+    AND?: Array<ChargeScalarWhereInput>;
 
-  @Field(() => [ChargeScalarWhereInput], { nullable: true })
-  NOT?: Array<ChargeScalarWhereInput>;
+    @Field(() => [ChargeScalarWhereInput], {nullable:true})
+    OR?: Array<ChargeScalarWhereInput>;
 
-  @Field(() => StringFilter, { nullable: true })
-  id?: StringFilter;
+    @Field(() => [ChargeScalarWhereInput], {nullable:true})
+    NOT?: Array<ChargeScalarWhereInput>;
 
-  @Field(() => DateTimeFilter, { nullable: true })
-  createdAt?: DateTimeFilter;
+    @Field(() => StringFilter, {nullable:true})
+    id?: StringFilter;
 
-  @Field(() => StringFilter, { nullable: true })
-  name?: StringFilter;
+    @Field(() => DateTimeFilter, {nullable:true})
+    createdAt?: DateTimeFilter;
 
-  @Field(() => DateTimeFilter, { nullable: true })
-  updatedAt?: DateTimeFilter;
+    @Field(() => StringFilter, {nullable:true})
+    name?: StringFilter;
 
-  @Field(() => FloatFilter, { nullable: true })
-  cost?: FloatFilter;
+    @Field(() => DateTimeFilter, {nullable:true})
+    updatedAt?: DateTimeFilter;
 
-  @Field(() => StringNullableFilter, { nullable: true })
-  accountId?: StringNullableFilter;
+    @Field(() => FloatFilter, {nullable:true})
+    cost?: FloatFilter;
+
+    @Field(() => StringNullableFilter, {nullable:true})
+    accountId?: StringNullableFilter;
 }

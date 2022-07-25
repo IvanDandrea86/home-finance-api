@@ -4,9 +4,10 @@ import { FamilyWhereInput } from './family-where.input';
 
 @InputType()
 export class FamilyRelationFilter {
-  @Field(() => FamilyWhereInput, { nullable: true })
-  is?: FamilyWhereInput;
 
-  @Field(() => FamilyWhereInput, { nullable: true })
-  isNot?: FamilyWhereInput;
+    @Field(() => FamilyWhereInput, {nullable:true})
+    is?: FamilyWhereInput;
+
+    @Field(() => FamilyWhereInput, {nullable:true})
+    isNot?: FamilyWhereInput;
 }

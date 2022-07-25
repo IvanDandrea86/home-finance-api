@@ -5,7 +5,8 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class DeleteManyExpenseArgs {
-  @Field(() => ExpenseWhereInput, { nullable: true })
-  @Type(() => ExpenseWhereInput)
-  where?: ExpenseWhereInput;
+
+    @Field(() => ExpenseWhereInput, {nullable:true})
+    @Type(() => ExpenseWhereInput)
+    where?: ExpenseWhereInput;
 }

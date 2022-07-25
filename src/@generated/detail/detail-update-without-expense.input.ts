@@ -8,24 +8,25 @@ import { UserUpdateOneWithoutMandateNestedInput } from '../user/user-update-one-
 
 @InputType()
 export class DetailUpdateWithoutExpenseInput {
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  id?: StringFieldUpdateOperationsInput;
 
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: DateTimeFieldUpdateOperationsInput;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    id?: StringFieldUpdateOperationsInput;
 
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: DateTimeFieldUpdateOperationsInput;
+    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
+    createdAt?: DateTimeFieldUpdateOperationsInput;
 
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  name?: StringFieldUpdateOperationsInput;
+    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
+    updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-  @Field(() => FloatFieldUpdateOperationsInput, { nullable: true })
-  cost?: FloatFieldUpdateOperationsInput;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    name?: StringFieldUpdateOperationsInput;
 
-  @Field(() => NullableIntFieldUpdateOperationsInput, { nullable: true })
-  period?: NullableIntFieldUpdateOperationsInput;
+    @Field(() => FloatFieldUpdateOperationsInput, {nullable:true})
+    cost?: FloatFieldUpdateOperationsInput;
 
-  @Field(() => UserUpdateOneWithoutMandateNestedInput, { nullable: true })
-  user?: UserUpdateOneWithoutMandateNestedInput;
+    @Field(() => NullableIntFieldUpdateOperationsInput, {nullable:true})
+    period?: NullableIntFieldUpdateOperationsInput;
+
+    @Field(() => UserUpdateOneWithoutMandateNestedInput, {nullable:true})
+    user?: UserUpdateOneWithoutMandateNestedInput;
 }

@@ -6,11 +6,12 @@ import { AccountUpdateManyMutationInput } from './account-update-many-mutation.i
 
 @InputType()
 export class AccountUpdateManyWithWhereWithoutFamilyInput {
-  @Field(() => AccountScalarWhereInput, { nullable: false })
-  @Type(() => AccountScalarWhereInput)
-  where!: AccountScalarWhereInput;
 
-  @Field(() => AccountUpdateManyMutationInput, { nullable: false })
-  @Type(() => AccountUpdateManyMutationInput)
-  data!: AccountUpdateManyMutationInput;
+    @Field(() => AccountScalarWhereInput, {nullable:false})
+    @Type(() => AccountScalarWhereInput)
+    where!: AccountScalarWhereInput;
+
+    @Field(() => AccountUpdateManyMutationInput, {nullable:false})
+    @Type(() => AccountUpdateManyMutationInput)
+    data!: AccountUpdateManyMutationInput;
 }

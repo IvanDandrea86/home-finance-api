@@ -9,23 +9,24 @@ import { FamilyUpdateWithoutRevenuesInput } from './family-update-without-revenu
 
 @InputType()
 export class FamilyUpdateOneRequiredWithoutRevenuesNestedInput {
-  @Field(() => FamilyCreateWithoutRevenuesInput, { nullable: true })
-  @Type(() => FamilyCreateWithoutRevenuesInput)
-  create?: FamilyCreateWithoutRevenuesInput;
 
-  @Field(() => FamilyCreateOrConnectWithoutRevenuesInput, { nullable: true })
-  @Type(() => FamilyCreateOrConnectWithoutRevenuesInput)
-  connectOrCreate?: FamilyCreateOrConnectWithoutRevenuesInput;
+    @Field(() => FamilyCreateWithoutRevenuesInput, {nullable:true})
+    @Type(() => FamilyCreateWithoutRevenuesInput)
+    create?: FamilyCreateWithoutRevenuesInput;
 
-  @Field(() => FamilyUpsertWithoutRevenuesInput, { nullable: true })
-  @Type(() => FamilyUpsertWithoutRevenuesInput)
-  upsert?: FamilyUpsertWithoutRevenuesInput;
+    @Field(() => FamilyCreateOrConnectWithoutRevenuesInput, {nullable:true})
+    @Type(() => FamilyCreateOrConnectWithoutRevenuesInput)
+    connectOrCreate?: FamilyCreateOrConnectWithoutRevenuesInput;
 
-  @Field(() => FamilyWhereUniqueInput, { nullable: true })
-  @Type(() => FamilyWhereUniqueInput)
-  connect?: FamilyWhereUniqueInput;
+    @Field(() => FamilyUpsertWithoutRevenuesInput, {nullable:true})
+    @Type(() => FamilyUpsertWithoutRevenuesInput)
+    upsert?: FamilyUpsertWithoutRevenuesInput;
 
-  @Field(() => FamilyUpdateWithoutRevenuesInput, { nullable: true })
-  @Type(() => FamilyUpdateWithoutRevenuesInput)
-  update?: FamilyUpdateWithoutRevenuesInput;
+    @Field(() => FamilyWhereUniqueInput, {nullable:true})
+    @Type(() => FamilyWhereUniqueInput)
+    connect?: FamilyWhereUniqueInput;
+
+    @Field(() => FamilyUpdateWithoutRevenuesInput, {nullable:true})
+    @Type(() => FamilyUpdateWithoutRevenuesInput)
+    update?: FamilyUpdateWithoutRevenuesInput;
 }

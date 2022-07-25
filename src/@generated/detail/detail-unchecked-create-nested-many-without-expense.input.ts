@@ -8,19 +8,20 @@ import { DetailWhereUniqueInput } from './detail-where-unique.input';
 
 @InputType()
 export class DetailUncheckedCreateNestedManyWithoutExpenseInput {
-  @Field(() => [DetailCreateWithoutExpenseInput], { nullable: true })
-  @Type(() => DetailCreateWithoutExpenseInput)
-  create?: Array<DetailCreateWithoutExpenseInput>;
 
-  @Field(() => [DetailCreateOrConnectWithoutExpenseInput], { nullable: true })
-  @Type(() => DetailCreateOrConnectWithoutExpenseInput)
-  connectOrCreate?: Array<DetailCreateOrConnectWithoutExpenseInput>;
+    @Field(() => [DetailCreateWithoutExpenseInput], {nullable:true})
+    @Type(() => DetailCreateWithoutExpenseInput)
+    create?: Array<DetailCreateWithoutExpenseInput>;
 
-  @Field(() => DetailCreateManyExpenseInputEnvelope, { nullable: true })
-  @Type(() => DetailCreateManyExpenseInputEnvelope)
-  createMany?: DetailCreateManyExpenseInputEnvelope;
+    @Field(() => [DetailCreateOrConnectWithoutExpenseInput], {nullable:true})
+    @Type(() => DetailCreateOrConnectWithoutExpenseInput)
+    connectOrCreate?: Array<DetailCreateOrConnectWithoutExpenseInput>;
 
-  @Field(() => [DetailWhereUniqueInput], { nullable: true })
-  @Type(() => DetailWhereUniqueInput)
-  connect?: Array<DetailWhereUniqueInput>;
+    @Field(() => DetailCreateManyExpenseInputEnvelope, {nullable:true})
+    @Type(() => DetailCreateManyExpenseInputEnvelope)
+    createMany?: DetailCreateManyExpenseInputEnvelope;
+
+    @Field(() => [DetailWhereUniqueInput], {nullable:true})
+    @Type(() => DetailWhereUniqueInput)
+    connect?: Array<DetailWhereUniqueInput>;
 }

@@ -6,11 +6,12 @@ import { DetailWhereInput } from './detail-where.input';
 
 @ArgsType()
 export class UpdateManyDetailArgs {
-  @Field(() => DetailUpdateManyMutationInput, { nullable: false })
-  @Type(() => DetailUpdateManyMutationInput)
-  data!: DetailUpdateManyMutationInput;
 
-  @Field(() => DetailWhereInput, { nullable: true })
-  @Type(() => DetailWhereInput)
-  where?: DetailWhereInput;
+    @Field(() => DetailUpdateManyMutationInput, {nullable:false})
+    @Type(() => DetailUpdateManyMutationInput)
+    data!: DetailUpdateManyMutationInput;
+
+    @Field(() => DetailWhereInput, {nullable:true})
+    @Type(() => DetailWhereInput)
+    where?: DetailWhereInput;
 }

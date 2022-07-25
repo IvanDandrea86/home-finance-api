@@ -6,11 +6,12 @@ import { UserUpdateWithoutFamilyInput } from './user-update-without-family.input
 
 @InputType()
 export class UserUpdateWithWhereUniqueWithoutFamilyInput {
-  @Field(() => UserWhereUniqueInput, { nullable: false })
-  @Type(() => UserWhereUniqueInput)
-  where!: UserWhereUniqueInput;
 
-  @Field(() => UserUpdateWithoutFamilyInput, { nullable: false })
-  @Type(() => UserUpdateWithoutFamilyInput)
-  data!: UserUpdateWithoutFamilyInput;
+    @Field(() => UserWhereUniqueInput, {nullable:false})
+    @Type(() => UserWhereUniqueInput)
+    where!: UserWhereUniqueInput;
+
+    @Field(() => UserUpdateWithoutFamilyInput, {nullable:false})
+    @Type(() => UserUpdateWithoutFamilyInput)
+    data!: UserUpdateWithoutFamilyInput;
 }

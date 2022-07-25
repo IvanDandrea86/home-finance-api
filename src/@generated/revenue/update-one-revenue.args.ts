@@ -6,11 +6,12 @@ import { RevenueWhereUniqueInput } from './revenue-where-unique.input';
 
 @ArgsType()
 export class UpdateOneRevenueArgs {
-  @Field(() => RevenueUpdateInput, { nullable: false })
-  @Type(() => RevenueUpdateInput)
-  data!: RevenueUpdateInput;
 
-  @Field(() => RevenueWhereUniqueInput, { nullable: false })
-  @Type(() => RevenueWhereUniqueInput)
-  where!: RevenueWhereUniqueInput;
+    @Field(() => RevenueUpdateInput, {nullable:false})
+    @Type(() => RevenueUpdateInput)
+    data!: RevenueUpdateInput;
+
+    @Field(() => RevenueWhereUniqueInput, {nullable:false})
+    @Type(() => RevenueWhereUniqueInput)
+    where!: RevenueWhereUniqueInput;
 }

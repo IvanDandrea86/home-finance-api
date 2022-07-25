@@ -6,11 +6,12 @@ import { UserCreateWithoutFamilyInput } from './user-create-without-family.input
 
 @InputType()
 export class UserCreateOrConnectWithoutFamilyInput {
-  @Field(() => UserWhereUniqueInput, { nullable: false })
-  @Type(() => UserWhereUniqueInput)
-  where!: UserWhereUniqueInput;
 
-  @Field(() => UserCreateWithoutFamilyInput, { nullable: false })
-  @Type(() => UserCreateWithoutFamilyInput)
-  create!: UserCreateWithoutFamilyInput;
+    @Field(() => UserWhereUniqueInput, {nullable:false})
+    @Type(() => UserWhereUniqueInput)
+    where!: UserWhereUniqueInput;
+
+    @Field(() => UserCreateWithoutFamilyInput, {nullable:false})
+    @Type(() => UserCreateWithoutFamilyInput)
+    create!: UserCreateWithoutFamilyInput;
 }

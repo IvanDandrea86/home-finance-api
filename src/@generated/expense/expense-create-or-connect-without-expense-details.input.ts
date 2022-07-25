@@ -6,11 +6,12 @@ import { ExpenseCreateWithoutExpenseDetailsInput } from './expense-create-withou
 
 @InputType()
 export class ExpenseCreateOrConnectWithoutExpenseDetailsInput {
-  @Field(() => ExpenseWhereUniqueInput, { nullable: false })
-  @Type(() => ExpenseWhereUniqueInput)
-  where!: ExpenseWhereUniqueInput;
 
-  @Field(() => ExpenseCreateWithoutExpenseDetailsInput, { nullable: false })
-  @Type(() => ExpenseCreateWithoutExpenseDetailsInput)
-  create!: ExpenseCreateWithoutExpenseDetailsInput;
+    @Field(() => ExpenseWhereUniqueInput, {nullable:false})
+    @Type(() => ExpenseWhereUniqueInput)
+    where!: ExpenseWhereUniqueInput;
+
+    @Field(() => ExpenseCreateWithoutExpenseDetailsInput, {nullable:false})
+    @Type(() => ExpenseCreateWithoutExpenseDetailsInput)
+    create!: ExpenseCreateWithoutExpenseDetailsInput;
 }

@@ -9,36 +9,37 @@ import { ChargeSumOrderByAggregateInput } from './charge-sum-order-by-aggregate.
 
 @InputType()
 export class ChargeOrderByWithAggregationInput {
-  @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  name?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    createdAt?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    name?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  cost?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    updatedAt?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  accountId?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    cost?: keyof typeof SortOrder;
 
-  @Field(() => ChargeCountOrderByAggregateInput, { nullable: true })
-  _count?: ChargeCountOrderByAggregateInput;
+    @Field(() => SortOrder, {nullable:true})
+    accountId?: keyof typeof SortOrder;
 
-  @Field(() => ChargeAvgOrderByAggregateInput, { nullable: true })
-  _avg?: ChargeAvgOrderByAggregateInput;
+    @Field(() => ChargeCountOrderByAggregateInput, {nullable:true})
+    _count?: ChargeCountOrderByAggregateInput;
 
-  @Field(() => ChargeMaxOrderByAggregateInput, { nullable: true })
-  _max?: ChargeMaxOrderByAggregateInput;
+    @Field(() => ChargeAvgOrderByAggregateInput, {nullable:true})
+    _avg?: ChargeAvgOrderByAggregateInput;
 
-  @Field(() => ChargeMinOrderByAggregateInput, { nullable: true })
-  _min?: ChargeMinOrderByAggregateInput;
+    @Field(() => ChargeMaxOrderByAggregateInput, {nullable:true})
+    _max?: ChargeMaxOrderByAggregateInput;
 
-  @Field(() => ChargeSumOrderByAggregateInput, { nullable: true })
-  _sum?: ChargeSumOrderByAggregateInput;
+    @Field(() => ChargeMinOrderByAggregateInput, {nullable:true})
+    _min?: ChargeMinOrderByAggregateInput;
+
+    @Field(() => ChargeSumOrderByAggregateInput, {nullable:true})
+    _sum?: ChargeSumOrderByAggregateInput;
 }

@@ -8,18 +8,19 @@ import { ExpenseMaxAggregate } from './expense-max-aggregate.output';
 
 @ObjectType()
 export class AggregateExpense {
-  @Field(() => ExpenseCountAggregate, { nullable: true })
-  _count?: ExpenseCountAggregate;
 
-  @Field(() => ExpenseAvgAggregate, { nullable: true })
-  _avg?: ExpenseAvgAggregate;
+    @Field(() => ExpenseCountAggregate, {nullable:true})
+    _count?: ExpenseCountAggregate;
 
-  @Field(() => ExpenseSumAggregate, { nullable: true })
-  _sum?: ExpenseSumAggregate;
+    @Field(() => ExpenseAvgAggregate, {nullable:true})
+    _avg?: ExpenseAvgAggregate;
 
-  @Field(() => ExpenseMinAggregate, { nullable: true })
-  _min?: ExpenseMinAggregate;
+    @Field(() => ExpenseSumAggregate, {nullable:true})
+    _sum?: ExpenseSumAggregate;
 
-  @Field(() => ExpenseMaxAggregate, { nullable: true })
-  _max?: ExpenseMaxAggregate;
+    @Field(() => ExpenseMinAggregate, {nullable:true})
+    _min?: ExpenseMinAggregate;
+
+    @Field(() => ExpenseMaxAggregate, {nullable:true})
+    _max?: ExpenseMaxAggregate;
 }

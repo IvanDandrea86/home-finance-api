@@ -5,27 +5,28 @@ import { DateTimeWithAggregatesFilter } from '../prisma/date-time-with-aggregate
 
 @InputType()
 export class RevenueScalarWhereWithAggregatesInput {
-  @Field(() => [RevenueScalarWhereWithAggregatesInput], { nullable: true })
-  AND?: Array<RevenueScalarWhereWithAggregatesInput>;
 
-  @Field(() => [RevenueScalarWhereWithAggregatesInput], { nullable: true })
-  OR?: Array<RevenueScalarWhereWithAggregatesInput>;
+    @Field(() => [RevenueScalarWhereWithAggregatesInput], {nullable:true})
+    AND?: Array<RevenueScalarWhereWithAggregatesInput>;
 
-  @Field(() => [RevenueScalarWhereWithAggregatesInput], { nullable: true })
-  NOT?: Array<RevenueScalarWhereWithAggregatesInput>;
+    @Field(() => [RevenueScalarWhereWithAggregatesInput], {nullable:true})
+    OR?: Array<RevenueScalarWhereWithAggregatesInput>;
 
-  @Field(() => StringWithAggregatesFilter, { nullable: true })
-  id?: StringWithAggregatesFilter;
+    @Field(() => [RevenueScalarWhereWithAggregatesInput], {nullable:true})
+    NOT?: Array<RevenueScalarWhereWithAggregatesInput>;
 
-  @Field(() => DateTimeWithAggregatesFilter, { nullable: true })
-  createdAt?: DateTimeWithAggregatesFilter;
+    @Field(() => StringWithAggregatesFilter, {nullable:true})
+    id?: StringWithAggregatesFilter;
 
-  @Field(() => DateTimeWithAggregatesFilter, { nullable: true })
-  updatedAt?: DateTimeWithAggregatesFilter;
+    @Field(() => DateTimeWithAggregatesFilter, {nullable:true})
+    createdAt?: DateTimeWithAggregatesFilter;
 
-  @Field(() => StringWithAggregatesFilter, { nullable: true })
-  userId?: StringWithAggregatesFilter;
+    @Field(() => DateTimeWithAggregatesFilter, {nullable:true})
+    updatedAt?: DateTimeWithAggregatesFilter;
 
-  @Field(() => StringWithAggregatesFilter, { nullable: true })
-  familyId?: StringWithAggregatesFilter;
+    @Field(() => StringWithAggregatesFilter, {nullable:true})
+    userId?: StringWithAggregatesFilter;
+
+    @Field(() => StringWithAggregatesFilter, {nullable:true})
+    familyId?: StringWithAggregatesFilter;
 }

@@ -8,21 +8,22 @@ import { AccountUpdateManyWithoutFamilyNestedInput } from '../account/account-up
 
 @InputType()
 export class FamilyUpdateWithoutExpensesInput {
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  id?: StringFieldUpdateOperationsInput;
 
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: DateTimeFieldUpdateOperationsInput;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    id?: StringFieldUpdateOperationsInput;
 
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: DateTimeFieldUpdateOperationsInput;
+    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
+    createdAt?: DateTimeFieldUpdateOperationsInput;
 
-  @Field(() => UserUpdateManyWithoutFamilyNestedInput, { nullable: true })
-  members?: UserUpdateManyWithoutFamilyNestedInput;
+    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
+    updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-  @Field(() => RevenueUpdateManyWithoutFamilyNestedInput, { nullable: true })
-  revenues?: RevenueUpdateManyWithoutFamilyNestedInput;
+    @Field(() => UserUpdateManyWithoutFamilyNestedInput, {nullable:true})
+    members?: UserUpdateManyWithoutFamilyNestedInput;
 
-  @Field(() => AccountUpdateManyWithoutFamilyNestedInput, { nullable: true })
-  accounts?: AccountUpdateManyWithoutFamilyNestedInput;
+    @Field(() => RevenueUpdateManyWithoutFamilyNestedInput, {nullable:true})
+    revenues?: RevenueUpdateManyWithoutFamilyNestedInput;
+
+    @Field(() => AccountUpdateManyWithoutFamilyNestedInput, {nullable:true})
+    accounts?: AccountUpdateManyWithoutFamilyNestedInput;
 }

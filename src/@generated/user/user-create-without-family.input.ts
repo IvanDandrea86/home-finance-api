@@ -7,42 +7,43 @@ import { DetailCreateNestedManyWithoutUserInput } from '../detail/detail-create-
 
 @InputType()
 export class UserCreateWithoutFamilyInput {
-  @Field(() => String, { nullable: true })
-  id?: string;
 
-  @Field(() => Date, { nullable: true })
-  createdAt?: Date | string;
+    @Field(() => String, {nullable:true})
+    id?: string;
 
-  @Field(() => Date, { nullable: true })
-  updatedAt?: Date | string;
+    @Field(() => Date, {nullable:true})
+    createdAt?: Date | string;
 
-  @Field(() => String, { nullable: false })
-  firstName!: string;
+    @Field(() => Date, {nullable:true})
+    updatedAt?: Date | string;
 
-  @Field(() => String, { nullable: false })
-  lastName!: string;
+    @Field(() => String, {nullable:false})
+    firstName!: string;
 
-  @Field(() => String, { nullable: false })
-  email!: string;
+    @Field(() => String, {nullable:false})
+    lastName!: string;
 
-  @Field(() => String, { nullable: true })
-  password?: string;
+    @Field(() => String, {nullable:false})
+    email!: string;
 
-  @Field(() => String, { nullable: false })
-  validationToken!: string;
+    @Field(() => String, {nullable:true})
+    password?: string;
 
-  @Field(() => Date, { nullable: true })
-  lastLogin?: Date | string;
+    @Field(() => String, {nullable:false})
+    validationToken!: string;
 
-  @Field(() => VerificationStatus, { nullable: true })
-  verificationStatus?: keyof typeof VerificationStatus;
+    @Field(() => Date, {nullable:true})
+    lastLogin?: Date | string;
 
-  @Field(() => PermissionCreateNestedOneWithoutUserInput, { nullable: true })
-  Permission?: PermissionCreateNestedOneWithoutUserInput;
+    @Field(() => VerificationStatus, {nullable:true})
+    verificationStatus?: keyof typeof VerificationStatus;
 
-  @Field(() => RevenueCreateNestedManyWithoutUserInput, { nullable: true })
-  Revenue?: RevenueCreateNestedManyWithoutUserInput;
+    @Field(() => PermissionCreateNestedOneWithoutUserInput, {nullable:true})
+    Permission?: PermissionCreateNestedOneWithoutUserInput;
 
-  @Field(() => DetailCreateNestedManyWithoutUserInput, { nullable: true })
-  Mandate?: DetailCreateNestedManyWithoutUserInput;
+    @Field(() => RevenueCreateNestedManyWithoutUserInput, {nullable:true})
+    Revenue?: RevenueCreateNestedManyWithoutUserInput;
+
+    @Field(() => DetailCreateNestedManyWithoutUserInput, {nullable:true})
+    Mandate?: DetailCreateNestedManyWithoutUserInput;
 }

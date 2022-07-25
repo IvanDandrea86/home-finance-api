@@ -9,29 +9,30 @@ import { UserUpdateWithoutPermissionInput } from './user-update-without-permissi
 
 @InputType()
 export class UserUpdateOneWithoutPermissionNestedInput {
-  @Field(() => UserCreateWithoutPermissionInput, { nullable: true })
-  @Type(() => UserCreateWithoutPermissionInput)
-  create?: UserCreateWithoutPermissionInput;
 
-  @Field(() => UserCreateOrConnectWithoutPermissionInput, { nullable: true })
-  @Type(() => UserCreateOrConnectWithoutPermissionInput)
-  connectOrCreate?: UserCreateOrConnectWithoutPermissionInput;
+    @Field(() => UserCreateWithoutPermissionInput, {nullable:true})
+    @Type(() => UserCreateWithoutPermissionInput)
+    create?: UserCreateWithoutPermissionInput;
 
-  @Field(() => UserUpsertWithoutPermissionInput, { nullable: true })
-  @Type(() => UserUpsertWithoutPermissionInput)
-  upsert?: UserUpsertWithoutPermissionInput;
+    @Field(() => UserCreateOrConnectWithoutPermissionInput, {nullable:true})
+    @Type(() => UserCreateOrConnectWithoutPermissionInput)
+    connectOrCreate?: UserCreateOrConnectWithoutPermissionInput;
 
-  @Field(() => Boolean, { nullable: true })
-  disconnect?: boolean;
+    @Field(() => UserUpsertWithoutPermissionInput, {nullable:true})
+    @Type(() => UserUpsertWithoutPermissionInput)
+    upsert?: UserUpsertWithoutPermissionInput;
 
-  @Field(() => Boolean, { nullable: true })
-  delete?: boolean;
+    @Field(() => Boolean, {nullable:true})
+    disconnect?: boolean;
 
-  @Field(() => UserWhereUniqueInput, { nullable: true })
-  @Type(() => UserWhereUniqueInput)
-  connect?: UserWhereUniqueInput;
+    @Field(() => Boolean, {nullable:true})
+    delete?: boolean;
 
-  @Field(() => UserUpdateWithoutPermissionInput, { nullable: true })
-  @Type(() => UserUpdateWithoutPermissionInput)
-  update?: UserUpdateWithoutPermissionInput;
+    @Field(() => UserWhereUniqueInput, {nullable:true})
+    @Type(() => UserWhereUniqueInput)
+    connect?: UserWhereUniqueInput;
+
+    @Field(() => UserUpdateWithoutPermissionInput, {nullable:true})
+    @Type(() => UserUpdateWithoutPermissionInput)
+    update?: UserUpdateWithoutPermissionInput;
 }

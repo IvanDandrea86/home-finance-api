@@ -9,22 +9,23 @@ import { ExpenseScalarFieldEnum } from './expense-scalar-field.enum';
 
 @ArgsType()
 export class FindFirstExpenseArgs {
-  @Field(() => ExpenseWhereInput, { nullable: true })
-  @Type(() => ExpenseWhereInput)
-  where?: ExpenseWhereInput;
 
-  @Field(() => [ExpenseOrderByWithRelationInput], { nullable: true })
-  orderBy?: Array<ExpenseOrderByWithRelationInput>;
+    @Field(() => ExpenseWhereInput, {nullable:true})
+    @Type(() => ExpenseWhereInput)
+    where?: ExpenseWhereInput;
 
-  @Field(() => ExpenseWhereUniqueInput, { nullable: true })
-  cursor?: ExpenseWhereUniqueInput;
+    @Field(() => [ExpenseOrderByWithRelationInput], {nullable:true})
+    orderBy?: Array<ExpenseOrderByWithRelationInput>;
 
-  @Field(() => Int, { nullable: true })
-  take?: number;
+    @Field(() => ExpenseWhereUniqueInput, {nullable:true})
+    cursor?: ExpenseWhereUniqueInput;
 
-  @Field(() => Int, { nullable: true })
-  skip?: number;
+    @Field(() => Int, {nullable:true})
+    take?: number;
 
-  @Field(() => [ExpenseScalarFieldEnum], { nullable: true })
-  distinct?: Array<keyof typeof ExpenseScalarFieldEnum>;
+    @Field(() => Int, {nullable:true})
+    skip?: number;
+
+    @Field(() => [ExpenseScalarFieldEnum], {nullable:true})
+    distinct?: Array<keyof typeof ExpenseScalarFieldEnum>;
 }

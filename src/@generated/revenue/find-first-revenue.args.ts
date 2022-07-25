@@ -9,22 +9,23 @@ import { RevenueScalarFieldEnum } from './revenue-scalar-field.enum';
 
 @ArgsType()
 export class FindFirstRevenueArgs {
-  @Field(() => RevenueWhereInput, { nullable: true })
-  @Type(() => RevenueWhereInput)
-  where?: RevenueWhereInput;
 
-  @Field(() => [RevenueOrderByWithRelationInput], { nullable: true })
-  orderBy?: Array<RevenueOrderByWithRelationInput>;
+    @Field(() => RevenueWhereInput, {nullable:true})
+    @Type(() => RevenueWhereInput)
+    where?: RevenueWhereInput;
 
-  @Field(() => RevenueWhereUniqueInput, { nullable: true })
-  cursor?: RevenueWhereUniqueInput;
+    @Field(() => [RevenueOrderByWithRelationInput], {nullable:true})
+    orderBy?: Array<RevenueOrderByWithRelationInput>;
 
-  @Field(() => Int, { nullable: true })
-  take?: number;
+    @Field(() => RevenueWhereUniqueInput, {nullable:true})
+    cursor?: RevenueWhereUniqueInput;
 
-  @Field(() => Int, { nullable: true })
-  skip?: number;
+    @Field(() => Int, {nullable:true})
+    take?: number;
 
-  @Field(() => [RevenueScalarFieldEnum], { nullable: true })
-  distinct?: Array<keyof typeof RevenueScalarFieldEnum>;
+    @Field(() => Int, {nullable:true})
+    skip?: number;
+
+    @Field(() => [RevenueScalarFieldEnum], {nullable:true})
+    distinct?: Array<keyof typeof RevenueScalarFieldEnum>;
 }

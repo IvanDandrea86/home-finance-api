@@ -8,26 +8,25 @@ import { NullableStringFieldUpdateOperationsInput } from '../prisma/nullable-str
 
 @InputType()
 export class ExpenseUncheckedUpdateWithoutFamilyInput {
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  id?: StringFieldUpdateOperationsInput;
 
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: DateTimeFieldUpdateOperationsInput;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    id?: StringFieldUpdateOperationsInput;
 
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: DateTimeFieldUpdateOperationsInput;
+    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
+    createdAt?: DateTimeFieldUpdateOperationsInput;
 
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  name?: StringFieldUpdateOperationsInput;
+    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
+    updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-  @Field(() => DetailUncheckedUpdateManyWithoutExpenseNestedInput, {
-    nullable: true,
-  })
-  expenseDetails?: DetailUncheckedUpdateManyWithoutExpenseNestedInput;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    name?: StringFieldUpdateOperationsInput;
 
-  @Field(() => FloatFieldUpdateOperationsInput, { nullable: true })
-  monthlyCost?: FloatFieldUpdateOperationsInput;
+    @Field(() => DetailUncheckedUpdateManyWithoutExpenseNestedInput, {nullable:true})
+    expenseDetails?: DetailUncheckedUpdateManyWithoutExpenseNestedInput;
 
-  @Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
-  accountId?: NullableStringFieldUpdateOperationsInput;
+    @Field(() => FloatFieldUpdateOperationsInput, {nullable:true})
+    monthlyCost?: FloatFieldUpdateOperationsInput;
+
+    @Field(() => NullableStringFieldUpdateOperationsInput, {nullable:true})
+    accountId?: NullableStringFieldUpdateOperationsInput;
 }

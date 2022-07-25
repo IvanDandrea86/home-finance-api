@@ -8,26 +8,25 @@ import { NullableIntFieldUpdateOperationsInput } from '../prisma/nullable-int-fi
 
 @InputType()
 export class DetailUpdateWithoutUserInput {
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  id?: StringFieldUpdateOperationsInput;
 
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: DateTimeFieldUpdateOperationsInput;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    id?: StringFieldUpdateOperationsInput;
 
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: DateTimeFieldUpdateOperationsInput;
+    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
+    createdAt?: DateTimeFieldUpdateOperationsInput;
 
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  name?: StringFieldUpdateOperationsInput;
+    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
+    updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-  @Field(() => ExpenseUpdateOneWithoutExpenseDetailsNestedInput, {
-    nullable: true,
-  })
-  Expense?: ExpenseUpdateOneWithoutExpenseDetailsNestedInput;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    name?: StringFieldUpdateOperationsInput;
 
-  @Field(() => FloatFieldUpdateOperationsInput, { nullable: true })
-  cost?: FloatFieldUpdateOperationsInput;
+    @Field(() => ExpenseUpdateOneWithoutExpenseDetailsNestedInput, {nullable:true})
+    Expense?: ExpenseUpdateOneWithoutExpenseDetailsNestedInput;
 
-  @Field(() => NullableIntFieldUpdateOperationsInput, { nullable: true })
-  period?: NullableIntFieldUpdateOperationsInput;
+    @Field(() => FloatFieldUpdateOperationsInput, {nullable:true})
+    cost?: FloatFieldUpdateOperationsInput;
+
+    @Field(() => NullableIntFieldUpdateOperationsInput, {nullable:true})
+    period?: NullableIntFieldUpdateOperationsInput;
 }

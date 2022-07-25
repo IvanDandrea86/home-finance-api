@@ -6,17 +6,16 @@ import { UserUpdateOneRequiredWithoutRevenueNestedInput } from '../user/user-upd
 
 @InputType()
 export class RevenueUpdateWithoutFamilyInput {
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  id?: StringFieldUpdateOperationsInput;
 
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: DateTimeFieldUpdateOperationsInput;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    id?: StringFieldUpdateOperationsInput;
 
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: DateTimeFieldUpdateOperationsInput;
+    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
+    createdAt?: DateTimeFieldUpdateOperationsInput;
 
-  @Field(() => UserUpdateOneRequiredWithoutRevenueNestedInput, {
-    nullable: true,
-  })
-  User?: UserUpdateOneRequiredWithoutRevenueNestedInput;
+    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
+    updatedAt?: DateTimeFieldUpdateOperationsInput;
+
+    @Field(() => UserUpdateOneRequiredWithoutRevenueNestedInput, {nullable:true})
+    User?: UserUpdateOneRequiredWithoutRevenueNestedInput;
 }

@@ -7,21 +7,22 @@ import { AccountUpdateOneWithoutChargeNestedInput } from '../account/account-upd
 
 @InputType()
 export class ChargeUpdateInput {
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  id?: StringFieldUpdateOperationsInput;
 
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: DateTimeFieldUpdateOperationsInput;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    id?: StringFieldUpdateOperationsInput;
 
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  name?: StringFieldUpdateOperationsInput;
+    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
+    createdAt?: DateTimeFieldUpdateOperationsInput;
 
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: DateTimeFieldUpdateOperationsInput;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    name?: StringFieldUpdateOperationsInput;
 
-  @Field(() => FloatFieldUpdateOperationsInput, { nullable: true })
-  cost?: FloatFieldUpdateOperationsInput;
+    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
+    updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-  @Field(() => AccountUpdateOneWithoutChargeNestedInput, { nullable: true })
-  Account?: AccountUpdateOneWithoutChargeNestedInput;
+    @Field(() => FloatFieldUpdateOperationsInput, {nullable:true})
+    cost?: FloatFieldUpdateOperationsInput;
+
+    @Field(() => AccountUpdateOneWithoutChargeNestedInput, {nullable:true})
+    Account?: AccountUpdateOneWithoutChargeNestedInput;
 }

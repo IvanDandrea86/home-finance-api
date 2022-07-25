@@ -5,27 +5,28 @@ import { Int } from '@nestjs/graphql';
 
 @InputType()
 export class DetailCreateManyInput {
-  @Field(() => String, { nullable: true })
-  id?: string;
 
-  @Field(() => Date, { nullable: true })
-  createdAt?: Date | string;
+    @Field(() => String, {nullable:true})
+    id?: string;
 
-  @Field(() => Date, { nullable: true })
-  updatedAt?: Date | string;
+    @Field(() => Date, {nullable:true})
+    createdAt?: Date | string;
 
-  @Field(() => String, { nullable: false })
-  name!: string;
+    @Field(() => Date, {nullable:true})
+    updatedAt?: Date | string;
 
-  @Field(() => String, { nullable: true })
-  expenseId?: string;
+    @Field(() => String, {nullable:false})
+    name!: string;
 
-  @Field(() => Float, { nullable: true })
-  cost?: number;
+    @Field(() => String, {nullable:true})
+    expenseId?: string;
 
-  @Field(() => Int, { nullable: true })
-  period?: number;
+    @Field(() => Float, {nullable:true})
+    cost?: number;
 
-  @Field(() => String, { nullable: true })
-  userId?: string;
+    @Field(() => Int, {nullable:true})
+    period?: number;
+
+    @Field(() => String, {nullable:true})
+    userId?: string;
 }

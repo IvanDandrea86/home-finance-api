@@ -7,22 +7,19 @@ import { FamilyUpdateOneRequiredWithoutRevenuesNestedInput } from '../family/fam
 
 @InputType()
 export class RevenueUpdateInput {
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  id?: StringFieldUpdateOperationsInput;
 
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: DateTimeFieldUpdateOperationsInput;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    id?: StringFieldUpdateOperationsInput;
 
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: DateTimeFieldUpdateOperationsInput;
+    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
+    createdAt?: DateTimeFieldUpdateOperationsInput;
 
-  @Field(() => UserUpdateOneRequiredWithoutRevenueNestedInput, {
-    nullable: true,
-  })
-  User?: UserUpdateOneRequiredWithoutRevenueNestedInput;
+    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
+    updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-  @Field(() => FamilyUpdateOneRequiredWithoutRevenuesNestedInput, {
-    nullable: true,
-  })
-  Family?: FamilyUpdateOneRequiredWithoutRevenuesNestedInput;
+    @Field(() => UserUpdateOneRequiredWithoutRevenueNestedInput, {nullable:true})
+    User?: UserUpdateOneRequiredWithoutRevenueNestedInput;
+
+    @Field(() => FamilyUpdateOneRequiredWithoutRevenuesNestedInput, {nullable:true})
+    Family?: FamilyUpdateOneRequiredWithoutRevenuesNestedInput;
 }

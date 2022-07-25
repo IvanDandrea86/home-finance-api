@@ -6,11 +6,12 @@ import { ExpenseCreateWithoutFamilyInput } from './expense-create-without-family
 
 @InputType()
 export class ExpenseCreateOrConnectWithoutFamilyInput {
-  @Field(() => ExpenseWhereUniqueInput, { nullable: false })
-  @Type(() => ExpenseWhereUniqueInput)
-  where!: ExpenseWhereUniqueInput;
 
-  @Field(() => ExpenseCreateWithoutFamilyInput, { nullable: false })
-  @Type(() => ExpenseCreateWithoutFamilyInput)
-  create!: ExpenseCreateWithoutFamilyInput;
+    @Field(() => ExpenseWhereUniqueInput, {nullable:false})
+    @Type(() => ExpenseWhereUniqueInput)
+    where!: ExpenseWhereUniqueInput;
+
+    @Field(() => ExpenseCreateWithoutFamilyInput, {nullable:false})
+    @Type(() => ExpenseCreateWithoutFamilyInput)
+    create!: ExpenseCreateWithoutFamilyInput;
 }

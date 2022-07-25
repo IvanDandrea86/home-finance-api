@@ -4,27 +4,28 @@ import { SortOrder } from '../prisma/sort-order.enum';
 
 @InputType()
 export class AccountMinOrderByAggregateInput {
-  @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  type?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    createdAt?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    type?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  name?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    updatedAt?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  monthlyBudget?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    name?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  sold?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    monthlyBudget?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  familyId?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    sold?: keyof typeof SortOrder;
+
+    @Field(() => SortOrder, {nullable:true})
+    familyId?: keyof typeof SortOrder;
 }

@@ -6,11 +6,12 @@ import { ExpenseWhereInput } from './expense-where.input';
 
 @ArgsType()
 export class UpdateManyExpenseArgs {
-  @Field(() => ExpenseUpdateManyMutationInput, { nullable: false })
-  @Type(() => ExpenseUpdateManyMutationInput)
-  data!: ExpenseUpdateManyMutationInput;
 
-  @Field(() => ExpenseWhereInput, { nullable: true })
-  @Type(() => ExpenseWhereInput)
-  where?: ExpenseWhereInput;
+    @Field(() => ExpenseUpdateManyMutationInput, {nullable:false})
+    @Type(() => ExpenseUpdateManyMutationInput)
+    data!: ExpenseUpdateManyMutationInput;
+
+    @Field(() => ExpenseWhereInput, {nullable:true})
+    @Type(() => ExpenseWhereInput)
+    where?: ExpenseWhereInput;
 }

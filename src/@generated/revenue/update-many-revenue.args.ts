@@ -6,11 +6,12 @@ import { RevenueWhereInput } from './revenue-where.input';
 
 @ArgsType()
 export class UpdateManyRevenueArgs {
-  @Field(() => RevenueUpdateManyMutationInput, { nullable: false })
-  @Type(() => RevenueUpdateManyMutationInput)
-  data!: RevenueUpdateManyMutationInput;
 
-  @Field(() => RevenueWhereInput, { nullable: true })
-  @Type(() => RevenueWhereInput)
-  where?: RevenueWhereInput;
+    @Field(() => RevenueUpdateManyMutationInput, {nullable:false})
+    @Type(() => RevenueUpdateManyMutationInput)
+    data!: RevenueUpdateManyMutationInput;
+
+    @Field(() => RevenueWhereInput, {nullable:true})
+    @Type(() => RevenueWhereInput)
+    where?: RevenueWhereInput;
 }

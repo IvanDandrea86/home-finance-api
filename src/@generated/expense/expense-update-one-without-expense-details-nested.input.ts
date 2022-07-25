@@ -9,31 +9,30 @@ import { ExpenseUpdateWithoutExpenseDetailsInput } from './expense-update-withou
 
 @InputType()
 export class ExpenseUpdateOneWithoutExpenseDetailsNestedInput {
-  @Field(() => ExpenseCreateWithoutExpenseDetailsInput, { nullable: true })
-  @Type(() => ExpenseCreateWithoutExpenseDetailsInput)
-  create?: ExpenseCreateWithoutExpenseDetailsInput;
 
-  @Field(() => ExpenseCreateOrConnectWithoutExpenseDetailsInput, {
-    nullable: true,
-  })
-  @Type(() => ExpenseCreateOrConnectWithoutExpenseDetailsInput)
-  connectOrCreate?: ExpenseCreateOrConnectWithoutExpenseDetailsInput;
+    @Field(() => ExpenseCreateWithoutExpenseDetailsInput, {nullable:true})
+    @Type(() => ExpenseCreateWithoutExpenseDetailsInput)
+    create?: ExpenseCreateWithoutExpenseDetailsInput;
 
-  @Field(() => ExpenseUpsertWithoutExpenseDetailsInput, { nullable: true })
-  @Type(() => ExpenseUpsertWithoutExpenseDetailsInput)
-  upsert?: ExpenseUpsertWithoutExpenseDetailsInput;
+    @Field(() => ExpenseCreateOrConnectWithoutExpenseDetailsInput, {nullable:true})
+    @Type(() => ExpenseCreateOrConnectWithoutExpenseDetailsInput)
+    connectOrCreate?: ExpenseCreateOrConnectWithoutExpenseDetailsInput;
 
-  @Field(() => Boolean, { nullable: true })
-  disconnect?: boolean;
+    @Field(() => ExpenseUpsertWithoutExpenseDetailsInput, {nullable:true})
+    @Type(() => ExpenseUpsertWithoutExpenseDetailsInput)
+    upsert?: ExpenseUpsertWithoutExpenseDetailsInput;
 
-  @Field(() => Boolean, { nullable: true })
-  delete?: boolean;
+    @Field(() => Boolean, {nullable:true})
+    disconnect?: boolean;
 
-  @Field(() => ExpenseWhereUniqueInput, { nullable: true })
-  @Type(() => ExpenseWhereUniqueInput)
-  connect?: ExpenseWhereUniqueInput;
+    @Field(() => Boolean, {nullable:true})
+    delete?: boolean;
 
-  @Field(() => ExpenseUpdateWithoutExpenseDetailsInput, { nullable: true })
-  @Type(() => ExpenseUpdateWithoutExpenseDetailsInput)
-  update?: ExpenseUpdateWithoutExpenseDetailsInput;
+    @Field(() => ExpenseWhereUniqueInput, {nullable:true})
+    @Type(() => ExpenseWhereUniqueInput)
+    connect?: ExpenseWhereUniqueInput;
+
+    @Field(() => ExpenseUpdateWithoutExpenseDetailsInput, {nullable:true})
+    @Type(() => ExpenseUpdateWithoutExpenseDetailsInput)
+    update?: ExpenseUpdateWithoutExpenseDetailsInput;
 }

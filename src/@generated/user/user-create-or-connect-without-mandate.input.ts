@@ -6,11 +6,12 @@ import { UserCreateWithoutMandateInput } from './user-create-without-mandate.inp
 
 @InputType()
 export class UserCreateOrConnectWithoutMandateInput {
-  @Field(() => UserWhereUniqueInput, { nullable: false })
-  @Type(() => UserWhereUniqueInput)
-  where!: UserWhereUniqueInput;
 
-  @Field(() => UserCreateWithoutMandateInput, { nullable: false })
-  @Type(() => UserCreateWithoutMandateInput)
-  create!: UserCreateWithoutMandateInput;
+    @Field(() => UserWhereUniqueInput, {nullable:false})
+    @Type(() => UserWhereUniqueInput)
+    where!: UserWhereUniqueInput;
+
+    @Field(() => UserCreateWithoutMandateInput, {nullable:false})
+    @Type(() => UserCreateWithoutMandateInput)
+    create!: UserCreateWithoutMandateInput;
 }

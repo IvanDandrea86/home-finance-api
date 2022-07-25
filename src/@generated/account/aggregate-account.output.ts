@@ -8,18 +8,19 @@ import { AccountMaxAggregate } from './account-max-aggregate.output';
 
 @ObjectType()
 export class AggregateAccount {
-  @Field(() => AccountCountAggregate, { nullable: true })
-  _count?: AccountCountAggregate;
 
-  @Field(() => AccountAvgAggregate, { nullable: true })
-  _avg?: AccountAvgAggregate;
+    @Field(() => AccountCountAggregate, {nullable:true})
+    _count?: AccountCountAggregate;
 
-  @Field(() => AccountSumAggregate, { nullable: true })
-  _sum?: AccountSumAggregate;
+    @Field(() => AccountAvgAggregate, {nullable:true})
+    _avg?: AccountAvgAggregate;
 
-  @Field(() => AccountMinAggregate, { nullable: true })
-  _min?: AccountMinAggregate;
+    @Field(() => AccountSumAggregate, {nullable:true})
+    _sum?: AccountSumAggregate;
 
-  @Field(() => AccountMaxAggregate, { nullable: true })
-  _max?: AccountMaxAggregate;
+    @Field(() => AccountMinAggregate, {nullable:true})
+    _min?: AccountMinAggregate;
+
+    @Field(() => AccountMaxAggregate, {nullable:true})
+    _max?: AccountMaxAggregate;
 }

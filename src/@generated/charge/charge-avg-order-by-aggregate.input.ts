@@ -4,6 +4,7 @@ import { SortOrder } from '../prisma/sort-order.enum';
 
 @InputType()
 export class ChargeAvgOrderByAggregateInput {
-  @Field(() => SortOrder, { nullable: true })
-  cost?: keyof typeof SortOrder;
+
+    @Field(() => SortOrder, {nullable:true})
+    cost?: keyof typeof SortOrder;
 }

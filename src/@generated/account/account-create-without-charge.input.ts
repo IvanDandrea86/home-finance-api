@@ -7,30 +7,31 @@ import { ExpenseCreateNestedManyWithoutAccountInput } from '../expense/expense-c
 
 @InputType()
 export class AccountCreateWithoutChargeInput {
-  @Field(() => String, { nullable: true })
-  id?: string;
 
-  @Field(() => Date, { nullable: true })
-  createdAt?: Date | string;
+    @Field(() => String, {nullable:true})
+    id?: string;
 
-  @Field(() => AccountType, { nullable: false })
-  type!: keyof typeof AccountType;
+    @Field(() => Date, {nullable:true})
+    createdAt?: Date | string;
 
-  @Field(() => Date, { nullable: true })
-  updatedAt?: Date | string;
+    @Field(() => AccountType, {nullable:false})
+    type!: keyof typeof AccountType;
 
-  @Field(() => String, { nullable: false })
-  name!: string;
+    @Field(() => Date, {nullable:true})
+    updatedAt?: Date | string;
 
-  @Field(() => Float, { nullable: true })
-  monthlyBudget?: number;
+    @Field(() => String, {nullable:false})
+    name!: string;
 
-  @Field(() => Float, { nullable: true })
-  sold?: number;
+    @Field(() => Float, {nullable:true})
+    monthlyBudget?: number;
 
-  @Field(() => FamilyCreateNestedOneWithoutAccountsInput, { nullable: true })
-  Family?: FamilyCreateNestedOneWithoutAccountsInput;
+    @Field(() => Float, {nullable:true})
+    sold?: number;
 
-  @Field(() => ExpenseCreateNestedManyWithoutAccountInput, { nullable: true })
-  Expense?: ExpenseCreateNestedManyWithoutAccountInput;
+    @Field(() => FamilyCreateNestedOneWithoutAccountsInput, {nullable:true})
+    Family?: FamilyCreateNestedOneWithoutAccountsInput;
+
+    @Field(() => ExpenseCreateNestedManyWithoutAccountInput, {nullable:true})
+    Expense?: ExpenseCreateNestedManyWithoutAccountInput;
 }

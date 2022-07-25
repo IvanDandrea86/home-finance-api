@@ -6,11 +6,12 @@ import { ExpenseUpdateWithoutFamilyInput } from './expense-update-without-family
 
 @InputType()
 export class ExpenseUpdateWithWhereUniqueWithoutFamilyInput {
-  @Field(() => ExpenseWhereUniqueInput, { nullable: false })
-  @Type(() => ExpenseWhereUniqueInput)
-  where!: ExpenseWhereUniqueInput;
 
-  @Field(() => ExpenseUpdateWithoutFamilyInput, { nullable: false })
-  @Type(() => ExpenseUpdateWithoutFamilyInput)
-  data!: ExpenseUpdateWithoutFamilyInput;
+    @Field(() => ExpenseWhereUniqueInput, {nullable:false})
+    @Type(() => ExpenseWhereUniqueInput)
+    where!: ExpenseWhereUniqueInput;
+
+    @Field(() => ExpenseUpdateWithoutFamilyInput, {nullable:false})
+    @Type(() => ExpenseUpdateWithoutFamilyInput)
+    data!: ExpenseUpdateWithoutFamilyInput;
 }

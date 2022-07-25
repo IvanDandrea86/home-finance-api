@@ -12,53 +12,48 @@ import { RevenueScalarWhereInput } from './revenue-scalar-where.input';
 
 @InputType()
 export class RevenueUpdateManyWithoutFamilyNestedInput {
-  @Field(() => [RevenueCreateWithoutFamilyInput], { nullable: true })
-  @Type(() => RevenueCreateWithoutFamilyInput)
-  create?: Array<RevenueCreateWithoutFamilyInput>;
 
-  @Field(() => [RevenueCreateOrConnectWithoutFamilyInput], { nullable: true })
-  @Type(() => RevenueCreateOrConnectWithoutFamilyInput)
-  connectOrCreate?: Array<RevenueCreateOrConnectWithoutFamilyInput>;
+    @Field(() => [RevenueCreateWithoutFamilyInput], {nullable:true})
+    @Type(() => RevenueCreateWithoutFamilyInput)
+    create?: Array<RevenueCreateWithoutFamilyInput>;
 
-  @Field(() => [RevenueUpsertWithWhereUniqueWithoutFamilyInput], {
-    nullable: true,
-  })
-  @Type(() => RevenueUpsertWithWhereUniqueWithoutFamilyInput)
-  upsert?: Array<RevenueUpsertWithWhereUniqueWithoutFamilyInput>;
+    @Field(() => [RevenueCreateOrConnectWithoutFamilyInput], {nullable:true})
+    @Type(() => RevenueCreateOrConnectWithoutFamilyInput)
+    connectOrCreate?: Array<RevenueCreateOrConnectWithoutFamilyInput>;
 
-  @Field(() => RevenueCreateManyFamilyInputEnvelope, { nullable: true })
-  @Type(() => RevenueCreateManyFamilyInputEnvelope)
-  createMany?: RevenueCreateManyFamilyInputEnvelope;
+    @Field(() => [RevenueUpsertWithWhereUniqueWithoutFamilyInput], {nullable:true})
+    @Type(() => RevenueUpsertWithWhereUniqueWithoutFamilyInput)
+    upsert?: Array<RevenueUpsertWithWhereUniqueWithoutFamilyInput>;
 
-  @Field(() => [RevenueWhereUniqueInput], { nullable: true })
-  @Type(() => RevenueWhereUniqueInput)
-  set?: Array<RevenueWhereUniqueInput>;
+    @Field(() => RevenueCreateManyFamilyInputEnvelope, {nullable:true})
+    @Type(() => RevenueCreateManyFamilyInputEnvelope)
+    createMany?: RevenueCreateManyFamilyInputEnvelope;
 
-  @Field(() => [RevenueWhereUniqueInput], { nullable: true })
-  @Type(() => RevenueWhereUniqueInput)
-  disconnect?: Array<RevenueWhereUniqueInput>;
+    @Field(() => [RevenueWhereUniqueInput], {nullable:true})
+    @Type(() => RevenueWhereUniqueInput)
+    set?: Array<RevenueWhereUniqueInput>;
 
-  @Field(() => [RevenueWhereUniqueInput], { nullable: true })
-  @Type(() => RevenueWhereUniqueInput)
-  delete?: Array<RevenueWhereUniqueInput>;
+    @Field(() => [RevenueWhereUniqueInput], {nullable:true})
+    @Type(() => RevenueWhereUniqueInput)
+    disconnect?: Array<RevenueWhereUniqueInput>;
 
-  @Field(() => [RevenueWhereUniqueInput], { nullable: true })
-  @Type(() => RevenueWhereUniqueInput)
-  connect?: Array<RevenueWhereUniqueInput>;
+    @Field(() => [RevenueWhereUniqueInput], {nullable:true})
+    @Type(() => RevenueWhereUniqueInput)
+    delete?: Array<RevenueWhereUniqueInput>;
 
-  @Field(() => [RevenueUpdateWithWhereUniqueWithoutFamilyInput], {
-    nullable: true,
-  })
-  @Type(() => RevenueUpdateWithWhereUniqueWithoutFamilyInput)
-  update?: Array<RevenueUpdateWithWhereUniqueWithoutFamilyInput>;
+    @Field(() => [RevenueWhereUniqueInput], {nullable:true})
+    @Type(() => RevenueWhereUniqueInput)
+    connect?: Array<RevenueWhereUniqueInput>;
 
-  @Field(() => [RevenueUpdateManyWithWhereWithoutFamilyInput], {
-    nullable: true,
-  })
-  @Type(() => RevenueUpdateManyWithWhereWithoutFamilyInput)
-  updateMany?: Array<RevenueUpdateManyWithWhereWithoutFamilyInput>;
+    @Field(() => [RevenueUpdateWithWhereUniqueWithoutFamilyInput], {nullable:true})
+    @Type(() => RevenueUpdateWithWhereUniqueWithoutFamilyInput)
+    update?: Array<RevenueUpdateWithWhereUniqueWithoutFamilyInput>;
 
-  @Field(() => [RevenueScalarWhereInput], { nullable: true })
-  @Type(() => RevenueScalarWhereInput)
-  deleteMany?: Array<RevenueScalarWhereInput>;
+    @Field(() => [RevenueUpdateManyWithWhereWithoutFamilyInput], {nullable:true})
+    @Type(() => RevenueUpdateManyWithWhereWithoutFamilyInput)
+    updateMany?: Array<RevenueUpdateManyWithWhereWithoutFamilyInput>;
+
+    @Field(() => [RevenueScalarWhereInput], {nullable:true})
+    @Type(() => RevenueScalarWhereInput)
+    deleteMany?: Array<RevenueScalarWhereInput>;
 }

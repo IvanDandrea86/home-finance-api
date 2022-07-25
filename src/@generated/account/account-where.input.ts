@@ -11,45 +11,46 @@ import { ExpenseListRelationFilter } from '../expense/expense-list-relation-filt
 
 @InputType()
 export class AccountWhereInput {
-  @Field(() => [AccountWhereInput], { nullable: true })
-  AND?: Array<AccountWhereInput>;
 
-  @Field(() => [AccountWhereInput], { nullable: true })
-  OR?: Array<AccountWhereInput>;
+    @Field(() => [AccountWhereInput], {nullable:true})
+    AND?: Array<AccountWhereInput>;
 
-  @Field(() => [AccountWhereInput], { nullable: true })
-  NOT?: Array<AccountWhereInput>;
+    @Field(() => [AccountWhereInput], {nullable:true})
+    OR?: Array<AccountWhereInput>;
 
-  @Field(() => StringFilter, { nullable: true })
-  id?: StringFilter;
+    @Field(() => [AccountWhereInput], {nullable:true})
+    NOT?: Array<AccountWhereInput>;
 
-  @Field(() => DateTimeFilter, { nullable: true })
-  createdAt?: DateTimeFilter;
+    @Field(() => StringFilter, {nullable:true})
+    id?: StringFilter;
 
-  @Field(() => EnumAccountTypeFilter, { nullable: true })
-  type?: EnumAccountTypeFilter;
+    @Field(() => DateTimeFilter, {nullable:true})
+    createdAt?: DateTimeFilter;
 
-  @Field(() => DateTimeFilter, { nullable: true })
-  updatedAt?: DateTimeFilter;
+    @Field(() => EnumAccountTypeFilter, {nullable:true})
+    type?: EnumAccountTypeFilter;
 
-  @Field(() => StringFilter, { nullable: true })
-  name?: StringFilter;
+    @Field(() => DateTimeFilter, {nullable:true})
+    updatedAt?: DateTimeFilter;
 
-  @Field(() => ChargeListRelationFilter, { nullable: true })
-  charge?: ChargeListRelationFilter;
+    @Field(() => StringFilter, {nullable:true})
+    name?: StringFilter;
 
-  @Field(() => FloatFilter, { nullable: true })
-  monthlyBudget?: FloatFilter;
+    @Field(() => ChargeListRelationFilter, {nullable:true})
+    charge?: ChargeListRelationFilter;
 
-  @Field(() => FloatFilter, { nullable: true })
-  sold?: FloatFilter;
+    @Field(() => FloatFilter, {nullable:true})
+    monthlyBudget?: FloatFilter;
 
-  @Field(() => FamilyRelationFilter, { nullable: true })
-  Family?: FamilyRelationFilter;
+    @Field(() => FloatFilter, {nullable:true})
+    sold?: FloatFilter;
 
-  @Field(() => StringNullableFilter, { nullable: true })
-  familyId?: StringNullableFilter;
+    @Field(() => FamilyRelationFilter, {nullable:true})
+    Family?: FamilyRelationFilter;
 
-  @Field(() => ExpenseListRelationFilter, { nullable: true })
-  Expense?: ExpenseListRelationFilter;
+    @Field(() => StringNullableFilter, {nullable:true})
+    familyId?: StringNullableFilter;
+
+    @Field(() => ExpenseListRelationFilter, {nullable:true})
+    Expense?: ExpenseListRelationFilter;
 }

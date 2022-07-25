@@ -7,15 +7,16 @@ import { AccountUpdateInput } from './account-update.input';
 
 @ArgsType()
 export class UpsertOneAccountArgs {
-  @Field(() => AccountWhereUniqueInput, { nullable: false })
-  @Type(() => AccountWhereUniqueInput)
-  where!: AccountWhereUniqueInput;
 
-  @Field(() => AccountCreateInput, { nullable: false })
-  @Type(() => AccountCreateInput)
-  create!: AccountCreateInput;
+    @Field(() => AccountWhereUniqueInput, {nullable:false})
+    @Type(() => AccountWhereUniqueInput)
+    where!: AccountWhereUniqueInput;
 
-  @Field(() => AccountUpdateInput, { nullable: false })
-  @Type(() => AccountUpdateInput)
-  update!: AccountUpdateInput;
+    @Field(() => AccountCreateInput, {nullable:false})
+    @Type(() => AccountCreateInput)
+    create!: AccountCreateInput;
+
+    @Field(() => AccountUpdateInput, {nullable:false})
+    @Type(() => AccountUpdateInput)
+    update!: AccountUpdateInput;
 }

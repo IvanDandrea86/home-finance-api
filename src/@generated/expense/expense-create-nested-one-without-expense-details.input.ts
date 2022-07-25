@@ -7,17 +7,16 @@ import { ExpenseWhereUniqueInput } from './expense-where-unique.input';
 
 @InputType()
 export class ExpenseCreateNestedOneWithoutExpenseDetailsInput {
-  @Field(() => ExpenseCreateWithoutExpenseDetailsInput, { nullable: true })
-  @Type(() => ExpenseCreateWithoutExpenseDetailsInput)
-  create?: ExpenseCreateWithoutExpenseDetailsInput;
 
-  @Field(() => ExpenseCreateOrConnectWithoutExpenseDetailsInput, {
-    nullable: true,
-  })
-  @Type(() => ExpenseCreateOrConnectWithoutExpenseDetailsInput)
-  connectOrCreate?: ExpenseCreateOrConnectWithoutExpenseDetailsInput;
+    @Field(() => ExpenseCreateWithoutExpenseDetailsInput, {nullable:true})
+    @Type(() => ExpenseCreateWithoutExpenseDetailsInput)
+    create?: ExpenseCreateWithoutExpenseDetailsInput;
 
-  @Field(() => ExpenseWhereUniqueInput, { nullable: true })
-  @Type(() => ExpenseWhereUniqueInput)
-  connect?: ExpenseWhereUniqueInput;
+    @Field(() => ExpenseCreateOrConnectWithoutExpenseDetailsInput, {nullable:true})
+    @Type(() => ExpenseCreateOrConnectWithoutExpenseDetailsInput)
+    connectOrCreate?: ExpenseCreateOrConnectWithoutExpenseDetailsInput;
+
+    @Field(() => ExpenseWhereUniqueInput, {nullable:true})
+    @Type(() => ExpenseWhereUniqueInput)
+    connect?: ExpenseWhereUniqueInput;
 }

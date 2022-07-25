@@ -10,42 +10,43 @@ import { UserRelationFilter } from '../user/user-relation-filter.input';
 
 @InputType()
 export class DetailWhereInput {
-  @Field(() => [DetailWhereInput], { nullable: true })
-  AND?: Array<DetailWhereInput>;
 
-  @Field(() => [DetailWhereInput], { nullable: true })
-  OR?: Array<DetailWhereInput>;
+    @Field(() => [DetailWhereInput], {nullable:true})
+    AND?: Array<DetailWhereInput>;
 
-  @Field(() => [DetailWhereInput], { nullable: true })
-  NOT?: Array<DetailWhereInput>;
+    @Field(() => [DetailWhereInput], {nullable:true})
+    OR?: Array<DetailWhereInput>;
 
-  @Field(() => StringFilter, { nullable: true })
-  id?: StringFilter;
+    @Field(() => [DetailWhereInput], {nullable:true})
+    NOT?: Array<DetailWhereInput>;
 
-  @Field(() => DateTimeFilter, { nullable: true })
-  createdAt?: DateTimeFilter;
+    @Field(() => StringFilter, {nullable:true})
+    id?: StringFilter;
 
-  @Field(() => DateTimeFilter, { nullable: true })
-  updatedAt?: DateTimeFilter;
+    @Field(() => DateTimeFilter, {nullable:true})
+    createdAt?: DateTimeFilter;
 
-  @Field(() => StringFilter, { nullable: true })
-  name?: StringFilter;
+    @Field(() => DateTimeFilter, {nullable:true})
+    updatedAt?: DateTimeFilter;
 
-  @Field(() => ExpenseRelationFilter, { nullable: true })
-  Expense?: ExpenseRelationFilter;
+    @Field(() => StringFilter, {nullable:true})
+    name?: StringFilter;
 
-  @Field(() => StringNullableFilter, { nullable: true })
-  expenseId?: StringNullableFilter;
+    @Field(() => ExpenseRelationFilter, {nullable:true})
+    Expense?: ExpenseRelationFilter;
 
-  @Field(() => FloatFilter, { nullable: true })
-  cost?: FloatFilter;
+    @Field(() => StringNullableFilter, {nullable:true})
+    expenseId?: StringNullableFilter;
 
-  @Field(() => IntNullableFilter, { nullable: true })
-  period?: IntNullableFilter;
+    @Field(() => FloatFilter, {nullable:true})
+    cost?: FloatFilter;
 
-  @Field(() => UserRelationFilter, { nullable: true })
-  user?: UserRelationFilter;
+    @Field(() => IntNullableFilter, {nullable:true})
+    period?: IntNullableFilter;
 
-  @Field(() => StringNullableFilter, { nullable: true })
-  userId?: StringNullableFilter;
+    @Field(() => UserRelationFilter, {nullable:true})
+    user?: UserRelationFilter;
+
+    @Field(() => StringNullableFilter, {nullable:true})
+    userId?: StringNullableFilter;
 }

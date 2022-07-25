@@ -5,10 +5,11 @@ import { Type } from 'class-transformer';
 
 @InputType()
 export class DetailCreateManyExpenseInputEnvelope {
-  @Field(() => [DetailCreateManyExpenseInput], { nullable: false })
-  @Type(() => DetailCreateManyExpenseInput)
-  data!: Array<DetailCreateManyExpenseInput>;
 
-  @Field(() => Boolean, { nullable: true })
-  skipDuplicates?: boolean;
+    @Field(() => [DetailCreateManyExpenseInput], {nullable:false})
+    @Type(() => DetailCreateManyExpenseInput)
+    data!: Array<DetailCreateManyExpenseInput>;
+
+    @Field(() => Boolean, {nullable:true})
+    skipDuplicates?: boolean;
 }

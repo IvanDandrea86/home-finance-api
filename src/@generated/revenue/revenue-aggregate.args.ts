@@ -11,28 +11,29 @@ import { RevenueMaxAggregateInput } from './revenue-max-aggregate.input';
 
 @ArgsType()
 export class RevenueAggregateArgs {
-  @Field(() => RevenueWhereInput, { nullable: true })
-  @Type(() => RevenueWhereInput)
-  where?: RevenueWhereInput;
 
-  @Field(() => [RevenueOrderByWithRelationInput], { nullable: true })
-  orderBy?: Array<RevenueOrderByWithRelationInput>;
+    @Field(() => RevenueWhereInput, {nullable:true})
+    @Type(() => RevenueWhereInput)
+    where?: RevenueWhereInput;
 
-  @Field(() => RevenueWhereUniqueInput, { nullable: true })
-  cursor?: RevenueWhereUniqueInput;
+    @Field(() => [RevenueOrderByWithRelationInput], {nullable:true})
+    orderBy?: Array<RevenueOrderByWithRelationInput>;
 
-  @Field(() => Int, { nullable: true })
-  take?: number;
+    @Field(() => RevenueWhereUniqueInput, {nullable:true})
+    cursor?: RevenueWhereUniqueInput;
 
-  @Field(() => Int, { nullable: true })
-  skip?: number;
+    @Field(() => Int, {nullable:true})
+    take?: number;
 
-  @Field(() => RevenueCountAggregateInput, { nullable: true })
-  _count?: RevenueCountAggregateInput;
+    @Field(() => Int, {nullable:true})
+    skip?: number;
 
-  @Field(() => RevenueMinAggregateInput, { nullable: true })
-  _min?: RevenueMinAggregateInput;
+    @Field(() => RevenueCountAggregateInput, {nullable:true})
+    _count?: RevenueCountAggregateInput;
 
-  @Field(() => RevenueMaxAggregateInput, { nullable: true })
-  _max?: RevenueMaxAggregateInput;
+    @Field(() => RevenueMinAggregateInput, {nullable:true})
+    _min?: RevenueMinAggregateInput;
+
+    @Field(() => RevenueMaxAggregateInput, {nullable:true})
+    _max?: RevenueMaxAggregateInput;
 }

@@ -5,21 +5,22 @@ import { AccountCreateNestedOneWithoutChargeInput } from '../account/account-cre
 
 @InputType()
 export class ChargeCreateInput {
-  @Field(() => String, { nullable: true })
-  id?: string;
 
-  @Field(() => Date, { nullable: true })
-  createdAt?: Date | string;
+    @Field(() => String, {nullable:true})
+    id?: string;
 
-  @Field(() => String, { nullable: false })
-  name!: string;
+    @Field(() => Date, {nullable:true})
+    createdAt?: Date | string;
 
-  @Field(() => Date, { nullable: true })
-  updatedAt?: Date | string;
+    @Field(() => String, {nullable:false})
+    name!: string;
 
-  @Field(() => Float, { nullable: false })
-  cost!: number;
+    @Field(() => Date, {nullable:true})
+    updatedAt?: Date | string;
 
-  @Field(() => AccountCreateNestedOneWithoutChargeInput, { nullable: true })
-  Account?: AccountCreateNestedOneWithoutChargeInput;
+    @Field(() => Float, {nullable:false})
+    cost!: number;
+
+    @Field(() => AccountCreateNestedOneWithoutChargeInput, {nullable:true})
+    Account?: AccountCreateNestedOneWithoutChargeInput;
 }

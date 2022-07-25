@@ -11,50 +11,43 @@ import { DetailUncheckedUpdateManyWithoutUserNestedInput } from '../detail/detai
 
 @InputType()
 export class UserUncheckedUpdateWithoutFamilyInput {
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  id?: StringFieldUpdateOperationsInput;
 
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: DateTimeFieldUpdateOperationsInput;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    id?: StringFieldUpdateOperationsInput;
 
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: DateTimeFieldUpdateOperationsInput;
+    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
+    createdAt?: DateTimeFieldUpdateOperationsInput;
 
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  firstName?: StringFieldUpdateOperationsInput;
+    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
+    updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  lastName?: StringFieldUpdateOperationsInput;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    firstName?: StringFieldUpdateOperationsInput;
 
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  email?: StringFieldUpdateOperationsInput;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    lastName?: StringFieldUpdateOperationsInput;
 
-  @Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
-  password?: NullableStringFieldUpdateOperationsInput;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    email?: StringFieldUpdateOperationsInput;
 
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  validationToken?: StringFieldUpdateOperationsInput;
+    @Field(() => NullableStringFieldUpdateOperationsInput, {nullable:true})
+    password?: NullableStringFieldUpdateOperationsInput;
 
-  @Field(() => NullableDateTimeFieldUpdateOperationsInput, { nullable: true })
-  lastLogin?: NullableDateTimeFieldUpdateOperationsInput;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    validationToken?: StringFieldUpdateOperationsInput;
 
-  @Field(() => EnumVerificationStatusFieldUpdateOperationsInput, {
-    nullable: true,
-  })
-  verificationStatus?: EnumVerificationStatusFieldUpdateOperationsInput;
+    @Field(() => NullableDateTimeFieldUpdateOperationsInput, {nullable:true})
+    lastLogin?: NullableDateTimeFieldUpdateOperationsInput;
 
-  @Field(() => PermissionUncheckedUpdateOneWithoutUserNestedInput, {
-    nullable: true,
-  })
-  Permission?: PermissionUncheckedUpdateOneWithoutUserNestedInput;
+    @Field(() => EnumVerificationStatusFieldUpdateOperationsInput, {nullable:true})
+    verificationStatus?: EnumVerificationStatusFieldUpdateOperationsInput;
 
-  @Field(() => RevenueUncheckedUpdateManyWithoutUserNestedInput, {
-    nullable: true,
-  })
-  Revenue?: RevenueUncheckedUpdateManyWithoutUserNestedInput;
+    @Field(() => PermissionUncheckedUpdateOneWithoutUserNestedInput, {nullable:true})
+    Permission?: PermissionUncheckedUpdateOneWithoutUserNestedInput;
 
-  @Field(() => DetailUncheckedUpdateManyWithoutUserNestedInput, {
-    nullable: true,
-  })
-  Mandate?: DetailUncheckedUpdateManyWithoutUserNestedInput;
+    @Field(() => RevenueUncheckedUpdateManyWithoutUserNestedInput, {nullable:true})
+    Revenue?: RevenueUncheckedUpdateManyWithoutUserNestedInput;
+
+    @Field(() => DetailUncheckedUpdateManyWithoutUserNestedInput, {nullable:true})
+    Mandate?: DetailUncheckedUpdateManyWithoutUserNestedInput;
 }

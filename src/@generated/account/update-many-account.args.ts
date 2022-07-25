@@ -6,11 +6,12 @@ import { AccountWhereInput } from './account-where.input';
 
 @ArgsType()
 export class UpdateManyAccountArgs {
-  @Field(() => AccountUpdateManyMutationInput, { nullable: false })
-  @Type(() => AccountUpdateManyMutationInput)
-  data!: AccountUpdateManyMutationInput;
 
-  @Field(() => AccountWhereInput, { nullable: true })
-  @Type(() => AccountWhereInput)
-  where?: AccountWhereInput;
+    @Field(() => AccountUpdateManyMutationInput, {nullable:false})
+    @Type(() => AccountUpdateManyMutationInput)
+    data!: AccountUpdateManyMutationInput;
+
+    @Field(() => AccountWhereInput, {nullable:true})
+    @Type(() => AccountWhereInput)
+    where?: AccountWhereInput;
 }

@@ -6,11 +6,12 @@ import { AccountCreateWithoutExpenseInput } from './account-create-without-expen
 
 @InputType()
 export class AccountCreateOrConnectWithoutExpenseInput {
-  @Field(() => AccountWhereUniqueInput, { nullable: false })
-  @Type(() => AccountWhereUniqueInput)
-  where!: AccountWhereUniqueInput;
 
-  @Field(() => AccountCreateWithoutExpenseInput, { nullable: false })
-  @Type(() => AccountCreateWithoutExpenseInput)
-  create!: AccountCreateWithoutExpenseInput;
+    @Field(() => AccountWhereUniqueInput, {nullable:false})
+    @Type(() => AccountWhereUniqueInput)
+    where!: AccountWhereUniqueInput;
+
+    @Field(() => AccountCreateWithoutExpenseInput, {nullable:false})
+    @Type(() => AccountCreateWithoutExpenseInput)
+    create!: AccountCreateWithoutExpenseInput;
 }

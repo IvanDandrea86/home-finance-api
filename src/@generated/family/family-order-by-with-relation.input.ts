@@ -8,24 +8,25 @@ import { AccountOrderByRelationAggregateInput } from '../account/account-order-b
 
 @InputType()
 export class FamilyOrderByWithRelationInput {
-  @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    createdAt?: keyof typeof SortOrder;
 
-  @Field(() => UserOrderByRelationAggregateInput, { nullable: true })
-  members?: UserOrderByRelationAggregateInput;
+    @Field(() => SortOrder, {nullable:true})
+    updatedAt?: keyof typeof SortOrder;
 
-  @Field(() => ExpenseOrderByRelationAggregateInput, { nullable: true })
-  expenses?: ExpenseOrderByRelationAggregateInput;
+    @Field(() => UserOrderByRelationAggregateInput, {nullable:true})
+    members?: UserOrderByRelationAggregateInput;
 
-  @Field(() => RevenueOrderByRelationAggregateInput, { nullable: true })
-  revenues?: RevenueOrderByRelationAggregateInput;
+    @Field(() => ExpenseOrderByRelationAggregateInput, {nullable:true})
+    expenses?: ExpenseOrderByRelationAggregateInput;
 
-  @Field(() => AccountOrderByRelationAggregateInput, { nullable: true })
-  accounts?: AccountOrderByRelationAggregateInput;
+    @Field(() => RevenueOrderByRelationAggregateInput, {nullable:true})
+    revenues?: RevenueOrderByRelationAggregateInput;
+
+    @Field(() => AccountOrderByRelationAggregateInput, {nullable:true})
+    accounts?: AccountOrderByRelationAggregateInput;
 }

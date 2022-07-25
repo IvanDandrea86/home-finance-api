@@ -6,27 +6,28 @@ import { RevenueMaxAggregate } from './revenue-max-aggregate.output';
 
 @ObjectType()
 export class RevenueGroupBy {
-  @Field(() => String, { nullable: false })
-  id!: string;
 
-  @Field(() => Date, { nullable: false })
-  createdAt!: Date | string;
+    @Field(() => String, {nullable:false})
+    id!: string;
 
-  @Field(() => Date, { nullable: false })
-  updatedAt!: Date | string;
+    @Field(() => Date, {nullable:false})
+    createdAt!: Date | string;
 
-  @Field(() => String, { nullable: false })
-  userId!: string;
+    @Field(() => Date, {nullable:false})
+    updatedAt!: Date | string;
 
-  @Field(() => String, { nullable: false })
-  familyId!: string;
+    @Field(() => String, {nullable:false})
+    userId!: string;
 
-  @Field(() => RevenueCountAggregate, { nullable: true })
-  _count?: RevenueCountAggregate;
+    @Field(() => String, {nullable:false})
+    familyId!: string;
 
-  @Field(() => RevenueMinAggregate, { nullable: true })
-  _min?: RevenueMinAggregate;
+    @Field(() => RevenueCountAggregate, {nullable:true})
+    _count?: RevenueCountAggregate;
 
-  @Field(() => RevenueMaxAggregate, { nullable: true })
-  _max?: RevenueMaxAggregate;
+    @Field(() => RevenueMinAggregate, {nullable:true})
+    _min?: RevenueMinAggregate;
+
+    @Field(() => RevenueMaxAggregate, {nullable:true})
+    _max?: RevenueMaxAggregate;
 }

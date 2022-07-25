@@ -8,18 +8,19 @@ import { DetailMaxAggregate } from './detail-max-aggregate.output';
 
 @ObjectType()
 export class AggregateDetail {
-  @Field(() => DetailCountAggregate, { nullable: true })
-  _count?: DetailCountAggregate;
 
-  @Field(() => DetailAvgAggregate, { nullable: true })
-  _avg?: DetailAvgAggregate;
+    @Field(() => DetailCountAggregate, {nullable:true})
+    _count?: DetailCountAggregate;
 
-  @Field(() => DetailSumAggregate, { nullable: true })
-  _sum?: DetailSumAggregate;
+    @Field(() => DetailAvgAggregate, {nullable:true})
+    _avg?: DetailAvgAggregate;
 
-  @Field(() => DetailMinAggregate, { nullable: true })
-  _min?: DetailMinAggregate;
+    @Field(() => DetailSumAggregate, {nullable:true})
+    _sum?: DetailSumAggregate;
 
-  @Field(() => DetailMaxAggregate, { nullable: true })
-  _max?: DetailMaxAggregate;
+    @Field(() => DetailMinAggregate, {nullable:true})
+    _min?: DetailMinAggregate;
+
+    @Field(() => DetailMaxAggregate, {nullable:true})
+    _max?: DetailMaxAggregate;
 }

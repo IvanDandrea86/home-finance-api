@@ -8,48 +8,49 @@ import { DetailOrderByRelationAggregateInput } from '../detail/detail-order-by-r
 
 @InputType()
 export class UserOrderByWithRelationInput {
-  @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    createdAt?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  firstName?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    updatedAt?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  lastName?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    firstName?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  email?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    lastName?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  password?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    email?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  validationToken?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    password?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  lastLogin?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    validationToken?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  verificationStatus?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    lastLogin?: keyof typeof SortOrder;
 
-  @Field(() => PermissionOrderByWithRelationInput, { nullable: true })
-  Permission?: PermissionOrderByWithRelationInput;
+    @Field(() => SortOrder, {nullable:true})
+    verificationStatus?: keyof typeof SortOrder;
 
-  @Field(() => FamilyOrderByWithRelationInput, { nullable: true })
-  Family?: FamilyOrderByWithRelationInput;
+    @Field(() => PermissionOrderByWithRelationInput, {nullable:true})
+    Permission?: PermissionOrderByWithRelationInput;
 
-  @Field(() => SortOrder, { nullable: true })
-  familyId?: keyof typeof SortOrder;
+    @Field(() => FamilyOrderByWithRelationInput, {nullable:true})
+    Family?: FamilyOrderByWithRelationInput;
 
-  @Field(() => RevenueOrderByRelationAggregateInput, { nullable: true })
-  Revenue?: RevenueOrderByRelationAggregateInput;
+    @Field(() => SortOrder, {nullable:true})
+    familyId?: keyof typeof SortOrder;
 
-  @Field(() => DetailOrderByRelationAggregateInput, { nullable: true })
-  Mandate?: DetailOrderByRelationAggregateInput;
+    @Field(() => RevenueOrderByRelationAggregateInput, {nullable:true})
+    Revenue?: RevenueOrderByRelationAggregateInput;
+
+    @Field(() => DetailOrderByRelationAggregateInput, {nullable:true})
+    Mandate?: DetailOrderByRelationAggregateInput;
 }

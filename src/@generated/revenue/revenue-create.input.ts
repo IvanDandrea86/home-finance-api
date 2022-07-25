@@ -5,18 +5,19 @@ import { FamilyCreateNestedOneWithoutRevenuesInput } from '../family/family-crea
 
 @InputType()
 export class RevenueCreateInput {
-  @Field(() => String, { nullable: true })
-  id?: string;
 
-  @Field(() => Date, { nullable: true })
-  createdAt?: Date | string;
+    @Field(() => String, {nullable:true})
+    id?: string;
 
-  @Field(() => Date, { nullable: true })
-  updatedAt?: Date | string;
+    @Field(() => Date, {nullable:true})
+    createdAt?: Date | string;
 
-  @Field(() => UserCreateNestedOneWithoutRevenueInput, { nullable: false })
-  User!: UserCreateNestedOneWithoutRevenueInput;
+    @Field(() => Date, {nullable:true})
+    updatedAt?: Date | string;
 
-  @Field(() => FamilyCreateNestedOneWithoutRevenuesInput, { nullable: false })
-  Family!: FamilyCreateNestedOneWithoutRevenuesInput;
+    @Field(() => UserCreateNestedOneWithoutRevenueInput, {nullable:false})
+    User!: UserCreateNestedOneWithoutRevenueInput;
+
+    @Field(() => FamilyCreateNestedOneWithoutRevenuesInput, {nullable:false})
+    Family!: FamilyCreateNestedOneWithoutRevenuesInput;
 }

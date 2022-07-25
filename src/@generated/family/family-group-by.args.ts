@@ -12,31 +12,32 @@ import { FamilyMaxAggregateInput } from './family-max-aggregate.input';
 
 @ArgsType()
 export class FamilyGroupByArgs {
-  @Field(() => FamilyWhereInput, { nullable: true })
-  @Type(() => FamilyWhereInput)
-  where?: FamilyWhereInput;
 
-  @Field(() => [FamilyOrderByWithAggregationInput], { nullable: true })
-  orderBy?: Array<FamilyOrderByWithAggregationInput>;
+    @Field(() => FamilyWhereInput, {nullable:true})
+    @Type(() => FamilyWhereInput)
+    where?: FamilyWhereInput;
 
-  @Field(() => [FamilyScalarFieldEnum], { nullable: false })
-  by!: Array<keyof typeof FamilyScalarFieldEnum>;
+    @Field(() => [FamilyOrderByWithAggregationInput], {nullable:true})
+    orderBy?: Array<FamilyOrderByWithAggregationInput>;
 
-  @Field(() => FamilyScalarWhereWithAggregatesInput, { nullable: true })
-  having?: FamilyScalarWhereWithAggregatesInput;
+    @Field(() => [FamilyScalarFieldEnum], {nullable:false})
+    by!: Array<keyof typeof FamilyScalarFieldEnum>;
 
-  @Field(() => Int, { nullable: true })
-  take?: number;
+    @Field(() => FamilyScalarWhereWithAggregatesInput, {nullable:true})
+    having?: FamilyScalarWhereWithAggregatesInput;
 
-  @Field(() => Int, { nullable: true })
-  skip?: number;
+    @Field(() => Int, {nullable:true})
+    take?: number;
 
-  @Field(() => FamilyCountAggregateInput, { nullable: true })
-  _count?: FamilyCountAggregateInput;
+    @Field(() => Int, {nullable:true})
+    skip?: number;
 
-  @Field(() => FamilyMinAggregateInput, { nullable: true })
-  _min?: FamilyMinAggregateInput;
+    @Field(() => FamilyCountAggregateInput, {nullable:true})
+    _count?: FamilyCountAggregateInput;
 
-  @Field(() => FamilyMaxAggregateInput, { nullable: true })
-  _max?: FamilyMaxAggregateInput;
+    @Field(() => FamilyMinAggregateInput, {nullable:true})
+    _min?: FamilyMinAggregateInput;
+
+    @Field(() => FamilyMaxAggregateInput, {nullable:true})
+    _max?: FamilyMaxAggregateInput;
 }

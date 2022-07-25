@@ -9,42 +9,43 @@ import { AccountSumOrderByAggregateInput } from './account-sum-order-by-aggregat
 
 @InputType()
 export class AccountOrderByWithAggregationInput {
-  @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  type?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    createdAt?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    type?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  name?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    updatedAt?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  monthlyBudget?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    name?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  sold?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    monthlyBudget?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  familyId?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    sold?: keyof typeof SortOrder;
 
-  @Field(() => AccountCountOrderByAggregateInput, { nullable: true })
-  _count?: AccountCountOrderByAggregateInput;
+    @Field(() => SortOrder, {nullable:true})
+    familyId?: keyof typeof SortOrder;
 
-  @Field(() => AccountAvgOrderByAggregateInput, { nullable: true })
-  _avg?: AccountAvgOrderByAggregateInput;
+    @Field(() => AccountCountOrderByAggregateInput, {nullable:true})
+    _count?: AccountCountOrderByAggregateInput;
 
-  @Field(() => AccountMaxOrderByAggregateInput, { nullable: true })
-  _max?: AccountMaxOrderByAggregateInput;
+    @Field(() => AccountAvgOrderByAggregateInput, {nullable:true})
+    _avg?: AccountAvgOrderByAggregateInput;
 
-  @Field(() => AccountMinOrderByAggregateInput, { nullable: true })
-  _min?: AccountMinOrderByAggregateInput;
+    @Field(() => AccountMaxOrderByAggregateInput, {nullable:true})
+    _max?: AccountMaxOrderByAggregateInput;
 
-  @Field(() => AccountSumOrderByAggregateInput, { nullable: true })
-  _sum?: AccountSumOrderByAggregateInput;
+    @Field(() => AccountMinOrderByAggregateInput, {nullable:true})
+    _min?: AccountMinOrderByAggregateInput;
+
+    @Field(() => AccountSumOrderByAggregateInput, {nullable:true})
+    _sum?: AccountSumOrderByAggregateInput;
 }

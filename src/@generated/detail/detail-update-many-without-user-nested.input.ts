@@ -12,51 +12,48 @@ import { DetailScalarWhereInput } from './detail-scalar-where.input';
 
 @InputType()
 export class DetailUpdateManyWithoutUserNestedInput {
-  @Field(() => [DetailCreateWithoutUserInput], { nullable: true })
-  @Type(() => DetailCreateWithoutUserInput)
-  create?: Array<DetailCreateWithoutUserInput>;
 
-  @Field(() => [DetailCreateOrConnectWithoutUserInput], { nullable: true })
-  @Type(() => DetailCreateOrConnectWithoutUserInput)
-  connectOrCreate?: Array<DetailCreateOrConnectWithoutUserInput>;
+    @Field(() => [DetailCreateWithoutUserInput], {nullable:true})
+    @Type(() => DetailCreateWithoutUserInput)
+    create?: Array<DetailCreateWithoutUserInput>;
 
-  @Field(() => [DetailUpsertWithWhereUniqueWithoutUserInput], {
-    nullable: true,
-  })
-  @Type(() => DetailUpsertWithWhereUniqueWithoutUserInput)
-  upsert?: Array<DetailUpsertWithWhereUniqueWithoutUserInput>;
+    @Field(() => [DetailCreateOrConnectWithoutUserInput], {nullable:true})
+    @Type(() => DetailCreateOrConnectWithoutUserInput)
+    connectOrCreate?: Array<DetailCreateOrConnectWithoutUserInput>;
 
-  @Field(() => DetailCreateManyUserInputEnvelope, { nullable: true })
-  @Type(() => DetailCreateManyUserInputEnvelope)
-  createMany?: DetailCreateManyUserInputEnvelope;
+    @Field(() => [DetailUpsertWithWhereUniqueWithoutUserInput], {nullable:true})
+    @Type(() => DetailUpsertWithWhereUniqueWithoutUserInput)
+    upsert?: Array<DetailUpsertWithWhereUniqueWithoutUserInput>;
 
-  @Field(() => [DetailWhereUniqueInput], { nullable: true })
-  @Type(() => DetailWhereUniqueInput)
-  set?: Array<DetailWhereUniqueInput>;
+    @Field(() => DetailCreateManyUserInputEnvelope, {nullable:true})
+    @Type(() => DetailCreateManyUserInputEnvelope)
+    createMany?: DetailCreateManyUserInputEnvelope;
 
-  @Field(() => [DetailWhereUniqueInput], { nullable: true })
-  @Type(() => DetailWhereUniqueInput)
-  disconnect?: Array<DetailWhereUniqueInput>;
+    @Field(() => [DetailWhereUniqueInput], {nullable:true})
+    @Type(() => DetailWhereUniqueInput)
+    set?: Array<DetailWhereUniqueInput>;
 
-  @Field(() => [DetailWhereUniqueInput], { nullable: true })
-  @Type(() => DetailWhereUniqueInput)
-  delete?: Array<DetailWhereUniqueInput>;
+    @Field(() => [DetailWhereUniqueInput], {nullable:true})
+    @Type(() => DetailWhereUniqueInput)
+    disconnect?: Array<DetailWhereUniqueInput>;
 
-  @Field(() => [DetailWhereUniqueInput], { nullable: true })
-  @Type(() => DetailWhereUniqueInput)
-  connect?: Array<DetailWhereUniqueInput>;
+    @Field(() => [DetailWhereUniqueInput], {nullable:true})
+    @Type(() => DetailWhereUniqueInput)
+    delete?: Array<DetailWhereUniqueInput>;
 
-  @Field(() => [DetailUpdateWithWhereUniqueWithoutUserInput], {
-    nullable: true,
-  })
-  @Type(() => DetailUpdateWithWhereUniqueWithoutUserInput)
-  update?: Array<DetailUpdateWithWhereUniqueWithoutUserInput>;
+    @Field(() => [DetailWhereUniqueInput], {nullable:true})
+    @Type(() => DetailWhereUniqueInput)
+    connect?: Array<DetailWhereUniqueInput>;
 
-  @Field(() => [DetailUpdateManyWithWhereWithoutUserInput], { nullable: true })
-  @Type(() => DetailUpdateManyWithWhereWithoutUserInput)
-  updateMany?: Array<DetailUpdateManyWithWhereWithoutUserInput>;
+    @Field(() => [DetailUpdateWithWhereUniqueWithoutUserInput], {nullable:true})
+    @Type(() => DetailUpdateWithWhereUniqueWithoutUserInput)
+    update?: Array<DetailUpdateWithWhereUniqueWithoutUserInput>;
 
-  @Field(() => [DetailScalarWhereInput], { nullable: true })
-  @Type(() => DetailScalarWhereInput)
-  deleteMany?: Array<DetailScalarWhereInput>;
+    @Field(() => [DetailUpdateManyWithWhereWithoutUserInput], {nullable:true})
+    @Type(() => DetailUpdateManyWithWhereWithoutUserInput)
+    updateMany?: Array<DetailUpdateManyWithWhereWithoutUserInput>;
+
+    @Field(() => [DetailScalarWhereInput], {nullable:true})
+    @Type(() => DetailScalarWhereInput)
+    deleteMany?: Array<DetailScalarWhereInput>;
 }

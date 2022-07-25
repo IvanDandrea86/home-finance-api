@@ -6,11 +6,12 @@ import { FamilyCreateWithoutExpensesInput } from './family-create-without-expens
 
 @InputType()
 export class FamilyUpsertWithoutExpensesInput {
-  @Field(() => FamilyUpdateWithoutExpensesInput, { nullable: false })
-  @Type(() => FamilyUpdateWithoutExpensesInput)
-  update!: FamilyUpdateWithoutExpensesInput;
 
-  @Field(() => FamilyCreateWithoutExpensesInput, { nullable: false })
-  @Type(() => FamilyCreateWithoutExpensesInput)
-  create!: FamilyCreateWithoutExpensesInput;
+    @Field(() => FamilyUpdateWithoutExpensesInput, {nullable:false})
+    @Type(() => FamilyUpdateWithoutExpensesInput)
+    update!: FamilyUpdateWithoutExpensesInput;
+
+    @Field(() => FamilyCreateWithoutExpensesInput, {nullable:false})
+    @Type(() => FamilyCreateWithoutExpensesInput)
+    create!: FamilyCreateWithoutExpensesInput;
 }

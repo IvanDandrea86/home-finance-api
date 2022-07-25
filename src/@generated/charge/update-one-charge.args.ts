@@ -6,11 +6,12 @@ import { ChargeWhereUniqueInput } from './charge-where-unique.input';
 
 @ArgsType()
 export class UpdateOneChargeArgs {
-  @Field(() => ChargeUpdateInput, { nullable: false })
-  @Type(() => ChargeUpdateInput)
-  data!: ChargeUpdateInput;
 
-  @Field(() => ChargeWhereUniqueInput, { nullable: false })
-  @Type(() => ChargeWhereUniqueInput)
-  where!: ChargeWhereUniqueInput;
+    @Field(() => ChargeUpdateInput, {nullable:false})
+    @Type(() => ChargeUpdateInput)
+    data!: ChargeUpdateInput;
+
+    @Field(() => ChargeWhereUniqueInput, {nullable:false})
+    @Type(() => ChargeWhereUniqueInput)
+    where!: ChargeWhereUniqueInput;
 }

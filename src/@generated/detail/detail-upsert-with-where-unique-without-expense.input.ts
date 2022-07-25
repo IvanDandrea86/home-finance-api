@@ -7,15 +7,16 @@ import { DetailCreateWithoutExpenseInput } from './detail-create-without-expense
 
 @InputType()
 export class DetailUpsertWithWhereUniqueWithoutExpenseInput {
-  @Field(() => DetailWhereUniqueInput, { nullable: false })
-  @Type(() => DetailWhereUniqueInput)
-  where!: DetailWhereUniqueInput;
 
-  @Field(() => DetailUpdateWithoutExpenseInput, { nullable: false })
-  @Type(() => DetailUpdateWithoutExpenseInput)
-  update!: DetailUpdateWithoutExpenseInput;
+    @Field(() => DetailWhereUniqueInput, {nullable:false})
+    @Type(() => DetailWhereUniqueInput)
+    where!: DetailWhereUniqueInput;
 
-  @Field(() => DetailCreateWithoutExpenseInput, { nullable: false })
-  @Type(() => DetailCreateWithoutExpenseInput)
-  create!: DetailCreateWithoutExpenseInput;
+    @Field(() => DetailUpdateWithoutExpenseInput, {nullable:false})
+    @Type(() => DetailUpdateWithoutExpenseInput)
+    update!: DetailUpdateWithoutExpenseInput;
+
+    @Field(() => DetailCreateWithoutExpenseInput, {nullable:false})
+    @Type(() => DetailCreateWithoutExpenseInput)
+    create!: DetailCreateWithoutExpenseInput;
 }

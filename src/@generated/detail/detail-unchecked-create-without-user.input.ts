@@ -5,24 +5,25 @@ import { Int } from '@nestjs/graphql';
 
 @InputType()
 export class DetailUncheckedCreateWithoutUserInput {
-  @Field(() => String, { nullable: true })
-  id?: string;
 
-  @Field(() => Date, { nullable: true })
-  createdAt?: Date | string;
+    @Field(() => String, {nullable:true})
+    id?: string;
 
-  @Field(() => Date, { nullable: true })
-  updatedAt?: Date | string;
+    @Field(() => Date, {nullable:true})
+    createdAt?: Date | string;
 
-  @Field(() => String, { nullable: false })
-  name!: string;
+    @Field(() => Date, {nullable:true})
+    updatedAt?: Date | string;
 
-  @Field(() => String, { nullable: true })
-  expenseId?: string;
+    @Field(() => String, {nullable:false})
+    name!: string;
 
-  @Field(() => Float, { nullable: true })
-  cost?: number;
+    @Field(() => String, {nullable:true})
+    expenseId?: string;
 
-  @Field(() => Int, { nullable: true })
-  period?: number;
+    @Field(() => Float, {nullable:true})
+    cost?: number;
+
+    @Field(() => Int, {nullable:true})
+    period?: number;
 }

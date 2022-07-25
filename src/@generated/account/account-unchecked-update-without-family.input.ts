@@ -9,34 +9,31 @@ import { ExpenseUncheckedUpdateManyWithoutAccountNestedInput } from '../expense/
 
 @InputType()
 export class AccountUncheckedUpdateWithoutFamilyInput {
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  id?: StringFieldUpdateOperationsInput;
 
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: DateTimeFieldUpdateOperationsInput;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    id?: StringFieldUpdateOperationsInput;
 
-  @Field(() => EnumAccountTypeFieldUpdateOperationsInput, { nullable: true })
-  type?: EnumAccountTypeFieldUpdateOperationsInput;
+    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
+    createdAt?: DateTimeFieldUpdateOperationsInput;
 
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: DateTimeFieldUpdateOperationsInput;
+    @Field(() => EnumAccountTypeFieldUpdateOperationsInput, {nullable:true})
+    type?: EnumAccountTypeFieldUpdateOperationsInput;
 
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  name?: StringFieldUpdateOperationsInput;
+    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
+    updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-  @Field(() => ChargeUncheckedUpdateManyWithoutAccountNestedInput, {
-    nullable: true,
-  })
-  charge?: ChargeUncheckedUpdateManyWithoutAccountNestedInput;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    name?: StringFieldUpdateOperationsInput;
 
-  @Field(() => FloatFieldUpdateOperationsInput, { nullable: true })
-  monthlyBudget?: FloatFieldUpdateOperationsInput;
+    @Field(() => ChargeUncheckedUpdateManyWithoutAccountNestedInput, {nullable:true})
+    charge?: ChargeUncheckedUpdateManyWithoutAccountNestedInput;
 
-  @Field(() => FloatFieldUpdateOperationsInput, { nullable: true })
-  sold?: FloatFieldUpdateOperationsInput;
+    @Field(() => FloatFieldUpdateOperationsInput, {nullable:true})
+    monthlyBudget?: FloatFieldUpdateOperationsInput;
 
-  @Field(() => ExpenseUncheckedUpdateManyWithoutAccountNestedInput, {
-    nullable: true,
-  })
-  Expense?: ExpenseUncheckedUpdateManyWithoutAccountNestedInput;
+    @Field(() => FloatFieldUpdateOperationsInput, {nullable:true})
+    sold?: FloatFieldUpdateOperationsInput;
+
+    @Field(() => ExpenseUncheckedUpdateManyWithoutAccountNestedInput, {nullable:true})
+    Expense?: ExpenseUncheckedUpdateManyWithoutAccountNestedInput;
 }

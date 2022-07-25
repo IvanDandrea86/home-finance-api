@@ -9,29 +9,30 @@ import { UserUpdateWithoutMandateInput } from './user-update-without-mandate.inp
 
 @InputType()
 export class UserUpdateOneWithoutMandateNestedInput {
-  @Field(() => UserCreateWithoutMandateInput, { nullable: true })
-  @Type(() => UserCreateWithoutMandateInput)
-  create?: UserCreateWithoutMandateInput;
 
-  @Field(() => UserCreateOrConnectWithoutMandateInput, { nullable: true })
-  @Type(() => UserCreateOrConnectWithoutMandateInput)
-  connectOrCreate?: UserCreateOrConnectWithoutMandateInput;
+    @Field(() => UserCreateWithoutMandateInput, {nullable:true})
+    @Type(() => UserCreateWithoutMandateInput)
+    create?: UserCreateWithoutMandateInput;
 
-  @Field(() => UserUpsertWithoutMandateInput, { nullable: true })
-  @Type(() => UserUpsertWithoutMandateInput)
-  upsert?: UserUpsertWithoutMandateInput;
+    @Field(() => UserCreateOrConnectWithoutMandateInput, {nullable:true})
+    @Type(() => UserCreateOrConnectWithoutMandateInput)
+    connectOrCreate?: UserCreateOrConnectWithoutMandateInput;
 
-  @Field(() => Boolean, { nullable: true })
-  disconnect?: boolean;
+    @Field(() => UserUpsertWithoutMandateInput, {nullable:true})
+    @Type(() => UserUpsertWithoutMandateInput)
+    upsert?: UserUpsertWithoutMandateInput;
 
-  @Field(() => Boolean, { nullable: true })
-  delete?: boolean;
+    @Field(() => Boolean, {nullable:true})
+    disconnect?: boolean;
 
-  @Field(() => UserWhereUniqueInput, { nullable: true })
-  @Type(() => UserWhereUniqueInput)
-  connect?: UserWhereUniqueInput;
+    @Field(() => Boolean, {nullable:true})
+    delete?: boolean;
 
-  @Field(() => UserUpdateWithoutMandateInput, { nullable: true })
-  @Type(() => UserUpdateWithoutMandateInput)
-  update?: UserUpdateWithoutMandateInput;
+    @Field(() => UserWhereUniqueInput, {nullable:true})
+    @Type(() => UserWhereUniqueInput)
+    connect?: UserWhereUniqueInput;
+
+    @Field(() => UserUpdateWithoutMandateInput, {nullable:true})
+    @Type(() => UserUpdateWithoutMandateInput)
+    update?: UserUpdateWithoutMandateInput;
 }

@@ -6,11 +6,12 @@ import { RevenueUpdateWithoutUserInput } from './revenue-update-without-user.inp
 
 @InputType()
 export class RevenueUpdateWithWhereUniqueWithoutUserInput {
-  @Field(() => RevenueWhereUniqueInput, { nullable: false })
-  @Type(() => RevenueWhereUniqueInput)
-  where!: RevenueWhereUniqueInput;
 
-  @Field(() => RevenueUpdateWithoutUserInput, { nullable: false })
-  @Type(() => RevenueUpdateWithoutUserInput)
-  data!: RevenueUpdateWithoutUserInput;
+    @Field(() => RevenueWhereUniqueInput, {nullable:false})
+    @Type(() => RevenueWhereUniqueInput)
+    where!: RevenueWhereUniqueInput;
+
+    @Field(() => RevenueUpdateWithoutUserInput, {nullable:false})
+    @Type(() => RevenueUpdateWithoutUserInput)
+    data!: RevenueUpdateWithoutUserInput;
 }

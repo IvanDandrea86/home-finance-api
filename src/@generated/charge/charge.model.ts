@@ -6,24 +6,25 @@ import { Account } from '../account/account.model';
 
 @ObjectType()
 export class Charge {
-  @Field(() => ID, { nullable: false })
-  id!: string;
 
-  @Field(() => Date, { nullable: false })
-  createdAt!: Date;
+    @Field(() => ID, {nullable:false})
+    id!: string;
 
-  @Field(() => String, { nullable: false })
-  name!: string;
+    @Field(() => Date, {nullable:false})
+    createdAt!: Date;
 
-  @Field(() => Date, { nullable: false })
-  updatedAt!: Date;
+    @Field(() => String, {nullable:false})
+    name!: string;
 
-  @Field(() => Float, { nullable: false })
-  cost!: number;
+    @Field(() => Date, {nullable:false})
+    updatedAt!: Date;
 
-  @Field(() => Account, { nullable: true })
-  Account?: Account | null;
+    @Field(() => Float, {nullable:false})
+    cost!: number;
 
-  @Field(() => String, { nullable: true })
-  accountId!: string | null;
+    @Field(() => Account, {nullable:true})
+    Account?: Account | null;
+
+    @Field(() => String, {nullable:true})
+    accountId!: string | null;
 }

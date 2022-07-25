@@ -10,42 +10,43 @@ import { AccountMaxAggregate } from './account-max-aggregate.output';
 
 @ObjectType()
 export class AccountGroupBy {
-  @Field(() => String, { nullable: false })
-  id!: string;
 
-  @Field(() => Date, { nullable: false })
-  createdAt!: Date | string;
+    @Field(() => String, {nullable:false})
+    id!: string;
 
-  @Field(() => AccountType, { nullable: false })
-  type!: keyof typeof AccountType;
+    @Field(() => Date, {nullable:false})
+    createdAt!: Date | string;
 
-  @Field(() => Date, { nullable: false })
-  updatedAt!: Date | string;
+    @Field(() => AccountType, {nullable:false})
+    type!: keyof typeof AccountType;
 
-  @Field(() => String, { nullable: false })
-  name!: string;
+    @Field(() => Date, {nullable:false})
+    updatedAt!: Date | string;
 
-  @Field(() => Float, { nullable: false })
-  monthlyBudget!: number;
+    @Field(() => String, {nullable:false})
+    name!: string;
 
-  @Field(() => Float, { nullable: false })
-  sold!: number;
+    @Field(() => Float, {nullable:false})
+    monthlyBudget!: number;
 
-  @Field(() => String, { nullable: true })
-  familyId?: string;
+    @Field(() => Float, {nullable:false})
+    sold!: number;
 
-  @Field(() => AccountCountAggregate, { nullable: true })
-  _count?: AccountCountAggregate;
+    @Field(() => String, {nullable:true})
+    familyId?: string;
 
-  @Field(() => AccountAvgAggregate, { nullable: true })
-  _avg?: AccountAvgAggregate;
+    @Field(() => AccountCountAggregate, {nullable:true})
+    _count?: AccountCountAggregate;
 
-  @Field(() => AccountSumAggregate, { nullable: true })
-  _sum?: AccountSumAggregate;
+    @Field(() => AccountAvgAggregate, {nullable:true})
+    _avg?: AccountAvgAggregate;
 
-  @Field(() => AccountMinAggregate, { nullable: true })
-  _min?: AccountMinAggregate;
+    @Field(() => AccountSumAggregate, {nullable:true})
+    _sum?: AccountSumAggregate;
 
-  @Field(() => AccountMaxAggregate, { nullable: true })
-  _max?: AccountMaxAggregate;
+    @Field(() => AccountMinAggregate, {nullable:true})
+    _min?: AccountMinAggregate;
+
+    @Field(() => AccountMaxAggregate, {nullable:true})
+    _max?: AccountMaxAggregate;
 }

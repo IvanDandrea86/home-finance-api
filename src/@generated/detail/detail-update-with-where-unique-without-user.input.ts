@@ -6,11 +6,12 @@ import { DetailUpdateWithoutUserInput } from './detail-update-without-user.input
 
 @InputType()
 export class DetailUpdateWithWhereUniqueWithoutUserInput {
-  @Field(() => DetailWhereUniqueInput, { nullable: false })
-  @Type(() => DetailWhereUniqueInput)
-  where!: DetailWhereUniqueInput;
 
-  @Field(() => DetailUpdateWithoutUserInput, { nullable: false })
-  @Type(() => DetailUpdateWithoutUserInput)
-  data!: DetailUpdateWithoutUserInput;
+    @Field(() => DetailWhereUniqueInput, {nullable:false})
+    @Type(() => DetailWhereUniqueInput)
+    where!: DetailWhereUniqueInput;
+
+    @Field(() => DetailUpdateWithoutUserInput, {nullable:false})
+    @Type(() => DetailUpdateWithoutUserInput)
+    data!: DetailUpdateWithoutUserInput;
 }

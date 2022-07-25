@@ -5,7 +5,8 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class CreateOneChargeArgs {
-  @Field(() => ChargeCreateInput, { nullable: false })
-  @Type(() => ChargeCreateInput)
-  data!: ChargeCreateInput;
+
+    @Field(() => ChargeCreateInput, {nullable:false})
+    @Type(() => ChargeCreateInput)
+    data!: ChargeCreateInput;
 }

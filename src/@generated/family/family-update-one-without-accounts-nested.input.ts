@@ -9,29 +9,30 @@ import { FamilyUpdateWithoutAccountsInput } from './family-update-without-accoun
 
 @InputType()
 export class FamilyUpdateOneWithoutAccountsNestedInput {
-  @Field(() => FamilyCreateWithoutAccountsInput, { nullable: true })
-  @Type(() => FamilyCreateWithoutAccountsInput)
-  create?: FamilyCreateWithoutAccountsInput;
 
-  @Field(() => FamilyCreateOrConnectWithoutAccountsInput, { nullable: true })
-  @Type(() => FamilyCreateOrConnectWithoutAccountsInput)
-  connectOrCreate?: FamilyCreateOrConnectWithoutAccountsInput;
+    @Field(() => FamilyCreateWithoutAccountsInput, {nullable:true})
+    @Type(() => FamilyCreateWithoutAccountsInput)
+    create?: FamilyCreateWithoutAccountsInput;
 
-  @Field(() => FamilyUpsertWithoutAccountsInput, { nullable: true })
-  @Type(() => FamilyUpsertWithoutAccountsInput)
-  upsert?: FamilyUpsertWithoutAccountsInput;
+    @Field(() => FamilyCreateOrConnectWithoutAccountsInput, {nullable:true})
+    @Type(() => FamilyCreateOrConnectWithoutAccountsInput)
+    connectOrCreate?: FamilyCreateOrConnectWithoutAccountsInput;
 
-  @Field(() => Boolean, { nullable: true })
-  disconnect?: boolean;
+    @Field(() => FamilyUpsertWithoutAccountsInput, {nullable:true})
+    @Type(() => FamilyUpsertWithoutAccountsInput)
+    upsert?: FamilyUpsertWithoutAccountsInput;
 
-  @Field(() => Boolean, { nullable: true })
-  delete?: boolean;
+    @Field(() => Boolean, {nullable:true})
+    disconnect?: boolean;
 
-  @Field(() => FamilyWhereUniqueInput, { nullable: true })
-  @Type(() => FamilyWhereUniqueInput)
-  connect?: FamilyWhereUniqueInput;
+    @Field(() => Boolean, {nullable:true})
+    delete?: boolean;
 
-  @Field(() => FamilyUpdateWithoutAccountsInput, { nullable: true })
-  @Type(() => FamilyUpdateWithoutAccountsInput)
-  update?: FamilyUpdateWithoutAccountsInput;
+    @Field(() => FamilyWhereUniqueInput, {nullable:true})
+    @Type(() => FamilyWhereUniqueInput)
+    connect?: FamilyWhereUniqueInput;
+
+    @Field(() => FamilyUpdateWithoutAccountsInput, {nullable:true})
+    @Type(() => FamilyUpdateWithoutAccountsInput)
+    update?: FamilyUpdateWithoutAccountsInput;
 }

@@ -9,32 +9,25 @@ import { AccountUncheckedUpdateManyWithoutFamilyNestedInput } from '../account/a
 
 @InputType()
 export class FamilyUncheckedUpdateInput {
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  id?: StringFieldUpdateOperationsInput;
 
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: DateTimeFieldUpdateOperationsInput;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    id?: StringFieldUpdateOperationsInput;
 
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: DateTimeFieldUpdateOperationsInput;
+    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
+    createdAt?: DateTimeFieldUpdateOperationsInput;
 
-  @Field(() => UserUncheckedUpdateManyWithoutFamilyNestedInput, {
-    nullable: true,
-  })
-  members?: UserUncheckedUpdateManyWithoutFamilyNestedInput;
+    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
+    updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-  @Field(() => ExpenseUncheckedUpdateManyWithoutFamilyNestedInput, {
-    nullable: true,
-  })
-  expenses?: ExpenseUncheckedUpdateManyWithoutFamilyNestedInput;
+    @Field(() => UserUncheckedUpdateManyWithoutFamilyNestedInput, {nullable:true})
+    members?: UserUncheckedUpdateManyWithoutFamilyNestedInput;
 
-  @Field(() => RevenueUncheckedUpdateManyWithoutFamilyNestedInput, {
-    nullable: true,
-  })
-  revenues?: RevenueUncheckedUpdateManyWithoutFamilyNestedInput;
+    @Field(() => ExpenseUncheckedUpdateManyWithoutFamilyNestedInput, {nullable:true})
+    expenses?: ExpenseUncheckedUpdateManyWithoutFamilyNestedInput;
 
-  @Field(() => AccountUncheckedUpdateManyWithoutFamilyNestedInput, {
-    nullable: true,
-  })
-  accounts?: AccountUncheckedUpdateManyWithoutFamilyNestedInput;
+    @Field(() => RevenueUncheckedUpdateManyWithoutFamilyNestedInput, {nullable:true})
+    revenues?: RevenueUncheckedUpdateManyWithoutFamilyNestedInput;
+
+    @Field(() => AccountUncheckedUpdateManyWithoutFamilyNestedInput, {nullable:true})
+    accounts?: AccountUncheckedUpdateManyWithoutFamilyNestedInput;
 }

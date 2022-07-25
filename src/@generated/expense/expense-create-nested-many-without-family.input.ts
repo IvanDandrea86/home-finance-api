@@ -8,19 +8,20 @@ import { ExpenseWhereUniqueInput } from './expense-where-unique.input';
 
 @InputType()
 export class ExpenseCreateNestedManyWithoutFamilyInput {
-  @Field(() => [ExpenseCreateWithoutFamilyInput], { nullable: true })
-  @Type(() => ExpenseCreateWithoutFamilyInput)
-  create?: Array<ExpenseCreateWithoutFamilyInput>;
 
-  @Field(() => [ExpenseCreateOrConnectWithoutFamilyInput], { nullable: true })
-  @Type(() => ExpenseCreateOrConnectWithoutFamilyInput)
-  connectOrCreate?: Array<ExpenseCreateOrConnectWithoutFamilyInput>;
+    @Field(() => [ExpenseCreateWithoutFamilyInput], {nullable:true})
+    @Type(() => ExpenseCreateWithoutFamilyInput)
+    create?: Array<ExpenseCreateWithoutFamilyInput>;
 
-  @Field(() => ExpenseCreateManyFamilyInputEnvelope, { nullable: true })
-  @Type(() => ExpenseCreateManyFamilyInputEnvelope)
-  createMany?: ExpenseCreateManyFamilyInputEnvelope;
+    @Field(() => [ExpenseCreateOrConnectWithoutFamilyInput], {nullable:true})
+    @Type(() => ExpenseCreateOrConnectWithoutFamilyInput)
+    connectOrCreate?: Array<ExpenseCreateOrConnectWithoutFamilyInput>;
 
-  @Field(() => [ExpenseWhereUniqueInput], { nullable: true })
-  @Type(() => ExpenseWhereUniqueInput)
-  connect?: Array<ExpenseWhereUniqueInput>;
+    @Field(() => ExpenseCreateManyFamilyInputEnvelope, {nullable:true})
+    @Type(() => ExpenseCreateManyFamilyInputEnvelope)
+    createMany?: ExpenseCreateManyFamilyInputEnvelope;
+
+    @Field(() => [ExpenseWhereUniqueInput], {nullable:true})
+    @Type(() => ExpenseWhereUniqueInput)
+    connect?: Array<ExpenseWhereUniqueInput>;
 }

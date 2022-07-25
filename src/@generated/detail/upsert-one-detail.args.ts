@@ -7,15 +7,16 @@ import { DetailUpdateInput } from './detail-update.input';
 
 @ArgsType()
 export class UpsertOneDetailArgs {
-  @Field(() => DetailWhereUniqueInput, { nullable: false })
-  @Type(() => DetailWhereUniqueInput)
-  where!: DetailWhereUniqueInput;
 
-  @Field(() => DetailCreateInput, { nullable: false })
-  @Type(() => DetailCreateInput)
-  create!: DetailCreateInput;
+    @Field(() => DetailWhereUniqueInput, {nullable:false})
+    @Type(() => DetailWhereUniqueInput)
+    where!: DetailWhereUniqueInput;
 
-  @Field(() => DetailUpdateInput, { nullable: false })
-  @Type(() => DetailUpdateInput)
-  update!: DetailUpdateInput;
+    @Field(() => DetailCreateInput, {nullable:false})
+    @Type(() => DetailCreateInput)
+    create!: DetailCreateInput;
+
+    @Field(() => DetailUpdateInput, {nullable:false})
+    @Type(() => DetailUpdateInput)
+    update!: DetailUpdateInput;
 }

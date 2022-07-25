@@ -7,15 +7,16 @@ import { RevenueUpdateInput } from './revenue-update.input';
 
 @ArgsType()
 export class UpsertOneRevenueArgs {
-  @Field(() => RevenueWhereUniqueInput, { nullable: false })
-  @Type(() => RevenueWhereUniqueInput)
-  where!: RevenueWhereUniqueInput;
 
-  @Field(() => RevenueCreateInput, { nullable: false })
-  @Type(() => RevenueCreateInput)
-  create!: RevenueCreateInput;
+    @Field(() => RevenueWhereUniqueInput, {nullable:false})
+    @Type(() => RevenueWhereUniqueInput)
+    where!: RevenueWhereUniqueInput;
 
-  @Field(() => RevenueUpdateInput, { nullable: false })
-  @Type(() => RevenueUpdateInput)
-  update!: RevenueUpdateInput;
+    @Field(() => RevenueCreateInput, {nullable:false})
+    @Type(() => RevenueCreateInput)
+    create!: RevenueCreateInput;
+
+    @Field(() => RevenueUpdateInput, {nullable:false})
+    @Type(() => RevenueUpdateInput)
+    update!: RevenueUpdateInput;
 }

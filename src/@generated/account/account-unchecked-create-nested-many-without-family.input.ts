@@ -8,19 +8,20 @@ import { AccountWhereUniqueInput } from './account-where-unique.input';
 
 @InputType()
 export class AccountUncheckedCreateNestedManyWithoutFamilyInput {
-  @Field(() => [AccountCreateWithoutFamilyInput], { nullable: true })
-  @Type(() => AccountCreateWithoutFamilyInput)
-  create?: Array<AccountCreateWithoutFamilyInput>;
 
-  @Field(() => [AccountCreateOrConnectWithoutFamilyInput], { nullable: true })
-  @Type(() => AccountCreateOrConnectWithoutFamilyInput)
-  connectOrCreate?: Array<AccountCreateOrConnectWithoutFamilyInput>;
+    @Field(() => [AccountCreateWithoutFamilyInput], {nullable:true})
+    @Type(() => AccountCreateWithoutFamilyInput)
+    create?: Array<AccountCreateWithoutFamilyInput>;
 
-  @Field(() => AccountCreateManyFamilyInputEnvelope, { nullable: true })
-  @Type(() => AccountCreateManyFamilyInputEnvelope)
-  createMany?: AccountCreateManyFamilyInputEnvelope;
+    @Field(() => [AccountCreateOrConnectWithoutFamilyInput], {nullable:true})
+    @Type(() => AccountCreateOrConnectWithoutFamilyInput)
+    connectOrCreate?: Array<AccountCreateOrConnectWithoutFamilyInput>;
 
-  @Field(() => [AccountWhereUniqueInput], { nullable: true })
-  @Type(() => AccountWhereUniqueInput)
-  connect?: Array<AccountWhereUniqueInput>;
+    @Field(() => AccountCreateManyFamilyInputEnvelope, {nullable:true})
+    @Type(() => AccountCreateManyFamilyInputEnvelope)
+    createMany?: AccountCreateManyFamilyInputEnvelope;
+
+    @Field(() => [AccountWhereUniqueInput], {nullable:true})
+    @Type(() => AccountWhereUniqueInput)
+    connect?: Array<AccountWhereUniqueInput>;
 }

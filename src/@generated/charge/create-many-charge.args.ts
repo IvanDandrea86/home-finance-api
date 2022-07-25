@@ -5,10 +5,11 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class CreateManyChargeArgs {
-  @Field(() => [ChargeCreateManyInput], { nullable: false })
-  @Type(() => ChargeCreateManyInput)
-  data!: Array<ChargeCreateManyInput>;
 
-  @Field(() => Boolean, { nullable: true })
-  skipDuplicates?: boolean;
+    @Field(() => [ChargeCreateManyInput], {nullable:false})
+    @Type(() => ChargeCreateManyInput)
+    data!: Array<ChargeCreateManyInput>;
+
+    @Field(() => Boolean, {nullable:true})
+    skipDuplicates?: boolean;
 }

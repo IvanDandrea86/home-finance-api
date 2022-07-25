@@ -7,21 +7,22 @@ import { FamilyMinOrderByAggregateInput } from './family-min-order-by-aggregate.
 
 @InputType()
 export class FamilyOrderByWithAggregationInput {
-  @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    createdAt?: keyof typeof SortOrder;
 
-  @Field(() => FamilyCountOrderByAggregateInput, { nullable: true })
-  _count?: FamilyCountOrderByAggregateInput;
+    @Field(() => SortOrder, {nullable:true})
+    updatedAt?: keyof typeof SortOrder;
 
-  @Field(() => FamilyMaxOrderByAggregateInput, { nullable: true })
-  _max?: FamilyMaxOrderByAggregateInput;
+    @Field(() => FamilyCountOrderByAggregateInput, {nullable:true})
+    _count?: FamilyCountOrderByAggregateInput;
 
-  @Field(() => FamilyMinOrderByAggregateInput, { nullable: true })
-  _min?: FamilyMinOrderByAggregateInput;
+    @Field(() => FamilyMaxOrderByAggregateInput, {nullable:true})
+    _max?: FamilyMaxOrderByAggregateInput;
+
+    @Field(() => FamilyMinOrderByAggregateInput, {nullable:true})
+    _min?: FamilyMinOrderByAggregateInput;
 }

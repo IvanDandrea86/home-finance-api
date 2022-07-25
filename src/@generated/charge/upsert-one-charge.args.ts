@@ -7,15 +7,16 @@ import { ChargeUpdateInput } from './charge-update.input';
 
 @ArgsType()
 export class UpsertOneChargeArgs {
-  @Field(() => ChargeWhereUniqueInput, { nullable: false })
-  @Type(() => ChargeWhereUniqueInput)
-  where!: ChargeWhereUniqueInput;
 
-  @Field(() => ChargeCreateInput, { nullable: false })
-  @Type(() => ChargeCreateInput)
-  create!: ChargeCreateInput;
+    @Field(() => ChargeWhereUniqueInput, {nullable:false})
+    @Type(() => ChargeWhereUniqueInput)
+    where!: ChargeWhereUniqueInput;
 
-  @Field(() => ChargeUpdateInput, { nullable: false })
-  @Type(() => ChargeUpdateInput)
-  update!: ChargeUpdateInput;
+    @Field(() => ChargeCreateInput, {nullable:false})
+    @Type(() => ChargeCreateInput)
+    create!: ChargeCreateInput;
+
+    @Field(() => ChargeUpdateInput, {nullable:false})
+    @Type(() => ChargeUpdateInput)
+    update!: ChargeUpdateInput;
 }

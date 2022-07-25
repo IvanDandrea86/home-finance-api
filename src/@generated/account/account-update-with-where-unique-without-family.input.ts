@@ -6,11 +6,12 @@ import { AccountUpdateWithoutFamilyInput } from './account-update-without-family
 
 @InputType()
 export class AccountUpdateWithWhereUniqueWithoutFamilyInput {
-  @Field(() => AccountWhereUniqueInput, { nullable: false })
-  @Type(() => AccountWhereUniqueInput)
-  where!: AccountWhereUniqueInput;
 
-  @Field(() => AccountUpdateWithoutFamilyInput, { nullable: false })
-  @Type(() => AccountUpdateWithoutFamilyInput)
-  data!: AccountUpdateWithoutFamilyInput;
+    @Field(() => AccountWhereUniqueInput, {nullable:false})
+    @Type(() => AccountWhereUniqueInput)
+    where!: AccountWhereUniqueInput;
+
+    @Field(() => AccountUpdateWithoutFamilyInput, {nullable:false})
+    @Type(() => AccountUpdateWithoutFamilyInput)
+    data!: AccountUpdateWithoutFamilyInput;
 }

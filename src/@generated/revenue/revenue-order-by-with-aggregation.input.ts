@@ -7,27 +7,28 @@ import { RevenueMinOrderByAggregateInput } from './revenue-min-order-by-aggregat
 
 @InputType()
 export class RevenueOrderByWithAggregationInput {
-  @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    createdAt?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  userId?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    updatedAt?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  familyId?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    userId?: keyof typeof SortOrder;
 
-  @Field(() => RevenueCountOrderByAggregateInput, { nullable: true })
-  _count?: RevenueCountOrderByAggregateInput;
+    @Field(() => SortOrder, {nullable:true})
+    familyId?: keyof typeof SortOrder;
 
-  @Field(() => RevenueMaxOrderByAggregateInput, { nullable: true })
-  _max?: RevenueMaxOrderByAggregateInput;
+    @Field(() => RevenueCountOrderByAggregateInput, {nullable:true})
+    _count?: RevenueCountOrderByAggregateInput;
 
-  @Field(() => RevenueMinOrderByAggregateInput, { nullable: true })
-  _min?: RevenueMinOrderByAggregateInput;
+    @Field(() => RevenueMaxOrderByAggregateInput, {nullable:true})
+    _max?: RevenueMaxOrderByAggregateInput;
+
+    @Field(() => RevenueMinOrderByAggregateInput, {nullable:true})
+    _min?: RevenueMinOrderByAggregateInput;
 }

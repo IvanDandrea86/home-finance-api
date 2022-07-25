@@ -13,34 +13,35 @@ import { ExpenseMaxAggregateInput } from './expense-max-aggregate.input';
 
 @ArgsType()
 export class ExpenseAggregateArgs {
-  @Field(() => ExpenseWhereInput, { nullable: true })
-  @Type(() => ExpenseWhereInput)
-  where?: ExpenseWhereInput;
 
-  @Field(() => [ExpenseOrderByWithRelationInput], { nullable: true })
-  orderBy?: Array<ExpenseOrderByWithRelationInput>;
+    @Field(() => ExpenseWhereInput, {nullable:true})
+    @Type(() => ExpenseWhereInput)
+    where?: ExpenseWhereInput;
 
-  @Field(() => ExpenseWhereUniqueInput, { nullable: true })
-  cursor?: ExpenseWhereUniqueInput;
+    @Field(() => [ExpenseOrderByWithRelationInput], {nullable:true})
+    orderBy?: Array<ExpenseOrderByWithRelationInput>;
 
-  @Field(() => Int, { nullable: true })
-  take?: number;
+    @Field(() => ExpenseWhereUniqueInput, {nullable:true})
+    cursor?: ExpenseWhereUniqueInput;
 
-  @Field(() => Int, { nullable: true })
-  skip?: number;
+    @Field(() => Int, {nullable:true})
+    take?: number;
 
-  @Field(() => ExpenseCountAggregateInput, { nullable: true })
-  _count?: ExpenseCountAggregateInput;
+    @Field(() => Int, {nullable:true})
+    skip?: number;
 
-  @Field(() => ExpenseAvgAggregateInput, { nullable: true })
-  _avg?: ExpenseAvgAggregateInput;
+    @Field(() => ExpenseCountAggregateInput, {nullable:true})
+    _count?: ExpenseCountAggregateInput;
 
-  @Field(() => ExpenseSumAggregateInput, { nullable: true })
-  _sum?: ExpenseSumAggregateInput;
+    @Field(() => ExpenseAvgAggregateInput, {nullable:true})
+    _avg?: ExpenseAvgAggregateInput;
 
-  @Field(() => ExpenseMinAggregateInput, { nullable: true })
-  _min?: ExpenseMinAggregateInput;
+    @Field(() => ExpenseSumAggregateInput, {nullable:true})
+    _sum?: ExpenseSumAggregateInput;
 
-  @Field(() => ExpenseMaxAggregateInput, { nullable: true })
-  _max?: ExpenseMaxAggregateInput;
+    @Field(() => ExpenseMinAggregateInput, {nullable:true})
+    _min?: ExpenseMinAggregateInput;
+
+    @Field(() => ExpenseMaxAggregateInput, {nullable:true})
+    _max?: ExpenseMaxAggregateInput;
 }

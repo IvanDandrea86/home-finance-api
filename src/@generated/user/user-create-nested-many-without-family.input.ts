@@ -8,19 +8,20 @@ import { UserWhereUniqueInput } from './user-where-unique.input';
 
 @InputType()
 export class UserCreateNestedManyWithoutFamilyInput {
-  @Field(() => [UserCreateWithoutFamilyInput], { nullable: true })
-  @Type(() => UserCreateWithoutFamilyInput)
-  create?: Array<UserCreateWithoutFamilyInput>;
 
-  @Field(() => [UserCreateOrConnectWithoutFamilyInput], { nullable: true })
-  @Type(() => UserCreateOrConnectWithoutFamilyInput)
-  connectOrCreate?: Array<UserCreateOrConnectWithoutFamilyInput>;
+    @Field(() => [UserCreateWithoutFamilyInput], {nullable:true})
+    @Type(() => UserCreateWithoutFamilyInput)
+    create?: Array<UserCreateWithoutFamilyInput>;
 
-  @Field(() => UserCreateManyFamilyInputEnvelope, { nullable: true })
-  @Type(() => UserCreateManyFamilyInputEnvelope)
-  createMany?: UserCreateManyFamilyInputEnvelope;
+    @Field(() => [UserCreateOrConnectWithoutFamilyInput], {nullable:true})
+    @Type(() => UserCreateOrConnectWithoutFamilyInput)
+    connectOrCreate?: Array<UserCreateOrConnectWithoutFamilyInput>;
 
-  @Field(() => [UserWhereUniqueInput], { nullable: true })
-  @Type(() => UserWhereUniqueInput)
-  connect?: Array<UserWhereUniqueInput>;
+    @Field(() => UserCreateManyFamilyInputEnvelope, {nullable:true})
+    @Type(() => UserCreateManyFamilyInputEnvelope)
+    createMany?: UserCreateManyFamilyInputEnvelope;
+
+    @Field(() => [UserWhereUniqueInput], {nullable:true})
+    @Type(() => UserWhereUniqueInput)
+    connect?: Array<UserWhereUniqueInput>;
 }

@@ -4,6 +4,7 @@ import { AccountType } from './account-type.enum';
 
 @InputType()
 export class EnumAccountTypeFieldUpdateOperationsInput {
-  @Field(() => AccountType, { nullable: true })
-  set?: keyof typeof AccountType;
+
+    @Field(() => AccountType, {nullable:true})
+    set?: keyof typeof AccountType;
 }

@@ -9,29 +9,30 @@ import { AccountUpdateWithoutExpenseInput } from './account-update-without-expen
 
 @InputType()
 export class AccountUpdateOneWithoutExpenseNestedInput {
-  @Field(() => AccountCreateWithoutExpenseInput, { nullable: true })
-  @Type(() => AccountCreateWithoutExpenseInput)
-  create?: AccountCreateWithoutExpenseInput;
 
-  @Field(() => AccountCreateOrConnectWithoutExpenseInput, { nullable: true })
-  @Type(() => AccountCreateOrConnectWithoutExpenseInput)
-  connectOrCreate?: AccountCreateOrConnectWithoutExpenseInput;
+    @Field(() => AccountCreateWithoutExpenseInput, {nullable:true})
+    @Type(() => AccountCreateWithoutExpenseInput)
+    create?: AccountCreateWithoutExpenseInput;
 
-  @Field(() => AccountUpsertWithoutExpenseInput, { nullable: true })
-  @Type(() => AccountUpsertWithoutExpenseInput)
-  upsert?: AccountUpsertWithoutExpenseInput;
+    @Field(() => AccountCreateOrConnectWithoutExpenseInput, {nullable:true})
+    @Type(() => AccountCreateOrConnectWithoutExpenseInput)
+    connectOrCreate?: AccountCreateOrConnectWithoutExpenseInput;
 
-  @Field(() => Boolean, { nullable: true })
-  disconnect?: boolean;
+    @Field(() => AccountUpsertWithoutExpenseInput, {nullable:true})
+    @Type(() => AccountUpsertWithoutExpenseInput)
+    upsert?: AccountUpsertWithoutExpenseInput;
 
-  @Field(() => Boolean, { nullable: true })
-  delete?: boolean;
+    @Field(() => Boolean, {nullable:true})
+    disconnect?: boolean;
 
-  @Field(() => AccountWhereUniqueInput, { nullable: true })
-  @Type(() => AccountWhereUniqueInput)
-  connect?: AccountWhereUniqueInput;
+    @Field(() => Boolean, {nullable:true})
+    delete?: boolean;
 
-  @Field(() => AccountUpdateWithoutExpenseInput, { nullable: true })
-  @Type(() => AccountUpdateWithoutExpenseInput)
-  update?: AccountUpdateWithoutExpenseInput;
+    @Field(() => AccountWhereUniqueInput, {nullable:true})
+    @Type(() => AccountWhereUniqueInput)
+    connect?: AccountWhereUniqueInput;
+
+    @Field(() => AccountUpdateWithoutExpenseInput, {nullable:true})
+    @Type(() => AccountUpdateWithoutExpenseInput)
+    update?: AccountUpdateWithoutExpenseInput;
 }

@@ -9,39 +9,40 @@ import { ExpenseMaxAggregate } from './expense-max-aggregate.output';
 
 @ObjectType()
 export class ExpenseGroupBy {
-  @Field(() => String, { nullable: false })
-  id!: string;
 
-  @Field(() => Date, { nullable: false })
-  createdAt!: Date | string;
+    @Field(() => String, {nullable:false})
+    id!: string;
 
-  @Field(() => Date, { nullable: false })
-  updatedAt!: Date | string;
+    @Field(() => Date, {nullable:false})
+    createdAt!: Date | string;
 
-  @Field(() => String, { nullable: false })
-  name!: string;
+    @Field(() => Date, {nullable:false})
+    updatedAt!: Date | string;
 
-  @Field(() => Float, { nullable: false })
-  monthlyCost!: number;
+    @Field(() => String, {nullable:false})
+    name!: string;
 
-  @Field(() => String, { nullable: true })
-  familyId?: string;
+    @Field(() => Float, {nullable:false})
+    monthlyCost!: number;
 
-  @Field(() => String, { nullable: true })
-  accountId?: string;
+    @Field(() => String, {nullable:true})
+    familyId?: string;
 
-  @Field(() => ExpenseCountAggregate, { nullable: true })
-  _count?: ExpenseCountAggregate;
+    @Field(() => String, {nullable:true})
+    accountId?: string;
 
-  @Field(() => ExpenseAvgAggregate, { nullable: true })
-  _avg?: ExpenseAvgAggregate;
+    @Field(() => ExpenseCountAggregate, {nullable:true})
+    _count?: ExpenseCountAggregate;
 
-  @Field(() => ExpenseSumAggregate, { nullable: true })
-  _sum?: ExpenseSumAggregate;
+    @Field(() => ExpenseAvgAggregate, {nullable:true})
+    _avg?: ExpenseAvgAggregate;
 
-  @Field(() => ExpenseMinAggregate, { nullable: true })
-  _min?: ExpenseMinAggregate;
+    @Field(() => ExpenseSumAggregate, {nullable:true})
+    _sum?: ExpenseSumAggregate;
 
-  @Field(() => ExpenseMaxAggregate, { nullable: true })
-  _max?: ExpenseMaxAggregate;
+    @Field(() => ExpenseMinAggregate, {nullable:true})
+    _min?: ExpenseMinAggregate;
+
+    @Field(() => ExpenseMaxAggregate, {nullable:true})
+    _max?: ExpenseMaxAggregate;
 }

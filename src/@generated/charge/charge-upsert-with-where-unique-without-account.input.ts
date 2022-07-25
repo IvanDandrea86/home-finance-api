@@ -7,15 +7,16 @@ import { ChargeCreateWithoutAccountInput } from './charge-create-without-account
 
 @InputType()
 export class ChargeUpsertWithWhereUniqueWithoutAccountInput {
-  @Field(() => ChargeWhereUniqueInput, { nullable: false })
-  @Type(() => ChargeWhereUniqueInput)
-  where!: ChargeWhereUniqueInput;
 
-  @Field(() => ChargeUpdateWithoutAccountInput, { nullable: false })
-  @Type(() => ChargeUpdateWithoutAccountInput)
-  update!: ChargeUpdateWithoutAccountInput;
+    @Field(() => ChargeWhereUniqueInput, {nullable:false})
+    @Type(() => ChargeWhereUniqueInput)
+    where!: ChargeWhereUniqueInput;
 
-  @Field(() => ChargeCreateWithoutAccountInput, { nullable: false })
-  @Type(() => ChargeCreateWithoutAccountInput)
-  create!: ChargeCreateWithoutAccountInput;
+    @Field(() => ChargeUpdateWithoutAccountInput, {nullable:false})
+    @Type(() => ChargeUpdateWithoutAccountInput)
+    update!: ChargeUpdateWithoutAccountInput;
+
+    @Field(() => ChargeCreateWithoutAccountInput, {nullable:false})
+    @Type(() => ChargeCreateWithoutAccountInput)
+    create!: ChargeCreateWithoutAccountInput;
 }

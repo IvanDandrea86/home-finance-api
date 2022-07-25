@@ -7,15 +7,16 @@ import { UserCreateWithoutFamilyInput } from './user-create-without-family.input
 
 @InputType()
 export class UserUpsertWithWhereUniqueWithoutFamilyInput {
-  @Field(() => UserWhereUniqueInput, { nullable: false })
-  @Type(() => UserWhereUniqueInput)
-  where!: UserWhereUniqueInput;
 
-  @Field(() => UserUpdateWithoutFamilyInput, { nullable: false })
-  @Type(() => UserUpdateWithoutFamilyInput)
-  update!: UserUpdateWithoutFamilyInput;
+    @Field(() => UserWhereUniqueInput, {nullable:false})
+    @Type(() => UserWhereUniqueInput)
+    where!: UserWhereUniqueInput;
 
-  @Field(() => UserCreateWithoutFamilyInput, { nullable: false })
-  @Type(() => UserCreateWithoutFamilyInput)
-  create!: UserCreateWithoutFamilyInput;
+    @Field(() => UserUpdateWithoutFamilyInput, {nullable:false})
+    @Type(() => UserUpdateWithoutFamilyInput)
+    update!: UserUpdateWithoutFamilyInput;
+
+    @Field(() => UserCreateWithoutFamilyInput, {nullable:false})
+    @Type(() => UserCreateWithoutFamilyInput)
+    create!: UserCreateWithoutFamilyInput;
 }

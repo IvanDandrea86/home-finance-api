@@ -5,10 +5,11 @@ import { Type } from 'class-transformer';
 
 @InputType()
 export class ChargeCreateManyAccountInputEnvelope {
-  @Field(() => [ChargeCreateManyAccountInput], { nullable: false })
-  @Type(() => ChargeCreateManyAccountInput)
-  data!: Array<ChargeCreateManyAccountInput>;
 
-  @Field(() => Boolean, { nullable: true })
-  skipDuplicates?: boolean;
+    @Field(() => [ChargeCreateManyAccountInput], {nullable:false})
+    @Type(() => ChargeCreateManyAccountInput)
+    data!: Array<ChargeCreateManyAccountInput>;
+
+    @Field(() => Boolean, {nullable:true})
+    skipDuplicates?: boolean;
 }

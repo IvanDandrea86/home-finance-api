@@ -12,53 +12,48 @@ import { AccountScalarWhereInput } from './account-scalar-where.input';
 
 @InputType()
 export class AccountUpdateManyWithoutFamilyNestedInput {
-  @Field(() => [AccountCreateWithoutFamilyInput], { nullable: true })
-  @Type(() => AccountCreateWithoutFamilyInput)
-  create?: Array<AccountCreateWithoutFamilyInput>;
 
-  @Field(() => [AccountCreateOrConnectWithoutFamilyInput], { nullable: true })
-  @Type(() => AccountCreateOrConnectWithoutFamilyInput)
-  connectOrCreate?: Array<AccountCreateOrConnectWithoutFamilyInput>;
+    @Field(() => [AccountCreateWithoutFamilyInput], {nullable:true})
+    @Type(() => AccountCreateWithoutFamilyInput)
+    create?: Array<AccountCreateWithoutFamilyInput>;
 
-  @Field(() => [AccountUpsertWithWhereUniqueWithoutFamilyInput], {
-    nullable: true,
-  })
-  @Type(() => AccountUpsertWithWhereUniqueWithoutFamilyInput)
-  upsert?: Array<AccountUpsertWithWhereUniqueWithoutFamilyInput>;
+    @Field(() => [AccountCreateOrConnectWithoutFamilyInput], {nullable:true})
+    @Type(() => AccountCreateOrConnectWithoutFamilyInput)
+    connectOrCreate?: Array<AccountCreateOrConnectWithoutFamilyInput>;
 
-  @Field(() => AccountCreateManyFamilyInputEnvelope, { nullable: true })
-  @Type(() => AccountCreateManyFamilyInputEnvelope)
-  createMany?: AccountCreateManyFamilyInputEnvelope;
+    @Field(() => [AccountUpsertWithWhereUniqueWithoutFamilyInput], {nullable:true})
+    @Type(() => AccountUpsertWithWhereUniqueWithoutFamilyInput)
+    upsert?: Array<AccountUpsertWithWhereUniqueWithoutFamilyInput>;
 
-  @Field(() => [AccountWhereUniqueInput], { nullable: true })
-  @Type(() => AccountWhereUniqueInput)
-  set?: Array<AccountWhereUniqueInput>;
+    @Field(() => AccountCreateManyFamilyInputEnvelope, {nullable:true})
+    @Type(() => AccountCreateManyFamilyInputEnvelope)
+    createMany?: AccountCreateManyFamilyInputEnvelope;
 
-  @Field(() => [AccountWhereUniqueInput], { nullable: true })
-  @Type(() => AccountWhereUniqueInput)
-  disconnect?: Array<AccountWhereUniqueInput>;
+    @Field(() => [AccountWhereUniqueInput], {nullable:true})
+    @Type(() => AccountWhereUniqueInput)
+    set?: Array<AccountWhereUniqueInput>;
 
-  @Field(() => [AccountWhereUniqueInput], { nullable: true })
-  @Type(() => AccountWhereUniqueInput)
-  delete?: Array<AccountWhereUniqueInput>;
+    @Field(() => [AccountWhereUniqueInput], {nullable:true})
+    @Type(() => AccountWhereUniqueInput)
+    disconnect?: Array<AccountWhereUniqueInput>;
 
-  @Field(() => [AccountWhereUniqueInput], { nullable: true })
-  @Type(() => AccountWhereUniqueInput)
-  connect?: Array<AccountWhereUniqueInput>;
+    @Field(() => [AccountWhereUniqueInput], {nullable:true})
+    @Type(() => AccountWhereUniqueInput)
+    delete?: Array<AccountWhereUniqueInput>;
 
-  @Field(() => [AccountUpdateWithWhereUniqueWithoutFamilyInput], {
-    nullable: true,
-  })
-  @Type(() => AccountUpdateWithWhereUniqueWithoutFamilyInput)
-  update?: Array<AccountUpdateWithWhereUniqueWithoutFamilyInput>;
+    @Field(() => [AccountWhereUniqueInput], {nullable:true})
+    @Type(() => AccountWhereUniqueInput)
+    connect?: Array<AccountWhereUniqueInput>;
 
-  @Field(() => [AccountUpdateManyWithWhereWithoutFamilyInput], {
-    nullable: true,
-  })
-  @Type(() => AccountUpdateManyWithWhereWithoutFamilyInput)
-  updateMany?: Array<AccountUpdateManyWithWhereWithoutFamilyInput>;
+    @Field(() => [AccountUpdateWithWhereUniqueWithoutFamilyInput], {nullable:true})
+    @Type(() => AccountUpdateWithWhereUniqueWithoutFamilyInput)
+    update?: Array<AccountUpdateWithWhereUniqueWithoutFamilyInput>;
 
-  @Field(() => [AccountScalarWhereInput], { nullable: true })
-  @Type(() => AccountScalarWhereInput)
-  deleteMany?: Array<AccountScalarWhereInput>;
+    @Field(() => [AccountUpdateManyWithWhereWithoutFamilyInput], {nullable:true})
+    @Type(() => AccountUpdateManyWithWhereWithoutFamilyInput)
+    updateMany?: Array<AccountUpdateManyWithWhereWithoutFamilyInput>;
+
+    @Field(() => [AccountScalarWhereInput], {nullable:true})
+    @Type(() => AccountScalarWhereInput)
+    deleteMany?: Array<AccountScalarWhereInput>;
 }

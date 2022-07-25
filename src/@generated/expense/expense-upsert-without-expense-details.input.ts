@@ -6,11 +6,12 @@ import { ExpenseCreateWithoutExpenseDetailsInput } from './expense-create-withou
 
 @InputType()
 export class ExpenseUpsertWithoutExpenseDetailsInput {
-  @Field(() => ExpenseUpdateWithoutExpenseDetailsInput, { nullable: false })
-  @Type(() => ExpenseUpdateWithoutExpenseDetailsInput)
-  update!: ExpenseUpdateWithoutExpenseDetailsInput;
 
-  @Field(() => ExpenseCreateWithoutExpenseDetailsInput, { nullable: false })
-  @Type(() => ExpenseCreateWithoutExpenseDetailsInput)
-  create!: ExpenseCreateWithoutExpenseDetailsInput;
+    @Field(() => ExpenseUpdateWithoutExpenseDetailsInput, {nullable:false})
+    @Type(() => ExpenseUpdateWithoutExpenseDetailsInput)
+    update!: ExpenseUpdateWithoutExpenseDetailsInput;
+
+    @Field(() => ExpenseCreateWithoutExpenseDetailsInput, {nullable:false})
+    @Type(() => ExpenseCreateWithoutExpenseDetailsInput)
+    create!: ExpenseCreateWithoutExpenseDetailsInput;
 }

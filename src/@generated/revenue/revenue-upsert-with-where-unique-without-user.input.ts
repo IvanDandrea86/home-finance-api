@@ -7,15 +7,16 @@ import { RevenueCreateWithoutUserInput } from './revenue-create-without-user.inp
 
 @InputType()
 export class RevenueUpsertWithWhereUniqueWithoutUserInput {
-  @Field(() => RevenueWhereUniqueInput, { nullable: false })
-  @Type(() => RevenueWhereUniqueInput)
-  where!: RevenueWhereUniqueInput;
 
-  @Field(() => RevenueUpdateWithoutUserInput, { nullable: false })
-  @Type(() => RevenueUpdateWithoutUserInput)
-  update!: RevenueUpdateWithoutUserInput;
+    @Field(() => RevenueWhereUniqueInput, {nullable:false})
+    @Type(() => RevenueWhereUniqueInput)
+    where!: RevenueWhereUniqueInput;
 
-  @Field(() => RevenueCreateWithoutUserInput, { nullable: false })
-  @Type(() => RevenueCreateWithoutUserInput)
-  create!: RevenueCreateWithoutUserInput;
+    @Field(() => RevenueUpdateWithoutUserInput, {nullable:false})
+    @Type(() => RevenueUpdateWithoutUserInput)
+    update!: RevenueUpdateWithoutUserInput;
+
+    @Field(() => RevenueCreateWithoutUserInput, {nullable:false})
+    @Type(() => RevenueCreateWithoutUserInput)
+    create!: RevenueCreateWithoutUserInput;
 }

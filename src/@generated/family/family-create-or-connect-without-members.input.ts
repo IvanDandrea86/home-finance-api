@@ -6,11 +6,12 @@ import { FamilyCreateWithoutMembersInput } from './family-create-without-members
 
 @InputType()
 export class FamilyCreateOrConnectWithoutMembersInput {
-  @Field(() => FamilyWhereUniqueInput, { nullable: false })
-  @Type(() => FamilyWhereUniqueInput)
-  where!: FamilyWhereUniqueInput;
 
-  @Field(() => FamilyCreateWithoutMembersInput, { nullable: false })
-  @Type(() => FamilyCreateWithoutMembersInput)
-  create!: FamilyCreateWithoutMembersInput;
+    @Field(() => FamilyWhereUniqueInput, {nullable:false})
+    @Type(() => FamilyWhereUniqueInput)
+    where!: FamilyWhereUniqueInput;
+
+    @Field(() => FamilyCreateWithoutMembersInput, {nullable:false})
+    @Type(() => FamilyCreateWithoutMembersInput)
+    create!: FamilyCreateWithoutMembersInput;
 }
