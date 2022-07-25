@@ -1,6 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 import middleware from './encryptMiddleware';
-import { seedDataAccount, seedDataExpense } from './seed/data';
+// import { seedDataAccount, seedDataExpense } from './seed/data';
 import { dropDB } from './utils';
 const prisma = new PrismaClient();
 async function seed() {
@@ -59,38 +59,38 @@ async function seed() {
         },
       },
     });
-    seedDataExpense.forEach(async (element) => {
-      const initialValue = 0;
-      const sumWithInitial = element.data.reduce(
-        (previousValue, currentValue) =>
-          previousValue + currentValue.cost / currentValue.period,
-        initialValue,
-      );
-      await prisma.expense.create({
-        data: {
-          name: element.name,
-          monthlyCost: sumWithInitial,
+    //     seedDataExpense.forEach(async (element) => {
+    //       const initialValue = 0;
+    //       const sumWithInitial = element.data.reduce(
+    //         (previousValue, currentValue) =>
+    //           previousValue + currentValue.cost / currentValue.period,
+    //         initialValue,
+    //       );
+    //       await prisma.expense.create({
+    //         data: {
+    //           name: element.name,
+    //           monthlyCost: sumWithInitial,
 
-          expenseDetails: {
-            createMany: {
-              data: element.data,
-            },
-          },
-        },
-      });
-    });
+    //           expenseDetails: {
+    //             createMany: {
+    //               data: element.data,
+    //             },
+    //           },
+    //         },
+    //       });
+    //     });
 
-    seedDataAccount.forEach(async (element) => {
-      const initialValue = 0;
+    //     seedDataAccount.forEach(async (element) => {
+    //       const initialValue = 0;
 
-      await prisma.account.create({
-        data: {
-          name: element.name,
-          type: element.type,
-          sold: element.sold,
-        },
-      });
-    });
+    //       await prisma.account.create({
+    //         data: {
+    //           name: element.name,
+    //           type: element.type,
+    //           sold: element.sold,
+    //         },
+    //       });
+    //     });
   } catch (err: any) {
     console.log(err);
   }
