@@ -12,7 +12,7 @@
     "prebuild": "rimraf dist",
     "gen-typings": " ts-node ./src/utils/generate-typings",
     "build": "nest build",
-    "heroku-prebuild":"yarn install && npx prisma generate",
+    "heroku-prebuild":" npx prisma generate",
     "prisma:db:seed:dev": "npx prisma db seed",
     "prisma:generate": "npx prisma generate  && yarn prisma:migrate:dev && yarn format",
     "prisma:migrate:dev": "rm -rf ./prisma/migrations && npx prisma migrate dev db",
