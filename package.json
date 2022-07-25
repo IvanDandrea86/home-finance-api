@@ -58,7 +58,10 @@
     "prisma-nestjs-graphql-resource-generator": "^0.1.1",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
-    "rxjs": "^7.2.0"
+    "rxjs": "^7.2.0",
+    "prisma": "^4.0.0",
+    "prisma-json-schema-generator": "^3.0.1",
+    "prisma-nestjs-graphql": "^16.0.1"
   },
   "devDependencies": {
     "@nestjs/cli": "^9.0.0",
